@@ -219,6 +219,8 @@
         </div>
       </footer>
     `;
+  }
+
   // Unified Component Loader
   async function loadComponents() {
     const headerContainer = document.getElementById('site-header-container');
@@ -230,7 +232,7 @@
         const res = await fetch(`${rootPrefix}assets/components/header.html`);
         if (res.ok) {
           const raw = await res.text();
-          headerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, homeUrl);
+          headerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, rootPrefix);
         } else {
           headerContainer.innerHTML = getHeaderTemplate();
         }
@@ -245,7 +247,7 @@
         const res = await fetch(`${rootPrefix}assets/components/footer.html`);
         if (res.ok) {
           const raw = await res.text();
-          footerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, homeUrl);
+          footerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, rootPrefix);
         } else {
           footerContainer.innerHTML = getFooterTemplate();
         }

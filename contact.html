@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -328,7 +328,13 @@
           <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Our team will review your inquiry and get back to you within 24 to 48 business hours.</p>
         </div>
 
-        <form id="contact-form" novalidate>
+        <form id="contact-form" action="https://formsubmit.co/info.finejust@gmail.com" method="POST" novalidate>
+          <!-- FormSubmit Configuration Hidden Fields -->
+          <input type="hidden" name="_subject" value="New Contact Message - Finejust.vip">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://www.finejust.vip/contact-success.html">
+
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
             
             <!-- Full Name -->
@@ -381,9 +387,9 @@
 
           <!-- Form Buttons -->
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <button type="submit" class="btn btn-primary" style="padding: 0.85rem 2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
-              <span>Send Message</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            <button type="submit" id="btn-submit-contact" class="btn btn-primary" style="padding: 0.85rem 2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
+              <span id="submit-btn-text">Send Message</span>
+              <svg id="submit-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </button>
             <button type="reset" id="btn-clear-form" class="btn btn-secondary" style="padding: 0.85rem 1.5rem;">
               <span>Clear Form</span>
@@ -528,7 +534,6 @@
       // Form validation & submission
       if (form) {
         form.addEventListener('submit', (e) => {
-          e.preventDefault();
           clearErrors();
           let hasError = false;
 
@@ -563,20 +568,24 @@
           }
 
           if (hasError) {
+            e.preventDefault();
             return;
           }
 
-          // Successful submission
-          if (successBanner) {
-            successBanner.style.display = 'block';
-            successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          // Show Loading State on Submit Button
+          const submitBtn = document.getElementById('btn-submit-contact');
+          const submitBtnText = document.getElementById('submit-btn-text');
+          const submitBtnIcon = document.getElementById('submit-btn-icon');
+
+          if (submitBtn) {
+            submitBtn.style.pointerEvents = 'none';
+            if (submitBtnText) submitBtnText.textContent = 'Sending Message...';
+            if (submitBtnIcon) {
+              submitBtnIcon.outerHTML = '<svg class="btn-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>';
+            }
           }
 
-          if (window.showToast) {
-            window.showToast('Message sent successfully! Our team will respond shortly.');
-          }
-
-          form.reset();
+          // Normal form submission proceeds to FormSubmit
         });
       }
 
@@ -584,6 +593,10 @@
         clearBtn.addEventListener('click', () => {
           clearErrors();
           if (successBanner) successBanner.style.display = 'none';
+          const submitBtn = document.getElementById('btn-submit-contact');
+          const submitBtnText = document.getElementById('submit-btn-text');
+          if (submitBtn) submitBtn.style.pointerEvents = '';
+          if (submitBtnText) submitBtnText.textContent = 'Send Message';
         });
       }
     });

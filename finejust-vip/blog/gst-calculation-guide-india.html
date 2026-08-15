@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Calculation Guide India: CGST, SGST, IGST &amp; Formulas</title>
+  <meta name="description" content="Master GST calculations in India. Learn formulas for inclusive and exclusive taxes, CGST, SGST, IGST splits, tax slabs, and invoicing on Finejust.vip.">
+  <link rel="canonical" href="https://finejust.vip/blog/gst-calculation-guide-india.html">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://finejust.vip/blog/gst-calculation-guide-india.html">
+  <meta property="og:title" content="GST Calculation Guide India: CGST, SGST, IGST &amp; Formulas">
+  <meta property="og:description" content="A comprehensive tax guide explaining Goods and Services Tax in India, interstate vs intrastate splits, and reverse tax math.">
+  <meta property="og:image" content="https://finejust.vip/images/blog/gst-guide.webp">
+  <meta property="og:site_name" content="Finejust.vip">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://finejust.vip/blog/gst-calculation-guide-india.html">
+  <meta name="twitter:title" content="GST Calculation Guide India: CGST, SGST, IGST &amp; Formulas">
+  <meta name="twitter:description" content="A comprehensive tax guide explaining Goods and Services Tax in India, interstate vs intrastate splits, and reverse tax math.">
+  <meta name="twitter:image" content="https://finejust.vip/images/blog/gst-guide.webp">
+
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/style.css">
+
+  <!-- Anti-flicker Dark Theme Initializer -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <!-- Structured Schema Markup (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://finejust.vip/blog/gst-calculation-guide-india.html#article",
+        "headline": "GST Calculation Guide India: CGST, SGST, IGST & Formulas",
+        "description": "Master GST calculations in India. Learn formulas for inclusive and exclusive taxes, CGST, SGST, IGST splits, tax slabs, and invoicing.",
+        "url": "https://finejust.vip/blog/gst-calculation-guide-india.html",
+        "datePublished": "2026-08-14T08:00:00+00:00",
+        "dateModified": "2026-08-14T23:30:00+00:00",
+        "mainEntityOfPage": "https://finejust.vip/blog/gst-calculation-guide-india.html",
+        "author": {
+          "@type": "Organization",
+          "name": "Finejust Editorial Team",
+          "url": "https://finejust.vip/about.html"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Finejust.vip",
+          "url": "https://finejust.vip/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://finejust.vip/images/logo.webp"
+          }
+        },
+        "image": "https://finejust.vip/images/blog/gst-guide.webp"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://finejust.vip/blog/gst-calculation-guide-india.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://finejust.vip/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://finejust.vip/index.html#articles"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "GST Calculation Guide India",
+            "item": "https://finejust.vip/blog/gst-calculation-guide-india.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://finejust.vip/blog/gst-calculation-guide-india.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the four primary GST tax rate slabs in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The four standard GST rate slabs in India are 5%, 12%, 18%, and 28%. Essential food items and basic grains are exempt at 0%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate GST Exclusive (Add GST) price?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GST Amount = (Net Amount x GST Rate) / 100. Total Price = Net Amount + GST Amount."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate GST Inclusive (Remove GST) price?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GST Amount = Total Amount - [Total Amount / (1 + GST Rate / 100)]. Original Net Price = Total Amount / (1 + GST Rate / 100)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between CGST, SGST, and IGST?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For intrastate sales within the same state, GST is split equally into Central GST (CGST) and State GST (SGST). For interstate sales across state borders, Integrated GST (IGST) is collected by the Central Government."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an Input Tax Credit (ITC)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Input Tax Credit allows registered businesses to claim back the GST paid on business purchases, subtracting it from their output tax liability to avoid cascading taxation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who must register for GST in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Businesses with annual aggregate turnover exceeding Rs. 40 Lakhs for goods (Rs. 20 Lakhs for services or northeastern states) and all e-commerce sellers must register."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an HSN or SAC code on a GST invoice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "HSN (Harmonized System of Nomenclature) classifies physical goods, while SAC (Services Accounting Code) classifies services for standardized tax application."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is reverse charge mechanism (RCM) under GST?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under RCM, the recipient of the goods or services is liable to pay tax directly to the government instead of the supplier."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate CGST and SGST on an 18% item?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Split 18% into two equal halves: 9% CGST and 9% SGST. On a Rs. 1,000 item, CGST is Rs. 90 and SGST is Rs. 90."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I compute inclusive and exclusive GST online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can calculate instant CGST, SGST, IGST breakdowns using the free GST Calculator on Finejust.vip."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+    <!-- Google Analytics 4 (Placeholder) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="../assets/analytics.js"></script>
+
+  <!-- Google AdSense Global Tag (Placeholder) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Indicator -->
+  <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
+
+  <!-- Sticky Announcement Bar -->
+  <!-- Sticky Announcement Bar -->
+  <aside class="announcement-bar">
+    <div class="container">
+      <div class="announcement-inner">
+        <div class="announcement-text">
+          <span class="announcement-pill">Free Access</span>
+          <span>100% Free &bull; No Sign Up &bull; Super Fast &bull; SEO Friendly</span>
+        </div>
+        <div class="announcement-actions">
+          <button type="button" class="theme-toggle-inline" id="announcement-theme-toggle" aria-label="Toggle Theme">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <span id="theme-label">Theme</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Reusable Glassmorphism Header -->
+  <div id="site-header-container"></div>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Top AdSense Placeholder -->
+      <div class="ad-container top-ad">Advertisement</div>
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item"><a href="../blog.html">Blog</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active">GST Calculation Guide India</div>
+      </nav>
+
+      <div class="tool-page-layout">
+        
+        <!-- Main Content Column -->
+        <div class="tool-main-panel">
+          
+          <div class="tool-header-block">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.75rem;">
+              <span class="meta-pill">Taxation &amp; Commerce</span>
+              <span class="meta-pill">9 Min Read</span>
+              <span class="meta-pill">Updated: Aug 14, 2026</span>
+              <span class="meta-pill">Author: Finejust Editorial Team</span>
+            </div>
+
+          <!-- Social Share Widget -->
+          <div class="share-buttons-wrap">
+            <div class="share-buttons-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share this tool / guide:</span>
+            </div>
+            <div class="share-buttons-list">
+              <button type="button" class="share-btn share-btn-twitter" data-platform="twitter" aria-label="Share on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Post</span>
+              </button>
+              <button type="button" class="share-btn share-btn-facebook" data-platform="facebook" aria-label="Share on Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" class="share-btn share-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
+              </button>
+              <button type="button" class="share-btn share-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" class="share-btn share-btn-copy" data-platform="copy" aria-label="Copy Link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Link</span>
+              </button>
+            </div>
+          </div>
+            <h1 class="tool-h1">GST Calculation Guide India: CGST, SGST, IGST &amp; Formulas</h1>
+            <p class="tool-subtitle">A comprehensive guide for merchants, freelancers, and consumers explaining Indian Goods and Services Tax slabs, inclusive vs exclusive math, and invoicing.</p>
+          </div>
+
+          <!-- Featured Image Placeholder -->
+          <img src="../images/blog/gst-guide.webp" alt="GST Calculation Guide CGST SGST IGST Invoicing Chart" class="article-featured-img" loading="lazy" width="800" height="420">
+
+          <!-- Key Takeaways Callout -->
+          <div class="callout-box info-callout">
+            <div class="callout-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              Key Takeaways
+            </div>
+            <ul style="margin-left:1.25rem; line-height:1.7; color:var(--text);">
+              <li>India's Goods and Services Tax (GST) replaces multiple indirect levies with four primary slabs: <strong>5%, 12%, 18%, and 28%</strong>.</li>
+              <li>Intrastate transactions split tax equally between <strong>CGST</strong> and <strong>SGST</strong>. Interstate transactions incur <strong>IGST</strong>.</li>
+              <li>To extract tax from a GST-inclusive MRP: <code>GST Amount = Total - [Total &divide; (1 + Rate / 100)]</code>.</li>
+              <li>Calculate exact tax breakdowns instantly with our free <a href="../tools/gst-calculator.html" style="font-weight:700;">GST Calculator</a>.</li>
+            </ul>
+          </div>
+
+          <!-- Table of Contents -->
+          <nav class="toc-box">
+            <div class="toc-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              Table of Contents
+            </div>
+            <ol class="toc-list">
+              <li><a href="#introduction-to-gst" class="toc-link">Introduction to Goods and Services Tax (GST)</a></li>
+              <li><a href="#types-of-gst" class="toc-link">Types of GST: CGST, SGST, UTGST, and IGST</a></li>
+              <li><a href="#gst-rate-slabs" class="toc-link">Standard GST Rate Slabs in India</a></li>
+              <li><a href="#gst-formulas" class="toc-link">Mathematical Formulas (Inclusive vs. Exclusive)</a></li>
+              <li><a href="#worked-examples" class="toc-link">Practical Invoicing Calculation Examples</a></li>
+              <li><a href="#input-tax-credit" class="toc-link">How Input Tax Credit (ITC) Works</a></li>
+              <li><a href="#common-invoicing-mistakes" class="toc-link">Common GST Invoicing Mistakes</a></li>
+              <li><a href="#pro-tips" class="toc-link">Pro Tips for Small Businesses &amp; Freelancers</a></li>
+              <li><a href="#faq" class="toc-link">Frequently Asked Questions (10 FAQs)</a></li>
+            </ol>
+          </nav>
+
+          <!-- Section 1 -->
+          <article class="content-box">
+            <h2 id="introduction-to-gst">1. Introduction to Goods and Services Tax (GST)</h2>
+            <p>Implemented on July 1, 2017, India's Goods and Services Tax (GST) replaced a complex web of cascading indirect taxes including Central Excise Duty, Service Tax, State VAT, Entry Tax, and Octroi under the banner of "One Nation, One Tax."</p>
+            <p>GST is a comprehensive, multi-stage, destination-based tax levied on every value addition across the supply chain, from raw material procurement to end-consumer retail.</p>
+
+            <h2 id="types-of-gst">2. Types of GST: CGST, SGST, UTGST, and IGST</h2>
+            <p>Under India's dual GST architecture, tax jurisdiction depends on the geographic location of the supplier and the recipient:</p>
+            <ul>
+              <li><strong>Central GST (CGST):</strong> Collected by the Central Government on intra-state supplies of goods and services (sales within the same state).</li>
+              <li><strong>State GST (SGST):</strong> Collected by the State Government on intra-state supplies.</li>
+              <li><strong>Union Territory GST (UTGST):</strong> Levied in place of SGST in Union Territories without legislatures (e.g. Andaman &amp; Nicobar, Chandigarh, Ladakh).</li>
+              <li><strong>Integrated GST (IGST):</strong> Levied on all inter-state supplies (across state borders) as well as imports. IGST is collected by the Centre and shared with the destination state.</li>
+            </ul>
+
+            <h2 id="gst-rate-slabs">3. Standard GST Rate Slabs in India</h2>
+            <p>Products and services are classified under standardized HSN and SAC codes across five primary rate tiers:</p>
+
+            <div class="example-box">
+              <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border); color:var(--text);">
+                    <th style="padding:0.6rem 0.4rem;">Tax Slab</th>
+                    <th style="padding:0.6rem 0.4rem;">CGST + SGST Split</th>
+                    <th style="padding:0.6rem 0.4rem;">Representative Items</th>
+                  </tr>
+                </thead>
+                <tbody style="color:var(--text-muted);">
+                  <tr style="border-bottom:1px solid var(--border-light);">
+                    <td style="padding:0.5rem 0.4rem; font-weight:700;">0% (Exempt)</td>
+                    <td style="padding:0.5rem 0.4rem;">0% + 0%</td>
+                    <td style="padding:0.5rem 0.4rem;">Fresh milk, vegetables, unbranded grains, books</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border-light);">
+                    <td style="padding:0.5rem 0.4rem; font-weight:700;">5% (Merit)</td>
+                    <td style="padding:0.5rem 0.4rem;">2.5% + 2.5%</td>
+                    <td style="padding:0.5rem 0.4rem;">Packaged food items, medicines, domestic economy flights</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border-light);">
+                    <td style="padding:0.5rem 0.4rem; font-weight:700;">12% (Standard 1)</td>
+                    <td style="padding:0.5rem 0.4rem;">6.0% + 6.0%</td>
+                    <td style="padding:0.5rem 0.4rem;">Processed food, cell phones, business class flights</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border-light);">
+                    <td style="padding:0.5rem 0.4rem; font-weight:700;">18% (Standard 2)</td>
+                    <td style="padding:0.5rem 0.4rem;">9.0% + 9.0%</td>
+                    <td style="padding:0.5rem 0.4rem;">IT services, software SaaS, restaurants, financial services</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:0.5rem 0.4rem; font-weight:700;">28% (Luxury/Demerit)</td>
+                    <td style="padding:0.5rem 0.4rem;">14.0% + 14.0%</td>
+                    <td style="padding:0.5rem 0.4rem;">Automobiles, luxury motorcycles, gaming, tobacco (+ cess)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Middle Ad Placeholder -->
+            <div class="ad-container middle-ad">Advertisement</div>
+
+            <h2 id="gst-formulas">4. Mathematical Formulas (Inclusive vs. Exclusive)</h2>
+            <p>Understanding whether a quotation is tax-exclusive or tax-inclusive is essential for accurate accounting.</p>
+
+            <div class="formula-box">
+              <strong>GST Exclusive (Adding GST):</strong><br>
+              GST Amount = (Net Amount &times; GST Rate) &divide; 100<br>
+              Invoice Gross = Net Amount + GST Amount<br><br>
+              <strong>GST Inclusive (Extracting GST from MRP):</strong><br>
+              Net Amount = Gross Total &divide; [ 1 + (GST Rate &divide; 100) ]<br>
+              GST Amount = Gross Total - Net Amount
+            </div>
+
+            <h2 id="worked-examples">5. Practical Invoicing Calculation Examples</h2>
+
+            <h3>Example 1: B2B Software Invoice (18% Intrastate)</h3>
+            <p>A web developer in Mumbai bills a client in Pune Rs. 50,000 for consulting services:</p>
+            <ol style="margin-left:1.5rem; line-height:1.7; color:var(--text-muted);">
+              <li>Intrastate transaction: 18% splits into 9% CGST and 9% SGST.</li>
+              <li>CGST Amount: Rs. 50,000 &times; 0.09 = <strong>Rs. 4,500</strong>.</li>
+              <li>SGST Amount: Rs. 50,000 &times; 0.09 = <strong>Rs. 4,500</strong>.</li>
+              <li>Total Invoice Amount: Rs. 50,000 + Rs. 9,000 = <strong>Rs. 59,000</strong>.</li>
+            </ol>
+
+            <h3>Example 2: Retail Consumer Purchase (Reverse Math)</h3>
+            <p>A consumer buys an electronic gadget with an inclusive MRP tag of <strong>Rs. 11,800</strong> (18% slab):</p>
+            <ol style="margin-left:1.5rem; line-height:1.7; color:var(--text-muted);">
+              <li>Net Value: Rs. 11,800 &divide; 1.18 = <strong>Rs. 10,000</strong>.</li>
+              <li>GST Paid: Rs. 11,800 - Rs. 10,000 = <strong>Rs. 1,800</strong>.</li>
+            </ol>
+            <p>Check any bill in seconds with our <a href="../tools/gst-calculator.html">GST Calculator</a> or <a href="../tools/percentage-calculator.html">Percentage Calculator</a>.</p>
+
+            <h2 id="input-tax-credit">6. How Input Tax Credit (ITC) Works</h2>
+            <p>Input Tax Credit eliminates tax cascading. If a manufacturing firm pays Rs. 1,800 in GST on raw materials and collects Rs. 2,500 in GST on finished goods sold, it pays only the net difference (Rs. 2,500 - Rs. 1,800 = <strong>Rs. 700</strong>) to the government.</p>
+
+            <h2 id="common-invoicing-mistakes">7. Common GST Invoicing Mistakes</h2>
+            <div class="callout-box warning-callout">
+              <div class="callout-title">Frequent GST Errors to Avoid</div>
+              <ul style="margin-left:1.25rem; line-height:1.7;">
+                <li><strong>Charging CGST + SGST on interstate transactions:</strong> Interstate transactions must always use IGST.</li>
+                <li><strong>Incorrectly extracting tax using direct multiplication:</strong> Calculating 18% of Rs. 11,800 yields Rs. 2,124 (wrong), rather than the true reverse tax of Rs. 1,800.</li>
+                <li><strong>Missing mandatory invoice details:</strong> Every GST invoice must show supplier GSTIN, invoice serial number, HSN/SAC code, and place of supply.</li>
+              </ul>
+            </div>
+
+            <h2 id="pro-tips">8. Pro Tips for Small Businesses &amp; Freelancers</h2>
+            <div class="callout-box tip-callout">
+              <div class="callout-title">Cash Flow &amp; Reconciliation Tip</div>
+              <p>Reconcile your purchase invoices against GSTR-2B monthly to ensure your vendors have filed returns, guaranteeing your Input Tax Credit is never blocked by the portal.</p>
+            </div>
+
+            <h2>Conclusion &amp; Next Steps</h2>
+            <p>Mastering GST mathematics prevents accounting errors, ensures regulatory compliance, and protects business profitability.</p>
+            <p>Use our free <a href="../tools/gst-calculator.html">GST Calculator</a> for instant inclusive and exclusive computations, or test our <a href="../tools/emi-calculator.html">EMI Calculator</a> and <a href="../tools/currency-converter.html">Currency Converter</a> for global financial planning.</p>
+          </article>
+
+          <!-- 10 Interactive FAQs Section -->
+          <div class="content-box faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What are the four primary GST tax rate slabs in India?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>The four standard GST rate slabs in India are 5%, 12%, 18%, and 28%. Essential food items and basic grains are exempt at 0%.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How do you calculate GST Exclusive (Add GST) price?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>GST Amount = (Net Amount x GST Rate) / 100. Total Price = Net Amount + GST Amount.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How do you calculate GST Inclusive (Remove GST) price?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>GST Amount = Total Amount - [Total Amount / (1 + GST Rate / 100)]. Original Net Price = Total Amount / (1 + GST Rate / 100).</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the difference between CGST, SGST, and IGST?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>For intrastate sales within the same state, GST is split equally into Central GST (CGST) and State GST (SGST). For interstate sales across state borders, Integrated GST (IGST) is collected by the Central Government.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is an Input Tax Credit (ITC)?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Input Tax Credit allows registered businesses to claim back the GST paid on business purchases, subtracting it from their output tax liability to avoid cascading taxation.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Who must register for GST in India?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Businesses with annual aggregate turnover exceeding Rs. 40 Lakhs for goods (Rs. 20 Lakhs for services or northeastern states) and all e-commerce sellers must register.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is an HSN or SAC code on a GST invoice?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>HSN (Harmonized System of Nomenclature) classifies physical goods, while SAC (Services Accounting Code) classifies services for standardized tax application.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is reverse charge mechanism (RCM) under GST?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Under RCM, the recipient of the goods or services is liable to pay tax directly to the government instead of the supplier.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How do you calculate CGST and SGST on an 18% item?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Split 18% into two equal halves: 9% CGST and 9% SGST. On a Rs. 1,000 item, CGST is Rs. 90 and SGST is Rs. 90.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Where can I compute inclusive and exclusive GST online?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>You can calculate instant CGST, SGST, IGST breakdowns using the free GST Calculator on Finejust.vip.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic 6 Related Tools Hook -->
+                    <!-- E-E-A-T Author Card -->
+          <div class="author-card">
+            <div class="author-avatar-wrap">FE</div>
+            <div class="author-card-body">
+              <div class="author-card-header">
+                <h3 class="author-name">Finejust Editorial Team</h3>
+                <span class="author-badge">Verified Review Board</span>
+              </div>
+              <p class="author-bio">
+                Written, calculated, and mathematically audited by the Finejust quantitative review board. We follow strict E-E-A-T principles and test every formula against official ISO, WHO, and statutory benchmarks.
+              </p>
+              <div class="author-links">
+                <a href="../author/finejust-editorial.html" style="color:var(--primary);">Author Bio &amp; Credentials &rarr;</a>
+                <a href="../editorial-policy.html" style="color:var(--text-muted);">Editorial Standards</a>
+              </div>
+            </div>
+          </div>
+
+<div id="dynamic-related-tools" data-category="finance"></div>
+
+          <!-- 3 Related Articles -->
+          <div class="content-box" style="margin-top:2rem;">
+            <h3>Related Reading &amp; Guides</h3>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1rem; margin-top:1rem;">
+              <a href="how-to-calculate-percentage.html" class="tool-card" style="padding:1.25rem;">
+                <div style="font-weight:700; color:var(--text); margin-bottom:0.35rem;">How to Calculate Percentage</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Formulas and mental math for business growth and invoices.</div>
+              </a>
+              <a href="emi-vs-simple-interest-explained.html" class="tool-card" style="padding:1.25rem;">
+                <div style="font-weight:700; color:var(--text); margin-bottom:0.35rem;">EMI vs Simple Interest Explained</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Compare loan interest models and save on financing costs.</div>
+              </a>
+              <a href="currency-converter-how-it-works.html" class="tool-card" style="padding:1.25rem;">
+                <div style="font-weight:700; color:var(--text); margin-bottom:0.35rem;">Currency Converter: How It Works</div>
+                <div style="font-size:0.85rem; color:var(--text-muted);">Explore forex exchange dynamics, spreads, and cross rates.</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bottom Ad Placeholder -->
+          <div class="ad-container bottom-ad">Advertisement</div>
+
+        </div>
+
+        <!-- Sticky Sidebar Column -->
+        <aside class="tool-sidebar">
+          
+          <div class="content-box">
+            <h3>Compute GST Instantly</h3>
+            <p style="font-size:0.875rem; margin-top:0.35rem;">Add or remove GST with automatic CGST, SGST, and IGST breakdowns.</p>
+            <a href="../tools/gst-calculator.html" class="btn btn-primary" style="width:100%; margin-top:0.75rem; justify-content:center;">
+              <span>Open GST Calculator</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <div class="content-box" style="margin-top:1.5rem;">
+            <h3>Popular Tools</h3>
+            <ul class="footer-links" style="margin-top:0.75rem;">
+              <li><a href="../tools/gst-calculator.html" class="footer-link">&bull; GST Calculator</a></li>
+              <li><a href="../tools/discount-calculator.html" class="footer-link">&bull; Discount Calculator</a></li>
+              <li><a href="../tools/percentage-calculator.html" class="footer-link">&bull; Percentage Calculator</a></li>
+              <li><a href="../tools/emi-calculator.html" class="footer-link">&bull; EMI Calculator</a></li>
+              <li><a href="../tools/loan-calculator.html" class="footer-link">&bull; Loan Calculator</a></li>
+              <li><a href="../tools/currency-converter.html" class="footer-link">&bull; Currency Converter</a></li>
+            </ul>
+          </div>
+
+          <div class="ad-container" style="min-height:300px; margin-top:1.5rem;">Advertisement</div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Reusable 5-Column Footer -->
+  <div id="site-footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/script.js"></script>
+  <script src="../assets/search.js"></script>
+</body>
+</html>

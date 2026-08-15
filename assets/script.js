@@ -17,8 +17,8 @@
 (function() {
   'use strict';
 
-  // Instant Canonical Redirect: If URL ends with /index.html, immediately replace with clean root /
-  if (window.location.pathname.endsWith('/index.html')) {
+  // Instant Canonical Redirect: If URL ends with /index.html on live domain, replace with clean root /
+  if (window.location.hostname.includes('finejust.vip') && window.location.pathname.endsWith('/index.html')) {
     window.location.replace('/');
   }
 
@@ -92,7 +92,7 @@
           <nav class="nav-desktop" aria-label="Primary Navigation">
             <a href="/" class="nav-link" data-nav="home">Home</a>
             <a href="${rootPrefix}tools.html" class="nav-link" data-nav="tools">Tools</a>
-            <a href="/#categories" class="nav-link" data-nav="categories">Categories</a>
+            <a href="${rootPrefix}#categories" class="nav-link" data-nav="categories">Categories</a>
             <a href="${rootPrefix}blog.html" class="nav-link" data-nav="blog">Blog</a>
             <a href="${rootPrefix}about.html" class="nav-link" data-nav="about">About</a>
             <a href="${rootPrefix}contact.html" class="nav-link" data-nav="contact">Contact</a>
@@ -125,7 +125,7 @@
         <div class="mobile-nav-drawer" id="mobile-nav-drawer">
           <a href="/" class="mobile-nav-link" data-nav="home">Home</a>
           <a href="${rootPrefix}tools.html" class="mobile-nav-link" data-nav="tools">All Tools (20+)</a>
-          <a href="/#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
+          <a href="${rootPrefix}#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
           <a href="${rootPrefix}blog.html" class="mobile-nav-link" data-nav="blog">Blog &amp; Guides</a>
           <a href="${rootPrefix}about.html" class="mobile-nav-link" data-nav="about">About Us</a>
           <a href="${rootPrefix}contact.html" class="mobile-nav-link" data-nav="contact">Contact Support</a>
@@ -221,13 +221,13 @@
     `;
   }
 
-  // Unified Component Loader
+  // Unified Component Loader (Loads ONLY once, prevents duplication)
   async function loadComponents() {
-    const headerContainer = document.getElementById('site-header-container');
-    const footerContainer = document.getElementById('site-footer-container');
+    const headerContainer = document.getElementById('header-container') || document.getElementById('site-header-container');
+    const footerContainer = document.getElementById('footer-container') || document.getElementById('site-footer-container');
 
-    // Header Injection
-    if (headerContainer) {
+    // Header Injection (Prevent duplicate by checking if #site-header already exists)
+    if (headerContainer && !document.getElementById('site-header')) {
       try {
         const res = await fetch(`${rootPrefix}assets/components/header.html`);
         if (res.ok) {
@@ -241,8 +241,8 @@
       }
     }
 
-    // Footer Injection
-    if (footerContainer) {
+    // Footer Injection (Prevent duplicate by checking if #site-footer already exists)
+    if (footerContainer && !document.getElementById('site-footer')) {
       try {
         const res = await fetch(`${rootPrefix}assets/components/footer.html`);
         if (res.ok) {
@@ -292,13 +292,13 @@
         if (navType === 'privacy' || href.includes('privacy-policy.html')) {
           link.classList.add('active');
         }
-      } else if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('/finejust-vip/') || currentPath.endsWith('\\finejust-vip\\') || currentPath.endsWith('/finejust-vip') || currentPath.endsWith('\\finejust-vip')) {
+      } else if (currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath.endsWith('/finejust-vip') || currentPath.endsWith('\\finejust-vip')) {
         if (currentHash.includes('categories')) {
           if (navType === 'categories' || href.includes('#categories')) {
             link.classList.add('active');
           }
         } else if (!currentHash || currentHash === '#') {
-          if (navType === 'home' || href === './' || href === '../' || href === '/' || (href.includes('index.html') && !href.includes('#'))) {
+          if (navType === 'home' || href === '/') {
             link.classList.add('active');
           }
         }
@@ -375,6 +375,37 @@
           closeDrawer();
         }
       });
+    }
+
+    // Categories Navigation Smooth Scroll & Cross-Page Handler
+    document.querySelectorAll('[data-nav="categories"]').forEach(catLink => {
+      catLink.onclick = function(e) {
+        const catSection = document.getElementById('categories');
+        if (catSection) {
+          e.preventDefault();
+          const drawer = document.getElementById('mobile-nav-drawer') || document.getElementById('mobile-drawer');
+          const overlay = document.getElementById('mobile-nav-overlay');
+          if (drawer) drawer.classList.remove('open');
+          if (overlay) overlay.classList.remove('open');
+          document.body.classList.remove('drawer-open');
+
+          catSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          try {
+            history.pushState(null, null, '#categories');
+          } catch (err) {}
+          highlightActiveNav();
+        }
+      };
+    });
+
+    // Auto-scroll to #categories if present in URL hash on page load
+    if (window.location.hash === '#categories') {
+      setTimeout(() => {
+        const catSection = document.getElementById('categories');
+        if (catSection) {
+          catSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
 
     // Global Search Modal Trigger

@@ -232,7 +232,24 @@
           </div>
 
           <div class="calculator-card">
-            <div class="calc-form-grid grid-3">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+                  Global FX Foreign Exchange
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> 25+ Global Currencies</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Quick Pairs:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='USD';document.getElementById('curr-to').value='EUR';document.getElementById('btn-calc-curr').click();">USD &rarr; EUR</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='USD';document.getElementById('curr-to').value='INR';document.getElementById('btn-calc-curr').click();">USD &rarr; INR</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='GBP';document.getElementById('curr-to').value='USD';document.getElementById('btn-calc-curr').click();">GBP &rarr; USD</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='EUR';document.getElementById('curr-to').value='GBP';document.getElementById('btn-calc-curr').click();">EUR &rarr; GBP</button>
+              </div>
+            </div>
+<div class="calc-form-grid grid-3">
               <div class="form-group">
                 <label class="form-label" for="cur-amount">Amount</label>
                 <input type="number" id="cur-amount" class="form-input" value="1000" min="0.01" step="any">
@@ -289,20 +306,20 @@
               </div>
               <div class="result-main-value" id="cur-main-val">920.00 EUR</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Conversion Rate</span>
                   <span class="breakdown-val" id="cur-rate-val">1 USD = 0.9200 EUR</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Inverse Reciprocal Rate</span>
                   <span class="breakdown-val" id="cur-inv-val">1 EUR = 1.0870 USD</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Mid-Market Spread</span>
                   <span class="breakdown-val" id="cur-spread-val">0.00% (No Markup)</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Valuation Timestamp</span>
                   <span class="breakdown-val" id="cur-time-val">Live Real-Time</span>
                 </div>

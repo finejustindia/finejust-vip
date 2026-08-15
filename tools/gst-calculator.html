@@ -232,7 +232,24 @@
           </div>
 
           <div class="calculator-card">
-            <!-- Mode Tabs -->
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path></svg>
+                  Statutory Tax Slabs
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> CGST / SGST Auto-Split</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Standard Slabs:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('gst-rate').value='5';document.getElementById('btn-calc-gst').click();">5% Essential</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('gst-rate').value='12';document.getElementById('btn-calc-gst').click();">12% Standard</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('gst-rate').value='18';document.getElementById('btn-calc-gst').click();">18% Services</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('gst-rate').value='28';document.getElementById('btn-calc-gst').click();">28% Luxury</button>
+              </div>
+            </div>
+<!-- Mode Tabs -->
             <div class="tools-filter-nav" style="margin-bottom: 1.5rem;" id="gst-mode-nav">
               <button type="button" class="filter-btn active" data-mode="exclusive">Add GST (Exclusive)</button>
               <button type="button" class="filter-btn" data-mode="inclusive">Remove GST (Inclusive)</button>
@@ -267,27 +284,27 @@
               <button type="button" id="btn-reset-gst" class="btn btn-secondary">Reset</button>
             </div>
 
-            <div class="result-card" id="gst-result-card">
+            <div class="result-card age-result-hero" id="gst-result-card">
               <div class="result-header">
                 <span class="result-title" id="gst-res-title">Gross Total with GST</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-gst">Copy Result</button>
               </div>
               <div class="result-main-value" id="gst-main-val">$1,180.00</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Net Base Price</span>
                   <span class="breakdown-val" id="gst-base-val">$1,000.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total GST Tax Amount</span>
                   <span class="breakdown-val" id="gst-tax-val" style="color:var(--primary);">$180.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">CGST (Intra-state 50%)</span>
                   <span class="breakdown-val" id="gst-cgst-val">$90.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">SGST (Intra-state 50%)</span>
                   <span class="breakdown-val" id="gst-sgst-val">$90.00</span>
                 </div>

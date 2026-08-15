@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
@@ -232,10 +232,34 @@
           </div>
 
           <div class="calculator-card">
+            <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  WHO Clinical Standard
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Live Evaluation</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Quick Presets:</span>
+                <button type="button" class="preset-chip" data-preset-weight="55" data-preset-height="170">55kg / 170cm</button>
+                <button type="button" class="preset-chip" data-preset-weight="70" data-preset-height="175">70kg / 175cm</button>
+                <button type="button" class="preset-chip" data-preset-weight="85" data-preset-height="180">85kg / 180cm</button>
+                <button type="button" class="preset-chip" data-preset-weight="100" data-preset-height="175">100kg / 175cm</button>
+              </div>
+            </div>
+
             <!-- Unit System Tabs -->
             <div class="tools-filter-nav" style="margin-bottom: 1.5rem;" id="bmi-unit-nav">
-              <button type="button" class="filter-btn active" data-unit="metric">Metric Units (kg / cm)</button>
-              <button type="button" class="filter-btn" data-unit="imperial">Imperial Units (lbs / ft / in)</button>
+              <button type="button" class="filter-btn active" data-unit="metric">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <span>Metric (kg / cm)</span>
+              </button>
+              <button type="button" class="filter-btn" data-unit="imperial">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+                <span>Imperial (lbs / ft / in)</span>
+              </button>
             </div>
 
             <!-- Metric Inputs -->
@@ -249,11 +273,17 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="bmi-m-weight">Weight (kg)</label>
+                  <label class="form-label" for="bmi-m-weight">
+                    <span>Weight</span>
+                    <span class="format-tag">kg</span>
+                  </label>
                   <input type="number" id="bmi-m-weight" class="form-input" value="70" min="20" max="300" step="0.5">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="bmi-m-height">Height (cm)</label>
+                  <label class="form-label" for="bmi-m-height">
+                    <span>Height</span>
+                    <span class="format-tag">cm</span>
+                  </label>
                   <input type="number" id="bmi-m-height" class="form-input" value="175" min="50" max="250" step="1">
                 </div>
               </div>
@@ -263,48 +293,88 @@
             <div id="panel-imperial" class="calc-panel hidden">
               <div class="calc-form-grid grid-3">
                 <div class="form-group">
-                  <label class="form-label" for="bmi-i-weight">Weight (lbs)</label>
+                  <label class="form-label" for="bmi-i-weight">
+                    <span>Weight</span>
+                    <span class="format-tag">lbs</span>
+                  </label>
                   <input type="number" id="bmi-i-weight" class="form-input" value="154" min="40" max="650" step="1">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="bmi-i-feet">Height (Feet)</label>
+                  <label class="form-label" for="bmi-i-feet">
+                    <span>Height (Feet)</span>
+                    <span class="format-tag">ft</span>
+                  </label>
                   <input type="number" id="bmi-i-feet" class="form-input" value="5" min="2" max="8" step="1">
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="bmi-i-inches">Height (Inches)</label>
+                  <label class="form-label" for="bmi-i-inches">
+                    <span>Height (Inches)</span>
+                    <span class="format-tag">in</span>
+                  </label>
                   <input type="number" id="bmi-i-inches" class="form-input" value="9" min="0" max="11" step="1">
                 </div>
               </div>
             </div>
 
             <div class="form-actions">
-              <button type="button" id="btn-calc-bmi" class="btn btn-primary">Calculate BMI</button>
-              <button type="button" id="btn-reset-bmi" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-calc-bmi" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Calculate BMI</span>
+              </button>
+              <button type="button" id="btn-reset-bmi" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                <span>Reset</span>
+              </button>
+              <button type="button" class="btn btn-outline" id="btn-copy-bmi">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy Result</span>
+              </button>
             </div>
 
-            <div class="result-card" id="bmi-result-card">
-              <div class="result-header">
-                <span class="result-title">Your Body Mass Index</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-bmi">Copy Result</button>
+            <!-- Result Hero Card -->
+            <div class="result-card age-result-hero" id="bmi-result-card">
+              <div class="result-hero-top">
+                <div>
+                  <span class="result-title">Your Body Mass Index</span>
+                  <div class="result-date-stamp" id="bmi-summary-stamp">Status: Healthy Range</div>
+                </div>
+                <div class="zodiac-badge" id="bmi-category-val" style="background:rgba(16,185,129,0.15); color:#10b981; border-color:rgba(16,185,129,0.3);">Normal Weight</div>
               </div>
-              <div class="result-main-value" id="bmi-score-val">22.86</div>
-              <div style="font-size:1.15rem; font-weight:800; color:#10b981; margin-top:0.25rem;" id="bmi-category-val">Normal Weight (Healthy)</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Healthy Weight Range</span>
+              <div class="result-main-value" id="bmi-score-val" style="font-size:clamp(2.5rem, 5vw, 3.5rem); margin-bottom:0.75rem;">22.86</div>
+
+              <!-- Multi-Segment Visual Gauge -->
+              <div class="visual-gauge-container">
+                <div class="visual-gauge-track">
+                  <div class="gauge-seg seg-underweight" style="width: 25%;" title="Underweight (< 18.5)"></div>
+                  <div class="gauge-seg seg-normal" style="width: 30%;" title="Normal (18.5 - 24.9)"></div>
+                  <div class="gauge-seg seg-overweight" style="width: 25%;" title="Overweight (25 - 29.9)"></div>
+                  <div class="gauge-seg seg-obese" style="width: 20%;" title="Obese (>= 30)"></div>
+                  <div class="gauge-indicator-pin" id="bmi-gauge-pin" style="left: 42%;"></div>
+                </div>
+                <div class="gauge-legend">
+                  <span style="color:#3b82f6;">● &lt;18.5 Underweight</span>
+                  <span style="color:#10b981;">● 18.5-24.9 Normal</span>
+                  <span style="color:#f59e0b;">● 25-29.9 Overweight</span>
+                  <span style="color:#ef4444;">● 30+ Obese</span>
+                </div>
+              </div>
+
+              <div class="result-breakdown-grid age-stats-grid" style="margin-top:1.5rem;">
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">🎯 Healthy Weight Range</span>
                   <span class="breakdown-val" id="bmi-ideal-weight">56.7 kg &ndash; 76.3 kg</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">BMI Prime</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">⚖️ BMI Prime</span>
                   <span class="breakdown-val" id="bmi-prime-val">0.91 (Normal)</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Ponderal Index</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">📐 Ponderal Index</span>
                   <span class="breakdown-val" id="bmi-ponderal-val">13.06 kg/m&sup3;</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">WHO Classification</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">🌐 WHO Classification</span>
                   <span class="breakdown-val" id="bmi-who-class">Normal Range (18.5 - 24.9)</span>
                 </div>
               </div>
@@ -619,6 +689,17 @@
         });
       });
 
+      const gaugePin = document.getElementById('bmi-gauge-pin');
+      const summaryStamp = document.getElementById('bmi-summary-stamp');
+
+      function updateGauge(bmi) {
+        if (!gaugePin) return;
+        // Gauge bounds: 12 to 40
+        const clamped = Math.max(12, Math.min(40, bmi));
+        const pct = ((clamped - 12) / (40 - 12)) * 100;
+        gaugePin.style.left = `${pct}%`;
+      }
+
       function calculateBMI() {
         let weightKg = 0;
         let heightM = 0;
@@ -657,30 +738,50 @@
           resIdeal.textContent = `${minLbs.toFixed(1)} lbs \u2013 ${maxLbs.toFixed(1)} lbs`;
         }
 
+        updateGauge(bmi);
+
         if (bmi < 16.0) {
           resCat.textContent = 'Severe Thinness';
+          resCat.style.background = 'rgba(239, 68, 68, 0.15)';
           resCat.style.color = '#ef4444';
+          resCat.style.borderColor = 'rgba(239, 68, 68, 0.3)';
           resWho.textContent = 'Severe Underweight (< 16.0)';
+          summaryStamp.textContent = 'Status: Clinical Attention Recommended';
         } else if (bmi < 18.5) {
           resCat.textContent = 'Underweight';
-          resCat.style.color = '#f59e0b';
+          resCat.style.background = 'rgba(59, 130, 246, 0.15)';
+          resCat.style.color = '#3b82f6';
+          resCat.style.borderColor = 'rgba(59, 130, 246, 0.3)';
           resWho.textContent = 'Underweight Range (16.0 - 18.4)';
+          summaryStamp.textContent = 'Status: Below Optimal Body Mass';
         } else if (bmi <= 24.9) {
-          resCat.textContent = 'Normal Weight (Healthy)';
+          resCat.textContent = 'Normal Weight';
+          resCat.style.background = 'rgba(16, 185, 129, 0.15)';
           resCat.style.color = '#10b981';
+          resCat.style.borderColor = 'rgba(16, 185, 129, 0.3)';
           resWho.textContent = 'Healthy Optimal Range (18.5 - 24.9)';
+          summaryStamp.textContent = 'Status: Optimal Healthy Range';
         } else if (bmi <= 29.9) {
-          resCat.textContent = 'Overweight (Pre-obese)';
-          resCat.style.color = '#f97316';
+          resCat.textContent = 'Overweight';
+          resCat.style.background = 'rgba(245, 158, 11, 0.15)';
+          resCat.style.color = '#f59e0b';
+          resCat.style.borderColor = 'rgba(245, 158, 11, 0.3)';
           resWho.textContent = 'Overweight Range (25.0 - 29.9)';
+          summaryStamp.textContent = 'Status: Moderately Elevated Risk';
         } else if (bmi <= 34.9) {
           resCat.textContent = 'Obese Class I';
+          resCat.style.background = 'rgba(239, 68, 68, 0.15)';
           resCat.style.color = '#ef4444';
+          resCat.style.borderColor = 'rgba(239, 68, 68, 0.3)';
           resWho.textContent = 'Moderate Obesity (30.0 - 34.9)';
+          summaryStamp.textContent = 'Status: Class I Obesity';
         } else {
-          resCat.textContent = 'Obese Class II / III';
+          resCat.textContent = 'Obese Class II/III';
+          resCat.style.background = 'rgba(185, 28, 28, 0.15)';
           resCat.style.color = '#b91c1c';
+          resCat.style.borderColor = 'rgba(185, 28, 28, 0.3)';
           resWho.textContent = 'Severe Clinical Obesity (>= 35.0)';
+          summaryStamp.textContent = 'Status: High Risk Category';
         }
       }
 
@@ -697,7 +798,39 @@
       });
 
       btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(`BMI: ${resScore.textContent} (${resCat.textContent})`, 'BMI result copied!');
+        const summary = `📊 Finejust.vip BMI Report
+----------------------------------------
+⚖️ BMI Score: ${resScore.textContent}
+🏷️ Classification: ${resCat.textContent}
+🎯 Healthy Weight Range: ${resIdeal.textContent}
+🌐 WHO Standard: ${resWho.textContent}
+----------------------------------------
+Calculate free on: https://finejust.vip/tools/bmi-calculator.html`;
+        if (window.copyToClipboard) {
+          window.copyToClipboard(summary, 'BMI Report copied to clipboard!');
+        } else {
+          navigator.clipboard.writeText(summary);
+        }
+      });
+
+      // Preset Chips Handling
+      document.querySelectorAll('.preset-chip').forEach(chip => {
+        chip.addEventListener('click', function() {
+          const w = this.getAttribute('data-preset-weight');
+          const h = this.getAttribute('data-preset-height');
+          if (w && h) {
+            // Switch to metric for presets
+            unitBtns.forEach(b => b.classList.remove('active'));
+            document.querySelector('#bmi-unit-nav .filter-btn[data-unit="metric"]').classList.add('active');
+            unit = 'metric';
+            panelM.classList.remove('hidden');
+            panelI.classList.add('hidden');
+
+            inpMW.value = w;
+            inpMH.value = h;
+            calculateBMI();
+          }
+        });
       });
 
       calculateBMI();

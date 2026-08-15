@@ -239,7 +239,24 @@
 
           <!-- Interactive Calculator Card -->
           <div class="calculator-card">
-            <!-- Mode Switcher -->
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+                  Multi-Mode Math Engine
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Instant Calculation</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Quick Presets:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('pct-val-1').value=5;document.getElementById('pct-base-1').value=100;document.getElementById('btn-calc').click();">5% of 100</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('pct-val-1').value=10;document.getElementById('pct-base-1').value=250;document.getElementById('btn-calc').click();">10% of 250</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('pct-val-1').value=18;document.getElementById('pct-base-1').value=1000;document.getElementById('btn-calc').click();">18% of 1000</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('pct-val-1').value=50;document.getElementById('pct-base-1').value=500;document.getElementById('btn-calc').click();">50% Half</button>
+              </div>
+            </div>
+<!-- Mode Switcher -->
             <div class="tools-filter-nav" style="margin-bottom: 1.5rem;" id="calc-mode-nav">
               <button type="button" class="filter-btn active" data-mode="what-is">X% of Y</button>
               <button type="button" class="filter-btn" data-mode="is-what">What % is X of Y?</button>
@@ -309,7 +326,7 @@
             </div>
 
             <!-- Result Card -->
-            <div class="result-card" id="result-box">
+            <div class="result-card age-result-hero" id="result-box">
               <div class="result-header">
                 <span class="result-title" id="res-title">Calculated Result</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy">Copy Result</button>

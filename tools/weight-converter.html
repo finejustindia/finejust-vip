@@ -232,7 +232,17 @@
           </div>
 
           <div class="calculator-card">
-            <div class="calc-form-grid grid-3">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline></svg>
+                  Mass &amp; Gravitational Weight
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Instant Conversion</span>
+              </div>
+            </div>
+<div class="calc-form-grid grid-3">
               <div class="form-group">
                 <label class="form-label" for="wt-amount">Weight Amount</label>
                 <input type="number" id="wt-amount" class="form-input" value="75" min="0" step="any">
@@ -276,27 +286,27 @@
               </div>
             </div>
 
-            <div class="result-card" id="wt-result-card">
+            <div class="result-card age-result-hero" id="wt-result-card">
               <div class="result-header">
                 <span class="result-title" id="wt-res-title">75 Kilograms =</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-wt">Copy Result</button>
               </div>
               <div class="result-main-value" id="wt-main-val">165.347 Pounds</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Metric Grams</span>
                   <span class="breakdown-val" id="wt-grams-val">75,000 g</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Imperial Ounces</span>
                   <span class="breakdown-val" id="wt-oz-val">2,645.55 oz</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">British Stones</span>
                   <span class="breakdown-val" id="wt-stones-val">11 st 11.3 lbs</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Conversion Ratio</span>
                   <span class="breakdown-val" id="wt-ratio-val">1 kg = 2.20462 lbs</span>
                 </div>

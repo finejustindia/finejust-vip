@@ -232,7 +232,24 @@
           </div>
 
           <div class="calculator-card">
-            <div class="calc-form-grid grid-2">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  Compound Growth &amp; APY Engine
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Exponential Yield</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Investment Horizions:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('ci-t').value=5;document.getElementById('btn-calc-ci').click();">5 Yrs Growth</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('ci-t').value=10;document.getElementById('btn-calc-ci').click();">10 Yrs Wealth</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('ci-t').value=20;document.getElementById('btn-calc-ci').click();">20 Yrs Retirement</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('ci-t').value=30;document.getElementById('btn-calc-ci').click();">30 Yrs Compounding</button>
+              </div>
+            </div>
+<div class="calc-form-grid grid-2">
               <div class="form-group">
                 <label class="form-label" for="ci-p">Initial Principal ($)</label>
                 <input type="number" id="ci-p" class="form-input" value="10000" min="0" step="500">
@@ -268,27 +285,27 @@
               <button type="button" id="btn-reset-ci" class="btn btn-secondary">Reset</button>
             </div>
 
-            <div class="result-card" id="ci-result-card">
+            <div class="result-card age-result-hero" id="ci-result-card">
               <div class="result-header">
                 <span class="result-title">Future Investment Balance</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-ci">Copy Result</button>
               </div>
               <div class="result-main-value" id="ci-future-val">$137,842.10</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Principal Invested</span>
                   <span class="breakdown-val" id="ci-invested-val">$64,000.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Compound Interest</span>
                   <span class="breakdown-val" id="ci-interest-val" style="color:#10b981;">$73,842.10</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Effective APY</span>
                   <span class="breakdown-val" id="ci-apy-val">8.30%</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Wealth Multiplier</span>
                   <span class="breakdown-val" id="ci-mult-val">2.15x</span>
                 </div>

@@ -232,7 +232,22 @@
           </div>
 
           <div class="calculator-card">
-            <div class="form-group mb-4">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+                  Real-time Text Analytics
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Live Character &amp; Word Tracker</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Sample Text:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('wc-textarea').value='Finejust.vip offers free, private, client-side online tools engineered for performance, precision, and ease of use.';document.getElementById('wc-textarea').dispatchEvent(new Event('input'));">Short Bio</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('wc-textarea').value='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';document.getElementById('wc-textarea').dispatchEvent(new Event('input'));">Lorem Ipsum</button>
+              </div>
+            </div>
+<div class="form-group mb-4">
               <label class="form-label" for="wc-textarea">Type or Paste Your Text Here</label>
               <textarea id="wc-textarea" class="form-textarea" placeholder="Start typing or paste your essay, blog article, social post, or email copy here..." style="min-height: 220px;">Finejust.vip delivers ultra-fast, 100% private online utility tools, calculators, and converters engineered with pure client-side JavaScript. Everything runs locally in your browser with zero latency and complete data confidentiality.</textarea>
             </div>
@@ -257,25 +272,25 @@
               </div>
             </div>
 
-            <div class="result-card">
+            <div class="result-card age-result-hero">
               <div class="result-header">
                 <span class="result-title">Reading &amp; Speaking Durations</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-wc">Copy Text</button>
               </div>
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Silent Reading Time (200 wpm)</span>
                   <span class="breakdown-val" id="stat-read-time" style="color:var(--primary);">~10 Seconds</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Public Speaking Time (130 wpm)</span>
                   <span class="breakdown-val" id="stat-speak-time">~15 Seconds</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Characters (No Spaces)</span>
                   <span class="breakdown-val" id="stat-chars-no-space">212</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Average Word Length</span>
                   <span class="breakdown-val" id="stat-avg-len">6.6 Chars</span>
                 </div>

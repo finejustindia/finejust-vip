@@ -232,7 +232,24 @@
           </div>
 
           <div class="calculator-card">
-            <div class="calc-form-grid grid-2">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                  Multi-Frequency Amortization
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Monthly / Bi-Weekly</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Popular Amounts:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('loan-p').value=15000;document.getElementById('btn-calc-loan').click();"> Auto</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('loan-p').value=30000;document.getElementById('btn-calc-loan').click();"> Personal</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('loan-p').value=75000;document.getElementById('btn-calc-loan').click();"> Home</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('loan-p').value=200000;document.getElementById('btn-calc-loan').click();"> Mortgage</button>
+              </div>
+            </div>
+<div class="calc-form-grid grid-2">
               <div class="form-group">
                 <label class="form-label" for="loan-p">Loan Amount ($)</label>
                 <input type="number" id="loan-p" class="form-input" value="35000" min="500" step="500">
@@ -263,27 +280,27 @@
               <button type="button" id="btn-reset-loan" class="btn btn-secondary">Reset</button>
             </div>
 
-            <div class="result-card" id="loan-result-card">
+            <div class="result-card age-result-hero" id="loan-result-card">
               <div class="result-header">
                 <span class="result-title" id="loan-res-title">Estimated Monthly Payment</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-loan">Copy Result</button>
               </div>
               <div class="result-main-value" id="loan-pay-val">$829.47</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Principal Borrowed</span>
                   <span class="breakdown-val" id="loan-orig-val">$35,000.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Interest Paid</span>
                   <span class="breakdown-val" id="loan-interest-val" style="color:#ef4444;">$4,814.41</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Repayment Amount</span>
                   <span class="breakdown-val" id="loan-total-val">$39,814.41</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Payment Cycles</span>
                   <span class="breakdown-val" id="loan-cycles-val">48 Payments</span>
                 </div>

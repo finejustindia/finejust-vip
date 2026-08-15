@@ -232,7 +232,24 @@
           </div>
 
           <div class="calculator-card">
-            <div class="calc-form-grid grid-3">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                  Standard Amortization Engine
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Live Monthly Forecast</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Quick Loans:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('emi-p').value=10000;document.getElementById('emi-r').value=8.5;document.getElementById('emi-n').value=3;document.getElementById('btn-calc-emi').click();"> / 3 Yrs</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('emi-p').value=25000;document.getElementById('emi-r').value=9.0;document.getElementById('emi-n').value=5;document.getElementById('btn-calc-emi').click();"> / 5 Yrs</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('emi-p').value=50000;document.getElementById('emi-r').value=8.5;document.getElementById('emi-n').value=5;document.getElementById('btn-calc-emi').click();"> / 5 Yrs</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('emi-p').value=100000;document.getElementById('emi-r').value=7.5;document.getElementById('emi-n').value=15;document.getElementById('btn-calc-emi').click();"> / 15 Yrs</button>
+              </div>
+            </div>
+<div class="calc-form-grid grid-3">
               <div class="form-group">
                 <label class="form-label" for="emi-p">Loan Amount ($)</label>
                 <input type="number" id="emi-p" class="form-input" value="50000" min="100" step="1000">
@@ -252,27 +269,27 @@
               <button type="button" id="btn-reset-emi" class="btn btn-secondary">Reset</button>
             </div>
 
-            <div class="result-card" id="emi-result-card">
+            <div class="result-card age-result-hero" id="emi-result-card">
               <div class="result-header">
                 <span class="result-title">Monthly EMI Payment</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-emi">Copy Result</button>
               </div>
               <div class="result-main-value" id="emi-monthly-val">$1,025.83</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Principal Amount</span>
                   <span class="breakdown-val" id="emi-principal-val">$50,000.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Interest</span>
                   <span class="breakdown-val" id="emi-interest-val" style="color:#ef4444;">$11,549.77</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Amount Payable</span>
                   <span class="breakdown-val" id="emi-total-val">$61,549.77</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Number of EMIs</span>
                   <span class="breakdown-val" id="emi-months-val">60 Months</span>
                 </div>

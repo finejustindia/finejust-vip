@@ -232,7 +232,24 @@
           </div>
 
           <div class="calculator-card">
-            <div class="calc-form-grid grid-2">
+                        <!-- Card Top Bar -->
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  Retail Savings Engine
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Stacked Discounts</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Sale Presets:</span>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=10;document.getElementById('btn-calc-disc').click();">10% Off</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=20;document.getElementById('btn-calc-disc').click();">20% Off</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=30;document.getElementById('btn-calc-disc').click();">30% Off</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=50;document.getElementById('btn-calc-disc').click();">50% Half Price</button>
+              </div>
+            </div>
+<div class="calc-form-grid grid-2">
               <div class="form-group">
                 <label class="form-label" for="disc-orig">Original Price ($)</label>
                 <input type="number" id="disc-orig" class="form-input" value="120" min="0" step="any">
@@ -259,27 +276,27 @@
               <button type="button" id="btn-reset-disc" class="btn btn-secondary">Reset</button>
             </div>
 
-            <div class="result-card" id="disc-result-card">
+            <div class="result-card age-result-hero" id="disc-result-card">
               <div class="result-header">
                 <span class="result-title">Final Price at Register</span>
                 <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-disc">Copy Result</button>
               </div>
               <div class="result-main-value" id="disc-final-val">$87.48</div>
 
-              <div class="result-breakdown-grid">
-                <div class="breakdown-item">
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Total Dollar Savings</span>
                   <span class="breakdown-val" id="disc-saved-val" style="color:#10b981;">$39.00 (32.5%)</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Discounted Subtotal</span>
                   <span class="breakdown-val" id="disc-subtotal-val">$81.00</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Sales Tax Amount</span>
                   <span class="breakdown-val" id="disc-tax-val">$6.48</span>
                 </div>
-                <div class="breakdown-item">
+                <div class="breakdown-item stat-card">
                   <span class="breakdown-label">Effective Total Off</span>
                   <span class="breakdown-val" id="disc-effective-val">32.5% Off</span>
                 </div>

@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://finejust.vip/sitemap.xml
-Sitemap: https://finejust.vip/image-sitemap.xml

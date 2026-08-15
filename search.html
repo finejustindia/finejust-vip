@@ -1,28 +1,34 @@
 ﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
+    <!-- High-Performance DNS Prefetch & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Tools &amp; Guides | Finejust.vip</title>
   <meta name="description" content="Search across 20+ free online calculators, unit converters, web utilities, and in-depth calculation guides on Finejust.vip.">
-  <link rel="canonical" href="https://finejust.vip/search.html">
+  <link rel="canonical" href="https://www.finejust.vip/search.html">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://finejust.vip/search.html">
+  <meta property="og:url" content="https://www.finejust.vip/search.html">
   <meta property="og:title" content="Search Tools &amp; Guides | Finejust.vip">
   <meta property="og:description" content="Find free calculators, converters, and educational guides instantly on Finejust.vip.">
-  <meta property="og:image" content="https://finejust.vip/images/og-banner.webp">
+  <meta property="og:image" content="https://www.finejust.vip/images/og-banner.webp">
   <meta property="og:site_name" content="Finejust.vip">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://finejust.vip/search.html">
+  <meta name="twitter:url" content="https://www.finejust.vip/search.html">
   <meta name="twitter:title" content="Search Tools &amp; Guides | Finejust.vip">
   <meta name="twitter:description" content="Find free calculators, converters, and educational guides instantly on Finejust.vip.">
-  <meta name="twitter:image" content="https://finejust.vip/images/og-banner.webp">
+  <meta name="twitter:image" content="https://www.finejust.vip/images/og-banner.webp">
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -48,42 +54,42 @@
     "@graph": [
       {
         "@type": "SearchResultsPage",
-        "@id": "https://finejust.vip/search.html#webpage",
-        "url": "https://finejust.vip/search.html",
+        "@id": "https://www.finejust.vip/search.html#webpage",
+        "url": "https://www.finejust.vip/search.html",
         "name": "Search Tools & Guides | Finejust.vip",
         "description": "Interactive search results page for calculators, converters, and guides on Finejust.vip.",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://finejust.vip/#website",
-          "url": "https://finejust.vip/",
+          "@id": "https://www.finejust.vip/#website",
+          "url": "https://www.finejust.vip/",
           "name": "Finejust.vip"
         },
         "publisher": {
           "@type": "Organization",
-          "@id": "https://finejust.vip/#organization",
+          "@id": "https://www.finejust.vip/#organization",
           "name": "Finejust.vip",
-          "url": "https://finejust.vip/",
+          "url": "https://www.finejust.vip/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://finejust.vip/images/logo.webp"
+            "url": "https://www.finejust.vip/images/logo.webp"
           }
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://finejust.vip/search.html#breadcrumb",
+        "@id": "https://www.finejust.vip/search.html#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://finejust.vip/"
+            "item": "https://www.finejust.vip/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Search Results",
-            "item": "https://finejust.vip/search.html"
+            "item": "https://www.finejust.vip/search.html"
           }
         ]
       }
@@ -200,8 +206,8 @@
   <!-- Dynamic Footer Container -->
   <div id="footer-container"></div>
 
-  <script src="assets/script.js"></script>
-  <script src="assets/search.js"></script>
+  <script src="assets/script.js" defer></script>
+  <script src="assets/search.js" defer></script>
 
   <!-- Dedicated Search Page Engine -->
   <script>
@@ -413,7 +419,7 @@
         blogGrid.innerHTML = list.map(b => `
           <a href="${b.url}" class="article-card">
             <div class="article-img-wrap">
-              <img src="${b.image}" alt="${b.title}" loading="lazy" width="400" height="225">
+              <img decoding="async" src="${b.image}" alt="${b.title}" loading="lazy" width="400" height="225">
             </div>
             <div class="article-card-body">
               <div class="article-meta-row">

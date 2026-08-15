@@ -108,13 +108,28 @@
     let filtered = toolsDatabase;
     if (query) {
       const q = query.toLowerCase();
-      filtered = toolsDatabase.filter(tool => {
+      filtered = toolsDatabase.map(tool => {
+        let score = 0;
         const title = (tool.title || tool.name || '').toLowerCase();
         const desc = (tool.description || '').toLowerCase();
         const cat = (tool.category || '').toLowerCase();
         const keywords = tool.keywords || [];
-        return title.includes(q) || desc.includes(q) || cat.includes(q) || keywords.some(k => k.toLowerCase().includes(q));
-      });
+
+        if (title === q) score += 100;
+        else if (title.startsWith(q)) score += 50;
+        else if (title.includes(q)) score += 30;
+
+        if (keywords.some(k => k.toLowerCase() === q)) score += 40;
+        else if (keywords.some(k => k.toLowerCase().includes(q))) score += 20;
+
+        if (cat.includes(q)) score += 15;
+        if (desc.includes(q)) score += 10;
+        if (tool.popular || tool.trending) score += 5;
+
+        return { tool, score };
+      }).filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map(item => item.tool);
     }
 
     if (filtered.length === 0) {

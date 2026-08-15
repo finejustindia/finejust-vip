@@ -16,11 +16,11 @@
 
     const pageTitle = container.getAttribute('data-title') || document.title.split(' - ')[0] || 'Tool';
     const categoryName = container.getAttribute('data-category') || (isTools ? 'Tools' : (isBlog ? 'Guides' : ''));
-    const categoryUrl = isTools ? `${rootPrefix}index.html#tools` : (isBlog ? `${rootPrefix}index.html#blog` : '');
+    const categoryUrl = isTools ? `${rootPrefix || './'}#tools` : (isBlog ? `${rootPrefix || './'}#blog` : '');
 
     let html = `
       <div class="breadcrumb-item">
-        <a href="${rootPrefix}index.html">
+        <a href="${rootPrefix || './'}">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
           <span>Home</span>
         </a>

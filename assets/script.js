@@ -74,20 +74,22 @@
     }
   };
 
+  const homeUrl = isSubdir ? '../' : './';
+
   // Fallback Templates (Synchronous & Offline Safe)
   function getHeaderTemplate() {
     return `
       <header class="site-header" id="site-header">
         <div class="container header-inner">
-          <a href="${rootPrefix}index.html" class="logo-link" aria-label="Finejust.vip Homepage">
+          <a href="${homeUrl}" class="logo-link" aria-label="Finejust.vip Homepage">
             <div class="logo-badge">F</div>
             <span class="brand-text">Finejust<span>.vip</span></span>
           </a>
 
           <nav class="nav-desktop" aria-label="Primary Navigation">
-            <a href="${rootPrefix}index.html" class="nav-link" data-nav="home">Home</a>
+            <a href="${homeUrl}" class="nav-link" data-nav="home">Home</a>
             <a href="${rootPrefix}tools.html" class="nav-link" data-nav="tools">Tools</a>
-            <a href="${rootPrefix}index.html#categories" class="nav-link" data-nav="categories">Categories</a>
+            <a href="${homeUrl}#categories" class="nav-link" data-nav="categories">Categories</a>
             <a href="${rootPrefix}blog.html" class="nav-link" data-nav="blog">Blog</a>
             <a href="${rootPrefix}about.html" class="nav-link" data-nav="about">About</a>
             <a href="${rootPrefix}contact.html" class="nav-link" data-nav="contact">Contact</a>
@@ -118,9 +120,9 @@
         <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
         <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-          <a href="${rootPrefix}index.html" class="mobile-nav-link" data-nav="home">Home</a>
+          <a href="${homeUrl}" class="mobile-nav-link" data-nav="home">Home</a>
           <a href="${rootPrefix}tools.html" class="mobile-nav-link" data-nav="tools">All Tools (20+)</a>
-          <a href="${rootPrefix}index.html#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
+          <a href="${homeUrl}#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
           <a href="${rootPrefix}blog.html" class="mobile-nav-link" data-nav="blog">Blog &amp; Guides</a>
           <a href="${rootPrefix}about.html" class="mobile-nav-link" data-nav="about">About Us</a>
           <a href="${rootPrefix}contact.html" class="mobile-nav-link" data-nav="contact">Contact Support</a>
@@ -136,7 +138,7 @@
         <div class="container">
           <div class="footer-grid-5">
             <div class="footer-brand-col">
-              <a href="${rootPrefix}index.html" class="logo-link" aria-label="Finejust.vip Homepage">
+              <a href="${homeUrl}" class="logo-link" aria-label="Finejust.vip Homepage">
                 <div class="logo-badge">F</div>
                 <span class="brand-text">Finejust<span>.vip</span></span>
               </a>
@@ -227,7 +229,7 @@
         const res = await fetch(`${rootPrefix}assets/components/header.html`);
         if (res.ok) {
           const raw = await res.text();
-          headerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, rootPrefix);
+          headerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, homeUrl);
         } else {
           headerContainer.innerHTML = getHeaderTemplate();
         }
@@ -242,7 +244,7 @@
         const res = await fetch(`${rootPrefix}assets/components/footer.html`);
         if (res.ok) {
           const raw = await res.text();
-          footerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, rootPrefix);
+          footerContainer.innerHTML = raw.replace(/\{\{ROOT\}\}/g, homeUrl);
         } else {
           footerContainer.innerHTML = getFooterTemplate();
         }
@@ -287,13 +289,13 @@
         if (navType === 'privacy' || href.includes('privacy-policy.html')) {
           link.classList.add('active');
         }
-      } else if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/finejust-vip/') || currentPath.endsWith('\\finejust-vip\\') || currentPath.endsWith('/finejust-vip') || currentPath.endsWith('\\finejust-vip')) {
+      } else if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('/finejust-vip/') || currentPath.endsWith('\\finejust-vip\\') || currentPath.endsWith('/finejust-vip') || currentPath.endsWith('\\finejust-vip')) {
         if (currentHash.includes('categories')) {
           if (navType === 'categories' || href.includes('#categories')) {
             link.classList.add('active');
           }
         } else if (!currentHash || currentHash === '#') {
-          if (navType === 'home' || (href.includes('index.html') && !href.includes('#'))) {
+          if (navType === 'home' || href === './' || href === '../' || href === '/' || (href.includes('index.html') && !href.includes('#'))) {
             link.classList.add('active');
           }
         }

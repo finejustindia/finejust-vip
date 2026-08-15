@@ -330,7 +330,7 @@
 
         <form id="contact-form" action="https://formsubmit.co/info.finejust@gmail.com" method="POST" novalidate>
           <!-- FormSubmit Configuration Hidden Fields -->
-          <input type="hidden" name="_subject" value="New Contact Message - Finejust.vip">
+          <input type="hidden" name="_subject" value="New Contact Message | Finejust.vip">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://www.finejust.vip/contact-success.html">
@@ -491,7 +491,7 @@
   <script src="assets/script.js"></script>
   <script src="assets/search.js"></script>
 
-  <!-- Contact Form Validation & Feedback Trigger Script -->
+  <!-- Contact Form Validation & Submission Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('contact-form');
@@ -500,8 +500,8 @@
       const subjectInput = document.getElementById('contact-subject');
       const categorySelect = document.getElementById('contact-category');
       const messageInput = document.getElementById('contact-message');
-      const successBanner = document.getElementById('form-success-banner');
       const clearBtn = document.getElementById('btn-clear-form');
+      let isSubmitting = false;
 
       // Quick feedback cards click handler
       document.querySelectorAll('.feedback-trigger-card').forEach(card => {
@@ -534,68 +534,86 @@
       // Form validation & submission
       if (form) {
         form.addEventListener('submit', (e) => {
+          if (isSubmitting) {
+            e.preventDefault();
+            return false;
+          }
+
           clearErrors();
           let hasError = false;
+          let firstErrorElement = null;
 
           if (!nameInput.value.trim()) {
             document.getElementById('name-error').style.display = 'block';
             nameInput.style.borderColor = '#ef4444';
             hasError = true;
+            if (!firstErrorElement) firstErrorElement = nameInput;
           }
 
           if (!isValidEmail(emailInput.value.trim())) {
             document.getElementById('email-error').style.display = 'block';
             emailInput.style.borderColor = '#ef4444';
             hasError = true;
+            if (!firstErrorElement) firstErrorElement = emailInput;
           }
 
           if (!subjectInput.value.trim()) {
             document.getElementById('subject-error').style.display = 'block';
             subjectInput.style.borderColor = '#ef4444';
             hasError = true;
+            if (!firstErrorElement) firstErrorElement = subjectInput;
           }
 
           if (!categorySelect.value) {
             document.getElementById('category-error').style.display = 'block';
             categorySelect.style.borderColor = '#ef4444';
             hasError = true;
+            if (!firstErrorElement) firstErrorElement = categorySelect;
           }
 
           if (!messageInput.value.trim() || messageInput.value.trim().length < 10) {
             document.getElementById('message-error').style.display = 'block';
             messageInput.style.borderColor = '#ef4444';
             hasError = true;
+            if (!firstErrorElement) firstErrorElement = messageInput;
           }
 
+          // If validation fails, prevent default submission and focus first field
           if (hasError) {
             e.preventDefault();
-            return;
+            if (firstErrorElement) firstErrorElement.focus();
+            return false;
           }
 
-          // Show Loading State on Submit Button
+          // Validation passed: Show loading state & prevent double click
+          isSubmitting = true;
           const submitBtn = document.getElementById('btn-submit-contact');
           const submitBtnText = document.getElementById('submit-btn-text');
           const submitBtnIcon = document.getElementById('submit-btn-icon');
 
           if (submitBtn) {
-            submitBtn.style.pointerEvents = 'none';
-            if (submitBtnText) submitBtnText.textContent = 'Sending Message...';
+            submitBtn.style.opacity = '0.8';
+            submitBtn.style.cursor = 'wait';
+            if (submitBtnText) submitBtnText.textContent = 'Sending...';
             if (submitBtnIcon) {
               submitBtnIcon.outerHTML = '<svg class="btn-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>';
             }
           }
 
-          // Normal form submission proceeds to FormSubmit
+          // Native HTML form submission proceeds to FormSubmit (no e.preventDefault())
         });
       }
 
       if (clearBtn) {
         clearBtn.addEventListener('click', () => {
           clearErrors();
-          if (successBanner) successBanner.style.display = 'none';
+          isSubmitting = false;
           const submitBtn = document.getElementById('btn-submit-contact');
           const submitBtnText = document.getElementById('submit-btn-text');
-          if (submitBtn) submitBtn.style.pointerEvents = '';
+          if (submitBtn) {
+            submitBtn.style.opacity = '';
+            submitBtn.style.cursor = '';
+          }
           if (submitBtnText) submitBtnText.textContent = 'Send Message';
         });
       }

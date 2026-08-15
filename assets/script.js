@@ -17,6 +17,11 @@
 (function() {
   'use strict';
 
+  // Instant Canonical Redirect: If URL ends with /index.html, immediately replace with clean root /
+  if (window.location.pathname.endsWith('/index.html')) {
+    window.location.replace('/');
+  }
+
   // Determine Relative Root Path based on URL location
   const path = window.location.pathname.toLowerCase();
   const isSubdir = path.includes('/blog/') || path.includes('/tools/') || path.includes('/author/') ||
@@ -74,22 +79,20 @@
     }
   };
 
-  const homeUrl = isSubdir ? '../' : './';
-
   // Fallback Templates (Synchronous & Offline Safe)
   function getHeaderTemplate() {
     return `
       <header class="site-header" id="site-header">
         <div class="container header-inner">
-          <a href="${homeUrl}" class="logo-link" aria-label="Finejust.vip Homepage">
+          <a href="/" class="logo-link" aria-label="Finejust.vip Homepage">
             <div class="logo-badge">F</div>
             <span class="brand-text">Finejust<span>.vip</span></span>
           </a>
 
           <nav class="nav-desktop" aria-label="Primary Navigation">
-            <a href="${homeUrl}" class="nav-link" data-nav="home">Home</a>
+            <a href="/" class="nav-link" data-nav="home">Home</a>
             <a href="${rootPrefix}tools.html" class="nav-link" data-nav="tools">Tools</a>
-            <a href="${homeUrl}#categories" class="nav-link" data-nav="categories">Categories</a>
+            <a href="/#categories" class="nav-link" data-nav="categories">Categories</a>
             <a href="${rootPrefix}blog.html" class="nav-link" data-nav="blog">Blog</a>
             <a href="${rootPrefix}about.html" class="nav-link" data-nav="about">About</a>
             <a href="${rootPrefix}contact.html" class="nav-link" data-nav="contact">Contact</a>
@@ -120,9 +123,9 @@
         <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
         <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-          <a href="${homeUrl}" class="mobile-nav-link" data-nav="home">Home</a>
+          <a href="/" class="mobile-nav-link" data-nav="home">Home</a>
           <a href="${rootPrefix}tools.html" class="mobile-nav-link" data-nav="tools">All Tools (20+)</a>
-          <a href="${homeUrl}#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
+          <a href="/#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
           <a href="${rootPrefix}blog.html" class="mobile-nav-link" data-nav="blog">Blog &amp; Guides</a>
           <a href="${rootPrefix}about.html" class="mobile-nav-link" data-nav="about">About Us</a>
           <a href="${rootPrefix}contact.html" class="mobile-nav-link" data-nav="contact">Contact Support</a>
@@ -138,7 +141,7 @@
         <div class="container">
           <div class="footer-grid-5">
             <div class="footer-brand-col">
-              <a href="${homeUrl}" class="logo-link" aria-label="Finejust.vip Homepage">
+              <a href="/" class="logo-link" aria-label="Finejust.vip Homepage">
                 <div class="logo-badge">F</div>
                 <span class="brand-text">Finejust<span>.vip</span></span>
               </a>
@@ -216,8 +219,6 @@
         </div>
       </footer>
     `;
-  }
-
   // Unified Component Loader
   async function loadComponents() {
     const headerContainer = document.getElementById('site-header-container');

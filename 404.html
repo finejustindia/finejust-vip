@@ -322,7 +322,7 @@
 
       <!-- Breadcrumb Navigation -->
       <nav class="breadcrumb-container" aria-label="Breadcrumb">
-        <div class="breadcrumb-item"><a href="./">Home</a></div>
+        <div class="breadcrumb-item"><a href="/">Home</a></div>
         <span class="breadcrumb-separator">/</span>
         <div class="breadcrumb-item breadcrumb-active">404 Error</div>
       </nav>
@@ -504,7 +504,7 @@
           if (timerEl) timerEl.textContent = `${timeLeft}s`;
           if (timeLeft <= 0) {
             clearInterval(countdownInterval);
-            window.location.href = 'index.html';
+            window.location.href = '/';
           }
         }
       }, 1000);
@@ -529,7 +529,7 @@
           if (query) {
             window.location.href = `search.html?q=${encodeURIComponent(query)}`;
           } else {
-            window.location.href = 'tools.html';
+            window.location.href = '/';
           }
         });
       }

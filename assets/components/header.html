@@ -14,7 +14,57 @@
     <nav class="nav-desktop" aria-label="Primary Navigation">
       <a href="/" class="nav-link" data-nav="home">Home</a>
       <a href="{{ROOT}}tools.html" class="nav-link" data-nav="tools">Tools</a>
-      <a href="{{ROOT}}#categories" class="nav-link" data-nav="categories">Categories</a>
+      
+      <!-- Categories Dropdown Menu -->
+      <div class="nav-dropdown-wrapper">
+        <a href="{{ROOT}}#categories" class="nav-link nav-dropdown-trigger" data-nav="categories" aria-haspopup="true" aria-expanded="false">
+          <span>Categories</span>
+          <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="{{ROOT}}tools.html?category=calculators" class="dropdown-item">
+            <span class="dropdown-icon">🧮</span>
+            <div class="dropdown-text">
+              <strong>Calculators</strong>
+              <small>Percentage, Age, BMI, Math</small>
+            </div>
+          </a>
+          <a href="{{ROOT}}tools.html?category=finance" class="dropdown-item">
+            <span class="dropdown-icon">💳</span>
+            <div class="dropdown-text">
+              <strong>Finance</strong>
+              <small>EMI, Loans, GST, Interest</small>
+            </div>
+          </a>
+          <a href="{{ROOT}}tools.html?category=converters" class="dropdown-item">
+            <span class="dropdown-icon">🔄</span>
+            <div class="dropdown-text">
+              <strong>Converters</strong>
+              <small>Currency, Length, Weight, Temp</small>
+            </div>
+          </a>
+          <a href="{{ROOT}}tools.html?category=text-tools" class="dropdown-item">
+            <span class="dropdown-icon">📝</span>
+            <div class="dropdown-text">
+              <strong>Text Tools</strong>
+              <small>Word Count, Character, Case</small>
+            </div>
+          </a>
+          <a href="{{ROOT}}tools.html?category=web-tools" class="dropdown-item">
+            <span class="dropdown-icon">⚡</span>
+            <div class="dropdown-text">
+              <strong>Dev &amp; Web</strong>
+              <small>QR Code, Password, Base64</small>
+            </div>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="{{ROOT}}tools.html" class="dropdown-item-all">
+            <span>Explore All 20+ Free Tools</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+
       <a href="{{ROOT}}blog.html" class="nav-link" data-nav="blog">Blog</a>
       <a href="{{ROOT}}about.html" class="nav-link" data-nav="about">About</a>
       <a href="{{ROOT}}contact.html" class="nav-link" data-nav="contact">Contact</a>
@@ -54,7 +104,17 @@
   <div class="mobile-nav-drawer" id="mobile-nav-drawer">
     <a href="/" class="mobile-nav-link" data-nav="home">Home</a>
     <a href="{{ROOT}}tools.html" class="mobile-nav-link" data-nav="tools">All Tools (20+)</a>
-    <a href="{{ROOT}}#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
+    
+    <div class="mobile-categories-group">
+      <a href="{{ROOT}}#categories" class="mobile-nav-link" data-nav="categories">Categories ▾</a>
+      <div class="mobile-cat-sublinks">
+        <a href="{{ROOT}}tools.html?category=calculators" class="mobile-cat-pill">🧮 Calculators</a>
+        <a href="{{ROOT}}tools.html?category=finance" class="mobile-cat-pill">💳 Finance</a>
+        <a href="{{ROOT}}tools.html?category=converters" class="mobile-cat-pill">🔄 Converters</a>
+        <a href="{{ROOT}}tools.html?category=text-tools" class="mobile-cat-pill">📝 Text Tools</a>
+        <a href="{{ROOT}}tools.html?category=web-tools" class="mobile-cat-pill">⚡ Dev Tools</a>
+      </div>
+    </div>
     <a href="{{ROOT}}blog.html" class="mobile-nav-link" data-nav="blog">Blog &amp; Guides</a>
     <a href="{{ROOT}}about.html" class="mobile-nav-link" data-nav="about">About Us</a>
     <a href="{{ROOT}}contact.html" class="mobile-nav-link" data-nav="contact">Contact Support</a>

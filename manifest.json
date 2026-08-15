@@ -1,8 +1,8 @@
-{
+﻿{
   "name": "Finejust.vip - AI Tools & Utilities",
   "short_name": "Finejust",
   "description": "Ultra-fast, 100% private online calculators and utilities.",
-  "start_url": "/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#F8FAFC",
   "theme_color": "#2563EB",

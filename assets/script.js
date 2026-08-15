@@ -22,10 +22,9 @@
     window.location.replace('/');
   }
 
-  // Determine Relative Root Path based on URL location
-  const path = window.location.pathname.toLowerCase();
-  const isSubdir = path.includes('/blog/') || path.includes('/tools/') || path.includes('/author/') ||
-                   path.includes('\\blog\\') || path.includes('\\tools\\') || path.includes('\\author\\');
+  // Determine Relative Root Path based on web-standard forward slash URL location
+  const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
+  const isSubdir = path.includes('/blog/') || path.includes('/tools/') || path.includes('/author/');
   const rootPrefix = isSubdir ? '../' : '';
 
   // Embedded Tools Database Fallback for 100% Offline / file:// Support
@@ -92,7 +91,56 @@
           <nav class="nav-desktop" aria-label="Primary Navigation">
             <a href="/" class="nav-link" data-nav="home">Home</a>
             <a href="${rootPrefix}tools.html" class="nav-link" data-nav="tools">Tools</a>
-            <a href="${rootPrefix}#categories" class="nav-link" data-nav="categories">Categories</a>
+            
+            <div class="nav-dropdown-wrapper">
+              <a href="${rootPrefix}#categories" class="nav-link nav-dropdown-trigger" data-nav="categories" aria-haspopup="true" aria-expanded="false">
+                <span>Categories</span>
+                <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+              <div class="nav-dropdown-menu">
+                <a href="${rootPrefix}tools.html?category=calculators" class="dropdown-item">
+                  <span class="dropdown-icon">🧮</span>
+                  <div class="dropdown-text">
+                    <strong>Calculators</strong>
+                    <small>Percentage, Age, BMI, Math</small>
+                  </div>
+                </a>
+                <a href="${rootPrefix}tools.html?category=finance" class="dropdown-item">
+                  <span class="dropdown-icon">💳</span>
+                  <div class="dropdown-text">
+                    <strong>Finance</strong>
+                    <small>EMI, Loans, GST, Interest</small>
+                  </div>
+                </a>
+                <a href="${rootPrefix}tools.html?category=converters" class="dropdown-item">
+                  <span class="dropdown-icon">🔄</span>
+                  <div class="dropdown-text">
+                    <strong>Converters</strong>
+                    <small>Currency, Length, Weight, Temp</small>
+                  </div>
+                </a>
+                <a href="${rootPrefix}tools.html?category=text-tools" class="dropdown-item">
+                  <span class="dropdown-icon">📝</span>
+                  <div class="dropdown-text">
+                    <strong>Text Tools</strong>
+                    <small>Word Count, Character, Case</small>
+                  </div>
+                </a>
+                <a href="${rootPrefix}tools.html?category=web-tools" class="dropdown-item">
+                  <span class="dropdown-icon">⚡</span>
+                  <div class="dropdown-text">
+                    <strong>Dev &amp; Web</strong>
+                    <small>QR Code, Password, Base64</small>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="${rootPrefix}tools.html" class="dropdown-item-all">
+                  <span>Explore All 20+ Free Tools</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+
             <a href="${rootPrefix}blog.html" class="nav-link" data-nav="blog">Blog</a>
             <a href="${rootPrefix}about.html" class="nav-link" data-nav="about">About</a>
             <a href="${rootPrefix}contact.html" class="nav-link" data-nav="contact">Contact</a>
@@ -125,7 +173,17 @@
         <div class="mobile-nav-drawer" id="mobile-nav-drawer">
           <a href="/" class="mobile-nav-link" data-nav="home">Home</a>
           <a href="${rootPrefix}tools.html" class="mobile-nav-link" data-nav="tools">All Tools (20+)</a>
-          <a href="${rootPrefix}#categories" class="mobile-nav-link" data-nav="categories">Categories</a>
+          
+          <div class="mobile-categories-group">
+            <a href="${rootPrefix}#categories" class="mobile-nav-link" data-nav="categories">Categories ▾</a>
+            <div class="mobile-cat-sublinks">
+              <a href="${rootPrefix}tools.html?category=calculators" class="mobile-cat-pill">🧮 Calculators</a>
+              <a href="${rootPrefix}tools.html?category=finance" class="mobile-cat-pill">💳 Finance</a>
+              <a href="${rootPrefix}tools.html?category=converters" class="mobile-cat-pill">🔄 Converters</a>
+              <a href="${rootPrefix}tools.html?category=text-tools" class="mobile-cat-pill">📝 Text Tools</a>
+              <a href="${rootPrefix}tools.html?category=web-tools" class="mobile-cat-pill">⚡ Dev Tools</a>
+            </div>
+          </div>
           <a href="${rootPrefix}blog.html" class="mobile-nav-link" data-nav="blog">Blog &amp; Guides</a>
           <a href="${rootPrefix}about.html" class="mobile-nav-link" data-nav="about">About Us</a>
           <a href="${rootPrefix}contact.html" class="mobile-nav-link" data-nav="contact">Contact Support</a>
@@ -264,7 +322,7 @@
 
   // Highlight Active Link Automatically
   function highlightActiveNav() {
-    const currentPath = window.location.pathname.toLowerCase();
+    const currentPath = window.location.pathname.replace(/\\/g, '/').toLowerCase();
     const currentHash = window.location.hash.toLowerCase();
 
     document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
@@ -272,11 +330,11 @@
       const href = (link.getAttribute('href') || '').toLowerCase();
       const navType = (link.getAttribute('data-nav') || '').toLowerCase();
 
-      if (currentPath.endsWith('blog.html') || currentPath.includes('/blog/') || currentPath.includes('\\blog\\')) {
+      if (currentPath.endsWith('blog.html') || currentPath.includes('/blog/')) {
         if (navType === 'blog' || href.includes('blog.html')) {
           link.classList.add('active');
         }
-      } else if (currentPath.endsWith('tools.html') || currentPath.includes('/tools/') || currentPath.includes('\\tools\\')) {
+      } else if (currentPath.endsWith('tools.html') || currentPath.includes('/tools/')) {
         if (navType === 'tools' || href.includes('tools.html')) {
           link.classList.add('active');
         }
@@ -292,7 +350,7 @@
         if (navType === 'privacy' || href.includes('privacy-policy.html')) {
           link.classList.add('active');
         }
-      } else if (currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath.endsWith('/finejust-vip') || currentPath.endsWith('\\finejust-vip')) {
+      } else if (currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath.endsWith('/finejust-vip')) {
         if (currentHash.includes('categories')) {
           if (navType === 'categories' || href.includes('#categories')) {
             link.classList.add('active');
@@ -637,12 +695,12 @@
 
   // Recently Viewed Tools (localStorage Engine)
   function initRecentlyViewedTools() {
-    const path = window.location.pathname.toLowerCase();
+    const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
     const allTools = window.FINEJUST_TOOLS || [];
 
     // Track current tool if on a tool page
-    if (path.includes('/tools/') || path.includes('\\tools\\')) {
-      const filename = path.split('/').pop().split('\\').pop();
+    if (path.includes('/tools/')) {
+      const filename = path.split('/').pop();
       const currentTool = allTools.find(t => t.url.endsWith(filename) || filename.includes(t.id));
       
       if (currentTool) {
@@ -671,7 +729,7 @@
       recent = JSON.parse(localStorage.getItem('finejust_recent_tools') || '[]');
     } catch (e) {}
 
-    const isSub = path.includes('/tools/') || path.includes('/blog/') || path.includes('/author/') || path.includes('\\tools\\') || path.includes('\\blog\\') || path.includes('\\author\\');
+    const isSub = path.includes('/tools/') || path.includes('/blog/') || path.includes('/author/');
     const prefix = isSub ? '../' : '';
 
     containers.forEach(c => {
@@ -707,8 +765,8 @@
     const containers = document.querySelectorAll('#popular-tools-widget');
     if (!containers.length) return;
     const tools = (window.FINEJUST_TOOLS || []).slice(0, 8);
-    const path = window.location.pathname.toLowerCase();
-    const isSub = path.includes('/tools/') || path.includes('/blog/') || path.includes('/author/') || path.includes('\\tools\\') || path.includes('\\blog\\') || path.includes('\\author\\');
+    const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
+    const isSub = path.includes('/tools/') || path.includes('/blog/') || path.includes('/author/');
     const prefix = isSub ? '../' : '';
 
     containers.forEach(c => {

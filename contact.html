@@ -311,91 +311,18 @@
         </div>
       </section>
 
-      <!-- 3. CONTACT FORM SECTION -->
-      <section class="content-box" id="contact-form-section" style="margin-bottom: 3.5rem; padding: 2.75rem 2.25rem;">
+      <!-- 3. CONTACT FORM SECTION (Google Forms) -->
+      <section class="content-box" id="contact-form-section" style="margin-bottom: 3.5rem; padding: 2.25rem 1.5rem; text-align: center;">
         <div class="section-tag" style="margin-bottom: 0.75rem;">Send a Message</div>
         <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem;">Get in Touch Directly</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.975rem;">
-          Fill out the form below. All messages are encrypted and reviewed by our engineering support team.
+        <p style="color: var(--text-muted); margin-bottom: 1.75rem; font-size: 0.975rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+          Fill out the official support form below. All messages are securely delivered directly to our team at <strong>info.finejust@gmail.com</strong>.
         </p>
 
-        <!-- Inline Success Alert (Hidden Initially) -->
-        <div id="form-success-banner" style="display: none; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: var(--text); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.75rem;">
-          <div style="display: flex; align-items: center; gap: 0.75rem; font-weight: 700; color: #10b981; margin-bottom: 0.35rem;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Thank you! Your message has been sent successfully.
-          </div>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Our team will review your inquiry and get back to you within 24 to 48 business hours.</p>
+        <!-- Responsive Google Form Container -->
+        <div class="google-form-wrapper" style="width: 100%; max-width: 740px; margin: 0 auto; display: flex; justify-content: center; background: var(--bg-alt); border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; padding: 0.5rem 0;">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSckZNpwRYog4ZyQj4QutUMMfUrRx902zVdEClrrwhSwmR1OhA/viewform?embedded=true" width="640" height="1123" frameborder="0" marginheight="0" marginwidth="0" style="width: 100%; max-width: 100%; min-height: 1150px; border: 0;" title="Finejust.vip Contact Form">Loading…</iframe>
         </div>
-
-        <form id="contact-form" action="https://formsubmit.co/info.finejust@gmail.com" method="POST" novalidate>
-          <!-- FormSubmit Configuration Hidden Fields -->
-          <input type="hidden" name="_subject" value="New Contact Message | Finejust.vip">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://www.finejust.vip/contact-success.html">
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-            
-            <!-- Full Name -->
-            <div class="form-group">
-              <label for="contact-name" class="form-label" style="font-weight: 700;">Full Name <span style="color:#ef4444;">*</span></label>
-              <input type="text" id="contact-name" name="name" required class="form-input" placeholder="e.g. Alex Morgan" autocomplete="name" aria-required="true">
-              <div class="form-error-msg" id="name-error" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: none;">Please enter your full name.</div>
-            </div>
-
-            <!-- Email Address -->
-            <div class="form-group">
-              <label for="contact-email" class="form-label" style="font-weight: 700;">Email Address <span style="color:#ef4444;">*</span></label>
-              <input type="email" id="contact-email" name="email" required class="form-input" placeholder="e.g. alex@example.com" autocomplete="email" aria-required="true">
-              <div class="form-error-msg" id="email-error" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: none;">Please enter a valid email address.</div>
-            </div>
-
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-            
-            <!-- Subject -->
-            <div class="form-group">
-              <label for="contact-subject" class="form-label" style="font-weight: 700;">Subject <span style="color:#ef4444;">*</span></label>
-              <input type="text" id="contact-subject" name="subject" required class="form-input" placeholder="Brief summary of your inquiry" aria-required="true">
-              <div class="form-error-msg" id="subject-error" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: none;">Please provide a subject line.</div>
-            </div>
-
-            <!-- Category Dropdown -->
-            <div class="form-group">
-              <label for="contact-category" class="form-label" style="font-weight: 700;">Category <span style="color:#ef4444;">*</span></label>
-              <select id="contact-category" name="category" required class="form-input" style="cursor: pointer;" aria-required="true">
-                <option value="" disabled selected>Select a category...</option>
-                <option value="Support">Support</option>
-                <option value="Feedback">Feedback</option>
-                <option value="Bug Report">Bug Report</option>
-                <option value="Tool Request">Tool Request</option>
-                <option value="Business Inquiry">Business Inquiry</option>
-              </select>
-              <div class="form-error-msg" id="category-error" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: none;">Please select an inquiry category.</div>
-            </div>
-
-          </div>
-
-          <!-- Message Textarea -->
-          <div class="form-group" style="margin-bottom: 2rem;">
-            <label for="contact-message" class="form-label" style="font-weight: 700;">Message <span style="color:#ef4444;">*</span></label>
-            <textarea id="contact-message" name="message" required rows="6" class="form-input" style="resize: vertical;" placeholder="Provide as much detail as possible (e.g., tool name, input values, or feature requirements)..." aria-required="true"></textarea>
-            <div class="form-error-msg" id="message-error" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.35rem; display: none;">Please type your message (minimum 10 characters).</div>
-          </div>
-
-          <!-- Form Buttons -->
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <button type="submit" id="btn-submit-contact" class="btn btn-primary" style="padding: 0.85rem 2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
-              <span id="submit-btn-text">Send Message</span>
-              <svg id="submit-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </button>
-            <button type="reset" id="btn-clear-form" class="btn btn-secondary" style="padding: 0.85rem 1.5rem;">
-              <span>Clear Form</span>
-            </button>
-          </div>
-        </form>
       </section>
 
       <!-- Middle AdSense Placeholder -->
@@ -491,132 +418,18 @@
   <script src="assets/script.js"></script>
   <script src="assets/search.js"></script>
 
-  <!-- Contact Form Validation & Submission Script -->
+  <!-- Feedback Cards Trigger Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('contact-form');
-      const nameInput = document.getElementById('contact-name');
-      const emailInput = document.getElementById('contact-email');
-      const subjectInput = document.getElementById('contact-subject');
-      const categorySelect = document.getElementById('contact-category');
-      const messageInput = document.getElementById('contact-message');
-      const clearBtn = document.getElementById('btn-clear-form');
-      let isSubmitting = false;
-
-      // Quick feedback cards click handler
+      // Quick feedback cards click handler: scroll to Google Form
       document.querySelectorAll('.feedback-trigger-card').forEach(card => {
         card.addEventListener('click', () => {
-          const category = card.getAttribute('data-category');
-          if (categorySelect) {
-            categorySelect.value = category;
-          }
           const formSection = document.getElementById('contact-form-section');
           if (formSection) {
             formSection.scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => {
-              if (messageInput) messageInput.focus();
-            }, 500);
           }
         });
       });
-
-      // Email format validator
-      function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      // Reset error styling
-      function clearErrors() {
-        document.querySelectorAll('.form-error-msg').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.form-input').forEach(el => el.style.borderColor = '');
-      }
-
-      // Form validation & submission
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          if (isSubmitting) {
-            e.preventDefault();
-            return false;
-          }
-
-          clearErrors();
-          let hasError = false;
-          let firstErrorElement = null;
-
-          if (!nameInput.value.trim()) {
-            document.getElementById('name-error').style.display = 'block';
-            nameInput.style.borderColor = '#ef4444';
-            hasError = true;
-            if (!firstErrorElement) firstErrorElement = nameInput;
-          }
-
-          if (!isValidEmail(emailInput.value.trim())) {
-            document.getElementById('email-error').style.display = 'block';
-            emailInput.style.borderColor = '#ef4444';
-            hasError = true;
-            if (!firstErrorElement) firstErrorElement = emailInput;
-          }
-
-          if (!subjectInput.value.trim()) {
-            document.getElementById('subject-error').style.display = 'block';
-            subjectInput.style.borderColor = '#ef4444';
-            hasError = true;
-            if (!firstErrorElement) firstErrorElement = subjectInput;
-          }
-
-          if (!categorySelect.value) {
-            document.getElementById('category-error').style.display = 'block';
-            categorySelect.style.borderColor = '#ef4444';
-            hasError = true;
-            if (!firstErrorElement) firstErrorElement = categorySelect;
-          }
-
-          if (!messageInput.value.trim() || messageInput.value.trim().length < 10) {
-            document.getElementById('message-error').style.display = 'block';
-            messageInput.style.borderColor = '#ef4444';
-            hasError = true;
-            if (!firstErrorElement) firstErrorElement = messageInput;
-          }
-
-          // If validation fails, prevent default submission and focus first field
-          if (hasError) {
-            e.preventDefault();
-            if (firstErrorElement) firstErrorElement.focus();
-            return false;
-          }
-
-          // Validation passed: Show loading state & prevent double click
-          isSubmitting = true;
-          const submitBtn = document.getElementById('btn-submit-contact');
-          const submitBtnText = document.getElementById('submit-btn-text');
-          const submitBtnIcon = document.getElementById('submit-btn-icon');
-
-          if (submitBtn) {
-            submitBtn.style.opacity = '0.8';
-            submitBtn.style.cursor = 'wait';
-            if (submitBtnText) submitBtnText.textContent = 'Sending...';
-            if (submitBtnIcon) {
-              submitBtnIcon.outerHTML = '<svg class="btn-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>';
-            }
-          }
-
-          // Native HTML form submission proceeds to FormSubmit (no e.preventDefault())
-        });
-      }
-
-      if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-          clearErrors();
-          isSubmitting = false;
-          const submitBtn = document.getElementById('btn-submit-contact');
-          const submitBtnText = document.getElementById('submit-btn-text');
-          if (submitBtn) {
-            submitBtn.style.opacity = '';
-            submitBtn.style.cursor = '';
-          }
-          if (submitBtnText) submitBtnText.textContent = 'Send Message';
-        });
-      }
     });
   </script>
 

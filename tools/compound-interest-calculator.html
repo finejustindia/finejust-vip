@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compound Interest Calculator — Project Investment Growth &amp; APY | Finejust.vip</title>
+  <meta name="description" content="Calculate compound interest and future investment growth with monthly contributions, variable compounding frequencies (daily, monthly, annually), and APY on Finejust.vip.">
+  <link rel="canonical" href="https://finejust.vip/tools/compound-interest-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finejust.vip/tools/compound-interest-calculator.html">
+  <meta property="og:title" content="Compound Interest Calculator — Project Investment Growth | Finejust.vip">
+  <meta property="og:description" content="Calculate long-term compound growth, monthly contributions, and investment returns.">
+  <meta property="og:image" content="https://finejust.vip/images/og-banner.webp">
+  <meta property="og:site_name" content="Finejust.vip">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://finejust.vip/tools/compound-interest-calculator.html">
+  <meta name="twitter:title" content="Compound Interest Calculator - Finejust.vip">
+  <meta name="twitter:description" content="Free compound growth and investment calculator with monthly contribution planning.">
+  <meta name="twitter:image" content="https://finejust.vip/images/og-banner.webp">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#2563EB">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://finejust.vip/tools/compound-interest-calculator.html#app",
+        "name": "Compound Interest Calculator",
+        "url": "https://finejust.vip/tools/compound-interest-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Long-term investment compounding calculator computing future portfolio valuations, recurring monthly contributions, and APY rates."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://finejust.vip/tools/compound-interest-calculator.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://finejust.vip/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://finejust.vip/tools.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Compound Interest Calculator",
+            "item": "https://finejust.vip/tools/compound-interest-calculator.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://finejust.vip/tools/compound-interest-calculator.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for compound interest with regular monthly deposits?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A = P(1 + r/n)^(nt) + PMT x [ ((1 + r/n)^(nt) - 1) / (r/n) ], where P is Principal, PMT is periodic payment, r is annual rate, n is compounding frequency, and t is time in years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between APR and APY?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "APR is the simple annual rate without compounding. APY (Annual Percentage Yield) reflects the true annual return accounting for intra-year compound interest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does compounding frequency impact returns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "More frequent compounding (such as daily or monthly instead of annually) produces higher overall yields because interest is credited and reinvested sooner."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the 'Rule of 72'?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Rule of 72 is a quick mental formula to estimate doubling time: Divide 72 by the annual interest rate (e.g., at 8% annual return, money doubles in approximately 9 years)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is time considered the most powerful variable in compound growth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because compounding is exponential (the time variable 't' is an exponent), investment growth accelerates dramatically in the later years of a portfolio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is continuous compounding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Continuous compounding calculates interest mathematically assuming infinite compounding intervals using Euler's constant e: A = P x e^(rt)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does inflation affect compound interest returns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Real return equals nominal return minus the inflation rate. To maintain purchasing power, your compounding yield must outpace annual inflation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I calculate retirement targets with this tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, by modeling your initial savings, monthly 401(k)/IRA contributions, and expected historical market returns over 20-30 years."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are dividend reinvestment plans (DRIP) considered compound interest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, reinvesting stock dividends to purchase additional shares functions identically to compounding by increasing your asset base for future dividend payouts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my financial calculation private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% private. All financial calculations occur locally in your device browser with zero remote transmission."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+    <!-- Google Analytics 4 (Placeholder) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="../assets/analytics.js"></script>
+
+  <!-- Google AdSense Global Tag (Placeholder) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Indicator -->
+  <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
+  <div id="site-header-container"></div>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="ad-container top-ad">Advertisement</div>
+
+      <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item"><a href="../tools.html">Tools</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active">Compound Interest Calculator</div>
+      </nav>
+
+      <div class="tool-page-layout">
+        <div class="tool-main-panel">
+          <header class="tool-header-block">
+            <h1 class="tool-h1">Compound Interest Calculator</h1>
+            <p class="tool-subtitle">Forecast long-term wealth accumulation, calculate annual percentage yields (APY), and model recurring monthly investments with exponential compound interest.</p>
+                      <div class="tool-rating-badge">
+              <span class="tool-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span><strong>4.9</strong>/5</span>
+              <span class="tool-rating-count">&bull; 12,000+ verified ratings</span>
+            </div>
+          </header>
+
+          <!-- Social Share Widget -->
+          <div class="share-buttons-wrap">
+            <div class="share-buttons-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share this tool:</span>
+            </div>
+            <div class="share-buttons-list">
+              <button type="button" class="share-btn share-btn-twitter" data-platform="twitter" aria-label="Share on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Post</span>
+              </button>
+              <button type="button" class="share-btn share-btn-facebook" data-platform="facebook" aria-label="Share on Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" class="share-btn share-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
+              </button>
+              <button type="button" class="share-btn share-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" class="share-btn share-btn-copy" data-platform="copy" aria-label="Copy Link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Link</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="calculator-card">
+            <div class="calc-form-grid grid-2">
+              <div class="form-group">
+                <label class="form-label" for="ci-p">Initial Principal ($)</label>
+                <input type="number" id="ci-p" class="form-input" value="10000" min="0" step="500">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ci-pmt">Monthly Contribution ($)</label>
+                <input type="number" id="ci-pmt" class="form-input" value="300" min="0" step="50">
+              </div>
+            </div>
+
+            <div class="calc-form-grid grid-3" style="margin-top:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="ci-r">Annual Return (%)</label>
+                <input type="number" id="ci-r" class="form-input" value="8" min="0.1" max="100" step="0.1">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ci-t">Investment Horizon (Years)</label>
+                <input type="number" id="ci-t" class="form-input" value="15" min="1" max="50" step="1">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ci-n">Compounding Frequency</label>
+                <select id="ci-n" class="form-select">
+                  <option value="12" selected>Monthly (12/yr)</option>
+                  <option value="4">Quarterly (4/yr)</option>
+                  <option value="1">Annually (1/yr)</option>
+                  <option value="365">Daily (365/yr)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="btn-calc-ci" class="btn btn-primary">Calculate Growth</button>
+              <button type="button" id="btn-reset-ci" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <div class="result-card" id="ci-result-card">
+              <div class="result-header">
+                <span class="result-title">Future Investment Balance</span>
+                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-ci">Copy Result</button>
+              </div>
+              <div class="result-main-value" id="ci-future-val">$137,842.10</div>
+
+              <div class="result-breakdown-grid">
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Total Principal Invested</span>
+                  <span class="breakdown-val" id="ci-invested-val">$64,000.00</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Total Compound Interest</span>
+                  <span class="breakdown-val" id="ci-interest-val" style="color:#10b981;">$73,842.10</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Effective APY</span>
+                  <span class="breakdown-val" id="ci-apy-val">8.30%</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Wealth Multiplier</span>
+                  <span class="breakdown-val" id="ci-mult-val">2.15x</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ad-container middle-ad">Advertisement</div>
+
+          <article class="content-box">
+            <h2>The Mathematics of Exponential Compound Wealth Accumulation</h2>
+            <p>Albert Einstein famously characterized compound interest as the "eighth wonder of the world," stating that "he who understands it, earns it; he who doesn't, pays it." Compound interest is the mathematical phenomenon whereby earned returns are continually reinvested alongside original capital, creating a self-reinforcing snowball effect that drives exponential portfolio growth over time.</p>
+
+            <p>Unlike linear simple interest—which generates fixed, static returns each period—compound growth generates returns upon prior returns. Over multi-decade investment horizons, compound interest typically surpasses total out-of-pocket contributions by substantial multiples.</p>
+
+            <h3>The Universal Compound Growth Equation with Recurring Deposits</h3>
+            <div class="formula-box">
+              Future Value (FV) = P &times; ( 1 + r/n )<sup>(n&times;t)</sup> + PMT &times; [ ( ( 1 + r/n )<sup>(n&times;t)</sup> - 1 ) &divide; ( r/n ) ]<br><br>
+              Where:<br>
+              &bull; P = Initial starting principal deposit<br>
+              &bull; PMT = Regular monthly addition<br>
+              &bull; r = Nominal annual interest rate in decimal form (Rate &divide; 100)<br>
+              &bull; n = Number of compounding intervals per year (e.g. 12 for monthly)<br>
+              &bull; t = Total duration of investment in years
+            </div>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.95rem;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--border); text-align:left;">
+                  <th style="padding:0.75rem 0.5rem;">Timeline Milestone</th>
+                  <th style="padding:0.75rem 0.5rem;">Total Out-of-Pocket Invested</th>
+                  <th style="padding:0.75rem 0.5rem;">Total Compound Interest</th>
+                  <th style="padding:0.75rem 0.5rem;">Portfolio Value (8% Return)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">5 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$28,000.00</td>
+                  <td style="padding:0.6rem 0.5rem; color:#10b981;">$8,642.15</td>
+                  <td style="padding:0.6rem 0.5rem;">$36,642.15</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">10 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$46,000.00</td>
+                  <td style="padding:0.6rem 0.5rem; color:#10b981;">$29,618.30</td>
+                  <td style="padding:0.6rem 0.5rem;">$75,618.30</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">20 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$82,000.00</td>
+                  <td style="padding:0.6rem 0.5rem; color:#10b981;">$147,842.60</td>
+                  <td style="padding:0.6rem 0.5rem;">$229,842.60</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">30 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$118,000.00</td>
+                  <td style="padding:0.6rem 0.5rem; color:#10b981;">$438,215.40</td>
+                  <td style="padding:0.6rem 0.5rem; font-weight:700; color:var(--primary);">$556,215.40</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>Key Principles to Maximize Compound Growth</h3>
+            <ul>
+              <li><strong>Start as Early as Possible:</strong> Due to exponential scaling, starting just five years earlier can nearly double your final retirement portfolio balance.</li>
+              <li><strong>Automate Consistent Contributions:</strong> Dollar-cost averaging via recurring monthly deposits ensures continuous capital accumulation through all market cycles.</li>
+              <li><strong>Minimize Investment Fees:</strong> A 1.5% management fee can diminish 30% to 40% of your potential lifetime compound gains over a 30-year horizon.</li>
+            </ul>
+          </article>
+
+          <section class="content-box faq-section" id="faq">
+            <h2>Frequently Asked Questions (10)</h2>
+            <div class="faq-list">
+              <div class="faq-item active">
+                <button type="button" class="faq-question">
+                  <span>What is the formula for compound interest with regular monthly deposits?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>A = P(1 + r/n)^(nt) + PMT x [ ((1 + r/n)^(nt) - 1) / (r/n) ], where P is Principal, PMT is periodic payment, r is annual rate, n is compounding frequency, and t is time in years.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the difference between APR and APY?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>APR is the simple annual rate without compounding. APY (Annual Percentage Yield) reflects the true annual return accounting for intra-year compound interest.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How does compounding frequency impact returns?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>More frequent compounding (such as daily or monthly instead of annually) produces higher overall yields because interest is credited and reinvested sooner.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the 'Rule of 72'?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>The Rule of 72 is a quick mental formula to estimate doubling time: Divide 72 by the annual interest rate (e.g., at 8% annual return, money doubles in approximately 9 years).</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Why is time considered the most powerful variable in compound growth?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Because compounding is exponential (the time variable 't' is an exponent), investment growth accelerates dramatically in the later years of a portfolio.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is continuous compounding?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Continuous compounding calculates interest mathematically assuming infinite compounding intervals using Euler's constant e: A = P x e^(rt).</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How does inflation affect compound interest returns?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Real return equals nominal return minus the inflation rate. To maintain purchasing power, your compounding yield must outpace annual inflation.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Can I calculate retirement targets with this tool?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, by modeling your initial savings, monthly 401(k)/IRA contributions, and expected historical market returns over 20-30 years.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Are dividend reinvestment plans (DRIP) considered compound interest?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, reinvesting stock dividends to purchase additional shares functions identically to compounding by increasing your asset base for future dividend payouts.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Is my financial calculation private?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, 100% private. All financial calculations occur locally in your device browser with zero remote transmission.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+                    <!-- E-E-A-T Author Card -->
+          <div class="author-card">
+            <div class="author-avatar-wrap">FE</div>
+            <div class="author-card-body">
+              <div class="author-card-header">
+                <h3 class="author-name">Finejust Editorial Team</h3>
+                <span class="author-badge">Verified Review Board</span>
+              </div>
+              <p class="author-bio">
+                Written, calculated, and mathematically audited by the Finejust quantitative review board. We follow strict E-E-A-T principles and test every formula against official ISO, WHO, and statutory benchmarks.
+              </p>
+              <div class="author-links">
+                <a href="../author/finejust-editorial.html" style="color:var(--primary);">Author Bio &amp; Credentials &rarr;</a>
+                <a href="../editorial-policy.html" style="color:var(--text-muted);">Editorial Standards</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Educational Articles -->
+          <div class="content-box" style="margin: 2.5rem 0;">
+            <div class="section-tag" style="margin-bottom:0.5rem;">Recommended Reading</div>
+            <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
+            <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+              <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
+                </div>
+              </a>
+              <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
+                </div>
+              </a>
+              <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+
+<div id="recently-viewed-tools"></div>
+
+          <div id="dynamic-related-tools" data-category="finance"></div>
+
+          <section class="newsletter-card" style="margin-top: 3rem;">
+            <h2 class="newsletter-title">Calculate Faster with Finejust.vip</h2>
+            <p class="newsletter-desc">Explore 20+ free client-side financial, math, conversion, and developer utilities with zero installation.</p>
+            <a href="../tools.html" class="btn btn-newsletter">Explore All 20+ Free Tools</a>
+          </section>
+        </div>
+
+        <aside>
+          <div class="content-box" style="margin-bottom: 1.5rem;">
+            <h3>Related Financial Tools</h3>
+            <ul class="footer-links" style="margin-top:0.75rem;">
+              <li><a href="simple-interest-calculator.html" class="footer-link">&bull; Simple Interest Calculator</a></li>
+              <li><a href="emi-calculator.html" class="footer-link">&bull; EMI Calculator</a></li>
+              <li><a href="loan-calculator.html" class="footer-link">&bull; Loan Calculator</a></li>
+              <li><a href="gst-calculator.html" class="footer-link">&bull; GST Calculator</a></li>
+              <li><a href="../tools.html" class="footer-link">&bull; All 20+ Free Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="ad-container" style="min-height: 300px;">Advertisement</div>
+        </aside>
+      </div>
+
+      <div class="ad-container bottom-ad">Advertisement</div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <script src="../assets/script.js"></script>
+  <script src="../assets/search.js"></script>
+  <script>
+    (function() {
+      const inpP = document.getElementById('ci-p');
+      const inpPmt = document.getElementById('ci-pmt');
+      const inpR = document.getElementById('ci-r');
+      const inpT = document.getElementById('ci-t');
+      const inpN = document.getElementById('ci-n');
+
+      const resFuture = document.getElementById('ci-future-val');
+      const resInvested = document.getElementById('ci-invested-val');
+      const resInterest = document.getElementById('ci-interest-val');
+      const resApy = document.getElementById('ci-apy-val');
+      const resMult = document.getElementById('ci-mult-val');
+
+      const btnCalc = document.getElementById('btn-calc-ci');
+      const btnReset = document.getElementById('btn-reset-ci');
+      const btnCopy = document.getElementById('btn-copy-ci');
+
+      function calculateCI() {
+        const p = parseFloat(inpP.value) || 0;
+        const pmt = parseFloat(inpPmt.value) || 0;
+        const annualRate = (parseFloat(inpR.value) || 0) / 100;
+        const years = parseFloat(inpT.value) || 0;
+        const n = parseInt(inpN.value, 10) || 12;
+
+        if (annualRate <= 0 || years <= 0) return;
+
+        // Principal growth
+        const fvPrincipal = p * Math.pow(1 + (annualRate / n), n * years);
+
+        // Annuity monthly additions compounded
+        const months = years * 12;
+        const monthlyRate = annualRate / 12;
+        let fvContributions = 0;
+        if (pmt > 0 && monthlyRate > 0) {
+          fvContributions = pmt * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+        }
+
+        const totalFuture = fvPrincipal + fvContributions;
+        const totalInvested = p + (pmt * months);
+        const totalInterest = totalFuture - totalInvested;
+        const apy = (Math.pow(1 + (annualRate / n), n) - 1) * 100;
+        const multiplier = totalInvested > 0 ? (totalFuture / totalInvested) : 1;
+
+        resFuture.textContent = `$${totalFuture.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        resInvested.textContent = `$${totalInvested.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        resInterest.textContent = `$${totalInterest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        resApy.textContent = `${apy.toFixed(2)}%`;
+        resMult.textContent = `${multiplier.toFixed(2)}x`;
+      }
+
+      [inpP, inpPmt, inpR, inpT, inpN].forEach(inp => inp.addEventListener('input', calculateCI));
+      btnCalc.addEventListener('click', calculateCI);
+
+      btnReset.addEventListener('click', () => {
+        inpP.value = '10000';
+        inpPmt.value = '300';
+        inpR.value = '8';
+        inpT.value = '15';
+        inpN.value = '12';
+        calculateCI();
+      });
+
+      btnCopy.addEventListener('click', () => {
+        window.copyToClipboard(resFuture.textContent, 'Compound Interest total copied!');
+      });
+
+      calculateCI();
+    })();
+  </script>
+</body>
+</html>

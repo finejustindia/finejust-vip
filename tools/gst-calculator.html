@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Calculator — Calculate Inclusive &amp; Exclusive Tax Online | Finejust.vip</title>
+  <meta name="description" content="Calculate Goods and Services Tax (GST) easily with inclusive and exclusive tax modes, custom tax slabs (5%, 12%, 18%, 28%), and CGST/SGST/IGST breakdowns on Finejust.vip.">
+  <link rel="canonical" href="https://finejust.vip/tools/gst-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finejust.vip/tools/gst-calculator.html">
+  <meta property="og:title" content="GST Calculator — Calculate Inclusive &amp; Exclusive Tax | Finejust.vip">
+  <meta property="og:description" content="Instant GST tax calculation with CGST/SGST breakdowns and multi-slab support.">
+  <meta property="og:image" content="https://finejust.vip/images/og-banner.webp">
+  <meta property="og:site_name" content="Finejust.vip">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://finejust.vip/tools/gst-calculator.html">
+  <meta name="twitter:title" content="GST Calculator - Finejust.vip">
+  <meta name="twitter:description" content="Calculate inclusive and exclusive GST rates with instant tax breakdowns.">
+  <meta name="twitter:image" content="https://finejust.vip/images/og-banner.webp">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#2563EB">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://finejust.vip/tools/gst-calculator.html#app",
+        "name": "GST Calculator",
+        "url": "https://finejust.vip/tools/gst-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Commercial and retail GST calculator computing tax-inclusive, tax-exclusive amounts, and intra-state CGST/SGST and inter-state IGST splits."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://finejust.vip/tools/gst-calculator.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://finejust.vip/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://finejust.vip/tools.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "GST Calculator",
+            "item": "https://finejust.vip/tools/gst-calculator.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://finejust.vip/tools/gst-calculator.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between GST-inclusive and GST-exclusive amounts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GST Exclusive means tax is added to the base price. GST Inclusive means the gross retail price already contains the tax component."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the formula to calculate GST exclusive of tax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GST Amount = (Base Price x GST%) / 100. Total Price = Base Price + GST Amount."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the formula to remove GST from an inclusive price?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Base Price = Total Price / (1 + GST% / 100). GST Amount = Total Price - Base Price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are CGST, SGST, and IGST?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CGST (Central GST) and SGST (State GST) apply equally to intra-state transactions. IGST (Integrated GST) applies to inter-state commerce and imports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the common GST tax slabs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Common standardized slabs are 0% (essential food), 5% (basic mass goods), 12% (standard items), 18% (services and manufacturing), and 28% (luxury and sin goods)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can businesses claim back GST paid on purchases?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, registered businesses utilize the Input Tax Credit (ITC) mechanism to offset GST paid on business inputs against output tax liability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does GST eliminate the cascading 'tax on tax' effect?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By providing comprehensive input tax credits at every value-addition stage in the supply chain, tax is only applied to net added value rather than gross historical totals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is reverse charge mechanism (RCM) in GST?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under RCM, the liability to pay tax shifts from the supplier to the recipient of goods or services (common when purchasing from unregistered vendors)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use custom GST percentages with this calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, select 'Custom' rate to enter any arbitrary percentage rate such as 7.5%, 15%, or 20%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this GST calculator suitable for invoicing preparation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it provides exact mathematical breakdowns for line-item CGST, SGST, and final invoice totals."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+    <!-- Google Analytics 4 (Placeholder) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="../assets/analytics.js"></script>
+
+  <!-- Google AdSense Global Tag (Placeholder) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Indicator -->
+  <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
+  <div id="site-header-container"></div>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="ad-container top-ad">Advertisement</div>
+
+      <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item"><a href="../tools.html">Tools</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active">GST Calculator</div>
+      </nav>
+
+      <div class="tool-page-layout">
+        <div class="tool-main-panel">
+          <header class="tool-header-block">
+            <h1 class="tool-h1">GST Calculator</h1>
+            <p class="tool-subtitle">Compute Goods and Services Tax (GST) with ease. Add tax to net amounts or extract pre-tax base values with CGST/SGST/IGST allocations.</p>
+                      <div class="tool-rating-badge">
+              <span class="tool-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span><strong>4.9</strong>/5</span>
+              <span class="tool-rating-count">&bull; 12,000+ verified ratings</span>
+            </div>
+          </header>
+
+          <!-- Social Share Widget -->
+          <div class="share-buttons-wrap">
+            <div class="share-buttons-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share this tool:</span>
+            </div>
+            <div class="share-buttons-list">
+              <button type="button" class="share-btn share-btn-twitter" data-platform="twitter" aria-label="Share on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Post</span>
+              </button>
+              <button type="button" class="share-btn share-btn-facebook" data-platform="facebook" aria-label="Share on Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" class="share-btn share-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
+              </button>
+              <button type="button" class="share-btn share-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" class="share-btn share-btn-copy" data-platform="copy" aria-label="Copy Link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Link</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="calculator-card">
+            <!-- Mode Tabs -->
+            <div class="tools-filter-nav" style="margin-bottom: 1.5rem;" id="gst-mode-nav">
+              <button type="button" class="filter-btn active" data-mode="exclusive">Add GST (Exclusive)</button>
+              <button type="button" class="filter-btn" data-mode="inclusive">Remove GST (Inclusive)</button>
+            </div>
+
+            <div class="calc-form-grid grid-2">
+              <div class="form-group">
+                <label class="form-label" for="gst-amount" id="gst-amount-label">Net Base Amount ($)</label>
+                <input type="number" id="gst-amount" class="form-input" value="1000" min="0" step="any">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="gst-rate">GST Tax Rate</label>
+                <select id="gst-rate" class="form-select">
+                  <option value="5">5% (Essential Commodities)</option>
+                  <option value="12">12% (Standard Goods)</option>
+                  <option value="18" selected>18% (Standard Services &amp; Tech)</option>
+                  <option value="28">28% (Luxury &amp; Automobiles)</option>
+                  <option value="custom">Custom Tax Rate...</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Custom Rate Input (hidden by default) -->
+            <div class="form-group mb-4 hidden" id="gst-custom-group">
+              <label class="form-label" for="gst-custom-rate">Custom GST Rate (%)</label>
+              <input type="number" id="gst-custom-rate" class="form-input" value="15" min="0" max="100" step="0.1">
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="btn-calc-gst" class="btn btn-primary">Calculate GST</button>
+              <button type="button" id="btn-reset-gst" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <div class="result-card" id="gst-result-card">
+              <div class="result-header">
+                <span class="result-title" id="gst-res-title">Gross Total with GST</span>
+                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-gst">Copy Result</button>
+              </div>
+              <div class="result-main-value" id="gst-main-val">$1,180.00</div>
+
+              <div class="result-breakdown-grid">
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Net Base Price</span>
+                  <span class="breakdown-val" id="gst-base-val">$1,000.00</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Total GST Tax Amount</span>
+                  <span class="breakdown-val" id="gst-tax-val" style="color:var(--primary);">$180.00</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">CGST (Intra-state 50%)</span>
+                  <span class="breakdown-val" id="gst-cgst-val">$90.00</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">SGST (Intra-state 50%)</span>
+                  <span class="breakdown-val" id="gst-sgst-val">$90.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ad-container middle-ad">Advertisement</div>
+
+          <article class="content-box">
+            <h2>The Mechanics of Goods and Services Tax (GST)</h2>
+            <p>Goods and Services Tax (GST), also referred to as Value-Added Tax (VAT) in numerous jurisdictions, is a comprehensive, multi-stage, destination-based indirect tax levied on the manufacture, sale, and consumption of goods and services. Implemented in over 160 nations worldwide, GST replaces fragmented indirect taxes (such as excise duty, service tax, entry tax, and sales tax) with a harmonized taxation framework.</p>
+
+            <p>A destination-based taxation model means revenue accrues to the taxing jurisdiction where consumption occurs rather than where goods originate. This structure incentivizes transparent supply chain documentation and eliminates the harmful economic distortion known as the "cascading tax effect" (paying tax upon tax).</p>
+
+            <h3>Core Mathematical GST Equations</h3>
+            <p>Depending on whether an invoice is quoted as tax-exclusive or tax-inclusive, we apply the following formulas:</p>
+
+            <div class="formula-box">
+              1. Adding GST to a Net Base Amount (Exclusive):<br>
+              GST Tax Amount = (Base Price &times; GST Rate) &divide; 100<br>
+              Gross Invoiced Price = Base Price + GST Tax Amount<br><br>
+              2. Removing GST from a Gross Price (Inclusive):<br>
+              Base Price = Gross Invoiced Price &divide; [ 1 + (GST Rate &divide; 100) ]<br>
+              GST Tax Amount = Gross Invoiced Price - Base Price
+            </div>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.95rem;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--border); text-align:left;">
+                  <th style="padding:0.75rem 0.5rem;">GST Rate Tier</th>
+                  <th style="padding:0.75rem 0.5rem;">Typical Goods / Services</th>
+                  <th style="padding:0.75rem 0.5rem;">Tax on $1,000 Base</th>
+                  <th style="padding:0.75rem 0.5rem;">Gross Invoiced Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">5% Slab</td>
+                  <td style="padding:0.6rem 0.5rem;">Apparel &lt;$15, generic medicine, packaged tea</td>
+                  <td style="padding:0.6rem 0.5rem;">$50.00</td>
+                  <td style="padding:0.6rem 0.5rem;">$1,050.00</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">12% Slab</td>
+                  <td style="padding:0.6rem 0.5rem;">Computers, processed foods, medical equipment</td>
+                  <td style="padding:0.6rem 0.5rem;">$120.00</td>
+                  <td style="padding:0.6rem 0.5rem;">$1,120.00</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">18% Slab</td>
+                  <td style="padding:0.6rem 0.5rem;">SaaS software, telecom services, capital goods</td>
+                  <td style="padding:0.6rem 0.5rem;">$180.00</td>
+                  <td style="padding:0.6rem 0.5rem;">$1,180.00</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">28% Slab</td>
+                  <td style="padding:0.6rem 0.5rem;">Luxury automobiles, gaming consoles, tobacco</td>
+                  <td style="padding:0.6rem 0.5rem;">$280.00</td>
+                  <td style="padding:0.6rem 0.5rem;">$1,280.00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>Understanding Dual GST (CGST, SGST &amp; IGST)</h3>
+            <p>In federal economic structures, tax collection is split between central and regional state authorities:</p>
+            <ul>
+              <li><strong>Intra-State Transactions:</strong> When buyer and seller operate within the same jurisdiction, tax is split equally: 50% CGST (Central GST) and 50% SGST (State GST). For an 18% slab, 9% is allocated to CGST and 9% to SGST.</li>
+              <li><strong>Inter-State Transactions:</strong> When transactions cross state or international borders, the entire 18% is billed as <strong>IGST (Integrated GST)</strong>, which is collected centrally and apportioned between jurisdictions.</li>
+            </ul>
+
+            <h3>Input Tax Credit (ITC) Explained</h3>
+            <p>One of the chief economic advantages of GST is the Input Tax Credit mechanism. When a manufacturer pays $180 in GST on raw materials and later charges $270 in GST when selling the finished product to a distributor, the manufacturer does not pay the full $270 to the government. Instead, they deduct the $180 already paid, remitting only the net added tax of $90 ($270 output GST - $180 input GST).</p>
+          </article>
+
+          <section class="content-box faq-section" id="faq">
+            <h2>Frequently Asked Questions (10)</h2>
+            <div class="faq-list">
+              <div class="faq-item active">
+                <button type="button" class="faq-question">
+                  <span>What is the difference between GST-inclusive and GST-exclusive amounts?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>GST Exclusive means tax is added to the base price. GST Inclusive means the gross retail price already contains the tax component.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the formula to calculate GST exclusive of tax?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>GST Amount = (Base Price x GST%) / 100. Total Price = Base Price + GST Amount.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the formula to remove GST from an inclusive price?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Base Price = Total Price / (1 + GST% / 100). GST Amount = Total Price - Base Price.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What are CGST, SGST, and IGST?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>CGST (Central GST) and SGST (State GST) apply equally to intra-state transactions. IGST (Integrated GST) applies to inter-state commerce and imports.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What are the common GST tax slabs?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Common standardized slabs are 0% (essential food), 5% (basic mass goods), 12% (standard items), 18% (services and manufacturing), and 28% (luxury and sin goods).</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Can businesses claim back GST paid on purchases?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, registered businesses utilize the Input Tax Credit (ITC) mechanism to offset GST paid on business inputs against output tax liability.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How does GST eliminate the cascading 'tax on tax' effect?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>By providing comprehensive input tax credits at every value-addition stage in the supply chain, tax is only applied to net added value rather than gross historical totals.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is reverse charge mechanism (RCM) in GST?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Under RCM, the liability to pay tax shifts from the supplier to the recipient of goods or services (common when purchasing from unregistered vendors).</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Can I use custom GST percentages with this calculator?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, select 'Custom' rate to enter any arbitrary percentage rate such as 7.5%, 15%, or 20%.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Is this GST calculator suitable for invoicing preparation?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, it provides exact mathematical breakdowns for line-item CGST, SGST, and final invoice totals.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+                    <!-- E-E-A-T Author Card -->
+          <div class="author-card">
+            <div class="author-avatar-wrap">FE</div>
+            <div class="author-card-body">
+              <div class="author-card-header">
+                <h3 class="author-name">Finejust Editorial Team</h3>
+                <span class="author-badge">Verified Review Board</span>
+              </div>
+              <p class="author-bio">
+                Written, calculated, and mathematically audited by the Finejust quantitative review board. We follow strict E-E-A-T principles and test every formula against official ISO, WHO, and statutory benchmarks.
+              </p>
+              <div class="author-links">
+                <a href="../author/finejust-editorial.html" style="color:var(--primary);">Author Bio &amp; Credentials &rarr;</a>
+                <a href="../editorial-policy.html" style="color:var(--text-muted);">Editorial Standards</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Educational Articles -->
+          <div class="content-box" style="margin: 2.5rem 0;">
+            <div class="section-tag" style="margin-bottom:0.5rem;">Recommended Reading</div>
+            <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
+            <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+              <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
+                </div>
+              </a>
+              <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
+                </div>
+              </a>
+              <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+
+<div id="recently-viewed-tools"></div>
+
+          <div id="dynamic-related-tools" data-category="finance"></div>
+
+          <section class="newsletter-card" style="margin-top: 3rem;">
+            <h2 class="newsletter-title">Calculate Faster with Finejust.vip</h2>
+            <p class="newsletter-desc">Explore 20+ free client-side financial, math, conversion, and developer utilities with zero installation.</p>
+            <a href="../tools.html" class="btn btn-newsletter">Explore All 20+ Free Tools</a>
+          </section>
+        </div>
+
+        <aside>
+          <div class="content-box" style="margin-bottom: 1.5rem;">
+            <h3>Related Finance Tools</h3>
+            <ul class="footer-links" style="margin-top:0.75rem;">
+              <li><a href="percentage-calculator.html" class="footer-link">&bull; Percentage Calculator</a></li>
+              <li><a href="../blog/gst-calculation-guide-india.html" class="footer-link">&bull; GST Invoicing Guide India &rarr;</a></li>
+              <li><a href="emi-calculator.html" class="footer-link">&bull; EMI Calculator</a></li>
+              <li><a href="../tools.html" class="footer-link">&bull; All 20+ Free Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="ad-container" style="min-height: 300px;">Advertisement</div>
+        </aside>
+      </div>
+
+      <div class="ad-container bottom-ad">Advertisement</div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <script src="../assets/script.js"></script>
+  <script src="../assets/search.js"></script>
+  <script>
+    (function() {
+      let mode = 'exclusive';
+      const modeBtns = document.querySelectorAll('#gst-mode-nav .filter-btn');
+      const amountInp = document.getElementById('gst-amount');
+      const amountLabel = document.getElementById('gst-amount-label');
+      const rateSelect = document.getElementById('gst-rate');
+      const customGroup = document.getElementById('gst-custom-group');
+      const customRateInp = document.getElementById('gst-custom-rate');
+
+      const resTitle = document.getElementById('gst-res-title');
+      const resMain = document.getElementById('gst-main-val');
+      const resBase = document.getElementById('gst-base-val');
+      const resTax = document.getElementById('gst-tax-val');
+      const resCgst = document.getElementById('gst-cgst-val');
+      const resSgst = document.getElementById('gst-sgst-val');
+
+      const btnCalc = document.getElementById('btn-calc-gst');
+      const btnReset = document.getElementById('btn-reset-gst');
+      const btnCopy = document.getElementById('btn-copy-gst');
+
+      modeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          modeBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          mode = btn.getAttribute('data-mode');
+
+          if (mode === 'exclusive') {
+            amountLabel.textContent = 'Net Base Amount ($)';
+            resTitle.textContent = 'Gross Total with GST';
+          } else {
+            amountLabel.textContent = 'Gross Amount (GST Inclusive) ($)';
+            resTitle.textContent = 'Net Base Price (Pre-Tax)';
+          }
+          calculateGST();
+        });
+      });
+
+      rateSelect.addEventListener('change', () => {
+        if (rateSelect.value === 'custom') {
+          customGroup.classList.remove('hidden');
+        } else {
+          customGroup.classList.add('hidden');
+        }
+        calculateGST();
+      });
+
+      function calculateGST() {
+        const rawAmount = parseFloat(amountInp.value) || 0;
+        let rate = parseFloat(rateSelect.value);
+        if (rateSelect.value === 'custom') {
+          rate = parseFloat(customRateInp.value) || 0;
+        }
+
+        let basePrice = 0;
+        let taxAmount = 0;
+        let totalPrice = 0;
+
+        if (mode === 'exclusive') {
+          basePrice = rawAmount;
+          taxAmount = (basePrice * rate) / 100;
+          totalPrice = basePrice + taxAmount;
+          resMain.textContent = `$${totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        } else {
+          totalPrice = rawAmount;
+          basePrice = totalPrice / (1 + (rate / 100));
+          taxAmount = totalPrice - basePrice;
+          resMain.textContent = `$${basePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        const cgst = taxAmount / 2;
+        const sgst = taxAmount / 2;
+
+        resBase.textContent = `$${basePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        resTax.textContent = `$${taxAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        resCgst.textContent = `$${cgst.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        resSgst.textContent = `$${sgst.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      }
+
+      amountInp.addEventListener('input', calculateGST);
+      customRateInp.addEventListener('input', calculateGST);
+      btnCalc.addEventListener('click', calculateGST);
+
+      btnReset.addEventListener('click', () => {
+        amountInp.value = '1000';
+        rateSelect.value = '18';
+        customGroup.classList.add('hidden');
+        calculateGST();
+      });
+
+      btnCopy.addEventListener('click', () => {
+        window.copyToClipboard(resMain.textContent, 'GST calculation copied!');
+      });
+
+      calculateGST();
+    })();
+  </script>
+</body>
+</html>

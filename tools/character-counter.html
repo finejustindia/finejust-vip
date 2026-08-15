@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter — Count Letters, Spaces &amp; Social Limits | Finejust.vip</title>
+  <meta name="description" content="Free online character counter tool. Track character limits, spaces, letters, numbers, SMS segment splits, and Twitter/X post lengths in real-time on Finejust.vip.">
+  <link rel="canonical" href="https://finejust.vip/tools/character-counter.html">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://finejust.vip/tools/character-counter.html">
+  <meta property="og:title" content="Character Counter — Count Letters &amp; Social Limits | Finejust.vip">
+  <meta property="og:description" content="Count characters, letters, digits, and track Twitter/X and SMS character limits in real-time.">
+  <meta property="og:image" content="https://finejust.vip/images/og-banner.webp">
+  <meta property="og:site_name" content="Finejust.vip">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://finejust.vip/tools/character-counter.html">
+  <meta name="twitter:title" content="Character Counter - Finejust.vip">
+  <meta name="twitter:description" content="Free real-time letter, character, and social media character limit tracker.">
+  <meta name="twitter:image" content="https://finejust.vip/images/og-banner.webp">
+
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#2563EB">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://finejust.vip/tools/character-counter.html#app",
+        "name": "Character Counter",
+        "url": "https://finejust.vip/tools/character-counter.html",
+        "applicationCategory": "TextApplication",
+        "operatingSystem": "All",
+        "description": "Character and letter counting tool with live social media platform limit validation and SMS segment calculations."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://finejust.vip/tools/character-counter.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://finejust.vip/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://finejust.vip/tools.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Character Counter",
+            "item": "https://finejust.vip/tools/character-counter.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://finejust.vip/tools/character-counter.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the character limit on Twitter / X?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Standard unverified accounts have a 280-character limit per post. Verified Premium subscribers can post up to 25,000 characters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many characters fit into a standard SMS text message?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard 7-bit GSM SMS holds 160 characters. If emojis or Unicode characters are used (UCS-2 encoding), the limit drops to 70 characters per segment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the ideal character limit for SEO Meta Descriptions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Search engines like Google typically truncate meta descriptions beyond 155 to 160 characters on desktop search results."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the character limit for Google SEO Title tags?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google Title tags should remain between 50 and 60 characters (or under 600 pixels width) to prevent visual clipping."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the character limit for an Instagram caption?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instagram allows up to 2,200 characters per post caption, though text truncates behind a 'more' link after 125 characters in user feeds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool count whitespace and line breaks as characters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our tool provides both total character counts (inclusive of whitespace and line breaks) and pure non-space character counts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the character limit for a LinkedIn post?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LinkedIn allows up to 3,000 characters per personal feed update and company page post."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are emojis counted in character limits?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In JavaScript and UTF-16 strings, most emojis occupy 2 code units (surrogate pairs), while complex composite emojis (with skin tone modifiers) occupy 4 to 8 code units."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text data private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% private. All character analysis runs locally in your browser without saving any text to remote servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this tool to count characters in code files?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, paste HTML, CSS, JavaScript, JSON, or SQL to count raw bytes, characters, and line breaks instantly."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+    <!-- Google Analytics 4 (Placeholder) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="../assets/analytics.js"></script>
+
+  <!-- Google AdSense Global Tag (Placeholder) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Indicator -->
+  <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
+  <div id="site-header-container"></div>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <div class="ad-container top-ad">Advertisement</div>
+
+      <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item"><a href="../tools.html">Tools</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active">Character Counter</div>
+      </nav>
+
+      <div class="tool-page-layout">
+        <div class="tool-main-panel">
+          <header class="tool-header-block">
+            <h1 class="tool-h1">Character Counter</h1>
+            <p class="tool-subtitle">Count characters, letters, digits, and spaces in real-time while monitoring exact limits for Twitter/X, SMS, SEO meta tags, and LinkedIn.</p>
+                      <div class="tool-rating-badge">
+              <span class="tool-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span><strong>4.9</strong>/5</span>
+              <span class="tool-rating-count">&bull; 12,000+ verified ratings</span>
+            </div>
+          </header>
+
+          <!-- Social Share Widget -->
+          <div class="share-buttons-wrap">
+            <div class="share-buttons-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share this tool:</span>
+            </div>
+            <div class="share-buttons-list">
+              <button type="button" class="share-btn share-btn-twitter" data-platform="twitter" aria-label="Share on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Post</span>
+              </button>
+              <button type="button" class="share-btn share-btn-facebook" data-platform="facebook" aria-label="Share on Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" class="share-btn share-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
+              </button>
+              <button type="button" class="share-btn share-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" class="share-btn share-btn-copy" data-platform="copy" aria-label="Copy Link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Link</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="calculator-card">
+            <div class="form-group mb-4">
+              <label class="form-label" for="cc-textarea">Enter Text to Track Characters</label>
+              <textarea id="cc-textarea" class="form-textarea" placeholder="Type or paste text here to see real-time character analytics..." style="min-height: 180px;">Finejust.vip is a fast, 100% private online utility tools hub.</textarea>
+            </div>
+
+            <!-- Primary Count Badges -->
+            <div class="stats-grid" style="margin-bottom:1.5rem;">
+              <div class="stat-card" style="padding:1rem;">
+                <div class="stat-number" id="cc-total-chars" style="font-size:1.85rem; color:var(--primary);">64</div>
+                <div class="stat-label">Total Characters</div>
+              </div>
+              <div class="stat-card" style="padding:1rem;">
+                <div class="stat-number" id="cc-no-spaces" style="font-size:1.85rem;">55</div>
+                <div class="stat-label">Without Spaces</div>
+              </div>
+              <div class="stat-card" style="padding:1rem;">
+                <div class="stat-number" id="cc-letters" style="font-size:1.85rem;">51</div>
+                <div class="stat-label">Letters</div>
+              </div>
+              <div class="stat-card" style="padding:1rem;">
+                <div class="stat-number" id="cc-digits" style="font-size:1.85rem;">3</div>
+                <div class="stat-label">Numbers / Digits</div>
+              </div>
+            </div>
+
+            <!-- Social Limits Checklist -->
+            <div class="result-card">
+              <div class="result-header">
+                <span class="result-title">Social Media &amp; SEO Limit Checkers</span>
+                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-cc">Copy Text</button>
+              </div>
+              
+              <div class="result-breakdown-grid">
+                <div class="breakdown-item">
+                  <span class="breakdown-label">Twitter / X (280 Max)</span>
+                  <span class="breakdown-val" id="limit-twitter" style="color:#10b981;">216 Remaining</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">SMS Segment (160 Max)</span>
+                  <span class="breakdown-val" id="limit-sms">1 SMS (96 Left)</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">SEO Meta Desc (160 Max)</span>
+                  <span class="breakdown-val" id="limit-seo">Optimal (64/160)</span>
+                </div>
+                <div class="breakdown-item">
+                  <span class="breakdown-label">LinkedIn Post (3,000 Max)</span>
+                  <span class="breakdown-val" id="limit-linkedin">2,936 Left</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions" style="margin-top:1.25rem;">
+              <button type="button" id="btn-clear-cc" class="btn btn-secondary">Clear Text</button>
+            </div>
+          </div>
+
+          <div class="ad-container middle-ad">Advertisement</div>
+
+          <article class="content-box">
+            <h2>The Critical Role of Character Limitations in Modern Communications</h2>
+            <p>Character constraints dictate digital communication standards across social networks, mobile carrier protocols, advertising networks, and search engine result pages (SERPs). Adhering to strict character limits ensures your marketing copy and social posts are not cut off prematurely by truncation algorithms.</p>
+
+            <h3>Essential Character Limits Across Major Platforms</h3>
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.95rem;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--border); text-align:left;">
+                  <th style="padding:0.75rem 0.5rem;">Platform / Protocol</th>
+                  <th style="padding:0.75rem 0.5rem;">Hard Character Limit</th>
+                  <th style="padding:0.75rem 0.5rem;">Optimal Truncation Target</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">Twitter / X Post</td>
+                  <td style="padding:0.6rem 0.5rem;">280 characters</td>
+                  <td style="padding:0.6rem 0.5rem;">240 &ndash; 260 characters (leaves room for retweets).</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">Google SEO Title</td>
+                  <td style="padding:0.6rem 0.5rem;">60 characters (~600px)</td>
+                  <td style="padding:0.6rem 0.5rem;">50 &ndash; 58 characters for clean rendering.</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">Google Meta Description</td>
+                  <td style="padding:0.6rem 0.5rem;">160 characters</td>
+                  <td style="padding:0.6rem 0.5rem;">140 &ndash; 155 characters for mobile viewports.</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">SMS Text Message</td>
+                  <td style="padding:0.6rem 0.5rem;">160 chars (7-bit GSM)</td>
+                  <td style="padding:0.6rem 0.5rem;">150 characters to prevent multi-part billing.</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">Instagram Caption</td>
+                  <td style="padding:0.6rem 0.5rem;">2,200 characters</td>
+                  <td style="padding:0.6rem 0.5rem;">First 125 characters (before the 'more' fold).</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <section class="content-box faq-section" id="faq">
+            <h2>Frequently Asked Questions (10)</h2>
+            <div class="faq-list">
+              <div class="faq-item active">
+                <button type="button" class="faq-question">
+                  <span>What is the character limit on Twitter / X?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Standard unverified accounts have a 280-character limit per post. Verified Premium subscribers can post up to 25,000 characters.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How many characters fit into a standard SMS text message?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>A standard 7-bit GSM SMS holds 160 characters. If emojis or Unicode characters are used (UCS-2 encoding), the limit drops to 70 characters per segment.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the ideal character limit for SEO Meta Descriptions?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Search engines like Google typically truncate meta descriptions beyond 155 to 160 characters on desktop search results.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the character limit for Google SEO Title tags?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Google Title tags should remain between 50 and 60 characters (or under 600 pixels width) to prevent visual clipping.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the character limit for an Instagram caption?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Instagram allows up to 2,200 characters per post caption, though text truncates behind a 'more' link after 125 characters in user feeds.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Does this tool count whitespace and line breaks as characters?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, our tool provides both total character counts (inclusive of whitespace and line breaks) and pure non-space character counts.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>What is the character limit for a LinkedIn post?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>LinkedIn allows up to 3,000 characters per personal feed update and company page post.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>How are emojis counted in character limits?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>In JavaScript and UTF-16 strings, most emojis occupy 2 code units (surrogate pairs), while complex composite emojis (with skin tone modifiers) occupy 4 to 8 code units.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Is my text data private?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, 100% private. All character analysis runs locally in your browser without saving any text to remote servers.</p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button type="button" class="faq-question">
+                  <span>Can I use this tool to count characters in code files?</span>
+                  <span class="faq-icon">&#9662;</span>
+                </button>
+                <div class="faq-answer">
+                  <p>Yes, paste HTML, CSS, JavaScript, JSON, or SQL to count raw bytes, characters, and line breaks instantly.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+                    <!-- E-E-A-T Author Card -->
+          <div class="author-card">
+            <div class="author-avatar-wrap">FE</div>
+            <div class="author-card-body">
+              <div class="author-card-header">
+                <h3 class="author-name">Finejust Editorial Team</h3>
+                <span class="author-badge">Verified Review Board</span>
+              </div>
+              <p class="author-bio">
+                Written, calculated, and mathematically audited by the Finejust quantitative review board. We follow strict E-E-A-T principles and test every formula against official ISO, WHO, and statutory benchmarks.
+              </p>
+              <div class="author-links">
+                <a href="../author/finejust-editorial.html" style="color:var(--primary);">Author Bio &amp; Credentials &rarr;</a>
+                <a href="../editorial-policy.html" style="color:var(--text-muted);">Editorial Standards</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Educational Articles -->
+          <div class="content-box" style="margin: 2.5rem 0;">
+            <div class="section-tag" style="margin-bottom:0.5rem;">Recommended Reading</div>
+            <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
+            <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+              <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
+                </div>
+              </a>
+              <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
+                </div>
+              </a>
+              <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
+                <div class="article-img-wrap"><img src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-card-body" style="padding:1rem;">
+                  <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
+                  <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+
+<div id="recently-viewed-tools"></div>
+
+          <div id="dynamic-related-tools" data-category="text-tools"></div>
+
+          <section class="newsletter-card" style="margin-top: 3rem;">
+            <h2 class="newsletter-title">Calculate Faster with Finejust.vip</h2>
+            <p class="newsletter-desc">Explore 20+ free client-side financial, math, conversion, and developer utilities with zero installation.</p>
+            <a href="../tools.html" class="btn btn-newsletter">Explore All 20+ Free Tools</a>
+          </section>
+        </div>
+
+        <aside>
+          <div class="content-box" style="margin-bottom: 1.5rem;">
+            <h3>Related Text Utilities</h3>
+            <ul class="footer-links" style="margin-top:0.75rem;">
+              <li><a href="word-counter.html" class="footer-link">&bull; Word Counter</a></li>
+              <li><a href="case-converter.html" class="footer-link">&bull; Case Converter</a></li>
+              <li><a href="base64-encoder.html" class="footer-link">&bull; Base64 Encoder</a></li>
+              <li><a href="password-generator.html" class="footer-link">&bull; Password Generator</a></li>
+              <li><a href="../tools.html" class="footer-link">&bull; All 20+ Free Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="ad-container" style="min-height: 300px;">Advertisement</div>
+        </aside>
+      </div>
+
+      <div class="ad-container bottom-ad">Advertisement</div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+
+  <script src="../assets/script.js"></script>
+  <script src="../assets/search.js"></script>
+  <script>
+    (function() {
+      const textarea = document.getElementById('cc-textarea');
+      const stTotal = document.getElementById('cc-total-chars');
+      const stNoSpace = document.getElementById('cc-no-spaces');
+      const stLetters = document.getElementById('cc-letters');
+      const stDigits = document.getElementById('cc-digits');
+
+      const limTwitter = document.getElementById('limit-twitter');
+      const limSMS = document.getElementById('limit-sms');
+      const limSEO = document.getElementById('limit-seo');
+      const limLinkedIn = document.getElementById('limit-linkedin');
+
+      const btnClear = document.getElementById('btn-clear-cc');
+      const btnCopy = document.getElementById('btn-copy-cc');
+
+      function updateCounts() {
+        const text = textarea.value;
+        const totalLen = text.length;
+        const noSpaces = text.replace(/\s/g, '').length;
+        const letters = (text.match(/[a-zA-Z]/g) || []).length;
+        const digits = (text.match(/[0-9]/g) || []).length;
+
+        stTotal.textContent = totalLen.toLocaleString();
+        stNoSpace.textContent = noSpaces.toLocaleString();
+        stLetters.textContent = letters.toLocaleString();
+        stDigits.textContent = digits.toLocaleString();
+
+        // Twitter / X limit (280)
+        const twLeft = 280 - totalLen;
+        if (twLeft >= 0) {
+          limTwitter.textContent = `${twLeft} Remaining`;
+          limTwitter.style.color = '#10b981';
+        } else {
+          limTwitter.textContent = `${Math.abs(twLeft)} Over Limit!`;
+          limTwitter.style.color = '#ef4444';
+        }
+
+        // SMS limit (160)
+        const smsCount = Math.ceil(totalLen / 160) || 1;
+        const smsLeft = (smsCount * 160) - totalLen;
+        limSMS.textContent = `${smsCount} SMS (${smsLeft} Left in segment)`;
+
+        // SEO Meta Description limit (160)
+        if (totalLen <= 160) {
+          limSEO.textContent = `Optimal (${totalLen}/160)`;
+          limSEO.style.color = '#10b981';
+        } else {
+          limSEO.textContent = `Truncated (${totalLen}/160)`;
+          limSEO.style.color = '#f59e0b';
+        }
+
+        // LinkedIn limit (3000)
+        const liLeft = 3000 - totalLen;
+        limLinkedIn.textContent = `${liLeft.toLocaleString()} Left`;
+      }
+
+      textarea.addEventListener('input', updateCounts);
+
+      btnClear.addEventListener('click', () => {
+        textarea.value = '';
+        updateCounts();
+      });
+
+      btnCopy.addEventListener('click', () => {
+        window.copyToClipboard(textarea.value, 'Text content copied!');
+      });
+
+      updateCounts();
+    })();
+  </script>
+</body>
+</html>

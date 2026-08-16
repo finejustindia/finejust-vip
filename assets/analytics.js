@@ -1,7 +1,7 @@
 /**
  * Google Analytics 4 (GA4) Global Site Tag
  * Brand: Finejust.vip
- * Production Measurement ID: G-Y47ZCSRFX9
+ * Production Measurement ID: G-HXVBES3BJF
  */
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

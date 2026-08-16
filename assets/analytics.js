@@ -8,7 +8,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 // Configuration with performance and privacy optimizations
-gtag('config', 'G-Y47ZCSRFX9', {
+gtag('config', 'G-HXVBES3BJF', {
   'anonymize_ip': true,
   'cookie_flags': 'SameSite=None;Secure'
 });

@@ -234,7 +234,7 @@
                 <li><a href="${rootPrefix}tools.html?category=calculators" class="footer-link">Calculators</a></li>
                 <li><a href="${rootPrefix}tools.html?category=converters" class="footer-link">Unit Converters</a></li>
                 <li><a href="${rootPrefix}tools.html?category=finance" class="footer-link">Finance Utilities</a></li>
-                <li><a href="${rootPrefix}tools.html?category=developer" class="footer-link">Dev &amp; AI Utilities</a></li>
+                <li><a href="${rootPrefix}tools.html?category=web-tools" class="footer-link">Dev &amp; AI Utilities</a></li>
                 <li><a href="${rootPrefix}tools.html" class="footer-link" style="color:var(--primary); font-weight:700;">All 20+ Free Tools &rarr;</a></li>
               </ul>
             </div>
@@ -668,6 +668,223 @@
     });
   }
 
+  // ==========================================================================
+  // Reusable Universal Print Engine (Clones Live DOM Tool Result Section)
+  // ==========================================================================
+  window.printCurrentTool = function() {
+    const toolH1 = document.querySelector('.tool-h1');
+    const toolTitle = toolH1 ? toolH1.textContent.trim() : (document.title.split('â€”')[0].split('-')[0].trim() || 'Calculation Report');
+
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+    const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
+    const isQR = path.includes('qr-code-generator') || (document.getElementById('qr-hero-preview') !== null);
+
+    let printableBody = null;
+
+    if (isQR) {
+      // 1. QR Code Generator Specific: Print ONLY the QR Code
+      const qrCanvas = document.getElementById('qr-hero-preview');
+      let qrImgSrc = '';
+      if (qrCanvas) {
+        try {
+          qrImgSrc = qrCanvas.toDataURL('image/png');
+        } catch(e) {
+          qrImgSrc = '';
+        }
+      }
+
+      const activeTabBtn = document.querySelector('#qr-tab-nav .filter-btn.active');
+      const tabName = activeTabBtn ? activeTabBtn.textContent.trim() : 'Website URL';
+
+      let payload = document.getElementById('qr-input-url')?.value || 
+                    document.getElementById('qr-input-text')?.value || 
+                    document.getElementById('wifi-ssid')?.value || 
+                    'https://finejust.vip';
+
+      const eccVal = document.getElementById('sidebar-qr-ecc')?.textContent || 'Level M (15%)';
+      const resVal = document.getElementById('sidebar-qr-res')?.textContent || '512 Ã— 512 px';
+
+      const qrContainer = document.createElement('div');
+      qrContainer.className = 'print-qr-exclusive-card';
+      qrContainer.innerHTML = `
+        <div class="print-qr-box-wrapper" style="text-align: center; padding: 25px 0;">
+          <div class="print-qr-code-frame" style="display: inline-block; background: #ffffff; border: 2.5px solid #0f172a; border-radius: 16px; padding: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); margin-bottom: 20px;">
+            ${qrImgSrc ? `<img src="${qrImgSrc}" alt="Scannable QR Code" style="width: 280px; height: 280px; display: block; margin: 0 auto; image-rendering: pixelated;" />` : ''}
+          </div>
+          <div class="print-qr-meta-info" style="max-width: 500px; margin: 0 auto; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; text-align: center;">
+            <div style="font-size: 14px; font-weight: 800; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Payload Type: ${tabName}</div>
+            <div style="font-size: 13.5px; font-weight: 700; color: #0f172a; word-break: break-all; margin-bottom: 6px; line-height: 1.4;">${payload}</div>
+            <div style="font-size: 11px; color: #64748b; font-weight: 600;">Resolution: ${resVal} &bull; Error Correction: ${eccVal} &bull; 100% Static & Permanent</div>
+          </div>
+        </div>
+      `;
+      printableBody = qrContainer;
+    } else {
+      // 2. All Other Tools: Clone the live tool card directly from the webpage
+      const targetContainer = document.querySelector('.calculator-card') || 
+                              document.querySelector('.tool-main-panel') || 
+                              document.querySelector('.tool-page-layout');
+
+      if (!targetContainer) {
+        window.print();
+        return;
+      }
+
+      const clonedNode = targetContainer.cloneNode(true);
+
+      const removeSelectors = [
+        '.form-actions',
+        '.preset-chips-wrap',
+        '.calc-badge-group',
+        '.calc-card-top-bar',
+        '.share-buttons-wrap',
+        '.reading-progress-container',
+        '#btn-set-today',
+        '.btn-today-chip',
+        'button',
+        '.btn'
+      ];
+      removeSelectors.forEach(sel => {
+        clonedNode.querySelectorAll(sel).forEach(el => el.remove());
+      });
+
+      clonedNode.querySelectorAll('.calc-panel.hidden').forEach(el => el.remove());
+
+      const origInputs = targetContainer.querySelectorAll('input, select, textarea');
+      const clonedInputs = clonedNode.querySelectorAll('input, select, textarea');
+      for (let i = 0; i < origInputs.length; i++) {
+        const orig = origInputs[i];
+        const cl = clonedInputs[i];
+        if (!cl) continue;
+
+        if (orig.tagName.toLowerCase() === 'select') {
+          const selText = orig.options[orig.selectedIndex]?.text || orig.value;
+          const valSpan = document.createElement('div');
+          valSpan.className = 'print-input-val-badge';
+          valSpan.textContent = selText;
+          cl.parentNode.replaceChild(valSpan, cl);
+        } else if (orig.type === 'checkbox' || orig.type === 'radio') {
+          cl.checked = orig.checked;
+          if (orig.checked) cl.setAttribute('checked', 'checked');
+          else cl.removeAttribute('checked');
+        } else {
+          const valSpan = document.createElement('div');
+          valSpan.className = 'print-input-val-badge';
+          valSpan.textContent = orig.value || 'â€”';
+          cl.parentNode.replaceChild(valSpan, cl);
+        }
+      }
+
+      const origCanvases = targetContainer.querySelectorAll('canvas');
+      const clonedCanvases = clonedNode.querySelectorAll('canvas');
+      origCanvases.forEach((origCanvas, idx) => {
+        const clonedCanvas = clonedCanvases[idx];
+        if (clonedCanvas && origCanvas.width > 0 && origCanvas.height > 0) {
+          clonedCanvas.width = origCanvas.width;
+          clonedCanvas.height = origCanvas.height;
+          const ctx = clonedCanvas.getContext('2d');
+          if (ctx) ctx.drawImage(origCanvas, 0, 0);
+        }
+      });
+
+      printableBody = clonedNode;
+    }
+
+    // Build the dedicated Print Document
+    const oldDocs = document.querySelectorAll('.print-document, .print-report, .print-area');
+    oldDocs.forEach(el => el.remove());
+
+    const printDoc = document.createElement('div');
+    printDoc.className = 'print-document';
+    printDoc.innerHTML = `
+      <!-- PRINT HEADER -->
+      <div class="print-doc-header">
+        <div class="print-doc-brand">
+          <div class="print-doc-logo-icon">FJ</div>
+          <div class="print-doc-brand-details">
+            <div class="print-doc-brand-name">Finejust<span class="dot-vip">.vip</span></div>
+            <div class="print-doc-tagline">All-in-One Free Online Tools</div>
+          </div>
+        </div>
+        <div class="print-doc-meta">
+          <div class="print-doc-tool-title">${toolTitle}</div>
+          <div class="print-doc-timestamp">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Generated on ${formattedDate}, ${formattedTime}</span>
+          </div>
+        </div>
+      </div>
+      <div class="print-doc-divider"></div>
+
+      <!-- PRINT BODY -->
+      <div class="print-doc-body"></div>
+
+      <!-- PRINT FOOTER -->
+      <div class="print-doc-footer">
+        <div class="print-footer-brand">Generated by Finejust.vip</div>
+        <div class="print-footer-url">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span>https://finejust.vip</span>
+        </div>
+        <div class="print-footer-page">Page 1 of 1</div>
+      </div>
+    `;
+
+    printDoc.querySelector('.print-doc-body').appendChild(printableBody);
+    document.body.appendChild(printDoc);
+
+    window.print();
+  };
+
+  // Backwards compatibility aliases
+  window.printToolReport = window.printCurrentTool;
+  window.printToolResult = window.printCurrentTool;
+
+  // Tool Action Bar Helper (Share Result & Print PDF)
+  function initToolActionButtons() {
+    document.addEventListener('click', function(e) {
+      const btnPrint = e.target.closest('#btn-print-tool');
+      if (btnPrint) {
+        window.printCurrentTool();
+        return;
+      }
+
+      const btnShare = e.target.closest('#btn-share-tool');
+      if (btnShare) {
+        const rawUrl = window.location.href;
+        const rawTitle = document.title || 'Finejust.vip Free Online Tools';
+
+        const copySummaryBtn = document.getElementById('btn-copy-summary') || 
+                               document.getElementById('btn-copy-age') || 
+                               document.getElementById('btn-copy-bmi') ||
+                               document.getElementById('btn-copy-wc') ||
+                               document.getElementById('btn-copy-pw');
+
+        if (navigator.share) {
+          navigator.share({
+            title: rawTitle,
+            text: `Finejust.vip Tool Calculation:\n`,
+            url: rawUrl
+          }).then(() => {
+            window.showToast('Shared successfully!');
+          }).catch(() => {
+            if (copySummaryBtn) copySummaryBtn.click();
+            else window.copyToClipboard(rawUrl, 'Tool link copied to clipboard!');
+          });
+        } else {
+          if (copySummaryBtn) {
+            copySummaryBtn.click();
+          } else {
+            window.copyToClipboard(rawUrl, 'Tool link copied to clipboard!');
+          }
+        }
+      }
+    });
+  }
+
   // Floating Back to Top Button Initializer
   function initBackToTop() {
     let btn = document.getElementById('back-to-top');
@@ -837,6 +1054,7 @@
       initDynamicRelatedTools();
       initReadingProgressBar();
       initShareButtons();
+      initToolActionButtons();
       initStickyTOC();
       initResponsiveTables();
       initBackToTop();
@@ -849,6 +1067,7 @@
     initDynamicRelatedTools();
     initReadingProgressBar();
     initShareButtons();
+    initToolActionButtons();
     initStickyTOC();
     initResponsiveTables();
     initBackToTop();

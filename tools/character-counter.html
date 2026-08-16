@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+        
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -271,51 +267,57 @@
             <div class="stats-grid" style="margin-bottom:1.5rem;">
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="cc-total-chars" style="font-size:1.85rem; color:var(--primary);">64</div>
-                <div class="stat-label">Total Characters</div>
+                <div class="stat-label">🔤 Total Characters</div>
               </div>
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="cc-no-spaces" style="font-size:1.85rem;">55</div>
-                <div class="stat-label">Without Spaces</div>
+                <div class="stat-label">🔡 Without Spaces</div>
               </div>
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="cc-letters" style="font-size:1.85rem;">51</div>
-                <div class="stat-label">Letters</div>
+                <div class="stat-label">📝 Letters</div>
               </div>
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="cc-digits" style="font-size:1.85rem;">3</div>
-                <div class="stat-label">Numbers / Digits</div>
+                <div class="stat-label">🔢 Numbers / Digits</div>
               </div>
             </div>
 
             <!-- Social Limits Checklist -->
             <div class="result-card age-result-hero">
               <div class="result-header">
-                <span class="result-title">Social Media &amp; SEO Limit Checkers</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-cc">Copy Text</button>
+                <span class="result-title">📱 Social Media &amp; SEO Limit Checkers</span>
               </div>
               
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Twitter / X (280 Max)</span>
+                  <span class="breakdown-label">🐦 Twitter / X (280 Max)</span>
                   <span class="breakdown-val" id="limit-twitter" style="color:#10b981;">216 Remaining</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">SMS Segment (160 Max)</span>
+                  <span class="breakdown-label">💬 SMS Segment (160 Max)</span>
                   <span class="breakdown-val" id="limit-sms">1 SMS (96 Left)</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">SEO Meta Desc (160 Max)</span>
+                  <span class="breakdown-label">🔍 SEO Meta Desc (160 Max)</span>
                   <span class="breakdown-val" id="limit-seo">Optimal (64/160)</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">LinkedIn Post (3,000 Max)</span>
+                  <span class="breakdown-label">💼 LinkedIn Post (3,000 Max)</span>
                   <span class="breakdown-val" id="limit-linkedin">2,936 Left</span>
                 </div>
               </div>
             </div>
 
-            <div class="form-actions" style="margin-top:1.25rem;">
-              <button type="button" id="btn-clear-cc" class="btn btn-secondary">Clear Text</button>
+                                    <div class="form-actions" style="margin-top:1.25rem;">
+              <button type="button" id="btn-copy-cc" class="btn btn-primary">Copy Text</button>
+              <button type="button" id="btn-clear-cc" class="btn btn-secondary">Clear</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
           </div>
 
@@ -493,21 +495,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -552,74 +554,116 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
+(function() {
+      'use strict';
       const textarea = document.getElementById('cc-textarea');
-      const stTotal = document.getElementById('cc-total-chars');
-      const stNoSpace = document.getElementById('cc-no-spaces');
-      const stLetters = document.getElementById('cc-letters');
-      const stDigits = document.getElementById('cc-digits');
+      const statTotal = document.getElementById('cc-total-chars');
+      const statNoSpaces = document.getElementById('cc-no-spaces');
+      const statLetters = document.getElementById('cc-letters');
+      const statDigits = document.getElementById('cc-digits');
 
-      const limTwitter = document.getElementById('limit-twitter');
-      const limSMS = document.getElementById('limit-sms');
-      const limSEO = document.getElementById('limit-seo');
-      const limLinkedIn = document.getElementById('limit-linkedin');
+      const limitTwitter = document.getElementById('limit-twitter');
+      const limitSms = document.getElementById('limit-sms');
+      const limitSeo = document.getElementById('limit-seo');
+      const limitLinkedin = document.getElementById('limit-linkedin');
 
-      const btnClear = document.getElementById('btn-clear-cc');
       const btnCopy = document.getElementById('btn-copy-cc');
+      const btnClear = document.getElementById('btn-clear-cc');
+      const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      function updateCounts() {
-        const text = textarea.value;
-        const totalLen = text.length;
+      function updateStats() {
+        const text = textarea ? textarea.value : '';
+        const total = text.length;
+
+        if (total === 0) {
+          if (statTotal) statTotal.textContent = '0';
+          if (statNoSpaces) statNoSpaces.textContent = '0';
+          if (statLetters) statLetters.textContent = '0';
+          if (statDigits) statDigits.textContent = '0';
+          if (limitTwitter) {
+            limitTwitter.textContent = '280 Remaining';
+            limitTwitter.style.color = '#10b981';
+          }
+          if (limitSms) limitSms.textContent = '0 SMS (160 Left)';
+          if (limitSeo) limitSeo.textContent = '0 / 160 Chars';
+          if (limitLinkedin) limitLinkedin.textContent = '3,000 Left';
+          return;
+        }
+
         const noSpaces = text.replace(/\s/g, '').length;
         const letters = (text.match(/[a-zA-Z]/g) || []).length;
         const digits = (text.match(/[0-9]/g) || []).length;
 
-        stTotal.textContent = totalLen.toLocaleString();
-        stNoSpace.textContent = noSpaces.toLocaleString();
-        stLetters.textContent = letters.toLocaleString();
-        stDigits.textContent = digits.toLocaleString();
+        if (statTotal) statTotal.textContent = total;
+        if (statNoSpaces) statNoSpaces.textContent = noSpaces;
+        if (statLetters) statLetters.textContent = letters;
+        if (statDigits) statDigits.textContent = digits;
 
-        // Twitter / X limit (280)
-        const twLeft = 280 - totalLen;
-        if (twLeft >= 0) {
-          limTwitter.textContent = `${twLeft} Remaining`;
-          limTwitter.style.color = '#10b981';
-        } else {
-          limTwitter.textContent = `${Math.abs(twLeft)} Over Limit!`;
-          limTwitter.style.color = '#ef4444';
+        // Platform limits
+        const twLeft = 280 - total;
+        if (limitTwitter) {
+          limitTwitter.textContent = twLeft >= 0 ? `${twLeft} Remaining` : `${Math.abs(twLeft)} Over Limit`;
+          limitTwitter.style.color = twLeft >= 0 ? '#10b981' : '#ef4444';
         }
 
-        // SMS limit (160)
-        const smsCount = Math.ceil(totalLen / 160) || 1;
-        const smsLeft = (smsCount * 160) - totalLen;
-        limSMS.textContent = `${smsCount} SMS (${smsLeft} Left in segment)`;
-
-        // SEO Meta Description limit (160)
-        if (totalLen <= 160) {
-          limSEO.textContent = `Optimal (${totalLen}/160)`;
-          limSEO.style.color = '#10b981';
-        } else {
-          limSEO.textContent = `Truncated (${totalLen}/160)`;
-          limSEO.style.color = '#f59e0b';
+        const smsCount = Math.ceil(total / 160) || 1;
+        const smsLeft = (smsCount * 160) - total;
+        if (limitSms) {
+          limitSms.textContent = `${smsCount} SMS (${smsLeft} Left)`;
         }
 
-        // LinkedIn limit (3000)
-        const liLeft = 3000 - totalLen;
-        limLinkedIn.textContent = `${liLeft.toLocaleString()} Left`;
+        if (limitSeo) {
+          if (total <= 160) limitSeo.textContent = `Optimal (${total}/160)`;
+          else limitSeo.textContent = `Truncated (${total}/160)`;
+        }
+
+        if (limitLinkedin) {
+          const liLeft = 3000 - total;
+          limitLinkedin.textContent = `${liLeft.toLocaleString()} Left`;
+        }
       }
 
-      textarea.addEventListener('input', updateCounts);
+      if (textarea) textarea.addEventListener('input', updateStats);
 
-      btnClear.addEventListener('click', () => {
-        textarea.value = '';
-        updateCounts();
-      });
+      if (btnClear) {
+        btnClear.addEventListener('click', () => {
+          if (textarea) textarea.value = '';
+          updateStats();
+          if (textarea) textarea.focus();
+        });
+      }
 
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(textarea.value, 'Text content copied!');
-      });
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          if (textarea && textarea.value) {
+            window.copyToClipboard(textarea.value, 'Text copied to clipboard!');
+          }
+        });
+      }
 
-      updateCounts();
+      if (btnCopySummary) {
+        btnCopySummary.addEventListener('click', () => {
+          const c = statTotal ? statTotal.textContent : '0';
+          const ns = statNoSpaces ? statNoSpaces.textContent : '0';
+          const l = statLetters ? statLetters.textContent : '0';
+          const d = statDigits ? statDigits.textContent : '0';
+
+          const summary = [
+            '\u{1F524} Finejust.vip Character Count Summary',
+            '----------------------------------------',
+            `\u{1F524} Total Characters: ${c}`,
+            `\u{2728} Characters (No Spaces): ${ns}`,
+            `\u{1F520} Alphabet Letters: ${l}`,
+            `\u{1F522} Numeric Digits: ${d}`,
+            '----------------------------------------',
+            'Count characters free on: https://www.finejust.vip/tools/character-counter.html'
+          ].join('\n');
+
+          window.copyToClipboard(summary, 'Character summary copied!');
+        });
+      }
+
+      updateStats();
     })();
   </script>
 </body>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+      
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -263,25 +259,26 @@
 
             <!-- Transformation Button Palette -->
             <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem;">
-              <button type="button" class="btn btn-secondary" id="btn-upper">UPPERCASE</button>
-              <button type="button" class="btn btn-secondary" id="btn-lower">lowercase</button>
-              <button type="button" class="btn btn-secondary" id="btn-title">Title Case</button>
-              <button type="button" class="btn btn-secondary" id="btn-sentence">Sentence case</button>
-              <button type="button" class="btn btn-secondary" id="btn-camel">camelCase</button>
-              <button type="button" class="btn btn-secondary" id="btn-pascal">PascalCase</button>
-              <button type="button" class="btn btn-secondary" id="btn-snake">snake_case</button>
-              <button type="button" class="btn btn-secondary" id="btn-kebab">kebab-case</button>
-              <button type="button" class="btn btn-secondary" id="btn-constant">CONSTANT_CASE</button>
+              <button type="button" class="btn btn-secondary" id="btn-upper">🔠 UPPERCASE</button>
+              <button type="button" class="btn btn-secondary" id="btn-lower">🔡 lowercase</button>
+              <button type="button" class="btn btn-secondary" id="btn-title">📰 Title Case</button>
+              <button type="button" class="btn btn-secondary" id="btn-sentence">📝 Sentence case</button>
+              <button type="button" class="btn btn-secondary" id="btn-camel">🐪 camelCase</button>
+              <button type="button" class="btn btn-secondary" id="btn-pascal">🏛️ PascalCase</button>
+              <button type="button" class="btn btn-secondary" id="btn-snake">🐍 snake_case</button>
+              <button type="button" class="btn btn-secondary" id="btn-kebab">🍢 kebab-case</button>
+              <button type="button" class="btn btn-secondary" id="btn-constant">⚡ CONSTANT_CASE</button>
             </div>
 
-            <div class="form-actions" style="justify-content:space-between;">
-              <div style="font-size:0.85rem; color:var(--text-muted);" id="case-char-info">
-                Words: <strong id="case-words">13</strong> | Chars: <strong id="case-chars">99</strong>
-              </div>
-              <div style="display:flex; gap:0.75rem;">
-                <button type="button" id="btn-copy-case" class="btn btn-primary">Copy Converted Text</button>
-                <button type="button" id="btn-clear-case" class="btn btn-outline">Clear</button>
-              </div>
+            <div class="form-actions" style="margin-top:1.5rem;">
+              <button type="button" id="btn-copy-case" class="btn btn-primary">Copy Text</button>
+              <button type="button" id="btn-clear-case" class="btn btn-secondary">Clear</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
           </div>
 
@@ -459,21 +456,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -518,92 +515,96 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const textarea = document.getElementById('case-input');
-      const wordsEl = document.getElementById('case-words');
-      const charsEl = document.getElementById('case-chars');
+(function() {
+      'use strict';
+      const textInput = document.getElementById('case-input');
+      const btnUpper = document.getElementById('btn-upper');
+      const btnLower = document.getElementById('btn-lower');
+      const btnTitle = document.getElementById('btn-title');
+      const btnSentence = document.getElementById('btn-sentence');
+      const btnCamel = document.getElementById('btn-camel');
+      const btnPascal = document.getElementById('btn-pascal');
+      const btnSnake = document.getElementById('btn-snake');
+      const btnKebab = document.getElementById('btn-kebab');
+      const btnConstant = document.getElementById('btn-constant');
 
-      function updateStats() {
-        const val = textarea.value;
-        charsEl.textContent = val.length;
-        const words = val.trim() ? val.trim().split(/\s+/).length : 0;
-        wordsEl.textContent = words;
+      const btnCopy = document.getElementById('btn-copy-case');
+      const btnClear = document.getElementById('btn-clear-case');
+      const btnCopySummary = document.getElementById('btn-copy-summary');
+
+      function toTitleCase(str) {
+        return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
       }
 
-      document.getElementById('btn-upper').addEventListener('click', () => {
-        textarea.value = textarea.value.toUpperCase();
-        updateStats();
-      });
+      function toSentenceCase(str) {
+        return str.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase());
+      }
 
-      document.getElementById('btn-lower').addEventListener('click', () => {
-        textarea.value = textarea.value.toLowerCase();
-        updateStats();
-      });
+      function toCamelCase(str) {
+        return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+      }
 
-      document.getElementById('btn-title').addEventListener('click', () => {
-        textarea.value = textarea.value.toLowerCase().replace(/(?:^|\s|\-)\w/g, m => m.toUpperCase());
-        updateStats();
-      });
+      function toPascalCase(str) {
+        const camel = toCamelCase(str);
+        return camel.charAt(0).toUpperCase() + camel.slice(1);
+      }
 
-      document.getElementById('btn-sentence').addEventListener('click', () => {
-        textarea.value = textarea.value.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, m => m.toUpperCase());
-        updateStats();
-      });
+      function toKebabCase(str) {
+        return str.toLowerCase().trim().replace(/[^a-zA-Z0-9]+/g, '-');
+      }
 
-      document.getElementById('btn-camel').addEventListener('click', () => {
-        textarea.value = textarea.value
-          .toLowerCase()
-          .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
-          .replace(/^[A-Z]/, c => c.toLowerCase());
-        updateStats();
-      });
+      function toSnakeCase(str) {
+        return str.toLowerCase().trim().replace(/[^a-zA-Z0-9]+/g, '_');
+      }
 
-      document.getElementById('btn-pascal').addEventListener('click', () => {
-        textarea.value = textarea.value
-          .toLowerCase()
-          .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase())
-          .replace(/^[a-z]/, c => c.toUpperCase());
-        updateStats();
-      });
+      function toConstantCase(str) {
+        return str.toUpperCase().trim().replace(/[^a-zA-Z0-9]+/g, '_');
+      }
 
-      document.getElementById('btn-snake').addEventListener('click', () => {
-        textarea.value = textarea.value
-          .trim()
-          .toLowerCase()
-          .replace(/[\s\-]+/g, '_')
-          .replace(/[^a-zA-Z0-9_]/g, '');
-        updateStats();
-      });
+      if (btnUpper) btnUpper.addEventListener('click', () => { if (textInput) textInput.value = textInput.value.toUpperCase(); });
+      if (btnLower) btnLower.addEventListener('click', () => { if (textInput) textInput.value = textInput.value.toLowerCase(); });
+      if (btnTitle) btnTitle.addEventListener('click', () => { if (textInput) textInput.value = toTitleCase(textInput.value); });
+      if (btnSentence) btnSentence.addEventListener('click', () => { if (textInput) textInput.value = toSentenceCase(textInput.value); });
+      if (btnCamel) btnCamel.addEventListener('click', () => { if (textInput) textInput.value = toCamelCase(textInput.value); });
+      if (btnPascal) btnPascal.addEventListener('click', () => { if (textInput) textInput.value = toPascalCase(textInput.value); });
+      if (btnSnake) btnSnake.addEventListener('click', () => { if (textInput) textInput.value = toSnakeCase(textInput.value); });
+      if (btnKebab) btnKebab.addEventListener('click', () => { if (textInput) textInput.value = toKebabCase(textInput.value); });
+      if (btnConstant) btnConstant.addEventListener('click', () => { if (textInput) textInput.value = toConstantCase(textInput.value); });
 
-      document.getElementById('btn-kebab').addEventListener('click', () => {
-        textarea.value = textarea.value
-          .trim()
-          .toLowerCase()
-          .replace(/[\s_]+/g, '-')
-          .replace(/[^a-zA-Z0-9\-]/g, '');
-        updateStats();
-      });
+      if (btnClear) {
+        btnClear.addEventListener('click', () => {
+          if (textInput) textInput.value = '';
+          if (textInput) textInput.focus();
+        });
+      }
 
-      document.getElementById('btn-constant').addEventListener('click', () => {
-        textarea.value = textarea.value
-          .trim()
-          .toUpperCase()
-          .replace(/[\s\-]+/g, '_')
-          .replace(/[^A-Z0-9_]/g, '');
-        updateStats();
-      });
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          if (textInput && textInput.value) {
+            window.copyToClipboard(textInput.value, 'Converted text copied to clipboard!');
+          }
+        });
+      }
 
-      document.getElementById('btn-copy-case').addEventListener('click', () => {
-        window.copyToClipboard(textarea.value, 'Converted text copied!');
-      });
+      if (btnCopySummary) {
+        btnCopySummary.addEventListener('click', () => {
+          const txt = textInput ? textInput.value : '';
+          const words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+          const chars = txt.length;
 
-      document.getElementById('btn-clear-case').addEventListener('click', () => {
-        textarea.value = '';
-        updateStats();
-      });
+          const summary = [
+            '\u{1F4DD} Finejust.vip Case Converter Summary',
+            '----------------------------------------',
+            `\u{1F4CA} Content Statistics: ${words} Words, ${chars} Characters`,
+            '\u{2B50} Transformed Text Output:',
+            txt,
+            '----------------------------------------',
+            'Convert text case free on: https://www.finejust.vip/tools/case-converter.html'
+          ].join('\n');
 
-      textarea.addEventListener('input', updateStats);
-      updateStats();
+          window.copyToClipboard(summary, 'Converted text summary copied!');
+        });
+      }
     })();
   </script>
 </body>

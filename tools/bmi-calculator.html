@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -170,11 +165,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -341,15 +336,20 @@
               </button>
               <button type="button" class="btn btn-outline" id="btn-copy-bmi">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                <span>Copy Result</span>
+                <span>Copy Summary</span>
               </button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
             <!-- Result Hero Card -->
-            <div class="result-card age-result-hero" id="bmi-result-card">
+            <div class="result-card age-result-hero hidden" id="bmi-result-card">
               <div class="result-hero-top">
                 <div>
-                  <span class="result-title">Your Body Mass Index</span>
+                  <span class="result-title">⚖️ Your Body Mass Index</span>
                   <div class="result-date-stamp" id="bmi-summary-stamp">Status: Healthy Range</div>
                 </div>
                 <div class="zodiac-badge" id="bmi-category-val" style="background:rgba(16,185,129,0.15); color:#10b981; border-color:rgba(16,185,129,0.3);">Normal Weight</div>
@@ -605,21 +605,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -664,7 +664,8 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
+(function() {
+      'use strict';
       let unit = 'metric';
       const unitBtns = document.querySelectorAll('#bmi-unit-nav .filter-btn');
       const panelM = document.getElementById('panel-metric');
@@ -678,6 +679,7 @@
 
       const resScore = document.getElementById('bmi-score-val');
       const resCat = document.getElementById('bmi-category-val');
+      const resStamp = document.getElementById('bmi-summary-stamp');
       const resIdeal = document.getElementById('bmi-ideal-weight');
       const resPrime = document.getElementById('bmi-prime-val');
       const resPonderal = document.getElementById('bmi-ponderal-val');
@@ -685,170 +687,163 @@
 
       const btnCalc = document.getElementById('btn-calc-bmi');
       const btnReset = document.getElementById('btn-reset-bmi');
-      const btnCopy = document.getElementById('btn-copy-bmi');
+      const btnCopy = document.getElementById('btn-copy-bmi') || document.getElementById('btn-copy-summary');
 
       unitBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           unitBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          unit = btn.getAttribute('data-unit');
+          unit = btn.getAttribute('data-unit') || 'metric';
 
           if (unit === 'metric') {
-            panelM.classList.remove('hidden');
-            panelI.classList.add('hidden');
+            if (panelM) panelM.classList.remove('hidden');
+            if (panelI) panelI.classList.add('hidden');
           } else {
-            panelM.classList.add('hidden');
-            panelI.classList.remove('hidden');
+            if (panelM) panelM.classList.add('hidden');
+            if (panelI) panelI.classList.remove('hidden');
           }
-          calculateBMI();
+          // Unit switched
         });
       });
-
-      const gaugePin = document.getElementById('bmi-gauge-pin');
-      const summaryStamp = document.getElementById('bmi-summary-stamp');
-
-      function updateGauge(bmi) {
-        if (!gaugePin) return;
-        // Gauge bounds: 12 to 40
-        const clamped = Math.max(12, Math.min(40, bmi));
-        const pct = ((clamped - 12) / (40 - 12)) * 100;
-        gaugePin.style.left = `${pct}%`;
-      }
 
       function calculateBMI() {
         let weightKg = 0;
         let heightM = 0;
 
         if (unit === 'metric') {
-          weightKg = parseFloat(inpMW.value) || 0;
-          heightM = (parseFloat(inpMH.value) || 0) / 100;
+          weightKg = parseFloat(inpMW ? inpMW.value : 0) || 0;
+          const hCm = parseFloat(inpMH ? inpMH.value : 0) || 0;
+          heightM = hCm / 100;
         } else {
-          const lbs = parseFloat(inpIW.value) || 0;
-          const ft = parseFloat(inpIF.value) || 0;
-          const inc = parseFloat(inpII.value) || 0;
-          const totalInches = (ft * 12) + inc;
-
-          weightKg = lbs * 0.45359237;
+          const wLbs = parseFloat(inpIW ? inpIW.value : 0) || 0;
+          const feet = parseFloat(inpIF ? inpIF.value : 0) || 0;
+          const inches = parseFloat(inpII ? inpII.value : 0) || 0;
+          const totalInches = (feet * 12) + inches;
+          weightKg = wLbs * 0.45359237;
           heightM = totalInches * 0.0254;
         }
 
-        if (weightKg <= 0 || heightM <= 0) return;
+        if (weightKg <= 0 || heightM <= 0) {
+          if (resScore) resScore.textContent = '0.0';
+          if (resCat) resCat.textContent = '\u2014';
+          if (resStamp) resStamp.textContent = 'Enter height and weight above to evaluate body mass index.';
+          if (resIdeal) resIdeal.textContent = '\u2014';
+          if (resPrime) resPrime.textContent = '0.00';
+          if (resPonderal) resPonderal.textContent = '0.0 kg/m\u00B3';
+          if (resWho) resWho.textContent = '\u2014';
+          return;
+        }
 
         const bmi = weightKg / (heightM * heightM);
-        const bmiPrime = bmi / 25.0;
-        const ponderal = weightKg / (heightM * heightM * heightM);
-
         const minIdealKg = 18.5 * (heightM * heightM);
         const maxIdealKg = 24.9 * (heightM * heightM);
+        const prime = bmi / 25;
+        const ponderal = weightKg / (heightM * heightM * heightM);
 
-        resScore.textContent = bmi.toFixed(2);
-        resPrime.textContent = `${bmiPrime.toFixed(2)} (${bmiPrime <= 1.0 && bmiPrime >= 0.74 ? 'Normal' : (bmiPrime < 0.74 ? 'Under' : 'Over')})`;
-        resPonderal.textContent = `${ponderal.toFixed(2)} kg/m\u00B3`;
+        let category = 'Normal weight';
+        let badgeColor = '#10b981';
 
-        if (unit === 'metric') {
-          resIdeal.textContent = `${minIdealKg.toFixed(1)} kg \u2013 ${maxIdealKg.toFixed(1)} kg`;
+        if (bmi < 18.5) {
+          category = 'Underweight';
+          badgeColor = '#f59e0b';
+        } else if (bmi >= 18.5 && bmi < 25) {
+          category = 'Normal weight';
+          badgeColor = '#10b981';
+        } else if (bmi >= 25 && bmi < 30) {
+          category = 'Overweight';
+          badgeColor = '#f59e0b';
+        } else if (bmi >= 30 && bmi < 35) {
+          category = 'Obesity Class I';
+          badgeColor = '#ef4444';
+        } else if (bmi >= 35 && bmi < 40) {
+          category = 'Obesity Class II';
+          badgeColor = '#dc2626';
         } else {
-          const minLbs = minIdealKg * 2.20462;
-          const maxLbs = maxIdealKg * 2.20462;
-          resIdeal.textContent = `${minLbs.toFixed(1)} lbs \u2013 ${maxLbs.toFixed(1)} lbs`;
+          category = 'Obesity Class III';
+          badgeColor = '#991b1b';
         }
 
-        updateGauge(bmi);
-
-        if (bmi < 16.0) {
-          resCat.textContent = 'Severe Thinness';
-          resCat.style.background = 'rgba(239, 68, 68, 0.15)';
-          resCat.style.color = '#ef4444';
-          resCat.style.borderColor = 'rgba(239, 68, 68, 0.3)';
-          resWho.textContent = 'Severe Underweight (< 16.0)';
-          summaryStamp.textContent = 'Status: Clinical Attention Recommended';
-        } else if (bmi < 18.5) {
-          resCat.textContent = 'Underweight';
-          resCat.style.background = 'rgba(59, 130, 246, 0.15)';
-          resCat.style.color = '#3b82f6';
-          resCat.style.borderColor = 'rgba(59, 130, 246, 0.3)';
-          resWho.textContent = 'Underweight Range (16.0 - 18.4)';
-          summaryStamp.textContent = 'Status: Below Optimal Body Mass';
-        } else if (bmi <= 24.9) {
-          resCat.textContent = 'Normal Weight';
-          resCat.style.background = 'rgba(16, 185, 129, 0.15)';
-          resCat.style.color = '#10b981';
-          resCat.style.borderColor = 'rgba(16, 185, 129, 0.3)';
-          resWho.textContent = 'Healthy Optimal Range (18.5 - 24.9)';
-          summaryStamp.textContent = 'Status: Optimal Healthy Range';
-        } else if (bmi <= 29.9) {
-          resCat.textContent = 'Overweight';
-          resCat.style.background = 'rgba(245, 158, 11, 0.15)';
-          resCat.style.color = '#f59e0b';
-          resCat.style.borderColor = 'rgba(245, 158, 11, 0.3)';
-          resWho.textContent = 'Overweight Range (25.0 - 29.9)';
-          summaryStamp.textContent = 'Status: Moderately Elevated Risk';
-        } else if (bmi <= 34.9) {
-          resCat.textContent = 'Obese Class I';
-          resCat.style.background = 'rgba(239, 68, 68, 0.15)';
-          resCat.style.color = '#ef4444';
-          resCat.style.borderColor = 'rgba(239, 68, 68, 0.3)';
-          resWho.textContent = 'Moderate Obesity (30.0 - 34.9)';
-          summaryStamp.textContent = 'Status: Class I Obesity';
-        } else {
-          resCat.textContent = 'Obese Class II/III';
-          resCat.style.background = 'rgba(185, 28, 28, 0.15)';
-          resCat.style.color = '#b91c1c';
-          resCat.style.borderColor = 'rgba(185, 28, 28, 0.3)';
-          resWho.textContent = 'Severe Clinical Obesity (>= 35.0)';
-          summaryStamp.textContent = 'Status: High Risk Category';
+        if (resScore) {
+          resScore.textContent = bmi.toFixed(1);
+          resScore.style.color = badgeColor;
         }
+        if (resCat) resCat.textContent = category;
+        if (resStamp) resStamp.textContent = `Your calculated BMI is ${bmi.toFixed(1)}, classified as ${category}.`;
+        if (resIdeal) {
+          if (unit === 'metric') {
+            resIdeal.textContent = `${minIdealKg.toFixed(1)} \u2013 ${maxIdealKg.toFixed(1)} kg`;
+          } else {
+            resIdeal.textContent = `${(minIdealKg * 2.20462).toFixed(1)} \u2013 ${(maxIdealKg * 2.20462).toFixed(1)} lbs`;
+          }
+        }
+        if (resPrime) resPrime.textContent = prime.toFixed(2);
+        if (resPonderal) resPonderal.textContent = `${ponderal.toFixed(1)} kg/m\u00B3`;
+        if (resWho) resWho.textContent = category;
       }
 
-      [inpMW, inpMH, inpIW, inpIF, inpII].forEach(inp => inp.addEventListener('input', calculateBMI));
-      btnCalc.addEventListener('click', calculateBMI);
+      // Calculate triggered on button click
+      if (btnCalc) btnCalc.addEventListener('click', () => { const br = document.getElementById('bmi-result-card'); if (br) br.classList.remove('hidden'); calculateBMI(); });
 
-      btnReset.addEventListener('click', () => {
-        inpMW.value = '70';
-        inpMH.value = '175';
-        inpIW.value = '154';
-        inpIF.value = '5';
-        inpII.value = '9';
-        calculateBMI();
-      });
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          if (inpMW) inpMW.value = '';
+          if (inpMH) inpMH.value = '';
+          if (inpIW) inpIW.value = '';
+          if (inpIF) inpIF.value = '';
+          if (inpII) inpII.value = '';
+          if (resScore) resScore.textContent = '0.0';
+          if (resCat) resCat.textContent = '\u2014';
+          if (resStamp) resStamp.textContent = 'Enter height and weight above to evaluate body mass index.';
+          if (resIdeal) resIdeal.textContent = '\u2014';
+          if (resPrime) resPrime.textContent = '0.00';
+          if (resPonderal) resPonderal.textContent = '0.0 kg/m\u00B3';
+          if (resWho) resWho.textContent = '\u2014';
+          const br = document.getElementById('bmi-result-card'); if (br) br.classList.add('hidden'); if (unit === 'metric' && inpMW) inpMW.focus();
+          else if (inpIW) inpIW.focus();
+        });
+      }
 
-      btnCopy.addEventListener('click', () => {
-        const summary = `📊 Finejust.vip BMI Report
-----------------------------------------
-⚖️ BMI Score: ${resScore.textContent}
-🏷️ Classification: ${resCat.textContent}
-🎯 Healthy Weight Range: ${resIdeal.textContent}
-🌐 WHO Standard: ${resWho.textContent}
-----------------------------------------
-Calculate free on: https://www.finejust.vip/tools/bmi-calculator.html`;
-        if (window.copyToClipboard) {
-          window.copyToClipboard(summary, 'BMI Report copied to clipboard!');
-        } else {
-          navigator.clipboard.writeText(summary);
-        }
-      });
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          const score = resScore ? resScore.textContent : '0';
+          const cat = resCat ? resCat.textContent : 'Normal';
+          const ideal = resIdeal ? resIdeal.textContent : '';
+          const prime = resPrime ? resPrime.textContent : '';
+          const ponderal = resPonderal ? resPonderal.textContent : '';
 
-      // Preset Chips Handling
+          const summary = [
+            '\u{2696}\u{FE0F} Finejust.vip BMI Health Assessment Summary',
+            '----------------------------------------',
+            `\u{2B50} Body Mass Index (BMI): ${score}`,
+            `\u{1F3F7}\u{FE0F} WHO Category: ${cat}`,
+            `\u{1F3AF} Healthy Target Weight: ${ideal}`,
+            `\u{26A1} BMI Prime Ratio: ${prime}`,
+            `\u{1F4D0} Ponderal Index: ${ponderal}`,
+            '----------------------------------------',
+            'Calculate free on: https://www.finejust.vip/tools/bmi-calculator.html'
+          ].join('\n');
+
+          window.copyToClipboard(summary, 'BMI assessment summary copied!');
+        });
+      }
+
       document.querySelectorAll('.preset-chip').forEach(chip => {
         chip.addEventListener('click', function() {
           const w = this.getAttribute('data-preset-weight');
           const h = this.getAttribute('data-preset-height');
           if (w && h) {
-            // Switch to metric for presets
             unitBtns.forEach(b => b.classList.remove('active'));
-            document.querySelector('#bmi-unit-nav .filter-btn[data-unit="metric"]').classList.add('active');
+            document.querySelector('#bmi-unit-nav .filter-btn[data-unit="metric"]')?.classList.add('active');
             unit = 'metric';
-            panelM.classList.remove('hidden');
-            panelI.classList.add('hidden');
+            if (panelM) panelM.classList.remove('hidden');
+            if (panelI) panelI.classList.add('hidden');
 
-            inpMW.value = w;
-            inpMH.value = h;
+            if (inpMW) inpMW.value = w;
+            if (inpMH) inpMH.value = h;
             calculateBMI();
           }
         });
       });
-
-      calculateBMI();
     })();
   </script>
 </body>

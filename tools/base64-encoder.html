@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+        
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -258,8 +254,8 @@
             </div>
 <!-- Mode Switcher -->
             <div class="tools-filter-nav" style="margin-bottom: 1.5rem;" id="b64-mode-nav">
-              <button type="button" class="filter-btn active" data-mode="encode">Encode Plain Text to Base64</button>
-              <button type="button" class="filter-btn" data-mode="decode">Decode Base64 to Plain Text</button>
+              <button type="button" class="filter-btn active" data-mode="encode">🔒 Encode Plain Text to Base64</button>
+              <button type="button" class="filter-btn" data-mode="decode">🔓 Decode Base64 to Plain Text</button>
             </div>
 
             <div class="form-group mb-4">
@@ -270,33 +266,38 @@
             <div class="form-actions mb-4">
               <button type="button" id="btn-process-b64" class="btn btn-primary">Process Conversion</button>
               <button type="button" id="btn-reset-b64" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
             <!-- Output Display -->
             <div class="form-group">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
                 <label class="form-label" style="margin-bottom:0;" for="b64-output" id="b64-out-label">Base64 Output</label>
-                <button type="button" class="btn btn-outline" style="padding:0.35rem 0.75rem; font-size:0.8rem;" id="btn-copy-b64">Copy Output</button>
               </div>
               <textarea id="b64-output" class="form-textarea font-mono" style="min-height: 140px; color:var(--primary); font-weight:600;" readonly></textarea>
             </div>
 
             <div class="result-card" style="margin-top:1.5rem;">
               <div class="result-breakdown-grid">
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Input Size</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">📝 Input Characters</span>
                   <span class="breakdown-val" id="b64-in-size">58 Bytes</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Output Size</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">📊 Output Byte Size</span>
                   <span class="breakdown-val" id="b64-out-size">80 Bytes (+37.9%)</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Padding Characters</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">⚡ Padding Characters</span>
                   <span class="breakdown-val" id="b64-pad-count">0 '=' Pad</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Encoding Standard</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">🛡️ Encoding Standard</span>
                   <span class="breakdown-val" style="color:#10b981;">RFC 4648 (UTF-8)</span>
                 </div>
               </div>
@@ -478,21 +479,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -537,97 +538,99 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      let mode = 'encode';
-      const modeBtns = document.querySelectorAll('#b64-mode-nav .filter-btn');
-      const inText = document.getElementById('b64-input');
-      const outText = document.getElementById('b64-output');
-      const inLabel = document.getElementById('b64-in-label');
-      const outLabel = document.getElementById('b64-out-label');
-
-      const inSizeEl = document.getElementById('b64-in-size');
-      const outSizeEl = document.getElementById('b64-out-size');
-      const padCountEl = document.getElementById('b64-pad-count');
-
+(function() {
+      'use strict';
+      let currentMode = 'encode';
+      const inp = document.getElementById('b64-input');
+      const out = document.getElementById('b64-output');
       const btnProcess = document.getElementById('btn-process-b64');
       const btnReset = document.getElementById('btn-reset-b64');
-      const btnCopy = document.getElementById('btn-copy-b64');
+      const btnCopySummary = document.getElementById('btn-copy-summary');
+      const modeBtns = document.querySelectorAll('#b64-mode-nav .filter-btn');
+
+      const statInSize = document.getElementById('b64-in-size');
+      const statOutSize = document.getElementById('b64-out-size');
+      const statPad = document.getElementById('b64-pad-count');
 
       modeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           modeBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          mode = btn.getAttribute('data-mode');
-
-          if (mode === 'encode') {
-            inLabel.textContent = 'Plain Text Input';
-            outLabel.textContent = 'Base64 Encoded Output';
-            inText.value = 'Finejust.vip — Ultra-Fast Online AI Tools & Utilities!';
-          } else {
-            inLabel.textContent = 'Base64 String Input';
-            outLabel.textContent = 'Decoded Plain Text Output';
-            inText.value = 'RmluZWp1c3QudmlwIOKAlCBVbHRyYS1GYXN0IE9ubGluZSBBSSBUb29scyAmIFV0aWxpdGllcyE=';
-          }
+          currentMode = btn.getAttribute('data-mode') || 'encode';
           processBase64();
         });
       });
 
-      function utf8ToBase64(str) {
-        return window.btoa(unescape(encodeURIComponent(str)));
-      }
-
-      function base64ToUtf8(str) {
-        return decodeURIComponent(escape(window.atob(str.replace(/\s/g, ''))));
-      }
-
       function processBase64() {
-        const input = inText.value;
-        const inBytes = new Blob([input]).size;
-        inSizeEl.textContent = `${inBytes} Bytes`;
+        const val = inp ? inp.value : '';
+        if (!out) return;
 
-        if (!input.trim()) {
-          outText.value = '';
-          outSizeEl.textContent = '0 Bytes';
-          padCountEl.textContent = '0 Pad';
+        if (!val) {
+          out.value = '';
+          if (statInSize) statInSize.textContent = '0 Bytes';
+          if (statOutSize) statOutSize.textContent = '0 Bytes';
+          if (statPad) statPad.textContent = '0';
           return;
         }
 
-        if (mode === 'encode') {
+        if (currentMode === 'encode') {
           try {
-            const encoded = utf8ToBase64(input);
-            outText.value = encoded;
-            const outBytes = new Blob([encoded]).size;
-            const diffPct = inBytes > 0 ? (((outBytes - inBytes) / inBytes) * 100).toFixed(1) : '0';
-            outSizeEl.textContent = `${outBytes} Bytes (+${diffPct}%)`;
-            const pads = (encoded.match(/=+$/) || [''])[0].length;
-            padCountEl.textContent = `${pads} '=' Pad`;
-          } catch(e) {
-            outText.value = 'Error: Failed to encode input string';
+            const encoded = btoa(unescape(encodeURIComponent(val)));
+            out.value = encoded;
+            if (statInSize) statInSize.textContent = `${new Blob([val]).size} Bytes`;
+            if (statOutSize) statOutSize.textContent = `${new Blob([encoded]).size} Bytes`;
+            const pads = (encoded.match(/=/g) || []).length;
+            if (statPad) statPad.textContent = `${pads} '=' Pad`;
+          } catch (e) {
+            out.value = 'Error: Invalid characters for encoding';
           }
         } else {
           try {
-            const decoded = base64ToUtf8(input);
-            outText.value = decoded;
-            const outBytes = new Blob([decoded]).size;
-            outSizeEl.textContent = `${outBytes} Bytes`;
-            padCountEl.textContent = 'Decoded';
-          } catch(e) {
-            outText.value = 'Error: Invalid Base64 input string';
+            const decoded = decodeURIComponent(escape(atob(val.trim())));
+            out.value = decoded;
+            if (statInSize) statInSize.textContent = `${new Blob([val]).size} Bytes`;
+            if (statOutSize) statOutSize.textContent = `${new Blob([decoded]).size} Bytes`;
+            if (statPad) statPad.textContent = '0';
+          } catch (e) {
+            out.value = 'Error: Invalid Base64 string';
           }
         }
       }
 
-      inText.addEventListener('input', processBase64);
-      btnProcess.addEventListener('click', processBase64);
+      if (inp) inp.addEventListener('input', processBase64);
+      if (btnProcess) btnProcess.addEventListener('click', processBase64);
 
-      btnReset.addEventListener('click', () => {
-        inText.value = mode === 'encode' ? 'Finejust.vip' : 'RmluZWp1c3Qudmlw';
-        processBase64();
-      });
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          if (inp) inp.value = '';
+          if (out) out.value = '';
+          if (statInSize) statInSize.textContent = '0 Bytes';
+          if (statOutSize) statOutSize.textContent = '0 Bytes';
+          if (statPad) statPad.textContent = '0';
+          if (inp) inp.focus();
+        });
+      }
 
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(outText.value, 'Base64 output copied!');
-      });
+      if (btnCopySummary) {
+        btnCopySummary.addEventListener('click', () => {
+          const outVal = out ? out.value : '';
+          const inSize = statInSize ? statInSize.textContent : '0 Bytes';
+          const outSize = statOutSize ? statOutSize.textContent : '0 Bytes';
+
+          const summary = [
+            `\u{1F512} Finejust.vip Base64 ${currentMode.toUpperCase()} Summary`,
+            '----------------------------------------',
+            `\u{1F4DD} Input Size: ${inSize}`,
+            `\u{1F4CA} Output Size: ${outSize}`,
+            '\u{2B50} Result Output:',
+            outVal,
+            '----------------------------------------',
+            'Encode & decode free on: https://www.finejust.vip/tools/base64-encoder.html'
+          ].join('\n');
+
+          window.copyToClipboard(summary, 'Base64 conversion summary copied!');
+        });
+      }
 
       processBase64();
     })();

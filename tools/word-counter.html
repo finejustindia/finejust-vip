@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+        
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -270,49 +266,55 @@
             <div class="stats-grid" style="margin-bottom:1.5rem;">
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="stat-words" style="font-size:1.85rem; color:var(--primary);">32</div>
-                <div class="stat-label">Words</div>
+                <div class="stat-label">📝 Words</div>
               </div>
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="stat-chars" style="font-size:1.85rem;">243</div>
-                <div class="stat-label">Characters</div>
+                <div class="stat-label">🔤 Characters</div>
               </div>
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="stat-sentences" style="font-size:1.85rem;">2</div>
-                <div class="stat-label">Sentences</div>
+                <div class="stat-label">🔠 Sentences</div>
               </div>
               <div class="stat-card" style="padding:1rem;">
                 <div class="stat-number" id="stat-paragraphs" style="font-size:1.85rem;">1</div>
-                <div class="stat-label">Paragraphs</div>
+                <div class="stat-label">📄 Paragraphs</div>
               </div>
             </div>
 
             <div class="result-card age-result-hero">
               <div class="result-header">
-                <span class="result-title">Reading &amp; Speaking Durations</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-wc">Copy Text</button>
+                <span class="result-title">⏱️ Reading &amp; Speaking Durations</span>
               </div>
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Silent Reading Time (200 wpm)</span>
+                  <span class="breakdown-label">📖 Silent Reading Time (200 wpm)</span>
                   <span class="breakdown-val" id="stat-read-time" style="color:var(--primary);">~10 Seconds</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Public Speaking Time (130 wpm)</span>
+                  <span class="breakdown-label">🗣️ Public Speaking Time (130 wpm)</span>
                   <span class="breakdown-val" id="stat-speak-time">~15 Seconds</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Characters (No Spaces)</span>
+                  <span class="breakdown-label">🔡 Characters (No Spaces)</span>
                   <span class="breakdown-val" id="stat-chars-no-space">212</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Average Word Length</span>
+                  <span class="breakdown-label">📐 Average Word Length</span>
                   <span class="breakdown-val" id="stat-avg-len">6.6 Chars</span>
                 </div>
               </div>
             </div>
 
-            <div class="form-actions" style="margin-top:1.25rem;">
-              <button type="button" id="btn-clear-wc" class="btn btn-secondary">Clear Text</button>
+                                    <div class="form-actions" style="margin-top:1.25rem;">
+              <button type="button" id="btn-copy-wc" class="btn btn-primary">Copy Text</button>
+              <button type="button" id="btn-clear-wc" class="btn btn-secondary">Clear</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
           </div>
 
@@ -488,21 +490,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -547,72 +549,101 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
+(function() {
+      'use strict';
       const textarea = document.getElementById('wc-textarea');
-      const stWords = document.getElementById('stat-words');
-      const stChars = document.getElementById('stat-chars');
-      const stSentences = document.getElementById('stat-sentences');
-      const stParagraphs = document.getElementById('stat-paragraphs');
-      const stRead = document.getElementById('stat-read-time');
-      const stSpeak = document.getElementById('stat-speak-time');
-      const stNoSpace = document.getElementById('stat-chars-no-space');
-      const stAvg = document.getElementById('stat-avg-len');
+      const statWords = document.getElementById('stat-words');
+      const statChars = document.getElementById('stat-chars');
+      const statSentences = document.getElementById('stat-sentences');
+      const statParagraphs = document.getElementById('stat-paragraphs');
+      const statReadTime = document.getElementById('stat-read-time');
+      const statSpeakTime = document.getElementById('stat-speak-time');
+      const statCharsNoSpace = document.getElementById('stat-chars-no-space');
+      const statAvgLen = document.getElementById('stat-avg-len');
 
-      const btnClear = document.getElementById('btn-clear-wc');
       const btnCopy = document.getElementById('btn-copy-wc');
+      const btnClear = document.getElementById('btn-clear-wc');
+      const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      function analyzeText() {
-        const text = textarea.value;
+      function updateStats() {
+        const text = textarea ? textarea.value : '';
         const trimmed = text.trim();
 
-        // Word count
-        const words = trimmed ? trimmed.split(/\s+/).filter(w => w.length > 0) : [];
-        const wordCount = words.length;
+        if (!trimmed) {
+          if (statWords) statWords.textContent = '0';
+          if (statChars) statChars.textContent = '0';
+          if (statSentences) statSentences.textContent = '0';
+          if (statParagraphs) statParagraphs.textContent = '0';
+          if (statReadTime) statReadTime.textContent = '~0 Sec';
+          if (statSpeakTime) statSpeakTime.textContent = '~0 Sec';
+          if (statCharsNoSpace) statCharsNoSpace.textContent = '0';
+          if (statAvgLen) statAvgLen.textContent = '0.0 Chars';
+          return;
+        }
 
-        // Character counts
-        const charCount = text.length;
-        const noSpaceCount = text.replace(/\s/g, '').length;
+        const words = trimmed.split(/\s+/).filter(Boolean).length;
+        const chars = text.length;
+        const charsNoSpace = text.replace(/\s/g, '').length;
+        const sentences = (text.match(/[^.!?]+[.!?]+(\s|$)/g) || [1]).length;
+        const paragraphs = text.split(/\n+/).filter(p => p.trim().length > 0).length;
 
-        // Sentence count
-        const sentences = trimmed ? trimmed.split(/[.!?]+/).filter(s => s.trim().length > 0) : [];
-        const sentenceCount = sentences.length;
+        const readSec = Math.ceil((words / 200) * 60);
+        const speakSec = Math.ceil((words / 130) * 60);
+        const avgLen = words > 0 ? (charsNoSpace / words).toFixed(1) : '0.0';
 
-        // Paragraph count
-        const paragraphs = trimmed ? trimmed.split(/\n+/).filter(p => p.trim().length > 0) : [];
-        const paragraphCount = paragraphs.length;
-
-        // Reading / Speaking Times
-        const readSeconds = Math.ceil((wordCount / 200) * 60);
-        const speakSeconds = Math.ceil((wordCount / 130) * 60);
-
-        const avgLen = wordCount > 0 ? (noSpaceCount / wordCount).toFixed(1) : '0';
-
-        stWords.textContent = wordCount.toLocaleString();
-        stChars.textContent = charCount.toLocaleString();
-        stSentences.textContent = sentenceCount.toLocaleString();
-        stParagraphs.textContent = paragraphCount.toLocaleString();
-        stNoSpace.textContent = noSpaceCount.toLocaleString();
-        stAvg.textContent = `${avgLen} Chars`;
-
-        if (readSeconds < 60) stRead.textContent = `~${readSeconds} Seconds`;
-        else stRead.textContent = `~${(readSeconds / 60).toFixed(1)} Min`;
-
-        if (speakSeconds < 60) stSpeak.textContent = `~${speakSeconds} Seconds`;
-        else stSpeak.textContent = `~${(speakSeconds / 60).toFixed(1)} Min`;
+        if (statWords) statWords.textContent = words;
+        if (statChars) statChars.textContent = chars;
+        if (statSentences) statSentences.textContent = sentences;
+        if (statParagraphs) statParagraphs.textContent = paragraphs;
+        if (statReadTime) statReadTime.textContent = readSec < 60 ? `~${readSec} Seconds` : `~${(readSec / 60).toFixed(1)} Min`;
+        if (statSpeakTime) statSpeakTime.textContent = speakSec < 60 ? `~${speakSec} Seconds` : `~${(speakSec / 60).toFixed(1)} Min`;
+        if (statCharsNoSpace) statCharsNoSpace.textContent = charsNoSpace;
+        if (statAvgLen) statAvgLen.textContent = `${avgLen} Chars`;
       }
 
-      textarea.addEventListener('input', analyzeText);
+      if (textarea) textarea.addEventListener('input', updateStats);
 
-      btnClear.addEventListener('click', () => {
-        textarea.value = '';
-        analyzeText();
-      });
+      if (btnClear) {
+        btnClear.addEventListener('click', () => {
+          if (textarea) textarea.value = '';
+          updateStats();
+          if (textarea) textarea.focus();
+        });
+      }
 
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(textarea.value, 'Text content copied!');
-      });
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          if (textarea && textarea.value) {
+            window.copyToClipboard(textarea.value, 'Text copied to clipboard!');
+          }
+        });
+      }
 
-      analyzeText();
+      if (btnCopySummary) {
+        btnCopySummary.addEventListener('click', () => {
+          const w = statWords ? statWords.textContent : '0';
+          const c = statChars ? statChars.textContent : '0';
+          const s = statSentences ? statSentences.textContent : '0';
+          const p = statParagraphs ? statParagraphs.textContent : '0';
+          const rt = statReadTime ? statReadTime.textContent : '~0 Sec';
+
+          const summary = [
+            '\u{1F4DD} Finejust.vip Text Analysis Summary',
+            '----------------------------------------',
+            `\u{1F4DD} Total Words: ${w}`,
+            `\u{1F524} Total Characters: ${c}`,
+            `\u{1F520} Total Sentences: ${s}`,
+            `\u{1F4C4} Total Paragraphs: ${p}`,
+            `\u{23F1}\u{FE0F} Estimated Reading Time: ${rt}`,
+            '----------------------------------------',
+            'Analyze text free on: https://www.finejust.vip/tools/word-counter.html'
+          ].join('\n');
+
+          window.copyToClipboard(summary, 'Word count summary copied!');
+        });
+      }
+
+      updateStats();
     })();
   </script>
 </body>

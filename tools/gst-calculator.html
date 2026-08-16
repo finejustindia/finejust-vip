@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+      
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -296,30 +292,35 @@
             <div class="form-actions">
               <button type="button" id="btn-calc-gst" class="btn btn-primary">Calculate GST</button>
               <button type="button" id="btn-reset-gst" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
-            <div class="result-card age-result-hero" id="gst-result-card">
+            <div class="result-card age-result-hero hidden" id="gst-result-card">
               <div class="result-header">
-                <span class="result-title" id="gst-res-title">Gross Total with GST</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-gst">Copy Result</button>
+                <span class="result-title" id="gst-res-title">🧾 Gross Total with GST</span>
               </div>
               <div class="result-main-value" id="gst-main-val">$1,180.00</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Net Base Price</span>
+                  <span class="breakdown-label">💰 Net Base Price</span>
                   <span class="breakdown-val" id="gst-base-val">$1,000.00</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total GST Tax Amount</span>
+                  <span class="breakdown-label">📈 Total GST Tax Amount</span>
                   <span class="breakdown-val" id="gst-tax-val" style="color:var(--primary);">$180.00</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">CGST (Intra-state 50%)</span>
+                  <span class="breakdown-label">🏛️ CGST (Intra-state 50%)</span>
                   <span class="breakdown-val" id="gst-cgst-val">$90.00</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">SGST (Intra-state 50%)</span>
+                  <span class="breakdown-label">🏛️ SGST (Intra-state 50%)</span>
                   <span class="breakdown-val" id="gst-sgst-val">$90.00</span>
                 </div>
               </div>
@@ -523,21 +524,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -581,101 +582,136 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      let mode = 'exclusive';
-      const modeBtns = document.querySelectorAll('#gst-mode-nav .filter-btn');
-      const amountInp = document.getElementById('gst-amount');
-      const amountLabel = document.getElementById('gst-amount-label');
-      const rateSelect = document.getElementById('gst-rate');
-      const customGroup = document.getElementById('gst-custom-group');
-      const customRateInp = document.getElementById('gst-custom-rate');
+(function() {
+  'use strict';
+  let mode = 'exclusive';
+  const modeBtns = document.querySelectorAll('#gst-mode-nav .filter-btn');
+  const inpAmt = document.getElementById('gst-amount');
+  const selRate = document.getElementById('gst-rate');
+  const customRateGroup = document.getElementById('gst-custom-group');
+  const inpCustomRate = document.getElementById('gst-custom-rate');
 
-      const resTitle = document.getElementById('gst-res-title');
-      const resMain = document.getElementById('gst-main-val');
-      const resBase = document.getElementById('gst-base-val');
-      const resTax = document.getElementById('gst-tax-val');
-      const resCgst = document.getElementById('gst-cgst-val');
-      const resSgst = document.getElementById('gst-sgst-val');
+  const resTitle = document.getElementById('gst-res-title');
+  const resMain = document.getElementById('gst-main-val');
+  const resBase = document.getElementById('gst-base-val');
+  const resTax = document.getElementById('gst-tax-val');
+  const resCgst = document.getElementById('gst-cgst-val');
+  const resSgst = document.getElementById('gst-sgst-val');
 
-      const btnCalc = document.getElementById('btn-calc-gst');
-      const btnReset = document.getElementById('btn-reset-gst');
-      const btnCopy = document.getElementById('btn-copy-gst');
+  const btnCalc = document.getElementById('btn-calc-gst') || document.getElementById('btn-calc');
+  const btnReset = document.getElementById('btn-reset-gst') || document.getElementById('btn-reset');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      modeBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          modeBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          mode = btn.getAttribute('data-mode');
+  modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      mode = btn.getAttribute('data-mode') || 'exclusive';
+    });
+  });
 
-          if (mode === 'exclusive') {
-            amountLabel.textContent = 'Net Base Amount ($)';
-            resTitle.textContent = 'Gross Total with GST';
-          } else {
-            amountLabel.textContent = 'Gross Amount (GST Inclusive) ($)';
-            resTitle.textContent = 'Net Base Price (Pre-Tax)';
-          }
-          calculateGST();
-        });
-      });
-
-      rateSelect.addEventListener('change', () => {
-        if (rateSelect.value === 'custom') {
-          customGroup.classList.remove('hidden');
-        } else {
-          customGroup.classList.add('hidden');
-        }
-        calculateGST();
-      });
-
-      function calculateGST() {
-        const rawAmount = parseFloat(amountInp.value) || 0;
-        let rate = parseFloat(rateSelect.value);
-        if (rateSelect.value === 'custom') {
-          rate = parseFloat(customRateInp.value) || 0;
-        }
-
-        let basePrice = 0;
-        let taxAmount = 0;
-        let totalPrice = 0;
-
-        if (mode === 'exclusive') {
-          basePrice = rawAmount;
-          taxAmount = (basePrice * rate) / 100;
-          totalPrice = basePrice + taxAmount;
-          resMain.textContent = `$${totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        } else {
-          totalPrice = rawAmount;
-          basePrice = totalPrice / (1 + (rate / 100));
-          taxAmount = totalPrice - basePrice;
-          resMain.textContent = `$${basePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        }
-
-        const cgst = taxAmount / 2;
-        const sgst = taxAmount / 2;
-
-        resBase.textContent = `$${basePrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resTax.textContent = `$${taxAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resCgst.textContent = `$${cgst.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resSgst.textContent = `$${sgst.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  if (selRate) {
+    selRate.addEventListener('change', () => {
+      if (selRate.value === 'custom') {
+        if (customRateGroup) customRateGroup.classList.remove('hidden');
+      } else {
+        if (customRateGroup) customRateGroup.classList.add('hidden');
       }
+    });
+  }
 
-      amountInp.addEventListener('input', calculateGST);
-      customRateInp.addEventListener('input', calculateGST);
-      btnCalc.addEventListener('click', calculateGST);
+  function calculateGST() {
+    const rc = document.getElementById('gst-result-card');
+    if (rc) rc.classList.remove('hidden');
 
-      btnReset.addEventListener('click', () => {
-        amountInp.value = '1000';
-        rateSelect.value = '18';
-        customGroup.classList.add('hidden');
-        calculateGST();
-      });
+    const amount = parseFloat(inpAmt ? inpAmt.value : 0) || 0;
+    let rate = parseFloat(selRate ? selRate.value : 18);
+    if (selRate && selRate.value === 'custom') {
+      rate = parseFloat(inpCustomRate ? inpCustomRate.value : 0) || 0;
+    }
 
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resMain.textContent, 'GST calculation copied!');
-      });
+    if (amount <= 0 && (!inpAmt || !inpAmt.value)) {
+      if (resMain) resMain.textContent = '$0.00';
+      if (resBase) resBase.textContent = '$0.00';
+      if (resTax) resTax.textContent = '$0.00';
+      if (resCgst) resCgst.textContent = '$0.00';
+      if (resSgst) resSgst.textContent = '$0.00';
+      return;
+    }
 
+    let base = 0;
+    let tax = 0;
+    let total = 0;
+
+    if (mode === 'exclusive') {
+      base = amount;
+      tax = (base * rate) / 100;
+      total = base + tax;
+      if (resTitle) resTitle.textContent = `Total Amount (GST Included)`;
+    } else {
+      total = amount;
+      base = total / (1 + rate / 100);
+      tax = total - base;
+      if (resTitle) resTitle.textContent = `Gross Total Invoice Amount`;
+    }
+
+    const halfTax = tax / 2;
+
+    if (resMain) resMain.textContent = `$${total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resBase) resBase.textContent = `$${base.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resTax) resTax.textContent = `$${tax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resCgst) resCgst.textContent = `$${halfTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resSgst) resSgst.textContent = `$${halfTax.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('gst-result-card');
+      if (rc) rc.classList.remove('hidden');
       calculateGST();
-    })();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('gst-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpAmt) inpAmt.value = '';
+      if (inpCustomRate) inpCustomRate.value = '';
+      if (resMain) resMain.textContent = '$0.00';
+      if (resBase) resBase.textContent = '$0.00';
+      if (resTax) resTax.textContent = '$0.00';
+      if (resCgst) resCgst.textContent = '$0.00';
+      if (resSgst) resSgst.textContent = '$0.00';
+      if (inpAmt) inpAmt.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const base = resBase ? resBase.textContent : '$0.00';
+      const tax = resTax ? resTax.textContent : '$0.00';
+      const total = resMain ? resMain.textContent : '$0.00';
+      const cgst = resCgst ? resCgst.textContent : '$0.00';
+      const sgst = resSgst ? resSgst.textContent : '$0.00';
+      const customRate = selRate && selRate.value === 'custom' ? (inpCustomRate ? inpCustomRate.value : '0') : (selRate ? selRate.value : '18');
+
+      const summary = [
+        `\u{1F9FE} Finejust.vip GST Tax Summary (${mode.toUpperCase()})`,
+        '----------------------------------------',
+        `\u{1F4B0} Net Base Amount: ${base}`,
+        `\u{1F4C8} Total GST (${customRate}%): ${tax}`,
+        `\u{1F4B5} Gross Total Amount: ${total}`,
+        `\u{1F3DB}\u{FE0F} CGST Split: ${cgst}`,
+        `\u{1F3DB}\u{FE0F} SGST Split: ${sgst}`,
+        '----------------------------------------',
+        'Calculate free on: https://www.finejust.vip/tools/gst-calculator.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'GST tax summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

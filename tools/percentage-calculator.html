@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -37,13 +37,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+    
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -174,11 +170,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -337,26 +333,31 @@
             <div class="form-actions">
               <button type="button" id="btn-calc" class="btn btn-primary">Calculate</button>
               <button type="button" id="btn-reset" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
             <!-- Result Card -->
-            <div class="result-card age-result-hero" id="result-box">
+            <div class="result-card age-result-hero hidden" id="result-box">
               <div class="result-header">
-                <span class="result-title" id="res-title">Calculated Result</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy">Copy Result</button>
+                <span class="result-title" id="res-title">📊 Calculated Result</span>
               </div>
               <div class="result-main-value" id="res-val">37.5</div>
               <div class="result-breakdown-grid" id="res-breakdown">
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Applied Formula</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">📐 Applied Formula</span>
                   <span class="breakdown-val" id="res-formula" style="font-size:0.95rem;">(15 &divide; 100) &times; 250</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Decimal Ratio</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">🔢 Decimal Ratio</span>
                   <span class="breakdown-val" id="res-decimal" style="font-size:0.95rem;">0.15</span>
                 </div>
-                <div class="breakdown-item">
-                  <span class="breakdown-label">Difference / Remainder</span>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">⚖️ Difference / Remainder</span>
                   <span class="breakdown-val" id="res-diff" style="font-size:0.95rem;">212.5</span>
                 </div>
               </div>
@@ -604,21 +605,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -669,116 +670,168 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      let currentMode = 'what-is';
-      const modeButtons = document.querySelectorAll('#calc-mode-nav .filter-btn');
-      const panels = {
-        'what-is': document.getElementById('mode-panel-what-is'),
-        'is-what': document.getElementById('mode-panel-is-what'),
-        'change': document.getElementById('mode-panel-change'),
-        'fraction': document.getElementById('mode-panel-fraction')
-      };
+(function() {
+      'use strict';
+      const modeNav = document.getElementById('calc-mode-nav');
+      const tabs = modeNav ? modeNav.querySelectorAll('.filter-btn') : [];
+      let currentMode = 1;
+
+      const panel1 = document.getElementById('mode-panel-what-is');
+      const panel2 = document.getElementById('mode-panel-is-what');
+      const panel3 = document.getElementById('mode-panel-change');
+      const panel4 = document.getElementById('mode-panel-fraction');
 
       const resTitle = document.getElementById('res-title');
       const resVal = document.getElementById('res-val');
       const resFormula = document.getElementById('res-formula');
       const resDecimal = document.getElementById('res-decimal');
       const resDiff = document.getElementById('res-diff');
+
       const btnCalc = document.getElementById('btn-calc');
       const btnReset = document.getElementById('btn-reset');
-      const btnCopy = document.getElementById('btn-copy');
+      const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      modeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          modeButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          currentMode = btn.getAttribute('data-mode');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentMode = parseInt(tab.getAttribute('data-tab'), 10);
 
-          Object.keys(panels).forEach(key => {
-            if (key === currentMode) panels[key].classList.remove('hidden');
-            else panels[key].classList.add('hidden');
+          [panel1, panel2, panel3, panel4].forEach((p, idx) => {
+            if (p) {
+              if (idx + 1 === currentMode) p.classList.remove('hidden');
+              else p.classList.add('hidden');
+            }
           });
-          calculate();
+
+          // Tab switched
         });
       });
 
       function calculate() {
-        if (currentMode === 'what-is') {
-          const p = parseFloat(document.getElementById('pct-val-1').value) || 0;
-          const base = parseFloat(document.getElementById('pct-base-1').value) || 0;
-          const result = (p / 100) * base;
-
-          resTitle.textContent = `${p}% of ${base} =`;
+        if (currentMode === 1) {
+          const v1 = document.getElementById('pct-val-1')?.value;
+          const b1 = document.getElementById('pct-base-1')?.value;
+          if (!v1 && !b1) {
+            if (resTitle) resTitle.textContent = 'Calculated Result';
+            if (resVal) resVal.textContent = '0';
+            if (resFormula) resFormula.textContent = 'Enter percentage & base amount';
+            if (resDecimal) resDecimal.textContent = '0.0000';
+            if (resDiff) resDiff.textContent = '0.00';
+            return;
+          }
+          const pct = parseFloat(v1) || 0;
+          const total = parseFloat(b1) || 0;
+          const result = (pct / 100) * total;
+          resTitle.textContent = `${pct}% of ${total} is:`;
           resVal.textContent = Number(result.toFixed(4)).toLocaleString();
-          resFormula.textContent = `(${p} \u00F7 100) \u00D7 ${base}`;
-          resDecimal.textContent = (p / 100).toFixed(4);
-          resDiff.textContent = Number((base - result).toFixed(4)).toLocaleString();
-        } else if (currentMode === 'is-what') {
-          const part = parseFloat(document.getElementById('pct-val-2').value) || 0;
-          const whole = parseFloat(document.getElementById('pct-base-2').value) || 0;
-          if (whole === 0) {
-            resVal.textContent = 'Division by zero';
+          resFormula.textContent = `(${pct} \u00F7 100) \u00D7 ${total} = ${result}`;
+          resDecimal.textContent = (pct / 100).toFixed(4);
+          resDiff.textContent = `Remaining: ${(total - result).toFixed(2)}`;
+        } else if (currentMode === 2) {
+          const v2 = document.getElementById('pct-val-2')?.value;
+          const b2 = document.getElementById('pct-base-2')?.value;
+          if (!v2 && !b2) {
+            if (resTitle) resTitle.textContent = 'Calculated Result';
+            if (resVal) resVal.textContent = '0%';
+            if (resFormula) resFormula.textContent = 'Enter sub-value & total';
+            if (resDecimal) resDecimal.textContent = '0.0000';
+            if (resDiff) resDiff.textContent = 'Ratio: 0 / 0';
             return;
           }
-          const result = (part / whole) * 100;
-          resTitle.textContent = `${part} of ${whole} is`;
-          resVal.textContent = `${Number(result.toFixed(4)).toLocaleString()}%`;
-          resFormula.textContent = `(${part} \u00F7 ${whole}) \u00D7 100%`;
-          resDecimal.textContent = (part / whole).toFixed(4);
-          resDiff.textContent = Number((whole - part).toFixed(4)).toLocaleString();
-        } else if (currentMode === 'change') {
-          const oldV = parseFloat(document.getElementById('pct-old-3').value) || 0;
-          const newV = parseFloat(document.getElementById('pct-new-3').value) || 0;
-          if (oldV === 0) {
-            resVal.textContent = 'Division by zero';
+          const part = parseFloat(v2) || 0;
+          const total = parseFloat(b2) || 0;
+          const result = total !== 0 ? (part / total) * 100 : 0;
+          resTitle.textContent = `${part} is what % of ${total}:`;
+          resVal.textContent = `${Number(result.toFixed(2)).toLocaleString()}%`;
+          resFormula.textContent = `(${part} \u00F7 ${total}) \u00D7 100% = ${result.toFixed(2)}%`;
+          resDecimal.textContent = (total !== 0 ? part / total : 0).toFixed(4);
+          resDiff.textContent = `Ratio: ${part} / ${total}`;
+        } else if (currentMode === 3) {
+          const o3 = document.getElementById('pct-old-3')?.value;
+          const n3 = document.getElementById('pct-new-3')?.value;
+          if (!o3 && !n3) {
+            if (resTitle) resTitle.textContent = 'Calculated Result';
+            if (resVal) resVal.textContent = '0%';
+            if (resFormula) resFormula.textContent = 'Enter initial & final values';
+            if (resDecimal) resDecimal.textContent = '0.0000';
+            if (resDiff) resDiff.textContent = '0.00';
             return;
           }
-          const diff = newV - oldV;
-          const result = (diff / Math.abs(oldV)) * 100;
-          const isInc = result >= 0;
-
-          resTitle.textContent = `Change from ${oldV} to ${newV}:`;
-          resVal.textContent = `${isInc ? '+' : ''}${Number(result.toFixed(2)).toLocaleString()}%`;
-          resVal.style.color = isInc ? '#10b981' : '#ef4444';
-          resFormula.textContent = `((${newV} - ${oldV}) \u00F7 |${oldV}|) \u00D7 100%`;
-          resDecimal.textContent = (diff / Math.abs(oldV)).toFixed(4);
-          resDiff.textContent = `Absolute Change: ${diff > 0 ? '+' : ''}${diff}`;
-        } else if (currentMode === 'fraction') {
-          const num = parseFloat(document.getElementById('pct-num-4').value) || 0;
-          const den = parseFloat(document.getElementById('pct-den-4').value) || 0;
-          if (den === 0) {
-            resVal.textContent = 'Division by zero';
+          const oldVal = parseFloat(o3) || 0;
+          const newVal = parseFloat(n3) || 0;
+          const diff = newVal - oldVal;
+          const change = oldVal !== 0 ? (diff / oldVal) * 100 : 0;
+          resTitle.textContent = `Change from ${oldVal} to ${newVal}:`;
+          resVal.textContent = `${change >= 0 ? '+' : ''}${change.toFixed(2)}%`;
+          resFormula.textContent = `((${newVal} - ${oldVal}) \u00F7 ${oldVal}) \u00D7 100%`;
+          resDecimal.textContent = (oldVal !== 0 ? diff / oldVal : 0).toFixed(4);
+          resDiff.textContent = `Absolute difference: ${diff >= 0 ? '+' : ''}${diff.toFixed(2)}`;
+        } else if (currentMode === 4) {
+          const num4 = document.getElementById('pct-num-4')?.value;
+          const den4 = document.getElementById('pct-den-4')?.value;
+          if (!num4 && !den4) {
+            if (resTitle) resTitle.textContent = 'Calculated Result';
+            if (resVal) resVal.textContent = '0%';
+            if (resFormula) resFormula.textContent = 'Enter numerator & denominator';
+            if (resDecimal) resDecimal.textContent = '0.0000';
+            if (resDiff) resDiff.textContent = '0.0000';
             return;
           }
-          const result = (num / den) * 100;
-          resTitle.textContent = `Fraction ${num}/${den} as Percentage:`;
-          resVal.textContent = `${Number(result.toFixed(4)).toLocaleString()}%`;
+          const num = parseFloat(num4) || 0;
+          const den = parseFloat(den4) || 1;
+          const result = den !== 0 ? (num / den) * 100 : 0;
+          resTitle.textContent = `Fraction ${num}/${den} as %:`;
+          resVal.textContent = `${Number(result.toFixed(2)).toLocaleString()}%`;
           resFormula.textContent = `(${num} \u00F7 ${den}) \u00D7 100%`;
-          resDecimal.textContent = (num / den).toFixed(4);
-          resDiff.textContent = `Fraction value: ${(num / den).toFixed(4)}`;
+          resDecimal.textContent = (den !== 0 ? num / den : 0).toFixed(4);
+          resDiff.textContent = `Fraction value: ${(den !== 0 ? num / den : 0).toFixed(4)}`;
         }
       }
 
-      document.querySelectorAll('.form-input').forEach(inp => inp.addEventListener('input', calculate));
-      btnCalc.addEventListener('click', calculate);
+      // Calculate triggered only on Calculate button click
+      if (btnCalc) btnCalc.addEventListener('click', () => { const rb = document.getElementById('result-box'); if (rb) rb.classList.remove('hidden'); calculate(); });
 
-      btnReset.addEventListener('click', () => {
-        document.getElementById('pct-val-1').value = '15';
-        document.getElementById('pct-base-1').value = '250';
-        document.getElementById('pct-val-2').value = '45';
-        document.getElementById('pct-base-2').value = '180';
-        document.getElementById('pct-old-3').value = '120';
-        document.getElementById('pct-new-3').value = '180';
-        document.getElementById('pct-num-4').value = '3';
-        document.getElementById('pct-den-4').value = '8';
-        calculate();
-      });
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          const ids = ['pct-val-1', 'pct-base-1', 'pct-val-2', 'pct-base-2', 'pct-old-3', 'pct-new-3', 'pct-num-4', 'pct-den-4'];
+          ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+          });
+          if (resTitle) resTitle.textContent = 'Calculated Result';
+          if (resVal) resVal.textContent = '0';
+          if (resFormula) resFormula.textContent = 'Enter values to calculate';
+          if (resDecimal) resDecimal.textContent = '0';
+          if (resDiff) resDiff.textContent = '0';
+          const rb = document.getElementById('result-box'); if (rb) rb.classList.add('hidden'); const firstInp = document.getElementById('pct-val-1');
+          if (firstInp) firstInp.focus();
+        });
+      }
 
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resVal.textContent, 'Percentage result copied!');
-      });
+      if (btnCopySummary) {
+        btnCopySummary.addEventListener('click', () => {
+          const rTitle = resTitle ? resTitle.textContent : 'Calculated Result';
+          const rVal = resVal ? resVal.textContent : '0';
+          const rFormula = resFormula ? resFormula.textContent : '';
+          const rDecimal = resDecimal ? resDecimal.textContent : '';
+          const rDiff = resDiff ? resDiff.textContent : '';
 
-      calculate();
+          const summary = [
+            '\u{1F4CA} Finejust.vip Percentage Calculator Summary',
+            '----------------------------------------',
+            `\u{1F522} Calculation: ${rTitle}`,
+            `\u{2B50} Result: ${rVal}`,
+            `\u{1F4D0} Applied Formula: ${rFormula}`,
+            `\u{1F4CA} Decimal Ratio: ${rDecimal}`,
+            `\u{2696}\u{FE0F} Difference / Remainder: ${rDiff}`,
+            '----------------------------------------',
+            'Calculate free on: https://www.finejust.vip/tools/percentage-calculator.html'
+          ].join('\n');
+
+          window.copyToClipboard(summary, 'Percentage summary copied to clipboard!');
+        });
+      }
     })();
   </script>
 </body>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+      
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -299,31 +295,36 @@
               <div style="display:flex; gap:0.75rem;">
                 <button type="button" id="btn-calc-len" class="btn btn-primary">Convert Length</button>
                 <button type="button" id="btn-reset-len" class="btn btn-secondary">Reset</button>
+                <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
               </div>
             </div>
 
-            <div class="result-card age-result-hero" id="len-result-card">
+            <div class="result-card age-result-hero hidden" id="len-result-card">
               <div class="result-header">
-                <span class="result-title" id="len-res-title">10 Feet =</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-len">Copy Result</button>
+                <span class="result-title" id="len-res-title">📏 10 Feet =</span>
               </div>
               <div class="result-main-value" id="len-main-val">3.048 Meters</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Metric Value</span>
+                  <span class="breakdown-label">📊 Metric Value</span>
                   <span class="breakdown-val" id="len-metric-val">304.8 cm</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Imperial Value</span>
+                  <span class="breakdown-label">📐 Imperial Value</span>
                   <span class="breakdown-val" id="len-imp-val">120.0 inches</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Conversion Factor</span>
+                  <span class="breakdown-label">🔄 Conversion Factor</span>
                   <span class="breakdown-val" id="len-factor-val">1 ft = 0.3048 m</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Scientific Notation</span>
+                  <span class="breakdown-label">🔬 Scientific Notation</span>
                   <span class="breakdown-val" id="len-sci-val">3.048 &times; 10&sup0; m</span>
                 </div>
               </div>
@@ -522,21 +523,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -581,89 +582,98 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const factorsInMeters = {
-        m: 1.0,
-        km: 1000.0,
-        cm: 0.01,
-        mm: 0.001,
-        ft: 0.3048,
-        in: 0.0254,
-        yd: 0.9144,
-        mi: 1609.344,
-        nmi: 1852.0
-      };
+(function() {
+  'use strict';
+  const inpAmount = document.getElementById('len-amount');
+  const selFrom = document.getElementById('len-from');
+  const selTo = document.getElementById('len-to');
+  const btnSwap = document.getElementById('btn-swap-len');
 
-      const unitNames = {
-        m: 'Meters',
-        km: 'Kilometers',
-        cm: 'Centimeters',
-        mm: 'Millimeters',
-        ft: 'Feet',
-        in: 'Inches',
-        yd: 'Yards',
-        mi: 'Miles',
-        nmi: 'Nautical Miles'
-      };
+  const resTitle = document.getElementById('len-res-title');
+  const resMain = document.getElementById('len-main-val');
+  const resMetric = document.getElementById('len-metric-val');
+  const resImp = document.getElementById('len-imp-val');
+  const resFactor = document.getElementById('len-factor-val');
+  const resSci = document.getElementById('len-sci-val');
 
-      const inpAmt = document.getElementById('len-amount');
-      const selFrom = document.getElementById('len-from');
-      const selTo = document.getElementById('len-to');
-      const btnSwap = document.getElementById('btn-swap-len');
+  const btnCalc = document.getElementById('btn-calc-len');
+  const btnReset = document.getElementById('btn-reset-len');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      const resTitle = document.getElementById('len-res-title');
-      const resMain = document.getElementById('len-main-val');
-      const resMetric = document.getElementById('len-metric-val');
-      const resImp = document.getElementById('len-imp-val');
-      const resFactor = document.getElementById('len-factor-val');
-      const resSci = document.getElementById('len-sci-val');
+  const factors = {
+    m: 1, km: 1000, cm: 0.01, mm: 0.001, mi: 1609.344, yd: 0.9144, ft: 0.3048, in: 0.0254, nmi: 1852
+  };
 
-      const btnCalc = document.getElementById('btn-calc-len');
-      const btnReset = document.getElementById('btn-reset-len');
-      const btnCopy = document.getElementById('btn-copy-len');
-
-      btnSwap.addEventListener('click', () => {
-        const temp = selFrom.value;
-        selFrom.value = selTo.value;
-        selTo.value = temp;
-        convertLength();
-      });
-
-      function convertLength() {
-        const amount = parseFloat(inpAmt.value) || 0;
-        const from = selFrom.value;
-        const to = selTo.value;
-
-        const inMeters = amount * factorsInMeters[from];
-        const converted = inMeters / factorsInMeters[to];
-        const singleFactor = factorsInMeters[from] / factorsInMeters[to];
-
-        resTitle.textContent = `${amount} ${unitNames[from]} =`;
-        resMain.textContent = `${Number(converted.toFixed(6)).toLocaleString()} ${unitNames[to]}`;
-        resMetric.textContent = `${(inMeters * 100).toFixed(2)} cm (${inMeters.toFixed(3)} m)`;
-        resImp.textContent = `${(inMeters / 0.0254).toFixed(2)} in (${(inMeters / 0.3048).toFixed(2)} ft)`;
-        resFactor.textContent = `1 ${from} = ${Number(singleFactor.toFixed(6))} ${to}`;
-        resSci.textContent = `${inMeters.toExponential(4)} m`;
-      }
-
-      inpAmt.addEventListener('input', convertLength);
-      selFrom.addEventListener('change', convertLength);
-      selTo.addEventListener('change', convertLength);
-      btnCalc.addEventListener('click', convertLength);
-
-      btnReset.addEventListener('click', () => {
-        inpAmt.value = '10';
-        selFrom.value = 'ft';
-        selTo.value = 'm';
-        convertLength();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resMain.textContent, 'Length conversion copied!');
-      });
-
+  if (btnSwap) {
+    btnSwap.addEventListener('click', () => {
+      if (!selFrom || !selTo) return;
+      const temp = selFrom.value;
+      selFrom.value = selTo.value;
+      selTo.value = temp;
       convertLength();
-    })();
+    });
+  }
+
+  function convertLength() {
+    const rc = document.getElementById('len-result-card');
+    if (rc) rc.classList.remove('hidden');
+
+    const val = parseFloat(inpAmount ? inpAmount.value : 0) || 0;
+    const from = selFrom ? selFrom.value : 'm';
+    const to = selTo ? selTo.value : 'ft';
+
+    const meters = val * (factors[from] || 1);
+    const result = meters / (factors[to] || 1);
+    const unitFactor = (factors[from] || 1) / (factors[to] || 1);
+
+    if (resTitle) resTitle.textContent = `\u{1F4CF} ${val} ${from.toUpperCase()} =`;
+    if (resMain) resMain.textContent = `${Number(result.toFixed(4)).toLocaleString()} ${to.toUpperCase()}`;
+    if (resMetric) resMetric.textContent = `${(meters * 100).toFixed(2)} cm (${meters.toFixed(4)} m)`;
+    if (resImp) resImp.textContent = `${(meters / 0.0254).toFixed(2)} in (${(meters / 0.3048).toFixed(2)} ft)`;
+    if (resFactor) resFactor.textContent = `1 ${from} = ${unitFactor.toFixed(4)} ${to}`;
+    if (resSci) resSci.textContent = `${meters.toExponential(4)} m`;
+  }
+
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('len-result-card');
+      if (rc) rc.classList.remove('hidden');
+      convertLength();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('len-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpAmount) inpAmount.value = '';
+      if (resTitle) resTitle.textContent = '\u{1F4CF} 0 M =';
+      if (resMain) resMain.textContent = '0 FT';
+      if (resMetric) resMetric.textContent = '0 cm';
+      if (resImp) resImp.textContent = '0 in';
+      if (resFactor) resFactor.textContent = 'â€”';
+      if (resSci) resSci.textContent = '0 m';
+      if (inpAmount) inpAmount.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const title = resTitle ? resTitle.textContent : '';
+      const main = resMain ? resMain.textContent : '';
+
+      const summary = [
+        '\u{1F4CF} Finejust.vip Length Conversion Summary',
+        '----------------------------------------',
+        `\u{2B50} ${title} ${main}`,
+        '----------------------------------------',
+        'Convert free on: https://www.finejust.vip/tools/length-converter.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Length summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

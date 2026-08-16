@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+      
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -289,31 +285,36 @@
               <div style="display:flex; gap:0.75rem;">
                 <button type="button" id="btn-calc-temp" class="btn btn-primary">Convert Temperature</button>
                 <button type="button" id="btn-reset-temp" class="btn btn-secondary">Reset</button>
+                <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
               </div>
             </div>
 
-            <div class="result-card age-result-hero" id="temp-result-card">
+            <div class="result-card age-result-hero hidden" id="temp-result-card">
               <div class="result-header">
-                <span class="result-title" id="temp-res-title">25 &deg;C =</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-temp">Copy Result</button>
+                <span class="result-title" id="temp-res-title">🌡️ 25 &deg;C =</span>
               </div>
               <div class="result-main-value" id="temp-main-val">77.0 &deg;F</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Applied Formula</span>
+                  <span class="breakdown-label">📐 Applied Formula</span>
                   <span class="breakdown-val" id="temp-formula-val">(25 &times; 9/5) + 32</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Absolute Kelvin</span>
+                  <span class="breakdown-label">🔬 Absolute Kelvin</span>
                   <span class="breakdown-val" id="temp-kelvin-val">298.15 K</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Rankine Scale</span>
+                  <span class="breakdown-label">🔥 Rankine Scale</span>
                   <span class="breakdown-val" id="temp-rankine-val">536.67 &deg;R</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Physical State of Water</span>
+                  <span class="breakdown-label">💧 Physical State of Water</span>
                   <span class="breakdown-val" id="temp-state-val" style="color:#10b981;">Liquid (Room Temp)</span>
                 </div>
               </div>
@@ -509,21 +510,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -568,104 +569,122 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const inpAmt = document.getElementById('temp-amount');
-      const selFrom = document.getElementById('temp-from');
-      const selTo = document.getElementById('temp-to');
-      const btnSwap = document.getElementById('btn-swap-temp');
+(function() {
+  'use strict';
+  const inpTemp = document.getElementById('temp-amount');
+  const selFrom = document.getElementById('temp-from');
+  const selTo = document.getElementById('temp-to');
+  const btnSwap = document.getElementById('btn-swap-temp');
 
-      const resTitle = document.getElementById('temp-res-title');
-      const resMain = document.getElementById('temp-main-val');
-      const resFormula = document.getElementById('temp-formula-val');
-      const resKelvin = document.getElementById('temp-kelvin-val');
-      const resRankine = document.getElementById('temp-rankine-val');
-      const resState = document.getElementById('temp-state-val');
+  const resTitle = document.getElementById('temp-res-title');
+  const resMain = document.getElementById('temp-main-val');
+  const resFormula = document.getElementById('temp-formula-val');
+  const resKelvin = document.getElementById('temp-kelvin-val');
+  const resRankine = document.getElementById('temp-rankine-val');
+  const resState = document.getElementById('temp-state-val');
 
-      const btnCalc = document.getElementById('btn-calc-temp');
-      const btnReset = document.getElementById('btn-reset-temp');
-      const btnCopy = document.getElementById('btn-copy-temp');
+  const btnCalc = document.getElementById('btn-calc-temp') || document.getElementById('btn-calc');
+  const btnReset = document.getElementById('btn-reset-temp') || document.getElementById('btn-reset');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      btnSwap.addEventListener('click', () => {
-        const temp = selFrom.value;
-        selFrom.value = selTo.value;
-        selTo.value = temp;
-        convertTemp();
-      });
-
-      function convertTemp() {
-        const val = parseFloat(inpAmt.value) || 0;
-        const from = selFrom.value;
-        const to = selTo.value;
-
-        // Convert any input to Celsius first
-        let inC = 0;
-        if (from === 'c') inC = val;
-        else if (from === 'f') inC = (val - 32) * (5 / 9);
-        else if (from === 'k') inC = val - 273.15;
-        else if (from === 'r') inC = (val - 491.67) * (5 / 9);
-
-        // Convert Celsius to Target
-        let outVal = 0;
-        let unitSymbol = '';
-        let formulaText = '';
-
-        if (to === 'c') {
-          outVal = inC;
-          unitSymbol = '\u00B0C';
-          formulaText = from === 'f' ? `(${val} - 32) \u00D7 5/9` : (from === 'k' ? `${val} - 273.15` : `${val} \u00B0C`);
-        } else if (to === 'f') {
-          outVal = (inC * (9 / 5)) + 32;
-          unitSymbol = '\u00B0F';
-          formulaText = from === 'c' ? `(${val} \u00D7 9/5) + 32` : (from === 'k' ? `(${val} - 273.15) \u00D7 9/5 + 32` : `${val} \u00B0F`);
-        } else if (to === 'k') {
-          outVal = inC + 273.15;
-          unitSymbol = 'K';
-          formulaText = `${inC.toFixed(2)} \u00B0C + 273.15`;
-        } else if (to === 'r') {
-          outVal = (inC + 273.15) * 1.8;
-          unitSymbol = '\u00B0R';
-          formulaText = `(${inC.toFixed(2)} + 273.15) \u00D7 1.8`;
-        }
-
-        const outK = inC + 273.15;
-        const outR = (inC + 273.15) * 1.8;
-
-        resTitle.textContent = `${val} ${from.toUpperCase()} =`;
-        resMain.textContent = `${outVal.toFixed(2)} ${unitSymbol}`;
-        resFormula.textContent = formulaText;
-        resKelvin.textContent = `${outK.toFixed(2)} K`;
-        resRankine.textContent = `${outR.toFixed(2)} \u00B0R`;
-
-        if (inC < 0) {
-          resState.textContent = 'Solid (Freezing / Ice)';
-          resState.style.color = '#3b82f6';
-        } else if (inC >= 100) {
-          resState.textContent = 'Gas (Boiling / Vapor)';
-          resState.style.color = '#ef4444';
-        } else {
-          resState.textContent = 'Liquid (Standard State)';
-          resState.style.color = '#10b981';
-        }
-      }
-
-      inpAmt.addEventListener('input', convertTemp);
-      selFrom.addEventListener('change', convertTemp);
-      selTo.addEventListener('change', convertTemp);
-      btnCalc.addEventListener('click', convertTemp);
-
-      btnReset.addEventListener('click', () => {
-        inpAmt.value = '25';
-        selFrom.value = 'c';
-        selTo.value = 'f';
-        convertTemp();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resMain.textContent, 'Temperature conversion copied!');
-      });
-
+  if (btnSwap) {
+    btnSwap.addEventListener('click', () => {
+      if (!selFrom || !selTo) return;
+      const temp = selFrom.value;
+      selFrom.value = selTo.value;
+      selTo.value = temp;
       convertTemp();
-    })();
+    });
+  }
+
+  function convertTemp() {
+    const rc = document.getElementById('temp-result-card');
+    if (rc) rc.classList.remove('hidden');
+
+    const raw = inpTemp ? inpTemp.value : '';
+    if (raw === '' || isNaN(parseFloat(raw))) {
+      if (resTitle) resTitle.textContent = '\u{1F321}\u{FE0F} 0\u00B0 =';
+      if (resMain) resMain.textContent = '0';
+      if (resFormula) resFormula.textContent = 'Enter temperature value';
+      if (resKelvin) resKelvin.textContent = '0 K';
+      if (resRankine) resRankine.textContent = '0 \u00B0R';
+      if (resState) resState.textContent = '\u2014';
+      return;
+    }
+
+    const val = parseFloat(raw) || 0;
+    const from = selFrom ? selFrom.value : 'c';
+    const to = selTo ? selTo.value : 'f';
+
+    let c = val;
+    if (from === 'f') c = (val - 32) * (5 / 9);
+    else if (from === 'k') c = val - 273.15;
+    else if (from === 'r') c = (val - 491.67) * (5 / 9);
+
+    let out = c;
+    if (to === 'f') out = (c * 9 / 5) + 32;
+    else if (to === 'k') out = c + 273.15;
+    else if (to === 'r') out = (c + 273.15) * 1.8;
+
+    const k = c + 273.15;
+    const r = (c + 273.15) * 1.8;
+
+    let state = 'Liquid (Water)';
+    if (c <= 0) state = 'Solid (Ice)';
+    else if (c >= 100) state = 'Gas (Steam)';
+
+    if (resTitle) resTitle.textContent = `\u{1F321}\u{FE0F} ${val}\u00B0 ${from.toUpperCase()} =`;
+    if (resMain) resMain.textContent = `${Number(out.toFixed(2)).toLocaleString()}\u00B0 ${to.toUpperCase()}`;
+    if (resFormula) resFormula.textContent = from === 'c' && to === 'f' ? '(\u00B0C \u00D7 9/5) + 32' : 'Thermodynamic conversion formula applied';
+    if (resKelvin) resKelvin.textContent = `${k.toFixed(2)} K`;
+    if (resRankine) resRankine.textContent = `${r.toFixed(2)} \u00B0R`;
+    if (resState) resState.textContent = state;
+  }
+
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('temp-result-card');
+      if (rc) rc.classList.remove('hidden');
+      convertTemp();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('temp-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpTemp) inpTemp.value = '';
+      if (resTitle) resTitle.textContent = '\u{1F321}\u{FE0F} 0\u00B0 =';
+      if (resMain) resMain.textContent = '0';
+      if (resFormula) resFormula.textContent = 'Enter temperature value';
+      if (resKelvin) resKelvin.textContent = '0 K';
+      if (resRankine) resRankine.textContent = '0 \u00B0R';
+      if (resState) resState.textContent = '\u2014';
+      if (inpTemp) inpTemp.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const title = resTitle ? resTitle.textContent : '';
+      const main = resMain ? resMain.textContent : '';
+      const kVal = resKelvin ? resKelvin.textContent : '';
+      const state = resState ? resState.textContent : '';
+
+      const summary = [
+        '\u{1F321}\u{FE0F} Finejust.vip Temperature Conversion Summary',
+        '----------------------------------------',
+        `\u{2B50} ${title} ${main}`,
+        `\u{1F52C} Kelvin Absolute: ${kVal}`,
+        `\u{2744}\u{FE0F} Water State: ${state}`,
+        '----------------------------------------',
+        'Convert free on: https://www.finejust.vip/tools/temperature-converter.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Temperature summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

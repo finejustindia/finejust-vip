@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -170,11 +165,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -297,30 +292,35 @@
             <div class="form-actions">
               <button type="button" id="btn-calc-ci" class="btn btn-primary">Calculate Growth</button>
               <button type="button" id="btn-reset-ci" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
-            <div class="result-card age-result-hero" id="ci-result-card">
+            <div class="result-card age-result-hero hidden" id="ci-result-card">
               <div class="result-header">
-                <span class="result-title">Future Investment Balance</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-ci">Copy Result</button>
+                <span class="result-title">📈 Future Investment Balance</span>
               </div>
               <div class="result-main-value" id="ci-future-val">$137,842.10</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Principal Invested</span>
+                  <span class="breakdown-label">💰 Total Principal Invested</span>
                   <span class="breakdown-val" id="ci-invested-val">$64,000.00</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Compound Interest</span>
+                  <span class="breakdown-label">✨ Total Compound Interest</span>
                   <span class="breakdown-val" id="ci-interest-val" style="color:#10b981;">$73,842.10</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Effective APY</span>
+                  <span class="breakdown-label">📊 Effective APY</span>
                   <span class="breakdown-val" id="ci-apy-val">8.30%</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Wealth Multiplier</span>
+                  <span class="breakdown-label">🚀 Wealth Multiplier</span>
                   <span class="breakdown-val" id="ci-mult-val">2.15x</span>
                 </div>
               </div>
@@ -520,21 +520,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -579,74 +579,119 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const inpP = document.getElementById('ci-p');
-      const inpPmt = document.getElementById('ci-pmt');
-      const inpR = document.getElementById('ci-r');
-      const inpT = document.getElementById('ci-t');
-      const inpN = document.getElementById('ci-n');
+(function() {
+  'use strict';
+  const inpP = document.getElementById('ci-p');
+  const inpPmt = document.getElementById('ci-pmt');
+  const inpR = document.getElementById('ci-r');
+  const inpT = document.getElementById('ci-t');
+  const selN = document.getElementById('ci-n');
 
-      const resFuture = document.getElementById('ci-future-val');
-      const resInvested = document.getElementById('ci-invested-val');
-      const resInterest = document.getElementById('ci-interest-val');
-      const resApy = document.getElementById('ci-apy-val');
-      const resMult = document.getElementById('ci-mult-val');
+  const resFuture = document.getElementById('ci-future-val');
+  const resInvested = document.getElementById('ci-invested-val');
+  const resInterest = document.getElementById('ci-interest-val');
+  const resApy = document.getElementById('ci-apy-val');
+  const resMult = document.getElementById('ci-mult-val');
 
-      const btnCalc = document.getElementById('btn-calc-ci');
-      const btnReset = document.getElementById('btn-reset-ci');
-      const btnCopy = document.getElementById('btn-copy-ci');
+  const btnCalc = document.getElementById('btn-calc-ci');
+  const btnReset = document.getElementById('btn-reset-ci');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      function calculateCI() {
-        const p = parseFloat(inpP.value) || 0;
-        const pmt = parseFloat(inpPmt.value) || 0;
-        const annualRate = (parseFloat(inpR.value) || 0) / 100;
-        const years = parseFloat(inpT.value) || 0;
-        const n = parseInt(inpN.value, 10) || 12;
+  function calculateCI() {
+    const rc = document.getElementById('ci-result-card');
+    if (rc) rc.classList.remove('hidden');
 
-        if (annualRate <= 0 || years <= 0) return;
+    const p = parseFloat(inpP ? inpP.value : 0) || 0;
+    const pmt = parseFloat(inpPmt ? inpPmt.value : 0) || 0;
+    const r = parseFloat(inpR ? inpR.value : 0) || 0;
+    const t = parseFloat(inpT ? inpT.value : 0) || 0;
+    const n = parseFloat(selN ? selN.value : 12) || 12;
 
-        // Principal growth
-        const fvPrincipal = p * Math.pow(1 + (annualRate / n), n * years);
+    if (p <= 0 && pmt <= 0) {
+      if (resFuture) resFuture.textContent = '$0.00';
+      if (resInvested) resInvested.textContent = '$0.00';
+      if (resInterest) resInterest.textContent = '$0.00';
+      if (resApy) resApy.textContent = '0.00%';
+      if (resMult) resMult.textContent = '0.00x';
+      return;
+    }
 
-        // Annuity monthly additions compounded
-        const months = years * 12;
-        const monthlyRate = annualRate / 12;
-        let fvContributions = 0;
-        if (pmt > 0 && monthlyRate > 0) {
-          fvContributions = pmt * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
-        }
+    const rateDec = r / 100;
+    const totalPeriods = n * t;
+    const compoundP = p * Math.pow(1 + (rateDec / n), totalPeriods);
+    
+    let fvPmt = 0;
+    if (pmt > 0 && rateDec > 0) {
+      fvPmt = pmt * ((Math.pow(1 + (rateDec / n), totalPeriods) - 1) / (rateDec / n));
+    } else if (pmt > 0) {
+      fvPmt = pmt * totalPeriods;
+    }
 
-        const totalFuture = fvPrincipal + fvContributions;
-        const totalInvested = p + (pmt * months);
-        const totalInterest = totalFuture - totalInvested;
-        const apy = (Math.pow(1 + (annualRate / n), n) - 1) * 100;
-        const multiplier = totalInvested > 0 ? (totalFuture / totalInvested) : 1;
+    const amount = compoundP + fvPmt;
+    const totalDeposited = p + (pmt * totalPeriods);
+    const interest = amount - totalDeposited;
+    const apy = (Math.pow(1 + (rateDec / n), n) - 1) * 100;
+    const mult = totalDeposited > 0 ? (amount / totalDeposited) : 1;
 
-        resFuture.textContent = `$${totalFuture.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resInvested.textContent = `$${totalInvested.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resInterest.textContent = `$${totalInterest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resApy.textContent = `${apy.toFixed(2)}%`;
-        resMult.textContent = `${multiplier.toFixed(2)}x`;
-      }
+    if (resFuture) resFuture.textContent = `$${amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resInvested) resInvested.textContent = `$${totalDeposited.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resInterest) resInterest.textContent = `$${interest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resApy) resApy.textContent = `${apy.toFixed(2)}%`;
+    if (resMult) resMult.textContent = `${mult.toFixed(2)}x`;
+  }
 
-      [inpP, inpPmt, inpR, inpT, inpN].forEach(inp => inp.addEventListener('input', calculateCI));
-      btnCalc.addEventListener('click', calculateCI);
-
-      btnReset.addEventListener('click', () => {
-        inpP.value = '10000';
-        inpPmt.value = '300';
-        inpR.value = '8';
-        inpT.value = '15';
-        inpN.value = '12';
-        calculateCI();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resFuture.textContent, 'Compound Interest total copied!');
-      });
-
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('ci-result-card');
+      if (rc) rc.classList.remove('hidden');
       calculateCI();
-    })();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('ci-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpP) inpP.value = '';
+      if (inpPmt) inpPmt.value = '';
+      if (inpR) inpR.value = '';
+      if (inpT) inpT.value = '';
+      if (resFuture) resFuture.textContent = '$0.00';
+      if (resInvested) resInvested.textContent = '$0.00';
+      if (resInterest) resInterest.textContent = '$0.00';
+      if (resApy) resApy.textContent = '0.00%';
+      if (resMult) resMult.textContent = '0.00x';
+      if (inpP) inpP.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const p = inpP ? inpP.value : '0';
+      const r = inpR ? inpR.value : '0';
+      const t = inpT ? inpT.value : '0';
+      const future = resFuture ? resFuture.textContent : '$0.00';
+      const interest = resInterest ? resInterest.textContent : '$0.00';
+      const invested = resInvested ? resInvested.textContent : '$0.00';
+      const apy = resApy ? resApy.textContent : '0.00%';
+
+      const summary = [
+        '\u{1F4C8} Finejust.vip Compound Interest Summary',
+        '----------------------------------------',
+        `\u{1F4B0} Total Principal Invested: ${invested}`,
+        `\u{1F4CA} Annual Return Rate: ${r}%`,
+        `\u{1F5D3}\u{FE0F} Investment Horizon: ${t} Years`,
+        `\u{2B50} Future Balance: ${future}`,
+        `\u{1F4B5} Total Compound Interest: ${interest}`,
+        `\u{26A1} Effective APY: ${apy}`,
+        '----------------------------------------',
+        'Calculate free on: https://www.finejust.vip/tools/compound-interest-calculator.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Compound Interest summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

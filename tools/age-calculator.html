@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+  
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
   <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -305,7 +301,7 @@
                   <!-- Year YYYY -->
                   <div class="dmy-col dmy-year">
                     <label class="dmy-sublabel" for="dob-year">Year (YYYY)</label>
-                    <input type="number" id="dob-year" class="form-input dmy-input" min="1900" max="2100" value="1998" placeholder="YYYY" aria-label="Birth Year">
+                    <input type="number" id="dob-year" class="form-input dmy-input" min="1000" max="2100" value="1998" placeholder="YYYY" aria-label="Birth Year">
                   </div>
                 </div>
               </div>
@@ -348,7 +344,7 @@
                   <!-- Target Year YYYY -->
                   <div class="dmy-col dmy-year">
                     <label class="dmy-sublabel" for="target-year">Year (YYYY)</label>
-                    <input type="number" id="target-year" class="form-input dmy-input" min="1900" max="2100" value="2026" placeholder="YYYY" aria-label="Target Year">
+                    <input type="number" id="target-year" class="form-input dmy-input" min="1000" max="2100" value="2026" placeholder="YYYY" aria-label="Target Year">
                   </div>
                 </div>
               </div>
@@ -369,10 +365,15 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 <span>Copy Summary</span>
               </button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
             <!-- Result Dashboard -->
-            <div class="result-card age-result-hero" id="age-result-card">
+            <div class="result-card age-result-hero hidden" id="age-result-card">
               
               <div class="result-hero-top">
                 <div>
@@ -673,21 +674,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/age-calculator-complete-guide.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/age-guide.webp" alt="Age Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/age-guide.webp" alt="Age Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Guide</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">Age Calculator Complete Guide</h4>
                 </div>
               </a>
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
@@ -731,32 +732,24 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      // DOM Elements
+(function() {
+      'use strict';
       const dobDay = document.getElementById('dob-day');
       const dobMonth = document.getElementById('dob-month');
       const dobYear = document.getElementById('dob-year');
-
       const targetDay = document.getElementById('target-day');
       const targetMonth = document.getElementById('target-month');
       const targetYear = document.getElementById('target-year');
 
-      const btnCalc = document.getElementById('btn-calc-age');
-      const btnReset = document.getElementById('btn-reset-age');
-      const btnCopy = document.getElementById('btn-copy-age');
-      const btnToday = document.getElementById('btn-set-today');
-
-      // Results Elements
-      const dateStamp = document.getElementById('age-date-stamp');
-      const zodiacBadge = document.getElementById('age-zodiac-badge');
       const unitYears = document.getElementById('age-unit-years');
       const unitMonths = document.getElementById('age-unit-months');
       const unitDays = document.getElementById('age-unit-days');
       const mainVal = document.getElementById('age-main-val');
-
+      const dateStamp = document.getElementById('age-date-stamp');
+      const zodiacBadge = document.getElementById('age-zodiac-badge');
+      const dayBornPill = document.getElementById('age-day-born-pill');
       const nextBday = document.getElementById('age-next-bday');
       const nextBdaySub = document.getElementById('age-next-bday-sub');
-      const dayBornPill = document.getElementById('age-day-born-pill');
 
       const totalMonths = document.getElementById('age-total-months');
       const totalWeeks = document.getElementById('age-total-weeks');
@@ -766,133 +759,122 @@
       const totalSeconds = document.getElementById('age-total-seconds');
       const heartbeats = document.getElementById('age-heartbeats');
       const breaths = document.getElementById('age-breaths');
-
       const halfBday = document.getElementById('age-half-bday');
       const nextMilestone = document.getElementById('age-next-milestone');
 
-      let liveTimer = null;
-      let currentBirthDate = null;
-      let currentTargetDate = null;
+      const btnCalc = document.getElementById('btn-calc-age');
+      const btnToday = document.getElementById('btn-set-today');
+      const btnReset = document.getElementById('btn-reset-age');
+      const btnCopy = document.getElementById('btn-copy-age') || document.getElementById('btn-copy-summary');
 
-      // Populate Day Dropdowns (1 to 31)
-      function populateDays(selectEl, selectedDay = 1) {
+      function getDaysInMonth(year, month) {
+        return new Date(year, month, 0).getDate();
+      }
+
+      function populateDays(selectEl, selectedVal) {
+        if (!selectEl) return;
+        const currentVal = selectedVal || parseInt(selectEl.value, 10) || 1;
         selectEl.innerHTML = '';
         for (let i = 1; i <= 31; i++) {
           const opt = document.createElement('option');
           opt.value = i;
-          opt.textContent = i < 10 ? '0' + i : String(i);
-          if (i === selectedDay) opt.selected = true;
+          opt.textContent = i < 10 ? '0' + i : i;
+          if (i === currentVal) opt.selected = true;
           selectEl.appendChild(opt);
         }
       }
 
-      // Initialize dropdowns
       populateDays(dobDay, 15);
-      const now = new Date();
-      populateDays(targetDay, now.getDate());
+      populateDays(targetDay, new Date().getDate());
 
-      // Set target dropdowns to current real-world date
-      targetMonth.value = String(now.getMonth() + 1);
-      targetYear.value = String(now.getFullYear());
+      const today = new Date();
+      if (targetYear && !targetYear.value) targetYear.value = today.getFullYear();
+      if (targetMonth && !targetMonth.value) targetMonth.value = String(today.getMonth() + 1);
 
-      // Adjust max days in month dynamically
-      function validateDaysInMonth(dayEl, monthEl, yearEl) {
-        const year = parseInt(yearEl.value, 10) || 2026;
-        const month = parseInt(monthEl.value, 10) || 1;
-        const maxDays = new Date(year, month, 0).getDate();
-
-        const currentVal = parseInt(dayEl.value, 10) || 1;
-        
-        // Update options if needed
-        if (dayEl.options.length !== maxDays) {
-          dayEl.innerHTML = '';
-          for (let i = 1; i <= maxDays; i++) {
-            const opt = document.createElement('option');
-            opt.value = i;
-            opt.textContent = i < 10 ? '0' + i : String(i);
-            dayEl.appendChild(opt);
-          }
-          dayEl.value = Math.min(currentVal, maxDays);
-        }
+      function getZodiac(day, month) {
+        const d = parseInt(day, 10);
+        const m = parseInt(month, 10);
+        if ((m === 3 && d >= 21) || (m === 4 && d <= 19)) return 'Aries \u2648';
+        if ((m === 4 && d >= 20) || (m === 5 && d <= 20)) return 'Taurus \u2649';
+        if ((m === 5 && d >= 21) || (m === 6 && d <= 20)) return 'Gemini \u264A';
+        if ((m === 6 && d >= 21) || (m === 7 && d <= 22)) return 'Cancer \u264B';
+        if ((m === 7 && d >= 23) || (m === 8 && d <= 22)) return 'Leo \u264C';
+        if ((m === 8 && d >= 23) || (m === 9 && d <= 22)) return 'Virgo \u264D';
+        if ((m === 9 && d >= 23) || (m === 10 && d <= 22)) return 'Libra \u264E';
+        if ((m === 10 && d >= 23) || (m === 11 && d <= 21)) return 'Scorpio \u264F';
+        if ((m === 11 && d >= 22) || (m === 12 && d <= 21)) return 'Sagittarius \u2650';
+        if ((m === 12 && d >= 22) || (m === 1 && d <= 19)) return 'Capricorn \u2651';
+        if ((m === 1 && d >= 20) || (m === 2 && d <= 18)) return 'Aquarius \u2652';
+        return 'Pisces \u2653';
       }
 
-      dobMonth.addEventListener('change', () => { validateDaysInMonth(dobDay, dobMonth, dobYear); calculateAge(); });
-      dobYear.addEventListener('input', () => { validateDaysInMonth(dobDay, dobMonth, dobYear); calculateAge(); });
-      dobDay.addEventListener('change', calculateAge);
-
-      targetMonth.addEventListener('change', () => { validateDaysInMonth(targetDay, targetMonth, targetYear); calculateAge(); });
-      targetYear.addEventListener('input', () => { validateDaysInMonth(targetDay, targetMonth, targetYear); calculateAge(); });
-      targetDay.addEventListener('change', calculateAge);
-
-      // Pad number to 2 digits
       function pad(num) {
         return num < 10 ? '0' + num : String(num);
       }
 
-      // Zodiac Sign Resolver
-      function getZodiac(day, month) {
-        const z = [
-          { name: "Capricorn ♑", start: [12, 22], end: [1, 19] },
-          { name: "Aquarius ♒", start: [1, 20], end: [2, 18] },
-          { name: "Pisces ♓", start: [2, 19], end: [3, 20] },
-          { name: "Aries ♈", start: [3, 21], end: [4, 19] },
-          { name: "Taurus ♉", start: [4, 20], end: [5, 20] },
-          { name: "Gemini ♊", start: [5, 21], end: [6, 20] },
-          { name: "Cancer ♋", start: [6, 21], end: [7, 22] },
-          { name: "Leo ♌", start: [7, 23], end: [8, 22] },
-          { name: "Virgo ♍", start: [8, 23], end: [9, 22] },
-          { name: "Libra ♎", start: [9, 23], end: [10, 22] },
-          { name: "Scorpio ♏", start: [10, 23], end: [11, 21] },
-          { name: "Sagittarius ♐", start: [11, 22], end: [12, 21] }
-        ];
+      let liveTimer = null;
 
-        for (let sign of z) {
-          if (sign.name.includes("Capricorn")) {
-            if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return sign.name;
-          } else {
-            if ((month === sign.start[0] && day >= sign.start[1]) || (month === sign.end[0] && day <= sign.end[1])) {
-              return sign.name;
-            }
-          }
+      function updateLiveTicker() {
+        const bYear = parseInt(dobYear ? dobYear.value : '', 10);
+        const bMonth = parseInt(dobMonth ? dobMonth.value : '1', 10);
+        const bDay = parseInt(dobDay ? dobDay.value : '1', 10);
+
+        if (isNaN(bYear) || bYear < 1000 || bYear > 2100) return;
+
+        const birthDate = new Date(bYear, bMonth - 1, bDay);
+        const now = new Date();
+        const diffMs = now - birthDate;
+
+        if (diffMs > 0) {
+          const totalS = Math.floor(diffMs / 1000);
+          const totalM = Math.floor(diffMs / (1000 * 60));
+          const totalH = Math.floor(diffMs / (1000 * 60 * 60));
+          const totalD = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+          if (totalSeconds) totalSeconds.textContent = Number(totalS).toLocaleString() + ' Sec';
+          if (totalMinutes) totalMinutes.textContent = Number(totalM).toLocaleString() + ' Minutes';
+          if (totalHours) totalHours.textContent = Number(totalH).toLocaleString() + ' Hours';
+          if (totalDays) totalDays.textContent = Number(totalD).toLocaleString() + ' Days';
+          if (heartbeats) heartbeats.textContent = '~' + (totalM * 72 / 1000000).toFixed(2) + ' Million';
+          if (breaths) breaths.textContent = '~' + (totalM * 16 / 1000000).toFixed(2) + ' Million';
         }
-        return "Taurus ♉";
       }
 
-      // Main Age Calculation Function
       function calculateAge() {
-        const bDay = parseInt(dobDay.value, 10);
-        const bMonth = parseInt(dobMonth.value, 10);
-        const bYear = parseInt(dobYear.value, 10);
+        if (liveTimer) {
+          clearInterval(liveTimer);
+          liveTimer = null;
+        }
 
-        const tDay = parseInt(targetDay.value, 10);
-        const tMonth = parseInt(targetMonth.value, 10);
-        const tYear = parseInt(targetYear.value, 10);
+        const bYear = parseInt(dobYear ? dobYear.value : '', 10);
+        const bMonth = parseInt(dobMonth ? dobMonth.value : '1', 10);
+        const bDay = parseInt(dobDay ? dobDay.value : '1', 10);
 
-        if (isNaN(bDay) || isNaN(bMonth) || isNaN(bYear) || isNaN(tDay) || isNaN(tMonth) || isNaN(tYear)) return;
+        const tYear = parseInt(targetYear ? targetYear.value : today.getFullYear(), 10);
+        const tMonth = parseInt(targetMonth ? targetMonth.value : (today.getMonth() + 1), 10);
+        const tDay = parseInt(targetDay ? targetDay.value : today.getDate(), 10);
 
-        const birthDate = new Date(bYear, bMonth - 1, bDay, 0, 0, 0);
-        const targetDate = new Date(tYear, tMonth - 1, tDay, 0, 0, 0);
-
-        if (birthDate > targetDate) {
-          unitYears.textContent = '0';
-          unitMonths.textContent = '0';
-          unitDays.textContent = '0';
-          dateStamp.textContent = '⚠️ Date of birth cannot be later than target date!';
+        if (isNaN(bYear) || bYear < 1000 || bYear > 2100) {
+          if (dateStamp) dateStamp.textContent = 'Please enter a valid birth year (1000 - 2100).';
           return;
         }
 
-        currentBirthDate = birthDate;
-        currentTargetDate = targetDate;
+        const birthDate = new Date(bYear, bMonth - 1, bDay);
+        const targetDate = new Date(tYear, tMonth - 1, tDay);
 
-        // Structured Calendar Borrowing
+        if (targetDate < birthDate) {
+          if (dateStamp) dateStamp.textContent = 'Target date cannot be earlier than birth date.';
+          return;
+        }
+
         let years = tYear - bYear;
         let months = tMonth - bMonth;
         let days = tDay - bDay;
 
         if (days < 0) {
           months--;
-          const prevMonthLastDay = new Date(tYear, tMonth - 1, 0).getDate();
-          days += prevMonthLastDay;
+          const prevMonthDays = getDaysInMonth(tYear, tMonth - 1 === 0 ? 12 : tMonth - 1);
+          days += prevMonthDays;
         }
 
         if (months < 0) {
@@ -900,187 +882,164 @@
           months += 12;
         }
 
-        // Render Hero 3-unit Cards
-        unitYears.textContent = years;
-        unitMonths.textContent = months;
-        unitDays.textContent = days;
+        if (unitYears) unitYears.textContent = years;
+        if (unitMonths) unitMonths.textContent = months;
+        if (unitDays) unitDays.textContent = days;
+        if (mainVal) mainVal.textContent = `${years} Years, ${months} Months, ${days} Days`;
 
-        const fullAgeStr = `${years} Years, ${months} Months, ${days} Days`;
-        mainVal.textContent = fullAgeStr;
+        const weekdayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        if (dayBornPill) dayBornPill.textContent = weekdayNames[birthDate.getDay()];
+        if (zodiacBadge) zodiacBadge.textContent = getZodiac(bDay, bMonth);
 
-        // Format DD/MM/YYYY Strings
-        const bFormatted = `${pad(bDay)}/${pad(bMonth)}/${bYear}`;
-        const tFormatted = `${pad(tDay)}/${pad(tMonth)}/${tYear}`;
-        const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const bDayName = daysOfWeek[birthDate.getDay()];
-        const tDayName = daysOfWeek[targetDate.getDay()];
-
-        dateStamp.textContent = `Born on: ${bFormatted} (${bDayName}) • Calculated on: ${tFormatted} (${tDayName})`;
-        zodiacBadge.textContent = getZodiac(bDay, bMonth);
-        dayBornPill.textContent = `Born on a ${bDayName}`;
-
-        // Total Elapsed Units
         const diffMs = targetDate - birthDate;
-        const totalDaysNum = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-        const totalWeeksNum = Math.floor(totalDaysNum / 7);
-        const remainDaysInWeek = totalDaysNum % 7;
-        const totalMonthsEst = (years * 12) + months;
-        const totalHoursNum = totalDaysNum * 24;
-        const totalMinsNum = totalHoursNum * 60;
-        const totalSecsNum = totalDaysNum * 86400;
+        const totalD = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+        const totalH = Math.floor(diffMs / (1000 * 60 * 60));
+        const totalM = Math.floor(diffMs / (1000 * 60));
+        const totalS = Math.floor(diffMs / 1000);
 
-        totalMonths.textContent = `${totalMonthsEst.toLocaleString()} Months & ${days} Days`;
-        totalWeeks.textContent = `${totalWeeksNum.toLocaleString()} Weeks & ${remainDaysInWeek} Days`;
-        totalDays.textContent = `${totalDaysNum.toLocaleString()} Days`;
-        totalHours.textContent = `${totalHoursNum.toLocaleString()} Hours`;
-        totalMinutes.textContent = `${totalMinsNum.toLocaleString()} Minutes`;
-        totalSeconds.textContent = `${totalSecsNum.toLocaleString()} Sec`;
+        if (totalDays) totalDays.textContent = Number(totalD).toLocaleString() + ' Days';
+        if (totalHours) totalHours.textContent = Number(totalH).toLocaleString() + ' Hours';
+        if (totalMinutes) totalMinutes.textContent = Number(totalM).toLocaleString() + ' Minutes';
+        if (totalSeconds) totalSeconds.textContent = Number(totalS).toLocaleString() + ' Sec';
+        if (totalWeeks) totalWeeks.textContent = (totalD / 7).toFixed(1) + ' Weeks';
+        if (totalMonths) totalMonths.textContent = ((years * 12) + months + (days / 30.4375)).toFixed(1) + ' Months';
 
-        // Physiological Estimates
-        // Average resting heart rate ~72 bpm
-        const heartCount = Math.round((totalMinsNum * 72) / 1000000 * 10) / 10;
-        heartbeats.textContent = `~${heartCount.toLocaleString()} Million`;
-
-        // Average resting breathing rate ~16 breaths/min
-        const breathCount = Math.round((totalMinsNum * 16) / 1000000 * 10) / 10;
-        breaths.textContent = `~${breathCount.toLocaleString()} Million`;
+        if (heartbeats) heartbeats.textContent = '~' + (totalM * 72 / 1000000).toFixed(2) + ' Million';
+        if (breaths) breaths.textContent = '~' + (totalM * 16 / 1000000).toFixed(2) + ' Million';
 
         // Next Birthday Countdown
-        let nextBYear = tYear;
-        let nextBDate = new Date(nextBYear, bMonth - 1, bDay);
-        if (nextBDate < targetDate) {
-          nextBYear++;
-          nextBDate = new Date(nextBYear, bMonth - 1, bDay);
+        let nextBdayYear = tYear;
+        let nextBdayDate = new Date(nextBdayYear, bMonth - 1, bDay);
+        if (nextBdayDate < targetDate) {
+          nextBdayDate = new Date(nextBdayYear + 1, bMonth - 1, bDay);
         }
+        const bdayDiffMs = nextBdayDate - targetDate;
+        const bdayDiffDays = Math.ceil(bdayDiffMs / (1000 * 60 * 60 * 24));
+        const bdayDiffMonths = Math.floor(bdayDiffDays / 30.4375);
+        const remDays = Math.floor(bdayDiffDays % 30.4375);
 
-        const bdayDiffDays = Math.ceil((nextBDate - targetDate) / (1000 * 60 * 60 * 24));
-        const turningAge = nextBYear - bYear;
-        const nextBdayFormatted = `${pad(bDay)}/${pad(bMonth)}/${nextBYear}`;
-        const nextBDayName = daysOfWeek[nextBDate.getDay()];
+        if (nextBday) nextBday.textContent = `${bdayDiffMonths} Months, ${remDays} Days`;
+        if (nextBdaySub) nextBdaySub.textContent = `Turning ${years + 1} on ${pad(bDay)}/${pad(bMonth)}/${nextBdayDate.getFullYear()} (${bdayDiffDays} days remaining)`;
 
-        if (bdayDiffDays === 0) {
-          nextBday.textContent = '🎉 Happy Birthday Today!';
-          nextBdaySub.textContent = `Turning ${turningAge} Years Old Today!`;
-        } else {
-          const bMonthsLeft = Math.floor(bdayDiffDays / 30.4375);
-          const bDaysLeft = Math.round(bdayDiffDays % 30.4375);
-          nextBday.textContent = `${bMonthsLeft} Months, ${bDaysLeft} Days (${bdayDiffDays} Days)`;
-          nextBdaySub.textContent = `Next Birthday: ${nextBdayFormatted} (${nextBDayName}) • Turning ${turningAge}`;
+        if (halfBday) halfBday.textContent = `${pad(bDay)}/${pad((bMonth + 6 > 12 ? bMonth - 6 : bMonth + 6))}/${tYear}`;
+        if (nextMilestone) nextMilestone.textContent = `${Math.ceil((years + 1) / 10) * 10}th Birthday`;
+
+        if (dateStamp) dateStamp.textContent = `Exact age calculated from ${pad(bDay)}/${pad(bMonth)}/${bYear} to ${pad(tDay)}/${pad(tMonth)}/${tYear}.`;
+
+        // Start Live Second-by-Second Ticker if evaluating up to Today
+        const isTargetToday = (tYear === today.getFullYear() && tMonth === (today.getMonth() + 1) && tDay === today.getDate());
+        if (isTargetToday) {
+          updateLiveTicker();
+          liveTimer = setInterval(updateLiveTicker, 1000);
         }
-
-        // Half Birthday (6 months after birth date)
-        const halfMonth = ((bMonth - 1 + 6) % 12) + 1;
-        const halfYear = (bMonth > 6) ? (tYear + (tMonth > halfMonth ? 1 : 0)) : tYear;
-        halfBday.textContent = `${pad(bDay)}/${pad(halfMonth)}/${halfYear}`;
-
-        // Next Major Decade/Round Milestone (e.g. 30, 40, 50, 60, 70)
-        const nextDecadeAge = (Math.floor(years / 10) + 1) * 10;
-        const nextDecadeYear = bYear + nextDecadeAge;
-        const yearsToMilestone = nextDecadeYear - tYear;
-        nextMilestone.textContent = `${nextDecadeAge}th Birthday on ${pad(bDay)}/${pad(bMonth)}/${nextDecadeYear} (in ~${yearsToMilestone} Years)`;
-
-        startLiveSecondTicker(birthDate);
       }
 
-      // Live Ticking Seconds Engine
-      function startLiveSecondTicker(birthDate) {
-        if (liveTimer) clearInterval(liveTimer);
-        liveTimer = setInterval(() => {
-          const nowLive = new Date();
-          const liveSecs = Math.floor((nowLive - birthDate) / 1000);
-          if (liveSecs > 0) {
-            totalSeconds.textContent = `${liveSecs.toLocaleString()} Sec`;
+      // Auto-calculate disabled; calculate triggered only on button click
+      if (btnCalc) btnCalc.addEventListener('click', () => { const rc = document.getElementById('age-result-card'); if (rc) rc.classList.remove('hidden'); calculateAge(); });
+
+      if (btnToday) {
+        btnToday.addEventListener('click', () => {
+          const t = new Date();
+          populateDays(targetDay, t.getDate());
+          if (targetMonth) targetMonth.value = String(t.getMonth() + 1);
+          if (targetYear) targetYear.value = String(t.getFullYear());
+          calculateAge();
+          if (window.showToast) window.showToast("Set target date to Today!");
+        });
+      }
+
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          if (liveTimer) {
+            clearInterval(liveTimer);
+            liveTimer = null;
           }
-        }, 1000);
+
+          if (dobYear) dobYear.value = '';
+          if (dobMonth) dobMonth.value = '1';
+          populateDays(dobDay, 1);
+
+          if (targetYear) targetYear.value = '';
+          if (targetMonth) targetMonth.value = '1';
+          populateDays(targetDay, 1);
+
+          if (unitYears) unitYears.textContent = '0';
+          if (unitMonths) unitMonths.textContent = '0';
+          if (unitDays) unitDays.textContent = '0';
+          if (mainVal) mainVal.textContent = '0 Years, 0 Months, 0 Days';
+          if (dateStamp) dateStamp.textContent = 'Enter date of birth and target date above, then click Calculate Age.';
+          if (zodiacBadge) zodiacBadge.textContent = '\u2014';
+          if (dayBornPill) dayBornPill.textContent = '\u2014';
+          if (nextBday) nextBday.textContent = '\u2014';
+          if (nextBdaySub) nextBdaySub.textContent = 'Enter date of birth above';
+
+          if (totalMonths) totalMonths.textContent = '0 Months';
+          if (totalWeeks) totalWeeks.textContent = '0 Weeks';
+          if (totalDays) totalDays.textContent = '0 Days';
+          if (totalHours) totalHours.textContent = '0 Hours';
+          if (totalMinutes) totalMinutes.textContent = '0 Minutes';
+          if (totalSeconds) totalSeconds.textContent = '0 Sec';
+          if (heartbeats) heartbeats.textContent = '0';
+          if (breaths) breaths.textContent = '0';
+          if (halfBday) halfBday.textContent = '\u2014';
+          if (nextMilestone) nextMilestone.textContent = '\u2014';
+
+          const rc = document.getElementById('age-result-card'); if (rc) rc.classList.add('hidden'); if (dobYear) dobYear.focus();
+        });
       }
 
-      // Event Listeners
-      btnCalc.addEventListener('click', calculateAge);
+      if (btnCopy) {
+        btnCopy.addEventListener('click', () => {
+          const bDay = pad(parseInt(dobDay ? dobDay.value : 1, 10));
+          const bMonth = pad(parseInt(dobMonth ? dobMonth.value : 1, 10));
+          const bYear = dobYear ? dobYear.value : '';
+          const tDay = pad(parseInt(targetDay ? targetDay.value : 1, 10));
+          const tMonth = pad(parseInt(targetMonth ? targetMonth.value : 1, 10));
+          const tYear = targetYear ? targetYear.value : '';
 
-      // Set to Today Handler
-      btnToday.addEventListener('click', () => {
-        const t = new Date();
-        populateDays(targetDay, t.getDate());
-        targetMonth.value = String(t.getMonth() + 1);
-        targetYear.value = String(t.getFullYear());
-        calculateAge();
-        if (window.showToast) window.showToast("Set target date to Today (DD/MM/YYYY)!");
-      });
+          const y = unitYears ? unitYears.textContent : '0';
+          const m = unitMonths ? unitMonths.textContent : '0';
+          const d = unitDays ? unitDays.textContent : '0';
+          const z = zodiacBadge ? zodiacBadge.textContent : '';
+          const nb = nextBday ? nextBday.textContent : '';
+          const td = totalDays ? totalDays.textContent : '';
+          const th = totalHours ? totalHours.textContent : '';
+          const hb = heartbeats ? heartbeats.textContent : '';
+          const sec = totalSeconds ? totalSeconds.textContent : '';
 
-      // Reset Button
-      btnReset.addEventListener('click', () => {
-        populateDays(dobDay, 15);
-        dobMonth.value = "5";
-        dobYear.value = "1998";
+          const summary = [
+            '\u{1F4C5} Finejust.vip Age Calculator Summary',
+            '----------------------------------------',
+            `\u{1F382} Date of Birth: ${bDay}/${bMonth}/${bYear}`,
+            `\u{1F3AF} Evaluated on: ${tDay}/${tMonth}/${tYear}`,
+            `\u{2B50} Exact Chronological Age: ${y} Years, ${m} Months, ${d} Days`,
+            `\u{2728} Zodiac Sign: ${z}`,
+            `\u{1F381} Next Birthday Countdown: ${nb}`,
+            `\u{2600}\u{FE0F} Total Days Lived: ${td}`,
+            `\u{23F0} Total Hours Lived: ${th}`,
+            `\u{23F1}\u{FE0F} Total Seconds Lived: ${sec}`,
+            `\u{1F493} Estimated Heartbeats: ${hb}`,
+            '----------------------------------------',
+            'Calculate your age free on: https://www.finejust.vip/tools/age-calculator.html'
+          ].join('\n');
 
-        const t = new Date();
-        populateDays(targetDay, t.getDate());
-        targetMonth.value = String(t.getMonth() + 1);
-        targetYear.value = String(t.getFullYear());
-
-        calculateAge();
-      });
-
-      // Copy Age Summary Button
-      btnCopy.addEventListener('click', () => {
-        const bDay = pad(parseInt(dobDay.value, 10));
-        const bMonth = pad(parseInt(dobMonth.value, 10));
-        const bYear = dobYear.value;
-        const tDay = pad(parseInt(targetDay.value, 10));
-        const tMonth = pad(parseInt(targetMonth.value, 10));
-        const tYear = targetYear.value;
-
-        const summary = `📅 Finejust.vip Age Calculator (DD/MM/YYYY)
-----------------------------------------
-🎂 Date of Birth: ${bDay}/${bMonth}/${bYear}
-🎯 Calculated on: ${tDay}/${tMonth}/${tYear}
-⭐ Exact Age: ${unitYears.textContent} Years, ${unitMonths.textContent} Months, ${unitDays.textContent} Days
-✨ Zodiac Sign: ${zodiacBadge.textContent}
-🎁 Next Birthday: ${nextBday.textContent} (${nextBdaySub.textContent})
-☀️ Total Days Lived: ${totalDays.textContent}
-⏰ Total Hours: ${totalHours.textContent}
-💓 Estimated Heartbeats: ${heartbeats.textContent}
-----------------------------------------
-Calculate your age free on: https://www.finejust.vip/tools/age-calculator.html`;
-
-        if (window.copyToClipboard) {
           window.copyToClipboard(summary, 'Age summary copied to clipboard!');
-        } else {
-          navigator.clipboard.writeText(summary).then(() => {
-            alert('Age summary copied to clipboard!');
-          });
-        }
-      });
+        });
+      }
 
-      // Preset Chips Handlers
       document.querySelectorAll('.preset-chip').forEach(chip => {
         chip.addEventListener('click', function() {
-          const dobPreset = this.getAttribute('data-preset-dob');
-          const agePreset = this.getAttribute('data-preset-age');
-          const t = new Date();
-
-          if (dobPreset) {
-            const parts = dobPreset.split('/');
-            populateDays(dobDay, parseInt(parts[0], 10));
-            dobMonth.value = String(parseInt(parts[1], 10));
-            dobYear.value = parts[2];
-          } else if (agePreset) {
-            const yrsAgo = parseInt(agePreset, 10);
-            populateDays(dobDay, t.getDate());
-            dobMonth.value = String(t.getMonth() + 1);
-            dobYear.value = String(t.getFullYear() - yrsAgo);
+          const y = this.getAttribute('data-preset-year');
+          const m = this.getAttribute('data-preset-month');
+          const d = this.getAttribute('data-preset-day');
+          if (y && m && d) {
+            if (dobYear) dobYear.value = y;
+            if (dobMonth) dobMonth.value = m;
+            populateDays(dobDay, parseInt(d, 10));
+            calculateAge();
           }
-
-          populateDays(targetDay, t.getDate());
-          targetMonth.value = String(t.getMonth() + 1);
-          targetYear.value = String(t.getFullYear());
-
-          calculateAge();
         });
       });
-
-      // Initial Calculation on Load
-      calculateAge();
     })();
   </script>
 </body>

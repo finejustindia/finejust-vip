@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -7,11 +7,7 @@
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-<script>
-    if (window.location.hostname.includes('finejust.vip') && window.location.pathname.endsWith('/index.html')) {
-      window.location.replace('/');
-    }
-  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finejust.vip — Free AI Tools &amp; Smart Utilities</title>
@@ -43,15 +39,11 @@
   <meta name="theme-color" content="#2563EB">
 
   <!-- Stylesheet -->
+  <link rel="preload" href="assets/style.css" as="style">
   <link rel="stylesheet" href="assets/style.css">
 
   <!-- Anti-flicker Dark Theme Initializer -->
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+  
 
   <!-- Structured Schema Markup (JSON-LD) -->
   <script type="application/ld+json">
@@ -127,11 +119,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -452,6 +444,32 @@
             </a>
           </div>
 
+          <div class="tool-card">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📅</div>
+              <span class="tool-card-tag">Calculators</span>
+            </div>
+            <h3 class="tool-card-title">Age Calculator</h3>
+            <p class="tool-card-desc">Calculate exact chronological age in years, months, days, hours, and countdown to your next birthday.</p>
+            <a href="tools/age-calculator.html" class="tool-card-footer">
+              <span>Open Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🌐</div>
+              <span class="tool-card-tag">Converters</span>
+            </div>
+            <h3 class="tool-card-title">Currency Converter</h3>
+            <p class="tool-card-desc">Convert across 25+ global currencies with real-time reciprocal rates and instant multi-unit calculations.</p>
+            <a href="tools/currency-converter.html" class="tool-card-footer">
+              <span>Open Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -509,7 +527,7 @@
         <div class="articles-grid">
           <a href="blog/how-to-calculate-percentage.html" class="article-card">
             <div class="article-img-wrap">
-              <img decoding="async" src="images/blog/percentage-guide.webp" alt="How to Calculate Percentage" loading="lazy" width="400" height="225">
+              <img decoding="async" src="images/blog/percentage-guide.webp" alt="How to Calculate Percentage" loading="lazy" decoding="async" width="400" height="225">
             </div>
             <div class="article-card-body">
               <div class="article-meta-row">
@@ -524,7 +542,7 @@
 
           <a href="blog/what-is-bmi-and-how-to-calculate-it.html" class="article-card">
             <div class="article-img-wrap">
-              <img decoding="async" src="images/blog/bmi-guide.webp" alt="What is Body Mass Index" loading="lazy" width="400" height="225">
+              <img decoding="async" src="images/blog/bmi-guide.webp" alt="What is Body Mass Index" loading="lazy" decoding="async" width="400" height="225">
             </div>
             <div class="article-card-body">
               <div class="article-meta-row">
@@ -539,7 +557,7 @@
 
           <a href="blog/how-do-qr-codes-work.html" class="article-card">
             <div class="article-img-wrap">
-              <img decoding="async" src="images/blog/qr-guide.webp" alt="How Do QR Codes Work" loading="lazy" width="400" height="225">
+              <img decoding="async" src="images/blog/qr-guide.webp" alt="How Do QR Codes Work" loading="lazy" decoding="async" width="400" height="225">
             </div>
             <div class="article-card-body">
               <div class="article-meta-row">

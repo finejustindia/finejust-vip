@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -170,11 +165,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -292,30 +287,35 @@
             <div class="form-actions">
               <button type="button" id="btn-calc-loan" class="btn btn-primary">Calculate Loan</button>
               <button type="button" id="btn-reset-loan" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
-            <div class="result-card age-result-hero" id="loan-result-card">
+            <div class="result-card age-result-hero hidden" id="loan-result-card">
               <div class="result-header">
-                <span class="result-title" id="loan-res-title">Estimated Monthly Payment</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-loan">Copy Result</button>
+                <span class="result-title" id="loan-res-title">💵 Estimated Payment</span>
               </div>
               <div class="result-main-value" id="loan-pay-val">$829.47</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Principal Borrowed</span>
+                  <span class="breakdown-label">💰 Total Principal Borrowed</span>
                   <span class="breakdown-val" id="loan-orig-val">$35,000.00</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Interest Paid</span>
+                  <span class="breakdown-label">💳 Total Interest Paid</span>
                   <span class="breakdown-val" id="loan-interest-val" style="color:#ef4444;">$4,814.41</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Repayment Amount</span>
+                  <span class="breakdown-label">📈 Total Repayment Amount</span>
                   <span class="breakdown-val" id="loan-total-val">$39,814.41</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Payment Cycles</span>
+                  <span class="breakdown-label">🔄 Total Payment Cycles</span>
                   <span class="breakdown-val" id="loan-cycles-val">48 Payments</span>
                 </div>
               </div>
@@ -504,21 +504,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -563,66 +563,111 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const inpP = document.getElementById('loan-p');
-      const inpR = document.getElementById('loan-r');
-      const inpTerm = document.getElementById('loan-term');
-      const inpFreq = document.getElementById('loan-freq');
+(function() {
+  'use strict';
+  const inpP = document.getElementById('loan-p');
+  const inpR = document.getElementById('loan-r');
+  const inpTerm = document.getElementById('loan-term');
+  const selFreq = document.getElementById('loan-freq');
 
-      const resTitle = document.getElementById('loan-res-title');
-      const resPay = document.getElementById('loan-pay-val');
-      const resOrig = document.getElementById('loan-orig-val');
-      const resInterest = document.getElementById('loan-interest-val');
-      const resTotal = document.getElementById('loan-total-val');
-      const resCycles = document.getElementById('loan-cycles-val');
+  const resTitle = document.getElementById('loan-res-title');
+  const resPay = document.getElementById('loan-pay-val');
+  const resOrig = document.getElementById('loan-orig-val');
+  const resInterest = document.getElementById('loan-interest-val');
+  const resTotal = document.getElementById('loan-total-val');
+  const resCycles = document.getElementById('loan-cycles-val');
 
-      const btnCalc = document.getElementById('btn-calc-loan');
-      const btnReset = document.getElementById('btn-reset-loan');
-      const btnCopy = document.getElementById('btn-copy-loan');
+  const btnCalc = document.getElementById('btn-calc-loan');
+  const btnReset = document.getElementById('btn-reset-loan');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      function calculateLoan() {
-        const p = parseFloat(inpP.value) || 0;
-        const annualRate = parseFloat(inpR.value) || 0;
-        const years = parseFloat(inpTerm.value) || 0;
-        const periodsPerYear = parseInt(inpFreq.value, 10) || 12;
+  function calculateLoan() {
+    const rc = document.getElementById('loan-result-card');
+    if (rc) rc.classList.remove('hidden');
 
-        if (p <= 0 || annualRate <= 0 || years <= 0) return;
+    const p = parseFloat(inpP ? inpP.value : 0) || 0;
+    const r = parseFloat(inpR ? inpR.value : 0) || 0;
+    const t = parseFloat(inpTerm ? inpTerm.value : 0) || 0;
+    const freq = parseFloat(selFreq ? selFreq.value : 12) || 12;
 
-        const periodicRate = annualRate / (periodsPerYear * 100);
-        const totalPeriods = Math.round(years * periodsPerYear);
+    if (p <= 0 || r <= 0 || t <= 0) {
+      if (resPay) resPay.textContent = '$0.00';
+      if (resOrig) resOrig.textContent = '$0.00';
+      if (resInterest) resInterest.textContent = '$0.00';
+      if (resTotal) resTotal.textContent = '$0.00';
+      if (resCycles) resCycles.textContent = '0 Payments';
+      return;
+    }
 
-        const payment = (p * periodicRate * Math.pow(1 + periodicRate, totalPeriods)) / (Math.pow(1 + periodicRate, totalPeriods) - 1);
-        const totalPayable = payment * totalPeriods;
-        const totalInterest = totalPayable - p;
+    const periodicRate = r / (freq * 100);
+    const totalPeriods = t * freq;
+    const payment = (p * periodicRate * Math.pow(1 + periodicRate, totalPeriods)) / (Math.pow(1 + periodicRate, totalPeriods) - 1);
+    const totalPayment = payment * totalPeriods;
+    const totalInterest = totalPayment - p;
 
-        if (periodsPerYear === 12) resTitle.textContent = 'Estimated Monthly Payment';
-        else if (periodsPerYear === 26) resTitle.textContent = 'Estimated Bi-Weekly Payment';
-        else resTitle.textContent = 'Estimated Weekly Payment';
+    let freqLabel = 'Monthly Payment';
+    if (freq === 26) freqLabel = 'Bi-Weekly Payment';
+    else if (freq === 52) freqLabel = 'Weekly Payment';
 
-        resPay.textContent = `$${payment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resOrig.textContent = `$${p.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resInterest.textContent = `$${totalInterest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resTotal.textContent = `$${totalPayable.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resCycles.textContent = `${totalPeriods} Payment Cycles`;
-      }
+    if (resTitle) resTitle.textContent = `\u{1F4B5} Estimated ${freqLabel}`;
+    if (resPay) resPay.textContent = `$${payment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resOrig) resOrig.textContent = `$${p.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resInterest) resInterest.textContent = `$${totalInterest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resTotal) resTotal.textContent = `$${totalPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resCycles) resCycles.textContent = `${totalPeriods} Payments`;
+  }
 
-      [inpP, inpR, inpTerm, inpFreq].forEach(inp => inp.addEventListener('input', calculateLoan));
-      btnCalc.addEventListener('click', calculateLoan);
-
-      btnReset.addEventListener('click', () => {
-        inpP.value = '35000';
-        inpR.value = '6.5';
-        inpTerm.value = '4';
-        inpFreq.value = '12';
-        calculateLoan();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resPay.textContent, 'Loan payment copied!');
-      });
-
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('loan-result-card');
+      if (rc) rc.classList.remove('hidden');
       calculateLoan();
-    })();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('loan-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpP) inpP.value = '';
+      if (inpR) inpR.value = '';
+      if (inpTerm) inpTerm.value = '';
+      if (resPay) resPay.textContent = '$0.00';
+      if (resOrig) resOrig.textContent = '$0.00';
+      if (resInterest) resInterest.textContent = '$0.00';
+      if (resTotal) resTotal.textContent = '$0.00';
+      if (resCycles) resCycles.textContent = '0 Payments';
+      if (inpP) inpP.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const p = inpP ? inpP.value : '0';
+      const r = inpR ? inpR.value : '0';
+      const t = inpTerm ? inpTerm.value : '0';
+      const pay = resPay ? resPay.textContent : '$0.00';
+      const interest = resInterest ? resInterest.textContent : '$0.00';
+      const total = resTotal ? resTotal.textContent : '$0.00';
+      const cycles = resCycles ? resCycles.textContent : '0 Payments';
+
+      const summary = [
+        '\u{1F4B3} Finejust.vip Loan Calculator Summary',
+        '----------------------------------------',
+        `\u{1F4B0} Loan Principal: $${Number(p || 0).toLocaleString()}`,
+        `\u{1F4CA} Annual Interest Rate: ${r}%`,
+        `\u{1F5D3}\u{FE0F} Loan Term: ${t} Years (${cycles})`,
+        `\u{2B50} Estimated Installment: ${pay}`,
+        `\u{1F4B5} Total Interest Paid: ${interest}`,
+        `\u{1F3E6} Total Repayment Outflow: ${total}`,
+        '----------------------------------------',
+        'Calculate free on: https://www.finejust.vip/tools/loan-calculator.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Loan summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

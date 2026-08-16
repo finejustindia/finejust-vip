@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -170,11 +165,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -285,33 +280,38 @@
               </div>
             </div>
 
-            <div class="form-actions">
+                        <div class="form-actions">
               <button type="button" id="btn-calc-disc" class="btn btn-primary">Calculate Savings</button>
               <button type="button" id="btn-reset-disc" class="btn btn-secondary">Reset</button>
+              <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
             </div>
 
-            <div class="result-card age-result-hero" id="disc-result-card">
+            <div class="result-card age-result-hero hidden" id="disc-result-card">
               <div class="result-header">
-                <span class="result-title">Final Price at Register</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-disc">Copy Result</button>
+                <span class="result-title">🏷️ Final Price at Register</span>
               </div>
               <div class="result-main-value" id="disc-final-val">$87.48</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Total Dollar Savings</span>
+                  <span class="breakdown-label">✨ Total Dollar Savings</span>
                   <span class="breakdown-val" id="disc-saved-val" style="color:#10b981;">$39.00 (32.5%)</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Discounted Subtotal</span>
+                  <span class="breakdown-label">💰 Discounted Subtotal</span>
                   <span class="breakdown-val" id="disc-subtotal-val">$81.00</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Sales Tax Amount</span>
+                  <span class="breakdown-label">🏛️ Sales Tax Amount</span>
                   <span class="breakdown-val" id="disc-tax-val">$6.48</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Effective Total Off</span>
+                  <span class="breakdown-label">🔥 Effective Total Off</span>
                   <span class="breakdown-val" id="disc-effective-val">32.5% Off</span>
                 </div>
               </div>
@@ -503,21 +503,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -562,61 +562,100 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const origInp = document.getElementById('disc-orig');
-      const pctInp = document.getElementById('disc-pct');
-      const extraInp = document.getElementById('disc-extra');
-      const taxInp = document.getElementById('disc-tax');
+(function() {
+  'use strict';
+  const inpOrig = document.getElementById('disc-orig');
+  const inpDisc = document.getElementById('disc-pct');
+  const inpExtra = document.getElementById('disc-extra');
+  const inpTax = document.getElementById('disc-tax');
 
-      const resFinal = document.getElementById('disc-final-val');
-      const resSaved = document.getElementById('disc-saved-val');
-      const resSub = document.getElementById('disc-subtotal-val');
-      const resTax = document.getElementById('disc-tax-val');
-      const resEff = document.getElementById('disc-effective-val');
+  const resFinal = document.getElementById('disc-final-val');
+  const resSaved = document.getElementById('disc-saved-val');
+  const resSubtotal = document.getElementById('disc-subtotal-val');
+  const resTax = document.getElementById('disc-tax-val');
+  const resEffective = document.getElementById('disc-effective-val');
 
-      const btnCalc = document.getElementById('btn-calc-disc');
-      const btnReset = document.getElementById('btn-reset-disc');
-      const btnCopy = document.getElementById('btn-copy-disc');
+  const btnCalc = document.getElementById('btn-calc-disc');
+  const btnReset = document.getElementById('btn-reset-disc');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      function calculateDiscount() {
-        const orig = parseFloat(origInp.value) || 0;
-        const d1 = parseFloat(pctInp.value) || 0;
-        const d2 = parseFloat(extraInp.value) || 0;
-        const tax = parseFloat(taxInp.value) || 0;
+  function calculateDiscount() {
+    const rc = document.getElementById('disc-result-card');
+    if (rc) rc.classList.remove('hidden');
 
-        if (orig <= 0) return;
+    const orig = parseFloat(inpOrig ? inpOrig.value : 0) || 0;
+    const disc = parseFloat(inpDisc ? inpDisc.value : 0) || 0;
+    const extra = parseFloat(inpExtra ? inpExtra.value : 0) || 0;
+    const tax = parseFloat(inpTax ? inpTax.value : 0) || 0;
 
-        const sub1 = orig * (1 - (d1 / 100));
-        const sub2 = sub1 * (1 - (d2 / 100));
-        const taxAmt = sub2 * (tax / 100);
-        const finalPrice = sub2 + taxAmt;
-        const totalSaved = orig - sub2;
-        const effectivePct = (totalSaved / orig) * 100;
+    if (orig <= 0) {
+      if (resFinal) resFinal.textContent = '$0.00';
+      if (resSaved) resSaved.textContent = '$0.00';
+      if (resSubtotal) resSubtotal.textContent = '$0.00';
+      if (resTax) resTax.textContent = '$0.00';
+      if (resEffective) resEffective.textContent = '0.0% Off';
+      return;
+    }
 
-        resFinal.textContent = `$${finalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resSaved.textContent = `$${totalSaved.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (${effectivePct.toFixed(1)}%)`;
-        resSub.textContent = `$${sub2.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resTax.textContent = `$${taxAmt.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        resEff.textContent = `${effectivePct.toFixed(1)}% Off`;
-      }
+    let subtotal = orig * (1 - (disc / 100));
+    if (extra > 0) subtotal = subtotal * (1 - (extra / 100));
+    const taxAmount = subtotal * (tax / 100);
+    const finalPrice = subtotal + taxAmount;
+    const totalSaved = orig - subtotal;
+    const effectivePct = orig > 0 ? ((totalSaved / orig) * 100) : 0;
 
-      [origInp, pctInp, extraInp, taxInp].forEach(inp => inp.addEventListener('input', calculateDiscount));
-      btnCalc.addEventListener('click', calculateDiscount);
+    if (resFinal) resFinal.textContent = `$${finalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resSaved) resSaved.textContent = `$${totalSaved.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (${effectivePct.toFixed(1)}%)`;
+    if (resSubtotal) resSubtotal.textContent = `$${subtotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resTax) resTax.textContent = `$${taxAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    if (resEffective) resEffective.textContent = `${effectivePct.toFixed(1)}% Off`;
+  }
 
-      btnReset.addEventListener('click', () => {
-        origInp.value = '120';
-        pctInp.value = '25';
-        extraInp.value = '10';
-        taxInp.value = '8';
-        calculateDiscount();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resFinal.textContent, 'Discount calculation copied!');
-      });
-
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('disc-result-card');
+      if (rc) rc.classList.remove('hidden');
       calculateDiscount();
-    })();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('disc-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpOrig) inpOrig.value = '';
+      if (inpDisc) inpDisc.value = '';
+      if (inpExtra) inpExtra.value = '';
+      if (inpTax) inpTax.value = '';
+      if (resFinal) resFinal.textContent = '$0.00';
+      if (resSaved) resSaved.textContent = '$0.00';
+      if (resSubtotal) resSubtotal.textContent = '$0.00';
+      if (resTax) resTax.textContent = '$0.00';
+      if (resEffective) resEffective.textContent = '0.0% Off';
+      if (inpOrig) inpOrig.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const finalPrice = resFinal ? resFinal.textContent : '$0.00';
+      const saved = resSaved ? resSaved.textContent : '$0.00';
+      const orig = inpOrig ? inpOrig.value : '0';
+
+      const summary = [
+        '\u{1F3F7}\u{FE0F} Finejust.vip Discount Calculator Summary',
+        '----------------------------------------',
+        `\u{1F4B5} Original Price: $${Number(orig || 0).toLocaleString()}`,
+        `\u{2B50} Final Price at Register: ${finalPrice}`,
+        `\u{1F389} Total Dollar Savings: ${saved}`,
+        '----------------------------------------',
+        'Calculate free on: https://www.finejust.vip/tools/discount-calculator.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Discount summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,9 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+        
 
   <script type="application/ld+json">
   {
@@ -170,11 +166,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -285,40 +281,45 @@
               </div>
             </div>
 
-            <div class="form-actions" style="justify-content:space-between;">
+                        <div class="form-actions" style="justify-content:space-between;">
               <button type="button" id="btn-swap-spd" class="btn btn-outline" style="border-radius:var(--radius-full);">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span>Swap Units</span>
+                <span>Swap</span>
               </button>
-              <div style="display:flex; gap:0.75rem;">
+              <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
                 <button type="button" id="btn-calc-spd" class="btn btn-primary">Convert Speed</button>
                 <button type="button" id="btn-reset-spd" class="btn btn-secondary">Reset</button>
+                <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
               </div>
             </div>
 
-            <div class="result-card age-result-hero" id="spd-result-card">
+            <div class="result-card age-result-hero hidden" id="speed-result-card">
               <div class="result-header">
-                <span class="result-title" id="spd-res-title">65 Miles per hour =</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-spd">Copy Result</button>
+                <span class="result-title" id="speed-res-title">🚗 65 mph =</span>
               </div>
-              <div class="result-main-value" id="spd-main-val">104.607 km/h</div>
+              <div class="result-main-value" id="speed-main-val">104.6074 km/h</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Meters per Second</span>
-                  <span class="breakdown-val" id="spd-ms-val">29.06 m/s</span>
+                  <span class="breakdown-label">🚗 Kilometers / Hr</span>
+                  <span class="breakdown-val" id="speed-kmh-val">104.61 km/h</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Maritime Knots</span>
-                  <span class="breakdown-val" id="spd-knots-val">56.48 knots</span>
+                  <span class="breakdown-label">🏎️ Miles / Hr</span>
+                  <span class="breakdown-val" id="speed-mph-val">65.00 mph</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Feet per Second</span>
-                  <span class="breakdown-val" id="spd-fts-val">95.33 ft/s</span>
+                  <span class="breakdown-label">⚡ Meters / Second</span>
+                  <span class="breakdown-val" id="speed-ms-val">29.06 m/s</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Aviation Mach Ratio</span>
-                  <span class="breakdown-val" id="spd-mach-val">0.085 Mach</span>
+                  <span class="breakdown-label">🚢 Nautical Knots</span>
+                  <span class="breakdown-val" id="speed-knot-val">56.48 knots</span>
                 </div>
               </div>
             </div>
@@ -511,21 +512,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -570,82 +571,97 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const factorsInMS = {
-        ms: 1.0,
-        kmh: 1 / 3.6,
-        mph: 0.44704,
-        knots: 0.514444444444,
-        fts: 0.3048,
-        mach: 343.0
-      };
+(function() {
+  'use strict';
+  const inpAmount = document.getElementById('spd-amount');
+  const selFrom = document.getElementById('spd-from');
+  const selTo = document.getElementById('spd-to');
+  const btnSwap = document.getElementById('btn-swap-spd');
 
-      const unitNames = {
-        kmh: 'km/h',
-        mph: 'Miles per hour',
-        ms: 'Meters per second',
-        knots: 'Knots',
-        fts: 'Feet per second',
-        mach: 'Mach'
-      };
+  const resTitle = document.getElementById('speed-res-title');
+  const resMain = document.getElementById('speed-main-val');
+  const resKmh = document.getElementById('speed-kmh-val');
+  const resMph = document.getElementById('speed-mph-val');
+  const resMs = document.getElementById('speed-ms-val');
+  const resKnot = document.getElementById('speed-knot-val');
 
-      const inpAmt = document.getElementById('spd-amount');
-      const selFrom = document.getElementById('spd-from');
-      const selTo = document.getElementById('spd-to');
-      const btnSwap = document.getElementById('btn-swap-spd');
+  const btnCalc = document.getElementById('btn-calc-spd');
+  const btnReset = document.getElementById('btn-reset-spd');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      const resTitle = document.getElementById('spd-res-title');
-      const resMain = document.getElementById('spd-main-val');
-      const resMS = document.getElementById('spd-ms-val');
-      const resKnots = document.getElementById('spd-knots-val');
-      const resFts = document.getElementById('spd-fts-val');
-      const resMach = document.getElementById('spd-mach-val');
+  const factors = {
+    ms: 1, kmh: 0.277777778, mph: 0.44704, knots: 0.514444444, fts: 0.3048, mach: 340.29
+  };
 
-      const btnCalc = document.getElementById('btn-calc-spd');
-      const btnReset = document.getElementById('btn-reset-spd');
-      const btnCopy = document.getElementById('btn-copy-spd');
-
-      btnSwap.addEventListener('click', () => {
-        const temp = selFrom.value;
-        selFrom.value = selTo.value;
-        selTo.value = temp;
-        convertSpeed();
-      });
-
-      function convertSpeed() {
-        const amount = parseFloat(inpAmt.value) || 0;
-        const from = selFrom.value;
-        const to = selTo.value;
-
-        const inMS = amount * factorsInMS[from];
-        const converted = inMS / factorsInMS[to];
-
-        resTitle.textContent = `${amount} ${unitNames[from]} =`;
-        resMain.textContent = `${Number(converted.toFixed(4)).toLocaleString()} ${unitNames[to]}`;
-        resMS.textContent = `${inMS.toFixed(2)} m/s`;
-        resKnots.textContent = `${(inMS / 0.514444444444).toFixed(2)} knots`;
-        resFts.textContent = `${(inMS / 0.3048).toFixed(2)} ft/s`;
-        resMach.textContent = `${(inMS / 343.0).toFixed(3)} Mach`;
-      }
-
-      inpAmt.addEventListener('input', convertSpeed);
-      selFrom.addEventListener('change', convertSpeed);
-      selTo.addEventListener('change', convertSpeed);
-      btnCalc.addEventListener('click', convertSpeed);
-
-      btnReset.addEventListener('click', () => {
-        inpAmt.value = '65';
-        selFrom.value = 'mph';
-        selTo.value = 'kmh';
-        convertSpeed();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resMain.textContent, 'Speed conversion copied!');
-      });
-
+  if (btnSwap) {
+    btnSwap.addEventListener('click', () => {
+      if (!selFrom || !selTo) return;
+      const temp = selFrom.value;
+      selFrom.value = selTo.value;
+      selTo.value = temp;
       convertSpeed();
-    })();
+    });
+  }
+
+  function convertSpeed() {
+    const rc = document.getElementById('speed-result-card');
+    if (rc) rc.classList.remove('hidden');
+
+    const val = parseFloat(inpAmount ? inpAmount.value : 0) || 0;
+    const from = selFrom ? selFrom.value : 'mph';
+    const to = selTo ? selTo.value : 'kmh';
+
+    const ms = val * (factors[from] || 1);
+    const result = ms / (factors[to] || 1);
+
+    if (resTitle) resTitle.textContent = `\u{1F680} ${val} ${from.toUpperCase()} =`;
+    if (resMain) resMain.textContent = `${Number(result.toFixed(2)).toLocaleString()} ${to.toUpperCase()}`;
+    if (resKmh) resKmh.textContent = `${(ms / 0.277777778).toFixed(2)} km/h`;
+    if (resMph) resMph.textContent = `${(ms / 0.44704).toFixed(2)} mph`;
+    if (resMs) resMs.textContent = `${ms.toFixed(2)} m/s`;
+    if (resKnot) resKnot.textContent = `${(ms / 0.514444444).toFixed(2)} knots`;
+  }
+
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('speed-result-card');
+      if (rc) rc.classList.remove('hidden');
+      convertSpeed();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('speed-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpAmount) inpAmount.value = '';
+      if (resTitle) resTitle.textContent = '\u{1F680} 0 MPH =';
+      if (resMain) resMain.textContent = '0 KM/H';
+      if (resKmh) resKmh.textContent = '0 km/h';
+      if (resMph) resMph.textContent = '0 mph';
+      if (resMs) resMs.textContent = '0 m/s';
+      if (resKnot) resKnot.textContent = '0 knots';
+      if (inpAmount) inpAmount.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const title = resTitle ? resTitle.textContent : '';
+      const main = resMain ? resMain.textContent : '';
+
+      const summary = [
+        '\u{1F680} Finejust.vip Speed Conversion Summary',
+        '----------------------------------------',
+        `\u{2B50} ${title} ${main}`,
+        '----------------------------------------',
+        'Convert free on: https://www.finejust.vip/tools/speed-converter.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Speed summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

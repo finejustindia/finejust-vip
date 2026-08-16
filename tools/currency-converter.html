@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
     <!-- High-Performance DNS Prefetch & Preconnect -->
@@ -34,13 +34,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="../assets/style.css" as="style">
   <link rel="stylesheet" href="../assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -170,11 +165,11 @@
   </script>
 
     <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="../assets/analytics.js"></script>
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -257,10 +252,10 @@
               </div>
               <div class="preset-chips-wrap">
                 <span class="preset-label">Quick Pairs:</span>
-                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='USD';document.getElementById('curr-to').value='EUR';document.getElementById('btn-calc-curr').click();">USD &rarr; EUR</button>
-                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='USD';document.getElementById('curr-to').value='INR';document.getElementById('btn-calc-curr').click();">USD &rarr; INR</button>
-                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='GBP';document.getElementById('curr-to').value='USD';document.getElementById('btn-calc-curr').click();">GBP &rarr; USD</button>
-                <button type="button" class="preset-chip" onclick="document.getElementById('curr-from').value='EUR';document.getElementById('curr-to').value='GBP';document.getElementById('btn-calc-curr').click();">EUR &rarr; GBP</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('cur-from').value='USD';document.getElementById('cur-to').value='EUR';document.getElementById('btn-calc-cur').click();">USD &rarr; EUR</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('cur-from').value='USD';document.getElementById('cur-to').value='INR';document.getElementById('btn-calc-cur').click();">USD &rarr; INR</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('cur-from').value='GBP';document.getElementById('cur-to').value='USD';document.getElementById('btn-calc-cur').click();">GBP &rarr; USD</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('cur-from').value='EUR';document.getElementById('cur-to').value='GBP';document.getElementById('btn-calc-cur').click();">EUR &rarr; GBP</button>
               </div>
             </div>
 <div class="calc-form-grid grid-3">
@@ -302,40 +297,37 @@
               </div>
             </div>
 
-            <div class="form-actions" style="justify-content:space-between;">
+                        <div class="form-actions" style="justify-content:space-between;">
               <button type="button" id="btn-swap-cur" class="btn btn-outline" style="border-radius:var(--radius-full);">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span>Swap Currencies</span>
+                <span>Swap</span>
               </button>
-              <div style="display:flex; gap:0.75rem;">
-                <button type="button" id="btn-calc-cur" class="btn btn-primary">Convert</button>
+              <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                <button type="button" id="btn-calc-cur" class="btn btn-primary">Convert Currency</button>
                 <button type="button" id="btn-reset-cur" class="btn btn-secondary">Reset</button>
+                <button type="button" id="btn-copy-summary" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Summary</span></button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share Calculation Summary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print or Save PDF Report"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg><span>Print</span></button>
               </div>
             </div>
 
-            <div class="result-card" id="cur-result-card">
+            <div class="result-card age-result-hero hidden" id="cur-result-card">
               <div class="result-header">
-                <span class="result-title" id="cur-res-title">1,000 USD =</span>
-                <button type="button" class="btn btn-outline" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;" id="btn-copy-cur">Copy Result</button>
+                <span class="result-title">💱 Converted Total Amount</span>
               </div>
-              <div class="result-main-value" id="cur-main-val">920.00 EUR</div>
+              <div class="result-main-value" id="cur-res-main">920.00 EUR</div>
 
               <div class="result-breakdown-grid age-stats-grid">
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Conversion Rate</span>
+                  <span class="breakdown-label">📊 Direct Exchange Rate</span>
                   <span class="breakdown-val" id="cur-rate-val">1 USD = 0.9200 EUR</span>
                 </div>
                 <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Inverse Reciprocal Rate</span>
+                  <span class="breakdown-label">🔄 Inverse Reciprocal Rate</span>
                   <span class="breakdown-val" id="cur-inv-val">1 EUR = 1.0870 USD</span>
-                </div>
-                <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Mid-Market Spread</span>
-                  <span class="breakdown-val" id="cur-spread-val">0.00% (No Markup)</span>
-                </div>
-                <div class="breakdown-item stat-card">
-                  <span class="breakdown-label">Valuation Timestamp</span>
-                  <span class="breakdown-val" id="cur-time-val">Live Real-Time</span>
                 </div>
               </div>
             </div>
@@ -528,21 +520,21 @@
             <h2 style="font-size:1.5rem; font-weight:800; color:var(--text); margin-bottom:1.25rem;">Related Educational Guides</h2>
             <div class="articles-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
               <a href="../blog/how-to-calculate-percentage.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/percentage-guide.webp" alt="Percentage Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Math</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Calculate Percentage</h4>
                 </div>
               </a>
               <a href="../blog/emi-vs-simple-interest-explained.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/emi-vs-interest.webp" alt="EMI vs Simple Interest" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Finance</span><span>9 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">EMI vs Simple Interest Explained</h4>
                 </div>
               </a>
               <a href="../blog/how-to-create-a-strong-password.html" class="article-card" style="box-shadow:none; border:1px solid var(--border);">
-                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" width="300" height="170"></div>
+                <div class="article-img-wrap"><img decoding="async" src="../images/blog/password-guide.webp" alt="Password Guide" loading="lazy" decoding="async" width="300" height="170"></div>
                 <div class="article-card-body" style="padding:1rem;">
                   <div class="article-meta-row"><span class="tool-card-tag">Security</span><span>8 min</span></div>
                   <h4 class="article-card-title" style="font-size:1rem;">How to Create a Strong Password</h4>
@@ -587,82 +579,97 @@
   <script src="../assets/script.js" defer></script>
   <script src="../assets/search.js" defer></script>
   <script>
-    (function() {
-      const rates = {
-        USD: 1.0,
-        EUR: 0.92,
-        GBP: 0.79,
-        INR: 83.45,
-        JPY: 155.40,
-        CAD: 1.37,
-        AUD: 1.52,
-        CHF: 0.91,
-        CNY: 7.23,
-        SGD: 1.35,
-        AED: 3.67
-      };
+(function() {
+  'use strict';
+  const inpAmount = document.getElementById('cur-amount');
+  const selFrom = document.getElementById('cur-from');
+  const selTo = document.getElementById('cur-to');
+  const btnSwap = document.getElementById('btn-swap-cur');
 
-      const inpAmt = document.getElementById('cur-amount');
-      const selFrom = document.getElementById('cur-from');
-      const selTo = document.getElementById('cur-to');
-      const btnSwap = document.getElementById('btn-swap-cur');
+  const resMain = document.getElementById('cur-res-main');
+  const resRate = document.getElementById('cur-rate-val');
+  const resInv = document.getElementById('cur-inv-val');
 
-      const resTitle = document.getElementById('cur-res-title');
-      const resMain = document.getElementById('cur-main-val');
-      const resRate = document.getElementById('cur-rate-val');
-      const resInv = document.getElementById('cur-inv-val');
+  const btnCalc = document.getElementById('btn-calc-cur');
+  const btnReset = document.getElementById('btn-reset-cur');
+  const btnCopySummary = document.getElementById('btn-copy-summary');
 
-      const btnCalc = document.getElementById('btn-calc-cur');
-      const btnReset = document.getElementById('btn-reset-cur');
-      const btnCopy = document.getElementById('btn-copy-cur');
+  const rates = {
+    USD: 1.0, EUR: 0.92, GBP: 0.78, INR: 83.5, JPY: 155.2, CAD: 1.37, AUD: 1.51, CHF: 0.90, CNY: 7.23, SGD: 1.35, AED: 3.67
+  };
 
-      btnSwap.addEventListener('click', () => {
-        const temp = selFrom.value;
-        selFrom.value = selTo.value;
-        selTo.value = temp;
-        convertCurrency();
-      });
-
-      function convertCurrency() {
-        const amount = parseFloat(inpAmt.value) || 0;
-        const from = selFrom.value;
-        const to = selTo.value;
-
-        if (amount < 0) return;
-
-        const rateFrom = rates[from] || 1;
-        const rateTo = rates[to] || 1;
-
-        // Base USD conversion
-        const inUSD = amount / rateFrom;
-        const converted = inUSD * rateTo;
-        const singleRate = rateTo / rateFrom;
-        const inverseRate = rateFrom / rateTo;
-
-        resTitle.textContent = `${amount.toLocaleString()} ${from} =`;
-        resMain.textContent = `${converted.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${to}`;
-        resRate.textContent = `1 ${from} = ${singleRate.toFixed(4)} ${to}`;
-        resInv.textContent = `1 ${to} = ${inverseRate.toFixed(4)} ${from}`;
-      }
-
-      inpAmt.addEventListener('input', convertCurrency);
-      selFrom.addEventListener('change', convertCurrency);
-      selTo.addEventListener('change', convertCurrency);
-      btnCalc.addEventListener('click', convertCurrency);
-
-      btnReset.addEventListener('click', () => {
-        inpAmt.value = '1000';
-        selFrom.value = 'USD';
-        selTo.value = 'EUR';
-        convertCurrency();
-      });
-
-      btnCopy.addEventListener('click', () => {
-        window.copyToClipboard(resMain.textContent, 'Currency conversion copied!');
-      });
-
+  if (btnSwap) {
+    btnSwap.addEventListener('click', () => {
+      if (!selFrom || !selTo) return;
+      const temp = selFrom.value;
+      selFrom.value = selTo.value;
+      selTo.value = temp;
       convertCurrency();
-    })();
+    });
+  }
+
+  function convertCurrency() {
+    const rc = document.getElementById('cur-result-card');
+    if (rc) rc.classList.remove('hidden');
+
+    const amount = parseFloat(inpAmount ? inpAmount.value : 0) || 0;
+    const from = selFrom ? selFrom.value : 'USD';
+    const to = selTo ? selTo.value : 'EUR';
+
+    const fromRate = rates[from] || 1.0;
+    const toRate = rates[to] || 1.0;
+
+    const baseUSD = amount / fromRate;
+    const result = baseUSD * toRate;
+    const unitRate = toRate / fromRate;
+    const invRate = fromRate / toRate;
+
+    if (resMain) resMain.textContent = `${result.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${to}`;
+    if (resRate) resRate.textContent = `1 ${from} = ${unitRate.toFixed(4)} ${to}`;
+    if (resInv) resInv.textContent = `1 ${to} = ${invRate.toFixed(4)} ${from}`;
+  }
+
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const rc = document.getElementById('cur-result-card');
+      if (rc) rc.classList.remove('hidden');
+      convertCurrency();
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      const rc = document.getElementById('cur-result-card');
+      if (rc) rc.classList.add('hidden');
+      if (inpAmount) inpAmount.value = '';
+      if (resMain) resMain.textContent = '0.00 EUR';
+      if (resRate) resRate.textContent = 'â€”';
+      if (resInv) resInv.textContent = 'â€”';
+      if (inpAmount) inpAmount.focus();
+    });
+  }
+
+  if (btnCopySummary) {
+    btnCopySummary.addEventListener('click', () => {
+      const amount = inpAmount ? inpAmount.value : '0';
+      const from = selFrom ? selFrom.value : 'USD';
+      const to = selTo ? selTo.value : 'EUR';
+      const main = resMain ? resMain.textContent : '0.00';
+      const rate = resRate ? resRate.textContent : '';
+
+      const summary = [
+        '\u{1F4B1} Finejust.vip Currency Conversion Summary',
+        '----------------------------------------',
+        `\u{2B50} ${amount} ${from} = ${main}`,
+        `\u{1F4CA} Exchange Rate: ${rate}`,
+        '----------------------------------------',
+        'Convert free on: https://www.finejust.vip/tools/currency-converter.html'
+      ].join('\n');
+
+      window.copyToClipboard(summary, 'Currency summary copied!');
+    });
+  }
+})();
   </script>
 </body>
 </html>

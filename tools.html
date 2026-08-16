@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-    <!-- High-Performance DNS Prefetch & Preconnect -->
+  <!-- High-Performance DNS Prefetch & Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Free AI Tools | Finejust.vip</title>
   <meta name="description" content="Explore 20+ free online AI tools, calculators, unit converters, image utilities, and developer web tools on Finejust.vip. 100% private, instant, and client-side.">
@@ -37,13 +37,9 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
+  <link rel="preload" href="assets/style.css" as="style">
   <link rel="stylesheet" href="assets/style.css">
-  <script>
-    (function() {
-      const savedTheme = localStorage.getItem('finejust_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    })();
-  </script>
+  
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -131,12 +127,12 @@
   }
   </script>
 
-    <!-- Google Analytics 4 (Placeholder) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y47ZCSRFX9"></script>
-  <script async src="assets/analytics.js"></script>
+  <!-- Google Analytics 4 (Placeholder) -->
+  
+  
 
   <!-- Google AdSense Global Tag (Placeholder) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  
 </head>
 <body>
 
@@ -177,7 +173,7 @@
 
         <div style="display:flex; justify-content:center; align-items:center; gap:0.6rem; font-size:0.9rem; color:var(--text-muted);">
           <span>Tool Counter:</span>
-          <strong id="live-tool-count" style="color:var(--primary); font-weight:800;">Loading tools from registry...</strong>
+          <strong id="live-tool-count" style="color:var(--primary); font-weight:800;">Showing 20 of 20 tools</strong>
         </div>
       </section>
 
@@ -191,7 +187,54 @@
           <span style="font-size:0.85rem; color:var(--text-muted);">Top user picks</span>
         </div>
         <div id="trending-tools-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:1.25rem;">
-          <!-- Injected dynamically -->
+          <div class="tool-card" style="padding:1.35rem;">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">%</div>
+              <span class="tool-card-tag" style="color:var(--primary); font-weight:700;">★ Popular</span>
+            </div>
+            <h3 class="tool-card-title" style="font-size:1.1rem;">Percentage Calculator</h3>
+            <p class="tool-card-desc" style="font-size:0.85rem; margin-bottom:1rem;">Calculate percentages, percentage increase/decrease, retail markdowns, and fractions instantly.</p>
+            <a href="tools/percentage-calculator.html" class="btn btn-primary" style="width:100%; padding:0.6rem 1rem; font-size:0.85rem; border-radius:var(--radius-md); justify-content:center;">
+              <span>Open Calculator</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" style="padding:1.35rem;">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📅</div>
+              <span class="tool-card-tag" style="color:var(--primary); font-weight:700;">★ Popular</span>
+            </div>
+            <h3 class="tool-card-title" style="font-size:1.1rem;">Age Calculator</h3>
+            <p class="tool-card-desc" style="font-size:0.85rem; margin-bottom:1rem;">Calculate exact chronological age in years, months, days, hours, and countdown to your next birthday.</p>
+            <a href="tools/age-calculator.html" class="btn btn-primary" style="width:100%; padding:0.6rem 1rem; font-size:0.85rem; border-radius:var(--radius-md); justify-content:center;">
+              <span>Open Calculator</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" style="padding:1.35rem;">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🏦</div>
+              <span class="tool-card-tag" style="color:var(--primary); font-weight:700;">★ Popular</span>
+            </div>
+            <h3 class="tool-card-title" style="font-size:1.1rem;">EMI Calculator</h3>
+            <p class="tool-card-desc" style="font-size:0.85rem; margin-bottom:1rem;">Calculate monthly loan installments (EMI), total interest payable, and comprehensive amortization schedules.</p>
+            <a href="tools/emi-calculator.html" class="btn btn-primary" style="width:100%; padding:0.6rem 1rem; font-size:0.85rem; border-radius:var(--radius-md); justify-content:center;">
+              <span>Open Calculator</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" style="padding:1.35rem;">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">⚖️</div>
+              <span class="tool-card-tag" style="color:var(--primary); font-weight:700;">★ Popular</span>
+            </div>
+            <h3 class="tool-card-title" style="font-size:1.1rem;">BMI Calculator</h3>
+            <p class="tool-card-desc" style="font-size:0.85rem; margin-bottom:1rem;">Evaluate Body Mass Index using Metric or Imperial units and check WHO healthy weight categories.</p>
+            <a href="tools/bmi-calculator.html" class="btn btn-primary" style="width:100%; padding:0.6rem 1rem; font-size:0.85rem; border-radius:var(--radius-md); justify-content:center;">
+              <span>Open Calculator</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -211,12 +254,251 @@
       <!-- 4. Dynamic Tool Grid -->
       <section>
         <div class="tools-grid" id="main-tools-grid">
-          <!-- Dynamically populated from assets/tools.json -->
+          <div class="tool-card" data-category="calculators">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">%</div>
+              <span class="tool-card-tag">Calculators</span>
+            </div>
+            <h3 class="tool-card-title">Percentage Calculator</h3>
+            <p class="tool-card-desc">Calculate percentages, percentage increase/decrease, retail markdowns, and fractions instantly.</p>
+            <a href="tools/percentage-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="calculators">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📅</div>
+              <span class="tool-card-tag">Calculators</span>
+            </div>
+            <h3 class="tool-card-title">Age Calculator</h3>
+            <p class="tool-card-desc">Calculate exact chronological age in years, months, days, hours, and countdown to your next birthday.</p>
+            <a href="tools/age-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="finance">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🏦</div>
+              <span class="tool-card-tag">Finance</span>
+            </div>
+            <h3 class="tool-card-title">EMI Calculator</h3>
+            <p class="tool-card-desc">Calculate monthly loan installments (EMI), total interest payable, and comprehensive amortization schedules.</p>
+            <a href="tools/emi-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="calculators">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">⚖️</div>
+              <span class="tool-card-tag">Calculators</span>
+            </div>
+            <h3 class="tool-card-title">BMI Calculator</h3>
+            <p class="tool-card-desc">Evaluate Body Mass Index using Metric or Imperial units and check WHO healthy weight categories.</p>
+            <a href="tools/bmi-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="finance">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🧾</div>
+              <span class="tool-card-tag">Finance</span>
+            </div>
+            <h3 class="tool-card-title">GST Calculator</h3>
+            <p class="tool-card-desc">Compute inclusive and exclusive Goods and Services Tax with accurate CGST/SGST/IGST breakdowns.</p>
+            <a href="tools/gst-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="finance">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🏷️</div>
+              <span class="tool-card-tag">Finance</span>
+            </div>
+            <h3 class="tool-card-title">Discount Calculator</h3>
+            <p class="tool-card-desc">Calculate retail sales savings, secondary stacked discounts, sales tax, and final checkout totals.</p>
+            <a href="tools/discount-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="finance">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">💵</div>
+              <span class="tool-card-tag">Finance</span>
+            </div>
+            <h3 class="tool-card-title">Loan Calculator</h3>
+            <p class="tool-card-desc">Estimate personal, auto, and mortgage amortizations with weekly, bi-weekly, or monthly frequencies.</p>
+            <a href="tools/loan-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="finance">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📊</div>
+              <span class="tool-card-tag">Finance</span>
+            </div>
+            <h3 class="tool-card-title">Simple Interest Calculator</h3>
+            <p class="tool-card-desc">Calculate fixed interest returns and maturity balance across days, months, or years.</p>
+            <a href="tools/simple-interest-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="finance">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📈</div>
+              <span class="tool-card-tag">Finance</span>
+            </div>
+            <h3 class="tool-card-title">Compound Interest Calculator</h3>
+            <p class="tool-card-desc">Project long-term compound growth, annual percentage yield (APY), and recurring investment contributions.</p>
+            <a href="tools/compound-interest-calculator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="converters">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🌐</div>
+              <span class="tool-card-tag">Converters</span>
+            </div>
+            <h3 class="tool-card-title">Currency Converter</h3>
+            <p class="tool-card-desc">Convert across 25+ global currencies (USD, EUR, GBP, INR, JPY, CAD) with real-time reciprocal rates.</p>
+            <a href="tools/currency-converter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="converters">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📏</div>
+              <span class="tool-card-tag">Converters</span>
+            </div>
+            <h3 class="tool-card-title">Length Converter</h3>
+            <p class="tool-card-desc">Convert meters, kilometers, miles, yards, feet, inches, centimeters, and nautical miles.</p>
+            <a href="tools/length-converter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="converters">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">⚖️</div>
+              <span class="tool-card-tag">Converters</span>
+            </div>
+            <h3 class="tool-card-title">Weight Converter</h3>
+            <p class="tool-card-desc">Convert between kilograms, grams, pounds, ounces, stones, metric tons, and carats.</p>
+            <a href="tools/weight-converter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="converters">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🌡️</div>
+              <span class="tool-card-tag">Converters</span>
+            </div>
+            <h3 class="tool-card-title">Temperature Converter</h3>
+            <p class="tool-card-desc">Convert temperatures between Celsius, Fahrenheit, Kelvin, and Rankine with instant formulas.</p>
+            <a href="tools/temperature-converter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="converters">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">⚡</div>
+              <span class="tool-card-tag">Converters</span>
+            </div>
+            <h3 class="tool-card-title">Speed Converter</h3>
+            <p class="tool-card-desc">Convert velocity between km/h, mph, m/s, knots, feet per second, and Mach.</p>
+            <a href="tools/speed-converter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="image-tools">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📱</div>
+              <span class="tool-card-tag">Image Tools</span>
+            </div>
+            <h3 class="tool-card-title">QR Code Generator</h3>
+            <p class="tool-card-desc">Generate high-resolution permanent QR codes for URLs, text, Wi-Fi networks, and contact cards with PNG download.</p>
+            <a href="tools/qr-code-generator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="web-tools">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🔒</div>
+              <span class="tool-card-tag">Web Tools</span>
+            </div>
+            <h3 class="tool-card-title">Password Generator</h3>
+            <p class="tool-card-desc">Create strong, uncrackable cryptographic random passwords with live entropy bits and strength scoring.</p>
+            <a href="tools/password-generator.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="text-tools">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">📝</div>
+              <span class="tool-card-tag">Text Tools</span>
+            </div>
+            <h3 class="tool-card-title">Word Counter</h3>
+            <p class="tool-card-desc">Count words, characters, sentences, paragraphs, reading/speaking time, and top keyword density in real time.</p>
+            <a href="tools/word-counter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="text-tools">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🔤</div>
+              <span class="tool-card-tag">Text Tools</span>
+            </div>
+            <h3 class="tool-card-title">Character Counter</h3>
+            <p class="tool-card-desc">Track character limits, letters, digits, spaces, SMS segments, and Twitter/X post lengths in real time.</p>
+            <a href="tools/character-counter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="text-tools">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">🔠</div>
+              <span class="tool-card-tag">Text Tools</span>
+            </div>
+            <h3 class="tool-card-title">Case Converter</h3>
+            <p class="tool-card-desc">Transform text between UPPERCASE, lowercase, Title Case, camelCase, kebab-case, snake_case, and PascalCase.</p>
+            <a href="tools/case-converter.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="tool-card" data-category="web-tools">
+            <div class="tool-card-header">
+              <div class="tool-card-icon">💻</div>
+              <span class="tool-card-tag">Web Tools</span>
+            </div>
+            <h3 class="tool-card-title">Base64 Encoder &amp; Decoder</h3>
+            <p class="tool-card-desc">Encode and decode plain text or binary data strings to and from Base64 with full UTF-8 Unicode support.</p>
+            <a href="tools/base64-encoder.html" class="btn btn-primary" style="width:100%; justify-content:space-between; padding:0.7rem 1.25rem;">
+              <span>Open Dedicated Tool</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
         </div>
 
         <!-- 5. Load More Button -->
         <div class="text-center" style="margin-top: 1.5rem; margin-bottom: 3.5rem;">
-          <button type="button" id="btn-load-more" class="btn btn-primary" style="padding: 0.95rem 2.25rem; font-size: 1rem; border-radius: var(--radius-full);">
+          <button type="button" id="btn-load-more" class="btn btn-primary" style="display:none; padding: 0.95rem 2.25rem; font-size: 1rem; border-radius: var(--radius-full);">
             <span>Load More Tools</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
@@ -305,45 +587,46 @@
     (function() {
       'use strict';
 
-      let allTools = [];
+      const FALLBACK_TOOLS = [
+        { id: "percentage-calculator", title: "Percentage Calculator", description: "Calculate percentages, percentage increase/decrease, retail markdowns, and fractions instantly.", category: "Calculators", categorySlug: "calculators", url: "tools/percentage-calculator.html", icon: "percent", keywords: ["percentage", "math", "discount"], featured: true, trending: true, popular: true },
+        { id: "age-calculator", title: "Age Calculator", description: "Calculate exact chronological age in years, months, days, hours, and countdown to your next birthday.", category: "Calculators", categorySlug: "calculators", url: "tools/age-calculator.html", icon: "calendar", keywords: ["age", "birthday", "dob"], featured: false, trending: true, popular: true },
+        { id: "emi-calculator", title: "EMI Calculator", description: "Calculate monthly loan installments (EMI), total interest payable, and comprehensive amortization schedules.", category: "Finance", categorySlug: "finance", url: "tools/emi-calculator.html", icon: "credit-card", keywords: ["emi", "loan", "mortgage"], featured: true, trending: true, popular: true },
+        { id: "bmi-calculator", title: "BMI Calculator", description: "Evaluate Body Mass Index using Metric or Imperial units and check WHO healthy weight categories.", category: "Calculators", categorySlug: "calculators", url: "tools/bmi-calculator.html", icon: "activity", keywords: ["bmi", "health", "weight"], featured: true, trending: true, popular: true },
+        { id: "gst-calculator", title: "GST Calculator", description: "Compute inclusive and exclusive Goods and Services Tax with accurate CGST/SGST/IGST breakdowns.", category: "Finance", categorySlug: "finance", url: "tools/gst-calculator.html", icon: "receipt", keywords: ["gst", "tax", "cgst"], featured: true, trending: true, popular: true },
+        { id: "discount-calculator", title: "Discount Calculator", description: "Calculate retail sales savings, secondary stacked discounts, sales tax, and final checkout totals.", category: "Finance", categorySlug: "finance", url: "tools/discount-calculator.html", icon: "tag", keywords: ["discount", "sale", "savings"], featured: false, trending: false, popular: false },
+        { id: "loan-calculator", title: "Loan Calculator", description: "Estimate personal, auto, and mortgage amortizations with weekly, bi-weekly, or monthly frequencies.", category: "Finance", categorySlug: "finance", url: "tools/loan-calculator.html", icon: "dollar-sign", keywords: ["loan", "mortgage", "principal"], featured: false, trending: false, popular: false },
+        { id: "simple-interest-calculator", title: "Simple Interest Calculator", description: "Calculate fixed interest returns and maturity balance across days, months, or years.", category: "Finance", categorySlug: "finance", url: "tools/simple-interest-calculator.html", icon: "bar-chart", keywords: ["simple interest", "principal"], featured: false, trending: false, popular: false },
+        { id: "compound-interest-calculator", title: "Compound Interest Calculator", description: "Project long-term compound growth, annual percentage yield (APY), and recurring investment contributions.", category: "Finance", categorySlug: "finance", url: "tools/compound-interest-calculator.html", icon: "trending-up", keywords: ["compound interest", "growth"], featured: true, trending: true, popular: true },
+        { id: "currency-converter", title: "Currency Converter", description: "Convert across 25+ global currencies (USD, EUR, GBP, INR, JPY, CAD) with real-time reciprocal rates.", category: "Converters", categorySlug: "converters", url: "tools/currency-converter.html", icon: "globe", keywords: ["currency", "forex", "usd"], featured: true, trending: true, popular: true },
+        { id: "length-converter", title: "Length Converter", description: "Convert meters, kilometers, miles, yards, feet, inches, centimeters, and nautical miles.", category: "Converters", categorySlug: "converters", url: "tools/length-converter.html", icon: "maximize-2", keywords: ["length", "distance", "feet"], featured: false, trending: false, popular: false },
+        { id: "weight-converter", title: "Weight Converter", description: "Convert between kilograms, grams, pounds, ounces, stones, metric tons, and carats.", category: "Converters", categorySlug: "converters", url: "tools/weight-converter.html", icon: "package", keywords: ["weight", "kg", "lbs"], featured: false, trending: false, popular: false },
+        { id: "temperature-converter", title: "Temperature Converter", description: "Convert temperatures between Celsius, Fahrenheit, Kelvin, and Rankine with instant formulas.", category: "Converters", categorySlug: "converters", url: "tools/temperature-converter.html", icon: "thermometer", keywords: ["temp", "celsius", "fahrenheit"], featured: false, trending: false, popular: false },
+        { id: "speed-converter", title: "Speed Converter", description: "Convert velocity between km/h, mph, m/s, knots, feet per second, and Mach.", category: "Converters", categorySlug: "converters", url: "tools/speed-converter.html", icon: "zap", keywords: ["speed", "kmh", "mph"], featured: false, trending: false, popular: false },
+        { id: "qr-code-generator", title: "QR Code Generator", description: "Generate high-resolution permanent QR codes for URLs, text, Wi-Fi networks, and contact cards with PNG download.", category: "Image Tools", categorySlug: "image-tools", url: "tools/qr-code-generator.html", icon: "grid", keywords: ["qr", "qrcode", "generator"], featured: true, trending: true, popular: true },
+        { id: "password-generator", title: "Password Generator", description: "Create strong, uncrackable cryptographic random passwords with live entropy bits and strength scoring.", category: "Web Tools", categorySlug: "web-tools", url: "tools/password-generator.html", icon: "lock", keywords: ["password", "generator"], featured: true, trending: true, popular: true },
+        { id: "word-counter", title: "Word Counter", description: "Count words, characters, sentences, paragraphs, reading/speaking time, and top keyword density in real time.", category: "Text Tools", categorySlug: "text-tools", url: "tools/word-counter.html", icon: "file-text", keywords: ["word", "counter", "reading"], featured: true, trending: true, popular: true },
+        { id: "character-counter", title: "Character Counter", description: "Track character limits, letters, digits, spaces, SMS segments, and Twitter/X post lengths in real time.", category: "Text Tools", categorySlug: "text-tools", url: "tools/character-counter.html", icon: "type", keywords: ["character", "letters", "sms"], featured: false, trending: false, popular: false },
+        { id: "case-converter", title: "Case Converter", description: "Transform text between UPPERCASE, lowercase, Title Case, camelCase, kebab-case, snake_case, and PascalCase.", category: "Text Tools", categorySlug: "text-tools", url: "tools/case-converter.html", icon: "edit-3", keywords: ["case", "uppercase", "camelcase"], featured: false, trending: false, popular: false },
+        { id: "base64-encoder", title: "Base64 Encoder & Decoder", description: "Encode and decode plain text or binary data strings to and from Base64 with full UTF-8 Unicode support.", category: "Web Tools", categorySlug: "web-tools", url: "tools/base64-encoder.html", icon: "code", keywords: ["base64", "encoder", "decoder"], featured: false, trending: false, popular: false }
+      ];
+
+      let allTools = (window.FINEJUST_TOOLS && window.FINEJUST_TOOLS.length >= 20) ? window.FINEJUST_TOOLS : FALLBACK_TOOLS;
       let currentCategory = 'all';
       let searchQuery = '';
-      let visibleLimit = 12;
+      let visibleLimit = 20;
       const PAGE_STEP = 12;
 
-      // DOM Elements
-      const gridContainer = document.getElementById('main-tools-grid');
-      const trendingContainer = document.getElementById('trending-tools-grid');
-      const searchInput = document.getElementById('tools-search-input');
-      const filterNav = document.getElementById('category-filter-nav');
-      const loadMoreBtn = document.getElementById('btn-load-more');
-      const liveCounter = document.getElementById('live-tool-count');
-      const heroBadge = document.getElementById('hero-tool-badge');
+      let gridContainer;
+      let trendingContainer;
+      let searchInput;
+      let filterNav;
+      let loadMoreBtn;
+      let liveCounter;
+      let heroBadge;
 
       function getIconHtml(icon) {
         if (window.getToolIconSvg) return window.getToolIconSvg(icon);
         return '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>';
-      }
-
-      async function fetchTools() {
-        if (window.FINEJUST_TOOLS && window.FINEJUST_TOOLS.length >= 20) {
-          allTools = window.FINEJUST_TOOLS;
-          initPage();
-          return;
-        }
-
-        try {
-          const res = await fetch('assets/tools.json');
-          if (res.ok) {
-            allTools = await res.json();
-            window.FINEJUST_TOOLS = allTools;
-          } else {
-            allTools = window.FINEJUST_TOOLS || [];
-          }
-        } catch (e) {
-          allTools = window.FINEJUST_TOOLS || [];
-        }
-        initPage();
       }
 
       function updateCategoryCounts() {
@@ -363,29 +646,9 @@
         updatePill('cnt-web', 'web-tools');
       }
 
-      function initPage() {
-        // Read ?category= parameter from URL if provided
-        try {
-          const params = new URLSearchParams(window.location.search);
-          const catParam = params.get('category');
-          if (catParam) {
-            const targetBtn = filterNav.querySelector(`[data-cat="${catParam}"]`);
-            if (targetBtn) {
-              currentCategory = catParam;
-              filterNav.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-              targetBtn.classList.add('active');
-            }
-          }
-        } catch (e) {}
-
-        heroBadge.textContent = `${allTools.length}+ Free Online Tools`;
-        updateCategoryCounts();
-        renderTrending();
-        renderFilteredTools();
-      }
-
       function renderTrending() {
-        const trending = allTools.filter(t => t.trending).slice(0, 4);
+        if (!trendingContainer) return;
+        const trending = allTools.filter(t => t.trending || t.popular).slice(0, 4);
         let html = '';
         trending.forEach(tool => {
           html += `
@@ -421,8 +684,11 @@
       }
 
       function renderFilteredTools() {
+        if (!gridContainer) return;
         const list = getFilteredList();
-        liveCounter.textContent = `Showing ${Math.min(visibleLimit, list.length)} of ${list.length} tools`;
+        if (liveCounter) {
+          liveCounter.textContent = `Showing ${Math.min(visibleLimit, list.length)} of ${list.length} tools`;
+        }
 
         if (list.length === 0) {
           gridContainer.innerHTML = `
@@ -436,13 +702,15 @@
           document.getElementById('btn-reset-filters')?.addEventListener('click', () => {
             currentCategory = 'all';
             searchQuery = '';
-            searchInput.value = '';
-            filterNav.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            filterNav.querySelector('[data-cat="all"]').classList.add('active');
-            visibleLimit = PAGE_STEP;
+            if (searchInput) searchInput.value = '';
+            if (filterNav) {
+              filterNav.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+              filterNav.querySelector('[data-cat="all"]')?.classList.add('active');
+            }
+            visibleLimit = 20;
             renderFilteredTools();
           });
-          loadMoreBtn.style.display = 'none';
+          if (loadMoreBtn) loadMoreBtn.style.display = 'none';
           return;
         }
 
@@ -468,40 +736,80 @@
 
         gridContainer.innerHTML = html;
 
-        // Toggle Load More button visibility
-        if (visibleLimit >= list.length) {
-          loadMoreBtn.style.display = 'none';
-        } else {
-          loadMoreBtn.style.display = 'inline-flex';
-          loadMoreBtn.innerHTML = `<span>Load More Tools (+${Math.min(PAGE_STEP, list.length - visibleLimit)})</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+        if (loadMoreBtn) {
+          if (visibleLimit >= list.length) {
+            loadMoreBtn.style.display = 'none';
+          } else {
+            loadMoreBtn.style.display = 'inline-flex';
+            loadMoreBtn.innerHTML = `<span>Load More Tools (+${Math.min(PAGE_STEP, list.length - visibleLimit)})</span> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+          }
         }
       }
 
-      // Filter Tabs
-      filterNav.addEventListener('click', (e) => {
-        const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
-        filterNav.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCategory = btn.getAttribute('data-cat');
-        visibleLimit = PAGE_STEP;
-        renderFilteredTools();
-      });
+      function init() {
+        gridContainer = document.getElementById('main-tools-grid');
+        trendingContainer = document.getElementById('trending-tools-grid');
+        searchInput = document.getElementById('tools-search-input');
+        filterNav = document.getElementById('category-filter-nav');
+        loadMoreBtn = document.getElementById('btn-load-more');
+        liveCounter = document.getElementById('live-tool-count');
+        heroBadge = document.getElementById('hero-tool-badge');
 
-      // Search Input
-      searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim();
-        visibleLimit = PAGE_STEP;
-        renderFilteredTools();
-      });
+        if (window.FINEJUST_TOOLS && window.FINEJUST_TOOLS.length >= 20) {
+          allTools = window.FINEJUST_TOOLS;
+        }
 
-      // Load More Button
-      loadMoreBtn.addEventListener('click', () => {
-        visibleLimit += PAGE_STEP;
-        renderFilteredTools();
-      });
+        try {
+          const params = new URLSearchParams(window.location.search);
+          const catParam = params.get('category');
+          if (catParam && filterNav) {
+            const targetBtn = filterNav.querySelector(`[data-cat="${catParam}"]`);
+            if (targetBtn) {
+              currentCategory = catParam;
+              filterNav.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+              targetBtn.classList.add('active');
+            }
+          }
+        } catch (e) {}
 
-      fetchTools();
+        if (heroBadge) heroBadge.textContent = `${allTools.length}+ Free Online Tools`;
+        updateCategoryCounts();
+        renderTrending();
+        renderFilteredTools();
+
+        if (filterNav) {
+          filterNav.addEventListener('click', (e) => {
+            const btn = e.target.closest('.filter-btn');
+            if (!btn) return;
+            filterNav.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = btn.getAttribute('data-cat');
+            visibleLimit = 20;
+            renderFilteredTools();
+          });
+        }
+
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim();
+            visibleLimit = 20;
+            renderFilteredTools();
+          });
+        }
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', () => {
+            visibleLimit += PAGE_STEP;
+            renderFilteredTools();
+          });
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
     })();
   </script>
 </body>

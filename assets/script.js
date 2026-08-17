@@ -24,8 +24,9 @@
 
   // Determine Relative Root Path based on web-standard forward slash URL location
   const path = window.location.pathname.replace(/\\/g, '/').toLowerCase();
-  const isSubdir = path.includes('/blog/') || path.includes('/tools/') || path.includes('/author/');
-  const rootPrefix = isSubdir ? '../' : '';
+  const is404 = path.endsWith('/404.html') || path.endsWith('/404') || document.title.includes('404') || document.querySelector('.error-number-glitch') !== null;
+  const isSubdir = !is404 && (path.includes('/blog/') || path.includes('/tools/') || path.includes('/author/'));
+  const rootPrefix = is404 ? '/' : (isSubdir ? '../' : '');
 
   // Embedded Tools Database Fallback for 100% Offline / file:// Support
   window.FINEJUST_TOOLS = window.FINEJUST_TOOLS || [

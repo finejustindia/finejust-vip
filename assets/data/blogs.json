@@ -1,0 +1,382 @@
+[
+    {
+        "id":  101,
+        "title":  "Mastering Percentage Calculations for Business \u0026 Daily Life",
+        "slug":  "how-to-calculate-percentages",
+        "url":  "/blog/how-to-calculate-percentages.html",
+        "category":  "calculators",
+        "summary":  "Master practical percentage formulas, retail markdowns, profit margins, and compound growth with easy step-by-step examples.",
+        "keywords":  [
+                         "percentage",
+                         "math",
+                         "formulas",
+                         "discounts",
+                         "business calculation",
+                         "algebra"
+                     ],
+        "readTime":  "6 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/percentage-guide.webp"
+    },
+    {
+        "id":  102,
+        "title":  "Chronological Age Calculation: Science, Precision \u0026 Leap Years",
+        "slug":  "age-calculation-guide",
+        "url":  "/blog/age-calculation-guide.html",
+        "category":  "calculators",
+        "summary":  "Understand how calendar algorithms calculate exact chronological age across Gregorian leap years, time zones, and astrological systems.",
+        "keywords":  [
+                         "age calculation",
+                         "chronological age",
+                         "leap year",
+                         "calendar math",
+                         "date algorithm"
+                     ],
+        "readTime":  "5 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/age-guide.webp"
+    },
+    {
+        "id":  103,
+        "title":  "The Complete Loan \u0026 EMI Amortization Playbook",
+        "slug":  "understanding-loan-emi",
+        "url":  "/blog/understanding-loan-emi.html",
+        "category":  "finance",
+        "summary":  "Learn how mortgage and personal loan EMIs are computed using reducing balance formulas and how prepayments save massive interest.",
+        "keywords":  [
+                         "emi",
+                         "loan amortization",
+                         "interest rate",
+                         "reducing balance",
+                         "prepayment",
+                         "mortgage"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/emi-vs-interest.webp"
+    },
+    {
+        "id":  104,
+        "title":  "Body Mass Index (BMI): Health Indicator or Outdated Metric?",
+        "slug":  "bmi-and-healthy-weight",
+        "url":  "/blog/bmi-and-healthy-weight.html",
+        "category":  "calculators",
+        "summary":  "An evidence-based examination of BMI categories, visceral fat, muscle mass discrepancies, and modern holistic health assessments.",
+        "keywords":  [
+                         "bmi",
+                         "body mass index",
+                         "health",
+                         "obesity",
+                         "body fat percentage",
+                         "fitness"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/bmi-guide.webp"
+    },
+    {
+        "id":  105,
+        "title":  "Understanding Goods and Services Tax (GST) \u0026 Invoicing",
+        "slug":  "gst-tax-guide",
+        "url":  "/blog/gst-tax-guide.html",
+        "category":  "finance",
+        "summary":  "Comprehensive guide to inclusive and exclusive GST, CGST, SGST, IGST tax structures, input tax credits, and billing compliance.",
+        "keywords":  [
+                         "gst",
+                         "tax calculation",
+                         "input tax credit",
+                         "cgst",
+                         "sgst",
+                         "invoice",
+                         "finance"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/gst-guide.webp"
+    },
+    {
+        "id":  106,
+        "title":  "The Psychology of Retail Discounts: How to Calculate Real Savings",
+        "slug":  "smart-shopping-discount-guide",
+        "url":  "/blog/smart-shopping-discount-guide.html",
+        "category":  "finance",
+        "summary":  "Discover how retail stacked discounts work, deceptive pricing strategies, and mathematical tips to maximize your budget savings.",
+        "keywords":  [
+                         "discount calculation",
+                         "retail sale",
+                         "shopping math",
+                         "stacked discount",
+                         "coupons"
+                     ],
+        "readTime":  "6 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/profit-margin-guide.webp"
+    },
+    {
+        "id":  107,
+        "title":  "Simple vs Compound Interest: The Exponential Power of Wealth",
+        "slug":  "simple-vs-compound-interest",
+        "url":  "/blog/simple-vs-compound-interest.html",
+        "category":  "finance",
+        "summary":  "Explore why compound interest is the eighth wonder of the world with side-by-side growth models and compounding frequencies.",
+        "keywords":  [
+                         "compound interest",
+                         "simple interest",
+                         "wealth building",
+                         "apy",
+                         "investing",
+                         "exponential growth"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/compound-guide.webp"
+    },
+    {
+        "id":  108,
+        "title":  "Foreign Exchange Mechanics: How Global Currencies Fluctuate",
+        "slug":  "foreign-exchange-basics",
+        "url":  "/blog/foreign-exchange-basics.html",
+        "category":  "converters",
+        "summary":  "Demystify currency pairs, bid-ask spreads, forex market drivers, interest rate parity, and how to avoid high remittance bank fees.",
+        "keywords":  [
+                         "currency exchange",
+                         "forex",
+                         "exchange rates",
+                         "usd",
+                         "eur",
+                         "gbp",
+                         "inr",
+                         "remittance"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/currency-guide.webp"
+    },
+    {
+        "id":  109,
+        "title":  "The Architecture of QR Codes: 2D Matrix Data \u0026 Error Correction",
+        "slug":  "qr-code-technology-guide",
+        "url":  "/blog/qr-code-technology-guide.html",
+        "category":  "image-tools",
+        "summary":  "Learn how Reed-Solomon error correction, finder patterns, and 2D matrix encoding enable instant mobile scanning even when damaged.",
+        "keywords":  [
+                         "qr code",
+                         "reed solomon",
+                         "barcode",
+                         "2d matrix",
+                         "mobile scanner",
+                         "data encoding"
+                     ],
+        "readTime":  "6 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/qr-guide.webp"
+    },
+    {
+        "id":  110,
+        "title":  "Password Security in 2026: Cryptographic Entropy \u0026 Zero-Trust",
+        "slug":  "cybersecurity-password-best-practices",
+        "url":  "/blog/cybersecurity-password-best-practices.html",
+        "category":  "web-tools",
+        "summary":  "Why character length beats character complexity, how rainbow tables operate, and how to configure high-entropy credentials.",
+        "keywords":  [
+                         "password security",
+                         "cryptography",
+                         "entropy",
+                         "cybersecurity",
+                         "hash cracking",
+                         "authentication"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/password-guide.webp"
+    },
+    {
+        "id":  111,
+        "title":  "SIP vs Mutual Fund Guide: Wealth Building, Compounding \u0026 Risk",
+        "slug":  "sip-vs-mutual-fund-guide",
+        "url":  "/blog/sip-vs-mutual-fund-guide.html",
+        "category":  "finance",
+        "summary":  "Detailed guide comparing Systematic Investment Plans (SIP) versus Lump-Sum Mutual Fund investing. Learn Rupee Cost Averaging and compounding math.",
+        "keywords":  [
+                         "sip",
+                         "mutual fund",
+                         "rupee cost averaging",
+                         "compound interest",
+                         "investing",
+                         "wealth"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/sip-guide.webp"
+    },
+    {
+        "id":  112,
+        "title":  "What is a Fixed Deposit (FD)? Types, Compounding Formulas \u0026 Tax Rules",
+        "slug":  "what-is-fixed-deposit",
+        "url":  "/blog/what-is-fixed-deposit.html",
+        "category":  "finance",
+        "summary":  "Complete guide to Fixed Deposits (FD). Learn cumulative vs non-cumulative FDs, compounding formulas, senior citizen benefits, and tax rules.",
+        "keywords":  [
+                         "fixed deposit",
+                         "fd",
+                         "term deposit",
+                         "compounding interest",
+                         "bank deposit",
+                         "tds"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/fd-guide.webp"
+    },
+    {
+        "id":  113,
+        "title":  "RD vs FD: Recurring Deposit vs Fixed Deposit Comparison Guide",
+        "slug":  "rd-vs-fd",
+        "url":  "/blog/rd-vs-fd.html",
+        "category":  "finance",
+        "summary":  "Comprehensive comparison of Recurring Deposit (RD) vs Fixed Deposit (FD). Compare interest returns, deposit flexibility, and liquidity.",
+        "keywords":  [
+                         "rd vs fd",
+                         "recurring deposit",
+                         "fixed deposit",
+                         "monthly savings",
+                         "banking"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/rd-vs-fd.webp"
+    },
+    {
+        "id":  114,
+        "title":  "How to Calculate ROI: Simple vs Annualized Return on Investment",
+        "slug":  "how-to-calculate-roi",
+        "url":  "/blog/how-to-calculate-roi.html",
+        "category":  "finance",
+        "summary":  "Master Return on Investment (ROI) formulas with real-world examples. Learn simple ROI, Annualized ROI (CAGR), and net financial profit.",
+        "keywords":  [
+                         "roi",
+                         "return on investment",
+                         "cagr",
+                         "annualized roi",
+                         "profitability",
+                         "valuation"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/roi-guide.webp"
+    },
+    {
+        "id":  115,
+        "title":  "Daily Calorie Needs: How to Calculate BMR \u0026 TDEE for Your Body",
+        "slug":  "daily-calorie-needs",
+        "url":  "/blog/daily-calorie-needs.html",
+        "category":  "calculators",
+        "summary":  "Learn how to calculate your daily calorie requirements for fat loss, maintenance, or muscle building using Mifflin-St Jeor BMR and TDEE.",
+        "keywords":  [
+                         "calorie needs",
+                         "bmr",
+                         "tdee",
+                         "mifflin st jeor",
+                         "weight loss",
+                         "nutrition"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/calorie-guide.webp"
+    },
+    {
+        "id":  116,
+        "title":  "Healthy Body Fat Percentage: Ideal Charts, Categories \u0026 Methods",
+        "slug":  "healthy-body-fat-percentage",
+        "url":  "/blog/healthy-body-fat-percentage.html",
+        "category":  "calculators",
+        "summary":  "Discover healthy body fat percentage ranges for men and women by age. Compare essential fat, fitness, and average categories with US Navy formulas.",
+        "keywords":  [
+                         "body fat percentage",
+                         "healthy body fat",
+                         "us navy formula",
+                         "dexa scan",
+                         "fitness",
+                         "body composition"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/body-fat-guide.webp"
+    },
+    {
+        "id":  117,
+        "title":  "Daily Water Intake Guide: How Much Water Should You Drink?",
+        "slug":  "daily-water-intake-guide",
+        "url":  "/blog/daily-water-intake-guide.html",
+        "category":  "calculators",
+        "summary":  "Discover how much water you should drink daily based on weight, workout intensity, and climate. Learn hydration physiology and electrolyte balance.",
+        "keywords":  [
+                         "water intake",
+                         "hydration",
+                         "daily fluid",
+                         "electrolytes",
+                         "dehydration",
+                         "wellness"
+                     ],
+        "readTime":  "7 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/water-intake-guide.webp"
+    },
+    {
+        "id":  118,
+        "title":  "Profit Margin Formula: Gross vs Operating vs Net Margin vs Markup",
+        "slug":  "profit-margin-formula",
+        "url":  "/blog/profit-margin-formula.html",
+        "category":  "finance",
+        "summary":  "Master profit margin formulas with worked examples. Learn the difference between Gross Margin, Operating Margin, Net Profit Margin, and Markup.",
+        "keywords":  [
+                         "profit margin",
+                         "gross margin",
+                         "net profit",
+                         "markup",
+                         "retail pricing",
+                         "cogs"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/profit-margin-guide.webp"
+    },
+    {
+        "id":  119,
+        "title":  "What is UUID / GUID? Versions 1 to 7 \u0026 Collision Math Explained",
+        "slug":  "what-is-uuid",
+        "url":  "/blog/what-is-uuid.html",
+        "category":  "web-tools",
+        "summary":  "Comprehensive developer guide to Universally Unique Identifiers (UUID / GUID). Understand UUID v1, v4, v5, and v7 formats and collision probability.",
+        "keywords":  [
+                         "uuid",
+                         "guid",
+                         "uuid v4",
+                         "uuid v7",
+                         "collision math",
+                         "software engineering"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/uuid-guide.webp"
+    },
+    {
+        "id":  120,
+        "title":  "JSON Formatting Guide: Syntax Rules, Validation \u0026 Minification",
+        "slug":  "json-formatting-guide",
+        "url":  "/blog/json-formatting-guide.html",
+        "category":  "web-tools",
+        "summary":  "Complete developer guide to JSON (JavaScript Object Notation). Learn strict syntax specifications, error troubleshooting, and schema validation.",
+        "keywords":  [
+                         "json",
+                         "json formatting",
+                         "json syntax",
+                         "minification",
+                         "json validator",
+                         "web api"
+                     ],
+        "readTime":  "8 min read",
+        "updated":  "2026-08-17",
+        "image":  "images/blog/json-guide.webp"
+    }
+]

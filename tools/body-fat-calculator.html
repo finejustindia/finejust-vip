@@ -523,9 +523,7 @@
       document.getElementById('bf-neck').value = n;
       document.getElementById('bf-waist').value = waist;
       if (hip) document.getElementById('bf-hip').value = hip;
-      const rc = document.getElementById('bf-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateBf();
+      if (window.showToast) window.showToast('Body composition profile preset loaded!');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

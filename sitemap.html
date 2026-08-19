@@ -13,7 +13,7 @@
   <!-- Google Analytics 4 (GA4) Global Site Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVBES3BJF"></script>
   <script src="/assets/js/analytics.js" defer></script>
-  <title>HTML Sitemap — Complete Directory of Tools &amp; Guides | Finejust.vip</title>
+  <title>HTML Sitemap &amp; Directory — 30+ Tools &amp; 20 Guides | Finejust.vip</title>
   <meta name="description" content="Explore the comprehensive sitemap and directory of all 30 free online tools, financial calculators, unit converters, and 20 in-depth editorial guides on Finejust.vip.">
   <link rel="canonical" href="https://www.finejust.vip/sitemap.html">
   <meta name="robots" content="index, follow">
@@ -22,8 +22,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.finejust.vip/sitemap.html">
-  <meta property="og:title" content="HTML Sitemap — Complete Directory | Finejust.vip">
-  <meta property="og:description" content="Explore the directory of all 30 tools and 20 editorial guides on Finejust.vip.">
+  <meta property="og:title" content="HTML Sitemap &amp; Directory | Finejust.vip">
+  <meta property="og:description" content="Explore the directory of all 30 free client-side tools and 20 editorial guides on Finejust.vip.">
   <meta property="og:image" content="https://www.finejust.vip/images/og-banner.webp">
   <meta property="og:site_name" content="Finejust.vip">
 
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://www.finejust.vip/sitemap.html">
   <meta name="twitter:title" content="HTML Sitemap - Finejust.vip">
-  <meta name="twitter:description" content="Complete directory of tools and blog articles.">
+  <meta name="twitter:description" content="Complete directory of all 30 tools and 20 editorial blog articles.">
   <meta name="twitter:image" content="https://www.finejust.vip/images/og-banner.webp">
 
   <!-- Favicons -->
@@ -43,6 +43,227 @@
 
   <link rel="preload" href="assets/css/style.css" as="style">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .sitemap-hero {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .sitemap-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      color: var(--primary, #2563eb);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+    }
+    .sitemap-quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+    .sitemap-nav-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border, #e2e8f0);
+      color: var(--text, #1e293b);
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .sitemap-nav-chip:hover {
+      background: var(--primary, #2563eb);
+      color: #ffffff;
+      border-color: var(--primary, #2563eb);
+      transform: translateY(-1px);
+    }
+    .sitemap-main-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+    .sitemap-section-card {
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border, #e2e8f0);
+      border-radius: var(--radius-lg, 1rem);
+      padding: 1.75rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .sitemap-section-card:hover {
+      border-color: var(--primary, #2563eb);
+      box-shadow: 0 12px 20px -4px rgba(37, 99, 235, 0.08);
+      transform: translateY(-2px);
+    }
+    .sitemap-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border-light, #f1f5f9);
+    }
+    .sitemap-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text, #0f172a);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .sitemap-icon-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--primary, #2563eb);
+      flex-shrink: 0;
+    }
+    .sitemap-count-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background: var(--bg-alt, #f8fafc);
+      border: 1px solid var(--border, #e2e8f0);
+      color: var(--text-muted, #64748b);
+    }
+    .sitemap-links-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      flex-grow: 1;
+    }
+    .sitemap-link-item a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.45rem 0.6rem;
+      border-radius: 6px;
+      color: var(--text, #334155);
+      text-decoration: none;
+      font-size: 0.925rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    .sitemap-link-item a:hover {
+      background: rgba(37, 99, 235, 0.06);
+      color: var(--primary, #2563eb);
+      padding-left: 0.85rem;
+    }
+    .sitemap-link-item a svg {
+      opacity: 0.4;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      flex-shrink: 0;
+    }
+    .sitemap-link-item a:hover svg {
+      opacity: 1;
+      transform: translateX(3px);
+      color: var(--primary, #2563eb);
+    }
+    .sitemap-full-width-card {
+      grid-column: 1 / -1;
+    }
+    .sitemap-guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+    .sitemap-policy-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      padding-top: 0.5rem;
+    }
+    .sitemap-policy-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      background: var(--bg-alt, #f8fafc);
+      border: 1px solid var(--border, #e2e8f0);
+      color: var(--text, #334155);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .sitemap-policy-chip:hover {
+      background: var(--primary, #2563eb);
+      color: #ffffff;
+      border-color: var(--primary, #2563eb);
+      transform: translateY(-1px);
+    }
+    .xml-sitemap-banner {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(16, 185, 129, 0.06));
+      border: 1px dashed rgba(37, 99, 235, 0.3);
+      border-radius: var(--radius-lg, 1rem);
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .xml-info h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text, #0f172a);
+    }
+    .xml-info p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted, #64748b);
+    }
+    .btn-xml-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary, #2563eb);
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-xml-link:hover {
+      background: var(--primary-hover, #1d4ed8);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+  </style>
 </head>
 <body data-type="static">
 
@@ -55,117 +276,228 @@
       <!-- Breadcrumb Navigation -->
       <nav id="breadcrumb"></nav>
 
-      <section class="tool-header text-center">
+      <!-- Hero Header -->
+      <section class="sitemap-hero">
+        <div class="sitemap-pill-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+          <span>Official Site Architecture</span>
+        </div>
         <h1 class="tool-h1">Website Sitemap &amp; Directory</h1>
-        <p class="tool-subtitle">A complete index of all 30 free online tools, converters, calculators, and 20 educational blog guides.</p>
+        <p class="tool-subtitle">A comprehensive, structured directory of all 30 client-side tools, 20 in-depth editorial guides, and core company policies on Finejust.vip.</p>
+        
+        <!-- Jump Nav -->
+        <div class="sitemap-quick-nav">
+          <a href="#financial-calculators" class="sitemap-nav-chip">Financial Calculators (11)</a>
+          <a href="#health-math" class="sitemap-nav-chip">Health &amp; Math (6)</a>
+          <a href="#unit-converters" class="sitemap-nav-chip">Unit Converters (5)</a>
+          <a href="#web-tools" class="sitemap-nav-chip">Web &amp; Text Tools (8)</a>
+          <a href="#editorial-guides" class="sitemap-nav-chip">Editorial Guides (20)</a>
+          <a href="#company-policies" class="sitemap-nav-chip">Company Policies (11)</a>
+        </div>
       </section>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+      <div class="sitemap-main-grid">
         
         <!-- Category 1: Financial Calculators -->
-        <div class="content-box">
-          <h2>Financial Calculators (9 Tools)</h2>
-          <ul style="line-height: 2;">
-            <li><a href="tools/sip-calculator.html">SIP Calculator</a></li>
-            <li><a href="tools/fd-calculator.html">FD Calculator</a></li>
-            <li><a href="tools/rd-calculator.html">RD Calculator</a></li>
-            <li><a href="tools/roi-calculator.html">ROI Calculator</a></li>
-            <li><a href="tools/profit-margin-calculator.html">Profit Margin Calculator</a></li>
-            <li><a href="tools/emi-calculator.html">EMI Calculator</a></li>
-            <li><a href="tools/gst-calculator.html">GST Calculator</a></li>
-            <li><a href="tools/loan-calculator.html">Loan Calculator</a></li>
-            <li><a href="tools/simple-interest-calculator.html">Simple Interest Calculator</a></li>
-            <li><a href="tools/compound-interest-calculator.html">Compound Interest Calculator</a></li>
-            <li><a href="tools/discount-calculator.html">Discount Calculator</a></li>
+        <div class="sitemap-section-card" id="financial-calculators">
+          <div class="sitemap-card-head">
+            <h2 class="sitemap-card-title">
+              <span class="sitemap-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </span>
+              <span>Financial Calculators</span>
+            </h2>
+            <span class="sitemap-count-tag">11 Tools</span>
+          </div>
+          <ul class="sitemap-links-list">
+            <li class="sitemap-link-item"><a href="tools/sip-calculator.html"><span>SIP Calculator (Mutual Funds)</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/fd-calculator.html"><span>Fixed Deposit (FD) Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/rd-calculator.html"><span>Recurring Deposit (RD) Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/roi-calculator.html"><span>ROI Calculator (Annualized)</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/profit-margin-calculator.html"><span>Profit Margin Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/emi-calculator.html"><span>Loan EMI Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/gst-calculator.html"><span>GST Calculator (India)</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/loan-calculator.html"><span>Loan Amortization Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/simple-interest-calculator.html"><span>Simple Interest Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/compound-interest-calculator.html"><span>Compound Interest Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/discount-calculator.html"><span>Discount &amp; Sale Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
           </ul>
         </div>
 
-        <!-- Category 2: Math, Health & Calculators -->
-        <div class="content-box">
-          <h2>Math &amp; Health Calculators (6 Tools)</h2>
-          <ul style="line-height: 2;">
-            <li><a href="tools/calorie-calculator.html">Calorie Calculator</a></li>
-            <li><a href="tools/body-fat-calculator.html">Body Fat Calculator</a></li>
-            <li><a href="tools/water-intake-calculator.html">Water Intake Calculator</a></li>
-            <li><a href="tools/bmi-calculator.html">BMI Calculator</a></li>
-            <li><a href="tools/percentage-calculator.html">Percentage Calculator</a></li>
-            <li><a href="tools/age-calculator.html">Age Calculator</a></li>
+        <!-- Category 2: Health & Math Calculators -->
+        <div class="sitemap-section-card" id="health-math">
+          <div class="sitemap-card-head">
+            <h2 class="sitemap-card-title">
+              <span class="sitemap-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+              </span>
+              <span>Health &amp; Math</span>
+            </h2>
+            <span class="sitemap-count-tag">6 Tools</span>
+          </div>
+          <ul class="sitemap-links-list">
+            <li class="sitemap-link-item"><a href="tools/percentage-calculator.html"><span>Percentage Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/age-calculator.html"><span>Chronological Age Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/bmi-calculator.html"><span>BMI Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/calorie-calculator.html"><span>Calorie &amp; TDEE Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/body-fat-calculator.html"><span>Body Fat Percentage Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/water-intake-calculator.html"><span>Daily Water Intake Calculator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
           </ul>
         </div>
 
         <!-- Category 3: Unit Converters -->
-        <div class="content-box">
-          <h2>Unit &amp; Currency Converters (5 Tools)</h2>
-          <ul style="line-height: 2;">
-            <li><a href="tools/currency-converter.html">Currency Converter</a></li>
-            <li><a href="tools/length-converter.html">Length Converter</a></li>
-            <li><a href="tools/weight-converter.html">Weight Converter</a></li>
-            <li><a href="tools/temperature-converter.html">Temperature Converter</a></li>
-            <li><a href="tools/speed-converter.html">Speed Converter</a></li>
+        <div class="sitemap-section-card" id="unit-converters">
+          <div class="sitemap-card-head">
+            <h2 class="sitemap-card-title">
+              <span class="sitemap-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+              </span>
+              <span>Unit Converters</span>
+            </h2>
+            <span class="sitemap-count-tag">5 Tools</span>
+          </div>
+          <ul class="sitemap-links-list">
+            <li class="sitemap-link-item"><a href="tools/currency-converter.html"><span>Live Currency Converter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/length-converter.html"><span>Length &amp; Distance Converter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/weight-converter.html"><span>Weight &amp; Mass Converter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/temperature-converter.html"><span>Temperature Converter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/speed-converter.html"><span>Speed &amp; Velocity Converter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
           </ul>
         </div>
 
         <!-- Category 4: Web & Developer Tools -->
-        <div class="content-box">
-          <h2>Web, Text &amp; Developer Tools (8 Tools)</h2>
-          <ul style="line-height: 2;">
-            <li><a href="tools/uuid-generator.html">UUID Generator</a></li>
-            <li><a href="tools/json-formatter.html">JSON Formatter</a></li>
-            <li><a href="tools/qr-code-generator.html">QR Code Generator</a></li>
-            <li><a href="tools/password-generator.html">Password Generator</a></li>
-            <li><a href="tools/word-counter.html">Word Counter</a></li>
-            <li><a href="tools/character-counter.html">Character Counter</a></li>
-            <li><a href="tools/case-converter.html">Case Converter</a></li>
-            <li><a href="tools/base64-encoder.html">Base64 Encoder &amp; Decoder</a></li>
+        <div class="sitemap-section-card" id="web-tools">
+          <div class="sitemap-card-head">
+            <h2 class="sitemap-card-title">
+              <span class="sitemap-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </span>
+              <span>Web &amp; Text Tools</span>
+            </h2>
+            <span class="sitemap-count-tag">8 Tools</span>
+          </div>
+          <ul class="sitemap-links-list">
+            <li class="sitemap-link-item"><a href="tools/qr-code-generator.html"><span>Custom QR Code Generator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/password-generator.html"><span>Secure Password Generator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/uuid-generator.html"><span>UUID / GUID v4 Generator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/json-formatter.html"><span>JSON Formatter &amp; Validator</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/word-counter.html"><span>Word &amp; Reading Time Counter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/character-counter.html"><span>Character Counter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/case-converter.html"><span>Text Case Converter</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+            <li class="sitemap-link-item"><a href="tools/base64-encoder.html"><span>Base64 Encoder &amp; Decoder</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
           </ul>
         </div>
 
-        <!-- Category 5: Educational Blog Guides -->
-        <div class="content-box" style="grid-column: 1 / -1;">
-          <h2>Editorial Guides &amp; Articles (20 Guides)</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-            <ul style="line-height: 2;">
-              <li><a href="blog/sip-vs-mutual-fund-guide.html">SIP vs Mutual Fund Guide</a></li>
-              <li><a href="blog/what-is-fixed-deposit.html">What Is Fixed Deposit (FD)</a></li>
-              <li><a href="blog/rd-vs-fd.html">RD vs FD Comparison Guide</a></li>
-              <li><a href="blog/how-to-calculate-roi.html">How to Calculate ROI</a></li>
-              <li><a href="blog/profit-margin-formula.html">Profit Margin Formula Guide</a></li>
-              <li><a href="blog/understanding-loan-emi.html">Understanding Loan EMI &amp; Amortization</a></li>
-              <li><a href="blog/gst-tax-guide.html">GST Tax &amp; Invoicing Guide</a></li>
-              <li><a href="blog/simple-vs-compound-interest.html">Simple vs Compound Interest</a></li>
-              <li><a href="blog/smart-shopping-discount-guide.html">Smart Shopping &amp; Discount Guide</a></li>
-              <li><a href="blog/foreign-exchange-basics.html">Foreign Exchange &amp; Forex Basics</a></li>
+        <!-- Category 5: Educational Blog Guides (Full Width) -->
+        <div class="sitemap-section-card sitemap-full-width-card" id="editorial-guides">
+          <div class="sitemap-card-head">
+            <h2 class="sitemap-card-title">
+              <span class="sitemap-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </span>
+              <span>Editorial Guides &amp; Articles</span>
+            </h2>
+            <span class="sitemap-count-tag">20 In-Depth Guides</span>
+          </div>
+          <div class="sitemap-guides-grid">
+            <ul class="sitemap-links-list">
+              <li class="sitemap-link-item"><a href="blog/sip-vs-mutual-fund-guide.html"><span>SIP vs Mutual Fund Guide: Compounding &amp; Wealth</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/what-is-fixed-deposit.html"><span>What is a Fixed Deposit (FD)? Types &amp; Compounding</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/rd-vs-fd.html"><span>RD vs FD: Recurring vs Fixed Deposit Comparison</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/how-to-calculate-roi.html"><span>How to Calculate ROI: Simple vs Annualized Return</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/profit-margin-formula.html"><span>Profit Margin Formula: Gross vs Net vs Markup</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/emi-vs-simple-interest-explained.html"><span>EMI vs Simple Interest Explained: Loan Math &amp; Cost</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/gst-calculation-guide-india.html"><span>GST Calculation Guide India: CGST, SGST, IGST</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/compound-interest-explained.html"><span>Compound Interest Explained: Rule of 72 &amp; APY</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/currency-converter-how-it-works.html"><span>Currency Converter: How It Works &amp; Forex Spreads</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/best-online-calculators-for-students.html"><span>Best Online Calculators for Students: STEM Guide</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
             </ul>
-            <ul style="line-height: 2;">
-              <li><a href="blog/daily-calorie-needs.html">Daily Calorie Needs: BMR &amp; TDEE</a></li>
-              <li><a href="blog/healthy-body-fat-percentage.html">Healthy Body Fat Percentage Charts</a></li>
-              <li><a href="blog/daily-water-intake-guide.html">Daily Water Intake Guide</a></li>
-              <li><a href="blog/bmi-and-healthy-weight.html">BMI and Healthy Weight Guide</a></li>
-              <li><a href="blog/how-to-calculate-percentages.html">Mastering Percentage Calculations</a></li>
-              <li><a href="blog/age-calculation-guide.html">Chronological Age Calculation Science</a></li>
-              <li><a href="blog/what-is-uuid.html">What Is UUID / GUID? Versions 1 to 7</a></li>
-              <li><a href="blog/json-formatting-guide.html">JSON Formatting &amp; Validation Guide</a></li>
-              <li><a href="blog/qr-code-technology-guide.html">QR Code Architecture &amp; Error Correction</a></li>
-              <li><a href="blog/cybersecurity-password-best-practices.html">Cybersecurity &amp; Password Best Practices</a></li>
+            <ul class="sitemap-links-list">
+              <li class="sitemap-link-item"><a href="blog/daily-calorie-needs.html"><span>Daily Calorie Needs: Calculate BMR &amp; TDEE</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/healthy-body-fat-percentage.html"><span>Healthy Body Fat Percentage: Ideal Charts &amp; Methods</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/daily-water-intake-guide.html"><span>Daily Water Intake Guide: Science &amp; Calculation</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/what-is-bmi-and-how-to-calculate-it.html"><span>What is BMI &amp; How to Calculate It: Formula &amp; Chart</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/how-to-calculate-percentage.html"><span>How to Calculate Percentage: Formula &amp; Steps</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/age-calculator-complete-guide.html"><span>Age Calculator Complete Guide: Chronological Math</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/what-is-uuid.html"><span>What is UUID / GUID? Versions 1 to 7 Explained</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/json-formatting-guide.html"><span>JSON Formatting Guide: Syntax Rules &amp; Validation</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/how-do-qr-codes-work.html"><span>How Do QR Codes Work: Matrix Geometry &amp; Security</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
+              <li class="sitemap-link-item"><a href="blog/how-to-create-a-strong-password.html"><span>How to Create a Strong Password: Entropy Guide</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg></a></li>
             </ul>
           </div>
         </div>
 
-        <!-- Category 6: Corporate & Legal Pages -->
-        <div class="content-box" style="grid-column: 1 / -1;">
-          <h2>Company &amp; Legal Policies</h2>
-          <ul style="display: flex; flex-wrap: wrap; gap: 1.5rem; line-height: 2;">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-          </ul>
+        <!-- Category 6: Corporate & Legal Pages (Full Width) -->
+        <div class="sitemap-section-card sitemap-full-width-card" id="company-policies">
+          <div class="sitemap-card-head">
+            <h2 class="sitemap-card-title">
+              <span class="sitemap-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </span>
+              <span>Company &amp; Legal Policies</span>
+            </h2>
+            <span class="sitemap-count-tag">11 Core Pages</span>
+          </div>
+          <div class="sitemap-policy-wrap">
+            <a href="index.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+              <span>Home</span>
+            </a>
+            <a href="tools.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              <span>All 30+ Free Tools</span>
+            </a>
+            <a href="blog.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path></svg>
+              <span>Blog &amp; Knowledge Base</span>
+            </a>
+            <a href="about.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>About Us</span>
+            </a>
+            <a href="contact.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>Contact Us</span>
+            </a>
+            <a href="editorial-policy.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              <span>Editorial Policy</span>
+            </a>
+            <a href="author/finejust-editorial.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <span>Editorial Board</span>
+            </a>
+            <a href="privacy-policy.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Privacy Policy</span>
+            </a>
+            <a href="terms.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>Terms of Service</span>
+            </a>
+            <a href="disclaimer.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <span>Disclaimer</span>
+            </a>
+            <a href="cookie-policy.html" class="sitemap-policy-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 0-2 19.8"></path></svg>
+              <span>Cookie Policy</span>
+            </a>
+          </div>
         </div>
 
+      </div>
+
+      <!-- XML Sitemap Direct Banner -->
+      <div class="xml-sitemap-banner">
+        <div class="xml-info">
+          <h3>Looking for our Machine-Readable XML Sitemap?</h3>
+          <p>Search engines and web crawlers can access our auto-indexed XML sitemap protocol endpoint.</p>
+        </div>
+        <a href="https://www.finejust.vip/sitemap.xml" target="_blank" rel="noopener" class="btn-xml-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>View XML Sitemap</span>
+        </a>
       </div>
 
     </div>

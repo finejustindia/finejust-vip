@@ -475,9 +475,7 @@
       document.getElementById('water-exercise').value = e;
       document.getElementById('water-climate').value = c;
       document.getElementById('water-special').value = s;
-      const rc = document.getElementById('water-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateWater();
+      if (window.showToast) window.showToast('Hydration preset loaded: ' + w + 'kg, ' + e + ' min activity');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

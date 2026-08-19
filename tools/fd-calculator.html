@@ -476,9 +476,7 @@
       document.getElementById('fd-rate').value = r;
       document.getElementById('fd-years').value = y;
       document.getElementById('fd-compounding').value = c;
-      const rc = document.getElementById('fd-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateFd();
+      if (window.showToast) window.showToast('FD preset loaded: $' + Number(p).toLocaleString() + ' / ' + y + ' Yrs @ ' + r + '%');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

@@ -1094,10 +1094,7 @@
           populateDays(dobDay, now.getDate());
         }
 
-        const rc = document.getElementById('age-result-card');
-        if (rc) rc.classList.remove('hidden');
-        calculateAge();
-        if (window.showToast) window.showToast("Age preset loaded!");
+        if (window.showToast) window.showToast("Age preset loaded! Click 'Calculate Age' when ready.");
       };
 
       document.querySelectorAll('.preset-chip').forEach(chip => {

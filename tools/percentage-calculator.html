@@ -770,7 +770,7 @@
     const inpBase = document.getElementById('pct-base-1');
     if (inpVal) inpVal.value = pct;
     if (inpBase) inpBase.value = base;
-    if (btnCalc) btnCalc.click();
+    if (window.showToast) window.showToast('Percentage preset loaded: ' + pct + '% of ' + base);
   };
 
   tabs.forEach((tab, index) => {

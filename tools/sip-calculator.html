@@ -598,9 +598,7 @@
       document.getElementById('sip-monthly').value = m;
       document.getElementById('sip-rate').value = r;
       document.getElementById('sip-years').value = y;
-      const rc = document.getElementById('sip-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateSip();
+      if (window.showToast) window.showToast('SIP preset loaded: $' + Number(m).toLocaleString() + ' / ' + y + ' Yrs @ ' + r + '%');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

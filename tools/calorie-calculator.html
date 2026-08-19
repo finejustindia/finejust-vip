@@ -487,9 +487,7 @@
       document.getElementById('cal-height').value = h;
       document.getElementById('cal-weight').value = w;
       document.getElementById('cal-activity').value = act;
-      const rc = document.getElementById('cal-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateCal();
+      if (window.showToast) window.showToast('Calorie profile preset loaded!');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

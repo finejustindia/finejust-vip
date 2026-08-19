@@ -469,9 +469,7 @@
       document.getElementById('pm-cost').value = c;
       document.getElementById('pm-revenue').value = r;
       document.getElementById('pm-units').value = u;
-      const rc = document.getElementById('pm-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculatePm();
+      if (window.showToast) window.showToast('Profit margin preset loaded: Cost $' + c + ', Price $' + r);
     };
 
     document.addEventListener('DOMContentLoaded', () => {

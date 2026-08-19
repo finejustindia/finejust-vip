@@ -473,9 +473,7 @@
       document.getElementById('rd-monthly').value = p;
       document.getElementById('rd-rate').value = r;
       document.getElementById('rd-months').value = m;
-      const rc = document.getElementById('rd-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateRd();
+      if (window.showToast) window.showToast('RD preset loaded: $' + Number(p).toLocaleString() + ' / ' + m + ' Months @ ' + r + '%');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

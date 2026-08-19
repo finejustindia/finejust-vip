@@ -467,9 +467,7 @@
       document.getElementById('roi-initial').value = i;
       document.getElementById('roi-final').value = f;
       document.getElementById('roi-years').value = y;
-      const rc = document.getElementById('roi-result-card');
-      if (rc) rc.classList.remove('hidden');
-      calculateRoi();
+      if (window.showToast) window.showToast('ROI preset loaded: $' + Number(i).toLocaleString() + ' -> $' + Number(f).toLocaleString() + ' in ' + y + ' Yrs');
     };
 
     document.addEventListener('DOMContentLoaded', () => {

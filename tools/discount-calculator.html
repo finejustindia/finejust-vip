@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Analytics 4 (GA4) Global Site Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVBES3BJF"></script>
-  <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/js/analytics.js" defer></script>
   <title>Discount Calculator — Calculate Sale Price &amp; Total Savings | Finejust.vip</title>
   <meta name="description" content="Free online discount calculator to calculate final sales prices, stacked coupon savings, and sales tax. Find out exact dollars saved on retail purchases instantly.">
   <link rel="canonical" href="https://www.finejust.vip/tools/discount-calculator.html">
@@ -38,8 +38,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
-  <link rel="preload" href="../assets/style.css" as="style">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="preload" href="../assets/css/style.css" as="style">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
   <script type="application/ld+json">
   {
@@ -58,24 +58,10 @@
         "@type": "BreadcrumbList",
         "@id": "https://www.finejust.vip/tools/discount-calculator.html#breadcrumb",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.finejust.vip/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Tools",
-            "item": "https://www.finejust.vip/tools.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Discount Calculator",
-            "item": "https://www.finejust.vip/tools/discount-calculator.html"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.finejust.vip/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.finejust.vip/tools.html" },
+          { "@type": "ListItem", "position": 3, "name": "Finance", "item": "https://www.finejust.vip/tools.html?category=finance" },
+          { "@type": "ListItem", "position": 4, "name": "Discount Calculator", "item": "https://www.finejust.vip/tools/discount-calculator.html" }
         ]
       },
       {
@@ -175,7 +161,7 @@
   <!-- Google AdSense Global Tag (Placeholder) -->
   
 </head>
-<body>
+<body data-type="tool" data-slug="discount-calculator" data-category="finance">
 
   <!-- Reading Progress Indicator -->
   <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
@@ -199,12 +185,15 @@
               </script>
             </div>
 
-      <nav class="breadcrumb-container" aria-label="Breadcrumb">
-        <div class="breadcrumb-item"><a href="/">Home</a></div>
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-container" id="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
         <span class="breadcrumb-separator">/</span>
         <div class="breadcrumb-item"><a href="../tools.html">Tools</a></div>
         <span class="breadcrumb-separator">/</span>
-        <div class="breadcrumb-item breadcrumb-active">Discount Calculator</div>
+        <div class="breadcrumb-item"><a href="../tools.html?category=finance">Finance</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active" aria-current="page">Discount Calculator</div>
       </nav>
 
       <div class="tool-page-layout">
@@ -268,10 +257,10 @@
               </div>
               <div class="preset-chips-wrap">
                 <span class="preset-label">Sale Presets:</span>
-                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=10;document.getElementById('btn-calc-disc').click();">10% Off</button>
-                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=20;document.getElementById('btn-calc-disc').click();">20% Off</button>
-                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=30;document.getElementById('btn-calc-disc').click();">30% Off</button>
-                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=50;document.getElementById('btn-calc-disc').click();">50% Half Price</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=10;if(window.showToast)window.showToast('Primary discount set to 10%');">10% Off</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=20;if(window.showToast)window.showToast('Primary discount set to 20%');">20% Off</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=30;if(window.showToast)window.showToast('Primary discount set to 30%');">30% Off</button>
+                <button type="button" class="preset-chip" onclick="document.getElementById('disc-pct').value=50;if(window.showToast)window.showToast('Primary discount set to 50%');">50% Half Price</button>
               </div>
             </div>
 <div class="calc-form-grid grid-2">
@@ -560,7 +549,7 @@
           <section class="newsletter-card" style="margin-top: 3rem;">
             <h2 class="newsletter-title">Calculate Faster with Finejust.vip</h2>
             <p class="newsletter-desc">Explore 20+ free client-side financial, math, conversion, and developer utilities with zero installation.</p>
-            <a href="../tools.html" class="btn btn-newsletter">Explore All 20+ Free Tools</a>
+            <a href="../tools.html" class="btn btn-newsletter">Explore All 30+ Free Tools</a>
           </section>
         </div>
 
@@ -572,7 +561,7 @@
               <li><a href="gst-calculator.html" class="footer-link">&bull; GST Calculator</a></li>
               <li><a href="emi-calculator.html" class="footer-link">&bull; EMI Calculator</a></li>
               <li><a href="compound-interest-calculator.html" class="footer-link">&bull; Compound Interest</a></li>
-              <li><a href="../tools.html" class="footer-link">&bull; All 20+ Free Tools &rarr;</a></li>
+              <li><a href="../tools.html" class="footer-link">&bull; All 30+ Free Tools &rarr;</a></li>
             </ul>
           </div>
           <div class="ad-container" style="min-height: 300px;">
@@ -603,13 +592,24 @@
         </script>
       </div>
     </div>
+  
+      
+      
+      <!-- Automated Internal Linking Engine -->
+      <section id="prev-next"></section>
+      <section id="related-tools"></section>
+      <section id="category-tools"></section>
+      <section id="popular-tools"></section>
+      <section id="recently-updated"></section>
+      <section id="related-articles"></section>
   </main>
 
   <!-- Dynamic Footer Container -->
   <div id="footer-container"></div>
 
-  <script src="../assets/script.js" defer></script>
-  <script src="../assets/search.js" defer></script>
+  <script src="../assets/js/script.js" defer></script>
+  <script src="../assets/js/internal-links.js" defer></script>
+  <script src="../assets/js/search.js" defer></script>
   <script>
 (function() {
   'use strict';

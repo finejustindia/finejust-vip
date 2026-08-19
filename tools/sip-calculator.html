@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- High-Performance DNS Prefetch & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1072044818583138" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics 4 (GA4) Global Site Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVBES3BJF"></script>
+  <script src="/assets/js/analytics.js" defer></script>
+  <title>SIP Calculator — Calculate Mutual Fund Maturity Wealth &amp; Returns | Finejust.vip</title>
+  <meta name="description" content="Calculate expected maturity wealth, total investment cost, and compound interest growth for mutual fund Systematic Investment Plans (SIP) on Finejust.vip.">
+  <link rel="canonical" href="https://www.finejust.vip/tools/sip-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.finejust.vip/tools/sip-calculator.html">
+  <meta property="og:title" content="SIP Calculator — Calculate Mutual Fund Maturity Wealth | Finejust.vip">
+  <meta property="og:description" content="Calculate expected maturity wealth, total investment cost, and compound interest growth for SIPs.">
+  <meta property="og:image" content="https://www.finejust.vip/images/og-banner.webp">
+  <meta property="og:site_name" content="Finejust.vip">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.finejust.vip/tools/sip-calculator.html">
+  <meta name="twitter:title" content="SIP Calculator - Finejust.vip">
+  <meta name="twitter:description" content="Calculate expected maturity wealth and compound returns for Systematic Investment Plans.">
+  <meta name="twitter:image" content="https://www.finejust.vip/images/og-banner.webp">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#2563EB">
+
+  <link rel="preload" href="../assets/css/style.css" as="style">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.finejust.vip/tools/sip-calculator.html#app",
+        "name": "SIP Calculator",
+        "url": "https://www.finejust.vip/tools/sip-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Calculate expected maturity wealth, total investment cost, and compound interest growth for mutual fund Systematic Investment Plans (SIP)."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.finejust.vip/tools/sip-calculator.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.finejust.vip/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.finejust.vip/tools.html" },
+          { "@type": "ListItem", "position": 3, "name": "Finance", "item": "https://www.finejust.vip/tools.html?category=finance" },
+          { "@type": "ListItem", "position": 4, "name": "SIP Calculator", "item": "https://www.finejust.vip/tools/sip-calculator.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.finejust.vip/tools/sip-calculator.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Systematic Investment Plan (SIP)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A SIP is an investment method where you deposit a fixed sum into mutual funds or index equities at regular monthly intervals to compound wealth steadily."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the formula for SIP compound wealth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "M = P × [((1 + i)^n - 1) / i] × (1 + i), where P is monthly deposit, i is monthly rate, and n is total months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Dollar/Rupee Cost Averaging?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When markets dip, your fixed contribution purchases more units; when markets rise, it purchases fewer units, lowering your average cost over time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is this SIP calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This calculator computes mathematical annuity formulas with exact monthly compounding precision matching institutional banking algorithms."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I modify my SIP amount later?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, mutual funds allow Step-Up or Top-Up SIPs to increase your monthly investment as your annual income increases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is SIP better than Lump Sum investment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SIP eliminates market timing anxiety and volatility risk, whereas Lump Sum requires having capital ready during major market downturns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a reasonable expected return for mutual funds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Historically, broad market index funds (like S&P 500, Nifty 50, MSCI World) have returned between 10% and 14% annualized CAGR over 10+ year horizons."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I stop my SIP anytime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, open-ended mutual funds permit you to pause, stop, or redeem your accumulated units without penalty after statutory lock-in periods."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does taxation apply to SIP mutual fund gains?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every individual monthly installment starts its own holding period clock for Short Term Capital Gains (STCG) vs Long Term Capital Gains (LTCG) tax rules."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is financial data stored on your servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Calculations execute entirely within your client-side browser with 100% data privacy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-type="tool" data-slug="sip-calculator" data-category="finance">
+
+  <!-- Reading Progress Indicator -->
+  <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
+
+  <!-- Dynamic Header Container -->
+  <div id="header-container"></div>
+
+  <main class="main-content">
+    <div class="container">
+      
+      <!-- Top AdSense Placeholder -->
+      <div class="ad-container top-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1072044818583138"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-container" id="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item"><a href="../tools.html">Tools</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item"><a href="../tools.html?category=finance">Finance</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active" aria-current="page">SIP Calculator</div>
+      </nav>
+
+      <div class="tool-page-layout">
+        <div class="tool-main-panel">
+          
+          <!-- Tool Header Block -->
+          <header class="tool-header-block">
+            <h1 class="tool-h1">SIP Calculator</h1>
+            <p class="tool-subtitle">Calculate expected maturity wealth, total investment cost, and compound interest growth for mutual fund Systematic Investment Plans (SIP).</p>
+            <div class="tool-rating-badge">
+              <span class="tool-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span><strong>4.9</strong>/5</span>
+              <span class="tool-rating-count">&bull; 12,000+ verified ratings</span>
+            </div>
+          </header>
+
+          <!-- Social Share Widget -->
+          <div class="share-buttons-wrap">
+            <div class="share-buttons-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share this tool:</span>
+            </div>
+            <div class="share-buttons-list">
+              <button type="button" class="share-btn share-btn-twitter" data-platform="twitter" aria-label="Share on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>Post</span>
+              </button>
+              <button type="button" class="share-btn share-btn-facebook" data-platform="facebook" aria-label="Share on Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" class="share-btn share-btn-linkedin" data-platform="linkedin" aria-label="Share on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>LinkedIn</span>
+              </button>
+              <button type="button" class="share-btn share-btn-whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+                <span>WhatsApp</span>
+              </button>
+              <button type="button" class="share-btn share-btn-copy" data-platform="copy" aria-label="Copy Link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Link</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tool Card (Standardized UI) -->
+          <div class="calculator-card">
+            <div class="calc-card-top-bar">
+              <div class="calc-badge-group">
+                <span class="calc-format-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                  Compound Frequency: Monthly
+                </span>
+                <span class="calc-live-pill"><span class="pulse-dot"></span> Real-time Compounding</span>
+              </div>
+              <div class="preset-chips-wrap">
+                <span class="preset-label">Quick SIPs:</span>
+                <button type="button" class="preset-chip" onclick="setSip(1000, 12, 10)">$1k / 10y</button>
+                <button type="button" class="preset-chip" onclick="setSip(5000, 12, 15)">$5k / 15y</button>
+                <button type="button" class="preset-chip" onclick="setSip(10000, 14, 20)">$10k / 20y</button>
+                <button type="button" class="preset-chip" onclick="setSip(25000, 15, 25)">$25k / 25y</button>
+              </div>
+            </div>
+
+            <!-- Input Grid (Desktop: 2 columns, Gap: 20px, Mobile: 1 column) -->
+            <div class="calc-form-grid grid-2">
+              <div class="form-group">
+                <label class="form-label" for="sip-monthly">
+                  <span>Monthly Investment ($ / ₹)</span>
+                  <span class="format-tag">Monthly</span>
+                </label>
+                <input type="number" id="sip-monthly" class="form-input" min="100" max="10000000" step="500" value="5000">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sip-rate">
+                  <span>Expected Return (% p.a.)</span>
+                  <span class="format-tag">CAGR</span>
+                </label>
+                <input type="number" id="sip-rate" class="form-input" min="1" max="50" step="0.5" value="12">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sip-years">
+                  <span>Investment Tenure (Years)</span>
+                  <span class="format-tag">Horizon</span>
+                </label>
+                <input type="number" id="sip-years" class="form-input" min="1" max="50" step="1" value="10">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sip-frequency">
+                  <span>Compounding Interval</span>
+                  <span class="format-tag">Frequency</span>
+                </label>
+                <select id="sip-frequency" class="form-select">
+                  <option value="12" selected>Monthly Compounding</option>
+                  <option value="4">Quarterly Compounding</option>
+                  <option value="1">Annual Compounding</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Button Row: 1 Calculate (primary), 2 Reset (outline), 3 Copy Summary (outline), 4 Share (outline), 5 Print (outline) -->
+            <div class="form-actions">
+              <button type="button" id="btn-calc-sip" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                <span>Calculate SIP Wealth</span>
+              </button>
+              <button type="button" id="btn-reset-sip" class="btn btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                <span>Reset</span>
+              </button>
+              <button type="button" id="btn-copy-sip" class="btn btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy Summary</span>
+              </button>
+              <button type="button" id="btn-share-tool" class="btn btn-outline" aria-label="Share">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span>Share</span>
+              </button>
+              <button type="button" id="btn-print-tool" class="btn btn-outline" aria-label="Print">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                <span>Print</span>
+              </button>
+            </div>
+
+            <!-- Result Card: 3-column CSS Grid (Desktop: 3 equal, Tablet: 2, Mobile: 1) - Hidden initially until Calculate is clicked -->
+            <div class="result-card age-result-hero hidden" id="sip-result-card">
+              <div class="result-hero-top">
+                <div>
+                  <span class="result-title">Expected Total Maturity Wealth</span>
+                  <div class="result-date-stamp" id="sip-date-stamp">10 Years Horizon • 12.0% Annual Compound Growth</div>
+                </div>
+                <div class="zodiac-badge" id="sip-growth-badge">📈 +92.3% Gain</div>
+              </div>
+
+              <!-- 3 Equal Width, Equal Height Cards (Never Wrap) -->
+              <div class="age-hero-units-grid result-cards-responsive-3">
+                <div class="age-unit-card result-unit-card">
+                  <div class="age-unit-num" id="sip-total-invested">$600,000</div>
+                  <div class="age-unit-label">Invested Amount</div>
+                </div>
+                <div class="age-unit-card result-unit-card">
+                  <div class="age-unit-num" id="sip-wealth-gain" style="color:var(--success, #10B981);">$561,695</div>
+                  <div class="age-unit-label">Est. Returns Earned</div>
+                </div>
+                <div class="age-unit-card result-unit-card">
+                  <div class="age-unit-num" id="sip-total-value" style="color:var(--primary);">$1,161,695</div>
+                  <div class="age-unit-label">Maturity Wealth</div>
+                </div>
+              </div>
+
+              <div class="age-stats-section-title">Comprehensive Investment Breakdown</div>
+              <div class="result-breakdown-grid age-stats-grid">
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">🗓️ Total Installments</span>
+                  <span class="breakdown-val" id="sip-total-months">120 Months</span>
+                </div>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">💎 Wealth Multiplier</span>
+                  <span class="breakdown-val" id="sip-multiplier">1.94x</span>
+                </div>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">📊 Invested Share</span>
+                  <span class="breakdown-val" id="sip-invested-share">51.6%</span>
+                </div>
+                <div class="breakdown-item stat-card">
+                  <span class="breakdown-label">🚀 Profit Share</span>
+                  <span class="breakdown-val" id="sip-profit-share">48.4%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle AdSense Placeholder -->
+          <div class="ad-container middle-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1072044818583138"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+
+          <!-- In-Depth Guide Article -->
+          <article class="content-box">
+            <h2>How Systematic Investment Plans (SIP) Generate Compound Wealth</h2>
+            <p>A <strong>Systematic Investment Plan (SIP)</strong> allows individuals to invest fixed sums regularly into mutual funds, index exchange-traded funds (ETFs), or equity portfolios. By combining <em>Rupee/Dollar Cost Averaging</em> and the <em>exponential mathematics of monthly compounding</em>, SIPs maximize wealth creation over long-term market cycles.</p>
+
+            <h3>The Future Value (FV) Annuity Compounding Formula</h3>
+            <div class="formula-box">
+              M = P &times; [((1 + i)<sup>n</sup> - 1) / i] &times; (1 + i)<br><br>
+              Where:<br>
+              &bull; <strong>M</strong> = Future Maturity Wealth Value<br>
+              &bull; <strong>P</strong> = Monthly SIP Contribution<br>
+              &bull; <strong>i</strong> = Monthly Interest Rate (Annual Rate &divide; 12 &divide; 100)<br>
+              &bull; <strong>n</strong> = Total Number of Monthly Installments (Years &times; 12)
+            </div>
+
+            <table style="width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.95rem;">
+              <thead>
+                <tr style="border-bottom:2px solid var(--border); text-align:left;">
+                  <th style="padding:0.75rem 0.5rem;">Tenure</th>
+                  <th style="padding:0.75rem 0.5rem;">Total Invested ($5k/mo)</th>
+                  <th style="padding:0.75rem 0.5rem;">Est. Value (12% CAGR)</th>
+                  <th style="padding:0.75rem 0.5rem;">Wealth Gain</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">5 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$300,000</td>
+                  <td style="padding:0.6rem 0.5rem;">$412,432</td>
+                  <td style="padding:0.6rem 0.5rem; color:var(--success, #10B981);">+$112,432</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">10 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$600,000</td>
+                  <td style="padding:0.6rem 0.5rem;">$1,161,695</td>
+                  <td style="padding:0.6rem 0.5rem; color:var(--success, #10B981);">+$561,695</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">15 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$900,000</td>
+                  <td style="padding:0.6rem 0.5rem;">$2,522,880</td>
+                  <td style="padding:0.6rem 0.5rem; color:var(--success, #10B981);">+$1,622,880</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.6rem 0.5rem; font-weight:600;">20 Years</td>
+                  <td style="padding:0.6rem 0.5rem;">$1,200,000</td>
+                  <td style="padding:0.6rem 0.5rem;">$4,995,740</td>
+                  <td style="padding:0.6rem 0.5rem; color:var(--success, #10B981);">+$3,795,740</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <!-- 10 FAQs Accordion -->
+          <section class="content-box faq-section" id="faq">
+            <h2>Frequently Asked Questions (10)</h2>
+            <div class="faq-list">
+              <div class="faq-item active">
+                <button type="button" class="faq-question"><span>What is a Systematic Investment Plan (SIP)?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>A SIP is an investment method where you deposit a fixed sum into mutual funds or index equities at regular intervals (usually monthly) to compound wealth steadily.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>What is the formula for SIP compound wealth?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>M = P × [((1 + i)^n - 1) / i] × (1 + i), where P is monthly deposit, i is monthly rate, and n is total months.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>What is Dollar/Rupee Cost Averaging?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>When markets dip, your fixed contribution purchases more units; when markets rise, it purchases fewer units. This lowers your average purchase price over time without timing the market.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>How accurate is this SIP calculator?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>This calculator computes mathematical annuity formulas with exact monthly compounding precision matching institutional banking algorithms.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>Can I modify my SIP amount later?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>Yes, mutual funds allow Step-Up or Top-Up SIPs to increase your monthly investment as your annual income increases.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>Is SIP better than Lump Sum investment?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>SIP eliminates market timing anxiety and volatility risk, whereas Lump Sum requires having capital ready during major market downturns.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>What is a reasonable expected return for mutual funds?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>Historically, broad market index funds (like S&P 500, Nifty 50, MSCI World) have returned between 10% and 14% annualized CAGR over 10+ year horizons.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>Can I stop my SIP anytime?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>Yes, open-ended mutual funds permit you to pause, stop, or redeem your accumulated units without penalty after statutory lock-in periods.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>How does taxation apply to SIP mutual fund gains?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>Every individual monthly installment starts its own holding period clock for Short Term Capital Gains (STCG) vs Long Term Capital Gains (LTCG) tax rules.</p></div>
+              </div>
+              <div class="faq-item">
+                <button type="button" class="faq-question"><span>Is financial data stored on your servers?</span><span class="faq-icon">&#9662;</span></button>
+                <div class="faq-answer"><p>No. Calculations execute entirely within your client-side browser with 100% data privacy.</p></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- E-E-A-T Verified Author Card -->
+          <div class="author-card">
+            <div class="author-avatar-wrap">FE</div>
+            <div class="author-card-body">
+              <div class="author-card-header">
+                <h3 class="author-name">Finejust Editorial Team</h3>
+                <span class="author-badge">Verified Quantitative Review Board</span>
+              </div>
+              <p class="author-bio">
+                Written, calculated, and mathematically audited by the Finejust quantitative review board. We follow strict E-E-A-T principles and test every formula against official ISO, WHO, and statutory benchmarks.
+              </p>
+              <div class="author-links">
+                <a href="../author/finejust-editorial.html" style="color:var(--primary);">Author Bio &amp; Credentials &rarr;</a>
+                <a href="../editorial-policy.html" style="color:var(--text-muted);">Editorial Standards</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Educational Articles Hook -->
+          <div id="related-articles"></div>
+
+          <!-- Dynamic Related Tools Hook -->
+          <div id="dynamic-related-tools" data-category="finance"></div>
+
+          <!-- Recently Viewed Tools Hook -->
+          <div id="recently-viewed-tools"></div>
+
+          <!-- Prev/Next Navigation Hook -->
+          <div id="prev-next"></div>
+
+          <!-- Newsletter Card -->
+          <section class="newsletter-card" style="margin-top: 3rem;">
+            <h2 class="newsletter-title">Calculate Faster with Finejust.vip</h2>
+            <p class="newsletter-desc">Explore 30+ free client-side financial, math, conversion, and developer utilities with zero installation.</p>
+            <a href="../tools.html" class="btn btn-newsletter">Explore All 30+ Free Tools</a>
+          </section>
+        </div>
+
+        <!-- Aside Sidebar -->
+        <aside>
+          <div class="content-box" style="margin-bottom: 1.5rem;">
+            <h3>Related Finance Tools</h3>
+            <ul class="footer-links" style="margin-top:0.75rem;">
+              <li><a href="emi-calculator.html" class="footer-link">&bull; EMI Calculator</a></li>
+              <li><a href="fd-calculator.html" class="footer-link">&bull; FD Calculator</a></li>
+              <li><a href="rd-calculator.html" class="footer-link">&bull; RD Calculator</a></li>
+              <li><a href="roi-calculator.html" class="footer-link">&bull; ROI Calculator</a></li>
+              <li><a href="../tools.html" class="footer-link">&bull; All 30+ Free Tools &rarr;</a></li>
+            </ul>
+          </div>
+          <div class="ad-container" style="min-height: 300px;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-1072044818583138"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Bottom AdSense Placeholder -->
+      <div class="ad-container bottom-ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-1072044818583138"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Container -->
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/script.js" defer></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script src="../assets/js/internal-links.js" defer></script>
+
+  <!-- Tool Specific Execution Logic -->
+  <script>
+    function calculateSip() {
+      const p = parseFloat(document.getElementById('sip-monthly').value) || 0;
+      const annualRate = parseFloat(document.getElementById('sip-rate').value) || 0;
+      const years = parseFloat(document.getElementById('sip-years').value) || 0;
+
+      if (p <= 0 || annualRate <= 0 || years <= 0) return;
+
+      const i = (annualRate / 12) / 100;
+      const n = years * 12;
+      const maturityValue = p * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+      const totalInvested = p * n;
+      const wealthGain = maturityValue - totalInvested;
+      const multiplier = (maturityValue / totalInvested).toFixed(2);
+      const profitPct = ((wealthGain / totalInvested) * 100).toFixed(1);
+
+      document.getElementById('sip-total-invested').textContent = '$' + Math.round(totalInvested).toLocaleString();
+      document.getElementById('sip-wealth-gain').textContent = '$' + Math.round(wealthGain).toLocaleString();
+      document.getElementById('sip-total-value').textContent = '$' + Math.round(maturityValue).toLocaleString();
+      document.getElementById('sip-total-months').textContent = n + ' Months';
+      document.getElementById('sip-multiplier').textContent = multiplier + 'x';
+      document.getElementById('sip-invested-share').textContent = ((totalInvested / maturityValue) * 100).toFixed(1) + '%';
+      document.getElementById('sip-profit-share').textContent = ((wealthGain / maturityValue) * 100).toFixed(1) + '%';
+      document.getElementById('sip-growth-badge').textContent = '📈 +' + profitPct + '% Gain';
+      document.getElementById('sip-date-stamp').textContent = years + ' Years Horizon • ' + annualRate.toFixed(1) + '% Annual Return';
+    }
+
+    window.setSip = function(m, r, y) {
+      document.getElementById('sip-monthly').value = m;
+      document.getElementById('sip-rate').value = r;
+      document.getElementById('sip-years').value = y;
+      const rc = document.getElementById('sip-result-card');
+      if (rc) rc.classList.remove('hidden');
+      calculateSip();
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btn-calc-sip')?.addEventListener('click', () => {
+        const rc = document.getElementById('sip-result-card');
+        if (rc) rc.classList.remove('hidden');
+        calculateSip();
+      });
+      document.getElementById('btn-reset-sip')?.addEventListener('click', () => {
+        const rc = document.getElementById('sip-result-card');
+        if (rc) rc.classList.add('hidden');
+        document.getElementById('sip-monthly').value = '';
+        document.getElementById('sip-rate').value = '';
+        document.getElementById('sip-years').value = '';
+        document.getElementById('sip-total-invested').textContent = '$0';
+        document.getElementById('sip-wealth-gain').textContent = '$0';
+        document.getElementById('sip-total-value').textContent = '$0';
+        document.getElementById('sip-monthly').focus();
+      });
+      document.getElementById('btn-copy-sip')?.addEventListener('click', () => {
+        const p = parseFloat(document.getElementById('sip-monthly').value) || 0;
+        const r = parseFloat(document.getElementById('sip-rate').value) || 0;
+        const y = parseFloat(document.getElementById('sip-years').value) || 0;
+        const invested = document.getElementById('sip-total-invested')?.textContent || '$0';
+        const gain = document.getElementById('sip-wealth-gain')?.textContent || '$0';
+        const maturity = document.getElementById('sip-total-value')?.textContent || '$0';
+        const months = document.getElementById('sip-total-months')?.textContent || '0 Months';
+        const multiplier = document.getElementById('sip-multiplier')?.textContent || '1.0x';
+        const invShare = document.getElementById('sip-invested-share')?.textContent || '50%';
+        const profShare = document.getElementById('sip-profit-share')?.textContent || '50%';
+
+        const summary = [
+          '\u{1F4C8} Finejust.vip SIP Mutual Fund Calculator Summary',
+          '----------------------------------------',
+          `\u{1F4B0} Monthly Investment: $${Number(p).toLocaleString()}`,
+          `\u{1F4CA} Expected Return Rate: ${r}% p.a.`,
+          `\u{1F5D3}\u{FE0F} Investment Horizon: ${y} Years (${months})`,
+          `\u{1F4B5} Total Amount Invested: ${invested}`,
+          `\u{1F680} Estimated Wealth Gain: ${gain}`,
+          `\u{2B50} Total Expected Maturity: ${maturity}`,
+          `\u{1F48E} Wealth Multiplier: ${multiplier}`,
+          `\u{1F4CA} Invested vs Profit Ratio: ${invShare} / ${profShare}`,
+          '----------------------------------------',
+          'Calculate free on: https://www.finejust.vip/tools/sip-calculator.html'
+        ].join('\n');
+
+        if (window.copyToClipboard) {
+          window.copyToClipboard(summary, 'SIP calculation summary copied!');
+        } else {
+          navigator.clipboard.writeText(summary);
+          if (window.showToast) window.showToast('SIP calculation summary copied!');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

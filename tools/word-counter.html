@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google Analytics 4 (GA4) Global Site Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXVBES3BJF"></script>
-  <script src="/assets/analytics.js" defer></script>
+  <script src="/assets/js/analytics.js" defer></script>
   <title>Word Counter — Free Online Word, Character &amp; Reading Time Counter | Finejust.vip</title>
   <meta name="description" content="Free online word counter and text analytics tool. Count words, characters, sentences, paragraphs, reading time, speaking time, and keyword density in real-time on Finejust.vip.">
   <link rel="canonical" href="https://www.finejust.vip/tools/word-counter.html">
@@ -38,8 +38,8 @@
   <link rel="manifest" href="../site.webmanifest">
   <meta name="theme-color" content="#2563EB">
 
-  <link rel="preload" href="../assets/style.css" as="style">
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="preload" href="../assets/css/style.css" as="style">
+  <link rel="stylesheet" href="../assets/css/style.css">
         
 
   <script type="application/ld+json">
@@ -59,24 +59,10 @@
         "@type": "BreadcrumbList",
         "@id": "https://www.finejust.vip/tools/word-counter.html#breadcrumb",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.finejust.vip/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Tools",
-            "item": "https://www.finejust.vip/tools.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Word Counter",
-            "item": "https://www.finejust.vip/tools/word-counter.html"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.finejust.vip/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://www.finejust.vip/tools.html" },
+          { "@type": "ListItem", "position": 3, "name": "Text Tools", "item": "https://www.finejust.vip/tools.html?category=text-tools" },
+          { "@type": "ListItem", "position": 4, "name": "Word Counter", "item": "https://www.finejust.vip/tools/word-counter.html" }
         ]
       },
       {
@@ -176,7 +162,7 @@
   <!-- Google AdSense Global Tag (Placeholder) -->
   
 </head>
-<body>
+<body data-type="tool" data-slug="word-counter" data-category="text-tools">
 
   <!-- Reading Progress Indicator -->
   <div class="reading-progress-container"><div id="reading-progress-bar" class="reading-progress-bar"></div></div>
@@ -200,12 +186,15 @@
               </script>
             </div>
 
-      <nav class="breadcrumb-container" aria-label="Breadcrumb">
-        <div class="breadcrumb-item"><a href="/">Home</a></div>
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-container" id="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
         <span class="breadcrumb-separator">/</span>
         <div class="breadcrumb-item"><a href="../tools.html">Tools</a></div>
         <span class="breadcrumb-separator">/</span>
-        <div class="breadcrumb-item breadcrumb-active">Word Counter</div>
+        <div class="breadcrumb-item"><a href="../tools.html?category=text-tools">Text Tools</a></div>
+        <span class="breadcrumb-separator">/</span>
+        <div class="breadcrumb-item breadcrumb-active" aria-current="page">Word Counter</div>
       </nav>
 
       <div class="tool-page-layout">
@@ -547,7 +536,7 @@
           <section class="newsletter-card" style="margin-top: 3rem;">
             <h2 class="newsletter-title">Calculate Faster with Finejust.vip</h2>
             <p class="newsletter-desc">Explore 20+ free client-side financial, math, conversion, and developer utilities with zero installation.</p>
-            <a href="../tools.html" class="btn btn-newsletter">Explore All 20+ Free Tools</a>
+            <a href="../tools.html" class="btn btn-newsletter">Explore All 30+ Free Tools</a>
           </section>
         </div>
 
@@ -559,7 +548,7 @@
               <li><a href="case-converter.html" class="footer-link">&bull; Case Converter</a></li>
               <li><a href="base64-encoder.html" class="footer-link">&bull; Base64 Encoder</a></li>
               <li><a href="password-generator.html" class="footer-link">&bull; Password Generator</a></li>
-              <li><a href="../tools.html" class="footer-link">&bull; All 20+ Free Tools &rarr;</a></li>
+              <li><a href="../tools.html" class="footer-link">&bull; All 30+ Free Tools &rarr;</a></li>
             </ul>
           </div>
           <div class="ad-container" style="min-height: 300px;">
@@ -590,13 +579,24 @@
         </script>
       </div>
     </div>
+  
+      
+      
+      <!-- Automated Internal Linking Engine -->
+      <section id="prev-next"></section>
+      <section id="related-tools"></section>
+      <section id="category-tools"></section>
+      <section id="popular-tools"></section>
+      <section id="recently-updated"></section>
+      <section id="related-articles"></section>
   </main>
 
   <!-- Dynamic Footer Container -->
   <div id="footer-container"></div>
 
-  <script src="../assets/script.js" defer></script>
-  <script src="../assets/search.js" defer></script>
+  <script src="../assets/js/script.js" defer></script>
+  <script src="../assets/js/internal-links.js" defer></script>
+  <script src="../assets/js/search.js" defer></script>
   <script>
 (function() {
       'use strict';
